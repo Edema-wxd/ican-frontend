@@ -27,7 +27,7 @@ function Mainfooter() {
             </div>
             <div className="self-stretch h-16 flex-col justify-start items-start gap-1 flex">
               <div className="justify-center items-center gap-2 inline-flex">
-                <HiOutlineLocationMarker className="w-6 h-6 relative" />
+                <HiOutlineLocationMarker className=" stroke-white w-8 h-8 relative" />
                 <p className="text-white text-sm font-normal   leading-tight">
                   Office Address
                 </p>
@@ -93,14 +93,14 @@ function Mainfooter() {
               </h5>
               <div className="self-stretch h-32 flex-col justify-start items-start gap-3 flex">
                 <div className="self-stretch justify-start items-center gap-1.5 inline-flex">
-                  <HiOutlineMail className="w-6 h-6 relative" />
+                  <HiOutlineMail className="w-6 h-6 stroke-white relative" />
                   <br />
                   <p className="grow w-fit shrink basis-0 text-gray-300 text-sm font-normal text-wrap">
                     icansuruleredistrictsociety@gmail.com
                   </p>
                 </div>
                 <div className="self-stretch justify-start items-center gap-1.5 inline-flex">
-                  <FaPhone className="w-6 h-6 relative" />
+                  <FaPhone className=" stroke-white fill-white w-6 h-6 relative" />
                   <div className="flex-col justify-center items-start gap-1.5 inline-flex">
                     <p className="text-gray-300 text-sm font-normal ">
                       +234 808 816 8895
@@ -111,9 +111,9 @@ function Mainfooter() {
                   </div>
                 </div>
                 <div className="self-stretch justify-start items-center gap-6 inline-flex">
-                  <FaInstagram className="w-8 h-8 relative" />
-                  <FaTwitter className="w-8 h-8 relative" />
-                  <FaMeta className="w-8 h-8 relative" />
+                  <FaInstagram className="stroke-white fill-white w-8 h-8 relative" />
+                  <FaTwitter className="stroke-white fill-white w-8 h-8 relative" />
+                  <FaMeta className=" stroke-white fill-white w-8 h-8 relative" />
                 </div>
               </div>
             </div>

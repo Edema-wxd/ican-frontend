@@ -18,19 +18,19 @@ function Mainheader() {
     <div className="w-full h-32 relative bg-white flex-col justify-start items-start flex">
       <div className="h-12 px-40 py-2 bg-[#1a379a] flex-row justify-between items-center w-50 gap-4 flex">
         <div className="justify-start items-center gap-1  w-fit  flex">
-          <HiOutlineMail />
+          <HiOutlineMail className=" stroke-white " />
           <p className="text-white text-sm font-semibold   leading-none">
             info@suruleredistrictsociety.org.ng
           </p>
         </div>
         <div className="w-fit justify-start items-center gap-1 flex">
-          <HiOutlinePhone />
+          <HiOutlinePhone className=" stroke-white  " />
           <p className="text-white text-sm font-semibold   leading-none">
             +234 808 816 8895
           </p>
         </div>
         <div className="w-fit justify-start items-center gap-1 flex">
-          <HiLocationMarker />
+          <HiLocationMarker className=" stroke-white fill-white" />
           <p className="text-white text-sm font-normal leading-none">
             Surulere, Lagos, Nigeria
           </p>

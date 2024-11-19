@@ -17,11 +17,10 @@ function Mainfooter() {
                   loading="lazy"
                   width={145}
                   height={60}
-                  className="w-36 h-12"
                   src="/Logo_small.png"
                 />
               </div>
-              <p className="self-stretch text-white text-base font-normal font-['Inter'] leading-tight">
+              <p className="self-stretch text-white text-base font-normal   leading-tight">
                 Tertiary institution as accredited by the Institute of Chartered
                 Accountants of Nigeria
               </p>
@@ -29,7 +28,7 @@ function Mainfooter() {
             <div className="self-stretch h-16 flex-col justify-start items-start gap-1 flex">
               <div className="justify-center items-center gap-2 inline-flex">
                 <HiOutlineLocationMarker className="w-6 h-6 relative" />
-                <p className="text-white text-sm font-normal font-['Inter'] leading-tight">
+                <p className="text-white text-sm font-normal   leading-tight">
                   Office Address
                 </p>
               </div>
@@ -42,7 +41,7 @@ function Mainfooter() {
           </div>
           <div className="justify-start items-start gap-10 flex">
             <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
-              <h5 className="w-fit text-white text-base font-bold font-['Inter'] leading-tight">
+              <h5 className="w-fit text-white text-base font-bold   leading-tight">
                 Page
               </h5>
               <div className="flex-col justify-start items-start gap-4 flex">
@@ -67,7 +66,7 @@ function Mainfooter() {
               </div>
             </div>
             <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
-              <h5 className="w-fit h-7 text-white text-base font-bold font-['Inter'] leading-tight">
+              <h5 className="w-fit h-7 text-white text-base font-bold   leading-tight">
                 Resources
               </h5>
               <div className="flex-col justify-start items-start gap-4 flex">
@@ -89,7 +88,7 @@ function Mainfooter() {
               </div>
             </div>
             <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
-              <h5 className="w-28 h-7 text-white text-base font-bold font-['Inter'] leading-tight">
+              <h5 className="w-28 h-7 text-white text-base font-bold   leading-tight">
                 Contact
               </h5>
               <div className="self-stretch h-32 flex-col justify-start items-start gap-3 flex">

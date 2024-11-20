@@ -7,7 +7,7 @@ import { FaInstagram, FaMeta, FaTwitter, FaPhone } from "react-icons/fa6";
 function Mainfooter() {
   return (
     <footer>
-      <div className="h-fit w-full px-20 py-20 bg-[#1a379a] flex-col justify-start items-center gap-20 inline-flex">
+      <div className="h-fit w-full px-20 py-20 bg-primary flex-col justify-start items-center gap-20 inline-flex">
         <div className="self-stretch justify-between items-start inline-flex">
           <div className="w-80 self-stretch flex-col justify-center items-start gap-8 inline-flex">
             <div className="self-stretch h-28 flex-col justify-start items-start gap-2 flex">

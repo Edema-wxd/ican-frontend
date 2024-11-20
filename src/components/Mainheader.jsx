@@ -16,7 +16,7 @@ import {
 function Mainheader() {
   return (
     <div className="w-full h-32 relative bg-white flex-col justify-start items-start flex">
-      <div className="h-12 px-40 py-2 bg-[#1a379a] flex-row justify-between items-center w-50 gap-4 flex">
+      <div className="h-12 px-40 py-2 bg-primary flex-row justify-between items-center w-50 gap-4 flex">
         <div className="justify-start items-center gap-1  w-fit  flex">
           <HiOutlineMail className=" stroke-white " />
           <p className="text-white text-sm font-semibold   leading-none">
@@ -87,7 +87,7 @@ function Mainheader() {
             </Link>
           </div>
         </div>
-        <button className="px-3 py-2 bg-[#1a379a] rounded-2xl justify-center items-center gap-2 flex text-white text-sm font-semibold   leading-none">
+        <button className="px-3 py-2 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white text-sm font-semibold   leading-none">
           Become a Member
         </button>
       </div>

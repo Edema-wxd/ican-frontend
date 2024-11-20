@@ -25,10 +25,10 @@ function Gallery() {
           <CarouselItem className="basis-1/3">
             <Imgcard />
           </CarouselItem>
-          <CarouselItem>
+          <CarouselItem className="basis-1/3">
             <Imgcard />
           </CarouselItem>
-          <CarouselItem>
+          <CarouselItem className="basis-1/3">
             <Imgcard />
           </CarouselItem>
         </CarouselContent>

@@ -5,15 +5,15 @@ function Dact() {
   return (
     <div className=" w-full py-20 bg-blue-200 flex flex-col items-center justify-center gap-16 ">
       <div className="flex flex-col w-fit items-center gap-2">
-        <h5 className="font-bold text-black text-xl text-center">
+        <h5 className="font-bold font-sans text-black text-xl text-center">
           ICAN SURULERE DISTRICT
         </h5>
-        <h4 className="text-primary font-['Spartan'] text-5xl font-bold text-center">
+        <h4 className="text-primary font-mono text-5xl font-bold text-center">
           Our District Activity
         </h4>
       </div>
       <div className="flex flex-row gap-12 items-center justify-center">
-        <div className="max-w-80 rounded-xl h-fit bg-white p-6 flex flex-col justify-between items-start gap-4 ">
+        <div className="max-w-80 font-sans rounded-xl h-fit bg-white p-6 flex flex-col justify-between items-start gap-4 ">
           <div className="rounded-xl p-2 bg-slate-300 ">
             <FaPeopleRoof className="w-9 h-9 fill-primary" />
           </div>

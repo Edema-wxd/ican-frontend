@@ -1,24 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { inter, league_spartan } from "./fonts";
 import Mainheader from "../components/Mainheader";
 import Mainfooter from "../components/Mainfooter";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "ICAN Surulere",
@@ -31,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={`${inter.variable}  ${league_spartan.variable}`}>
       <head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </head>

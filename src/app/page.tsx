@@ -4,6 +4,7 @@ import Cta from "../components/Cta";
 import Metrics from "../components/Metrics";
 import Dact from "../components/Dact";
 import Gallery from "../components/Gallery";
+import Speech from "../components/Speech";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
             </button>
           </div>
         </Heroimg>
+        <Speech />
         <Metrics />
         <Dact />
         <Gallery />

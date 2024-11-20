@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
   darkMode: ["class"],
@@ -58,7 +57,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["InterVariable", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-inter)"],
+        mono: ["var(--font-league-spartan)"],
       },
     },
   },

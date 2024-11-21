@@ -13,7 +13,7 @@ function Speech() {
             Welcome to ICAN Surulere & District Society
           </h2>
         </div>
-        <p className="text-sans  font-normal text-base text-gray-600">
+        <p className="text-sans font-normal text-base text-gray-600">
           OBA District Society, the Institute of Chartered Accountants of
           Nigeria (Established by Act of Parliament No. 15 of 1965) is one of
           the District Societies that make up the 64 District Societies of ICAN.

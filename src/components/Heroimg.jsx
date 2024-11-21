@@ -31,6 +31,12 @@ function Heroimg({ toggle, maintxt, subtxt, children }) {
     subtxt: PropTypes.string,
     children: PropTypes.node,
   };
+  Heroimg.defaultProps = {
+    toggle: false,
+    maintxt: "",
+    subtxt: "",
+    children: <></>,
+  };
 }
 
 export default Heroimg;

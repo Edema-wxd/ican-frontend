@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   HiLocationMarker,
@@ -6,6 +8,7 @@ import {
 } from "react-icons/hi";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +17,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 function Mainheader() {
+  const pathname = usePathname();
+
   return (
     <div className="w-full h-32 relative bg-white flex-col justify-start items-start flex">
       <div className="h-12 px-40 py-2 bg-primary flex-row justify-between items-center w-50 gap-4 flex">
@@ -42,29 +47,48 @@ function Mainheader() {
         <div className="justify-start items-center gap-4 flex">
           <div className="px-0 py-2 flex-col justify-start items-start gap-2 inline-flex">
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-[#3c3c3c] text-sm font-semibold w-fit leading-none">
+              <DropdownMenuTrigger
+                className={` ${
+                  pathname === "/about-us" ? "text-primary" : ""
+                } text-sm font-semibold w-fit leading-none`}
+              >
                 About Us
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white">
-                <DropdownMenuItem>Who we are</DropdownMenuItem>
-                <DropdownMenuItem>Executive Team</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/about-us">Who we are</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/about-us/our-team">Executive Team</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
           <div className="py-2 px-0 justify-start items-center flex">
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-[#3c3c3c] text-sm font-semibold   leading-none">
+              <DropdownMenuTrigger
+                className={`${
+                  pathname === "/membership" ? "text-primary" : ""
+                } text-sm font-semibold   leading-none`}
+              >
                 Membership
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white">
-                <DropdownMenuItem>Become a Member</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/membership">Become a Member</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem>Login as Member</DropdownMenuItem>
                 <DropdownMenuItem>ICAN Website</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
           <div className="px-0 py-2 rounded-2xl flex-col justify-start items-start gap-2 inline-flex">
-            <Link href="/" className="text-[#3c3c3c] text-sm font-semibold">
+            <Link
+              href="/donate"
+              className={`${
+                pathname === "/donate" ? "text-primary" : ""
+              } text-sm font-semibold`}
+            >
               Donation
             </Link>
           </div>
@@ -82,14 +106,21 @@ function Mainheader() {
             </DropdownMenu>
           </div>
           <div className="px-4 py-2 rounded-2xl flex-col justify-start items-start gap-2 inline-flex">
-            <Link href="/" className="text-[#3c3c3c] text-sm font-semibold">
+            <Link
+              href="/"
+              className={`${
+                pathname === "/contact-us" ? "text-primary" : ""
+              } text-sm font-semibold`}
+            >
               Contact Us
             </Link>
           </div>
         </div>
-        <button className="px-3 py-2 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white text-sm font-semibold   leading-none">
-          Become a Member
-        </button>
+        <Link href="/membership">
+          <button className="px-3 py-2 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white text-sm font-semibold   leading-none">
+            Become a Member
+          </button>
+        </Link>
       </div>
     </div>
   );

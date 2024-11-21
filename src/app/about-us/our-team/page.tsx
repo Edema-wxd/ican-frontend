@@ -20,7 +20,7 @@ function Ourteam() {
         </div>
       </div>
 
-      <Cta  />
+      <Cta />
     </>
   );
 }

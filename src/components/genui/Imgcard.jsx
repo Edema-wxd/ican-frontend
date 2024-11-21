@@ -1,13 +1,31 @@
 import React from "react";
+import PropTypes from "prop-types";
+import Image from "next/image";
 
-function Imgcard() {
+function Imgcard(props) {
   return (
-    <div className="items-start h-[512px] w-[480px] rounded-3xl flex flex-col p-12  to-transparent from-gray-700 justify-end max-w-md bg-[url('/galleryfiller.jpg')] bg-no-repeat bg-cover">
-      <h6 className="text-left font-bold drop-shadow-2xl text-2xl font-mono text-white ">
-        ICAN Award & Dinner
+    <div className=" relative max-w-md ">
+      <h6 className=" absolute p-12 bottom-0 z-20 text-left font-bold drop-shadow-2xl text-2xl font-mono text-white ">
+        {props.title}
       </h6>
+      <Image
+        src={props.imgurl}
+        width={0}
+        height={0}
+        sizes="100vw"
+        alt="image"
+        className="h-auto w-full z-10 rounded-3xl  relative"
+      />
     </div>
   );
+  Imgcard.propTypes = {
+    imgurl: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  };
+  Imgcard.defaultProp = {
+    imgurl: "/galleryfiller.jpg",
+    title: "ICAN Award & Dinner",
+  };
 }
 
 export default Imgcard;

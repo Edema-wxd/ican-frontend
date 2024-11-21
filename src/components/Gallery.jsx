@@ -23,13 +23,13 @@ function Gallery() {
       <Carousel>
         <CarouselContent className="gap-20">
           <CarouselItem className="min-w-fit basis-auto">
-            <Imgcard />
+            <Imgcard title="Hot Eba" imgurl="/galleryfiller.jpg" />
           </CarouselItem>
           <CarouselItem className="min-w-fit basis-auto">
-            <Imgcard />
+            <Imgcard title="Hot Eba" imgurl="/galleryfiller.jpg" />
           </CarouselItem>
           <CarouselItem className="min-w-fit basis-auto">
-            <Imgcard />
+            <Imgcard title="Hot Eba" imgurl="/galleryfiller.jpg" />
           </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />

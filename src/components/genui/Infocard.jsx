@@ -1,6 +1,7 @@
 import React from "react";
 import { FaPeopleRoof } from "react-icons/fa6";
 import PropTypes from "prop-types";
+import Itemcard from "@/components/genui/Itemcard";
 
 function Infocard(props) {
   return (
@@ -14,29 +15,17 @@ function Infocard(props) {
         </h4>
       </div>
       <div className="flex flex-row gap-12 items-center justify-center">
-        <div className="max-w-80 font-sans rounded-xl h-fit bg-white p-6 flex flex-col justify-between items-start gap-4 ">
-          <div className="rounded-xl p-2 bg-slate-300 ">
-            <FaPeopleRoof className="w-9 h-9 fill-primary" />
-          </div>
-          <h6 className="font-semibold text-xl text-left text-gray-900 ">
-            Monthly Meeting
-          </h6>
-          <p className="text-base font-medium text-gray-600 text-balance ">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum{" "}
-            dolor sit amet, consectetur adipiscing elit
-          </p>
-        </div>
+        <Itemcard />
       </div>
     </div>
   );
-
-  Infocard.propTypes = {
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string,
-  };
-  Infocard.defaultProp = {
-    subtitle: "ICAN SURULERE DISTRICT",
-  };
 }
+Infocard.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+};
+Infocard.defaultProp = {
+  subtitle: "ICAN SURULERE DISTRICT",
+};
 
 export default Infocard;

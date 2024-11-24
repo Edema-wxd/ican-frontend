@@ -2,7 +2,7 @@
 import Heroimg from "../components/Heroimg";
 import Cta from "../components/Cta";
 import Metrics from "../components/Metrics";
-import Dact from "../components/Dact";
+
 import Gallery from "../components/Gallery";
 import Speech from "../components/Speech";
 import Infocard from "@/components/genui/Infocard";
@@ -29,7 +29,7 @@ export default function Home() {
         </Heroimg>
         <Speech />
         <Metrics />
-        <Dact />
+   
         <Infocard
           title={"Our District Activity"}
           subtitle={"ICAN SURULERE DISTRICT"}

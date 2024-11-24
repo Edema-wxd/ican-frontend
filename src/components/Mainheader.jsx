@@ -43,7 +43,9 @@ function Mainheader() {
       </div>
 
       <div className="w-full mt-4 justify-around items-center gap-10 inline-flex">
-        <Image alt="Logo" width={143} height={60} src="/Logo_big.png" />
+        <Link href="/">
+          <Image alt="Logo" width={143} height={60} src="/Logo_big.png" />
+        </Link>
         <div className="justify-start items-center gap-4 flex">
           <div className="px-0 py-2 flex-col justify-start items-start gap-2 inline-flex">
             <DropdownMenu>

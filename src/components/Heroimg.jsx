@@ -8,7 +8,7 @@ function Heroimg({ toggle, maintxt, subtxt, children }) {
       <h1 className="text-center max-w-3xl text-white text-6xl font-bold font-['Spartan'] leading-20 ">
         {maintxt}
       </h1>
-      <p className="text-center text-white text-base font-medium font-['Inter'] leading-6">
+      <p className="text-center text-white text-base font-medium  leading-6">
         {subtxt}
       </p>
       <div>{children}</div>
@@ -24,19 +24,19 @@ function Heroimg({ toggle, maintxt, subtxt, children }) {
       )}
     </div>
   );
-
-  Heroimg.propTypes = {
-    toggle: PropTypes.bool.isRequired,
-    maintxt: PropTypes.string.isRequired,
-    subtxt: PropTypes.string,
-    children: PropTypes.node,
-  };
-  Heroimg.defaultProps = {
-    toggle: false,
-    maintxt: "",
-    subtxt: "",
-    children: <></>,
-  };
 }
+
+Heroimg.propTypes = {
+  toggle: PropTypes.bool.isRequired,
+  maintxt: PropTypes.string.isRequired,
+  subtxt: PropTypes.string,
+  children: PropTypes.node,
+};
+Heroimg.defaultProps = {
+  toggle: false,
+  maintxt: "",
+  subtxt: "",
+  children: <></>,
+};
 
 export default Heroimg;

@@ -18,14 +18,14 @@ function Imgcard(props) {
       />
     </div>
   );
-  Imgcard.propTypes = {
-    imgurl: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  };
-  Imgcard.defaultProp = {
-    imgurl: "/galleryfiller.jpg",
-    title: "ICAN Award & Dinner",
-  };
-}
+} 
+Imgcard.propTypes = {
+  imgurl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+Imgcard.defaultProp = {
+  imgurl: "/galleryfiller.jpg",
+  title: "ICAN Award & Dinner",
+};
 
 export default Imgcard;

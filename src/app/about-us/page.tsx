@@ -1,6 +1,8 @@
 import React from "react";
 import Heroimg from "@/components/Heroimg";
 import Meminfo from "@/components/Meminfo";
+import Infocard from "@/components/genui/Infocard";
+import Aims from "../../components/Aims";
 
 function Aboutus() {
   return (
@@ -35,10 +37,12 @@ function Aboutus() {
           </div>
         </div>
       </div>
+      <Infocard subtitle={""} title="Our Values" />
       <div className="py-30 px-40">
         <h3 className="bg-primary text-5xl"></h3>
         <div className="w-fit flex flex-row justify-center items-center gap-12"></div>
       </div>
+      <Aims />
       <Meminfo />
     </div>
   );

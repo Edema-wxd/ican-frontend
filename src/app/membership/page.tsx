@@ -2,6 +2,7 @@ import React from "react";
 import Heroimg from "@/components/Heroimg";
 import Cta from "@/components/Cta";
 import Meminfo from "@/components/Meminfo";
+import Infocard from "@/components/genui/Infocard";
 
 function Membership() {
   return (
@@ -17,6 +18,13 @@ function Membership() {
         </div>
       </Heroimg>
       <Meminfo />
+      <Infocard
+        subtitle={"ICAN SURULERE DISTRICT"}
+        title="Benefits of Being a Member"
+        addtxt={
+          "Lorem ipsum dolor sit amet, consectetur adipiscing eLorem ipsum dolor sit amet, dolor sit amet, consectetur adipiscing elitlitLorem ipsum dolor sit amet, consectetur adipiscing elit"
+        }
+      />
 
       <Cta toggle={false} />
     </>

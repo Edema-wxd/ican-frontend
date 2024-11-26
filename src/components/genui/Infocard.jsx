@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Itemcard from "@/components/genui/Itemcard";
 
 function Infocard({ subtitle, title, data }) {
+  console.log(data);
   return (
     <div className=" w-full py-20 bg-blue-200 flex flex-col items-center justify-center gap-16 ">
       <div className="flex flex-col w-fit items-center gap-2">

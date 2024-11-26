@@ -18,6 +18,9 @@ body {
     --primary-foreground: 0 0% 98%;
     --secondary: 138 51% 43%;
     --secondary-foreground: 0 0% 9%;
+    --success: 134 61% 41%;
+    --error: 2 82% 44%;
+    --warning: 40 96% 53%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
     --accent: 0 0% 96.1%;

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function Meminfo() {
   return (
-    <div className=" flex flex-row p-20 mx-10 gap-8 w-auto items-center justify-center ">
+    <div className=" flex flex-row py-20 px-40 mx-10 gap-8 w-auto items-center justify-center ">
       <div className="flex flex-col gap-12 max-w-[470px] text-left">
         <div>
           <p className="text-base font-semibold text-black">

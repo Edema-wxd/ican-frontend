@@ -22,6 +22,7 @@ function Infocard({ subtitle, title, data }) {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           }
           icon={<FaPeopleRoof className="w-9 h-9 fill-primary" />}
+          type="col"
         />
       </div>
     </div>

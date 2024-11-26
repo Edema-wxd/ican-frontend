@@ -2,10 +2,12 @@ import React from "react";
 import { FaPerson } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
+import Itemcard from "./genui/Itemcard";
+// import { FaPeopleRoof } from "react-icons/fa6";
 
 function Meminfo() {
   return (
-    <div className=" flex flex-row py-20 px-40 mx-10 gap-8 w-auto items-center justify-center ">
+    <div className=" flex flex-row py-20 px-40  gap-8 w-auto items-center justify-between ">
       <div className="flex flex-col gap-12 max-w-[470px] text-left">
         <div>
           <p className="text-base font-semibold text-black">
@@ -16,6 +18,14 @@ function Meminfo() {
           </h1>
         </div>
         <div className="flex flex-col gap-6 justify-center items-start h-fit w-fit">
+          <Itemcard
+            name={"Pay for Registration"}
+            info={
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+            icon={<FaPerson className="w-9 h-9 fill-primary" />}
+            type="row"
+          />
           <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
             <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
               <FaPerson />

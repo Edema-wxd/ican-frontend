@@ -3,6 +3,7 @@ import Heroimg from "@/components/Heroimg";
 import Cta from "@/components/Cta";
 import Meminfo from "@/components/Meminfo";
 import Infocard from "@/components/genui/Infocard";
+import Dues from "@/components/Dues";
 
 function Membership() {
   return (
@@ -25,6 +26,7 @@ function Membership() {
           "Lorem ipsum dolor sit amet, consectetur adipiscing eLorem ipsum dolor sit amet, dolor sit amet, consectetur adipiscing elitlitLorem ipsum dolor sit amet, consectetur adipiscing elit"
         }
       />
+      <Dues />
 
       <Cta toggle={false} />
     </>

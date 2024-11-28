@@ -29,34 +29,29 @@ function Blogtile({
     );
   }
   return (
-    <div className="max-w-96 w-fit h-64 pr-4 rounded-lg border border-gray-300 justify-start items-center gap-8 flex flex-row">
+    <div className="max-w-[500px] w-fit h-64 pr-4 rounded-lg border border-gray-300 justify-start items-center gap-8 flex flex-row">
       <img
         className="w-64 h-64 relative rounded-tl-2xl rounded-bl-2xl"
         src={imgurl}
       />
       <div className="grow shrink basis-0 py-8 flex-col justify-start items-start gap-4 inline-flex">
         {bucket}
-        <div className="self-stretch text-gray-950 text-xl font-semibold  leading-normal">
-          {title}
-        </div>
-        <div className="text-gray-600 text-sm font-medium  leading-tight">
-          {date}
-        </div>
+        <h4 className="text-gray-950 text-xl font-semibold">{title}</h4>
+        <p className="text-gray-600 text-sm font-medium">{date}</p>
         <Link href={"/"}>
-          <div className="self-stretch text-primary text-base font-semibold  leading-normal">
+          <p className="self-stretch text-primary text-base font-semibold  ">
             Read more &gt;&gt;
-          </div>
+          </p>
         </Link>
       </div>
     </div>
   );
 }
 Blogtile.propTypes = {
-  imgurl: PropTypes.string,
-  type: PropTypes.oneOf(["article", "news", "video"]),
+  imgurl: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(["article", "news", "video"]).isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 };
-
 
 export default Blogtile;

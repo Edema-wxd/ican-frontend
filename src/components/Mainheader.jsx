@@ -109,7 +109,7 @@ function Mainheader() {
           </div>
           <div className="px-4 py-2 rounded-2xl flex-col justify-start items-start gap-2 inline-flex">
             <Link
-              href="/"
+              href="/contact-us"
               className={`${
                 pathname === "/contact-us" ? "text-primary" : ""
               } text-sm font-semibold`}

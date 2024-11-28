@@ -43,7 +43,7 @@ function Getin() {
           </label>
           <input
             className=" p-3 border rounded-xl border-gray-400 "
-            type="text"
+            type="tel"
             name="phone"
             placeholder="Enter your phone number"
           />

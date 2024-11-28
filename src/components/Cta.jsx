@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 
-function Cta(props) {
+function Cta({ toggle }) {
   return (
     <div className="flex flex-col gap-8 w-full items-center py-20 bg-blue-100 bg-[url('/ctatexture.svg')] bg-no-repeat bg-right">
       <h5 className="text-black font-bold font text-xl items-center text-center">
-        {props.toggle ? (
+        {toggle ? (
           <>
             Would you like to maximize your potentials by <br /> joining other
             district society?
@@ -25,12 +25,9 @@ function Cta(props) {
       </Link>
     </div>
   );
-  Cta.propTypes = {
-    toggle: PropTypes.bool,
-  };
-  Cta.defaultProp = {
-    toggle: false,
-  };
 }
+Cta.propTypes = {
+  toggle: PropTypes.bool,
+};
 
 export default Cta;

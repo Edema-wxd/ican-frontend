@@ -3,7 +3,9 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-function Publicationtile({ imgurl, title, date, previewurl, downloadurl }) {
+function Publicationtile({ imgurl= "/image.png",
+  title= "2024- Annual Report & Minutes of AGM",
+  date= "22, October 2024", previewurl, downloadurl }) {
   console.log(previewurl, downloadurl);
 
   // async function downloadPublication({downloadurl}) {
@@ -59,11 +61,6 @@ Publicationtile.propTypes = {
   imgurl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-};
-Publicationtile.defaultProps = {
-  imgurl: "/image.png",
-  title: "2024- Annual Report & Minutes of AGM",
-  date: "22, October 2024",
 };
 
 export default Publicationtile;

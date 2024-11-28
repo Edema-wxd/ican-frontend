@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FaPeopleRoof } from "react-icons/fa6";
 
-function Itemcard({ name, info, icon, type }) {
+function Itemcard({
+  name = "Monthly Meeting",
+  info = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  icon = <FaPeopleRoof className="w-9 h-9 fill-primary" />,
+  type = "col",
+}) {
   var boc;
   var floc;
   if (type === "row") {
@@ -29,13 +34,6 @@ Itemcard.propTypes = {
   info: PropTypes.string.isRequired, // Mandatory string for 'info'
   icon: PropTypes.node, // Any renderable React node for 'icon'
   type: PropTypes.oneOf(["col", "row"]),
-};
-
-Itemcard.defaultProps = {
-  name: "Monthly Meeting",
-  info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  icon: <FaPeopleRoof className="w-9 h-9 fill-primary" />,
-  type: "col",
 };
 
 export default Itemcard;

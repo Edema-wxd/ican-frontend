@@ -1,5 +1,6 @@
 import React from "react";
 import Heroimg from "@/components/Heroimg";
+import Blogtile from "@/components/genui/Blogtile";
 
 function Blog() {
   return (
@@ -20,6 +21,7 @@ function Blog() {
           </button>
         </div>
       </Heroimg>
+      <Blogtile  />
     </div>
   );
 }

@@ -3,7 +3,12 @@ import { FaPeopleRoof } from "react-icons/fa6";
 import PropTypes from "prop-types";
 import Itemcard from "@/components/genui/Itemcard";
 
-function Infocard({ subtitle, title, data, addtxt }) {
+function Infocard({
+  subtitle = "ICAN SURULERE DISTRICT",
+  title,
+  data,
+  addtxt,
+}) {
   console.log(data);
   return (
     <div className=" w-full py-20 px-40 bg-blue-200 flex flex-col items-center justify-center gap-16 ">
@@ -34,9 +39,6 @@ Infocard.propTypes = {
   subtitle: PropTypes.string,
   addtxt: PropTypes.string,
   data: PropTypes.array,
-};
-Infocard.defaultProp = {
-  subtitle: "ICAN SURULERE DISTRICT",
 };
 
 export default Infocard;

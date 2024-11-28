@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 
-function Blogtile({ imgurl, type, title, date }) {
+function Blogtile({
+  imgurl = "/image.png",
+  type = "article",
+  title = "5 Essential needs to consider for developing a web App",
+  date = "22, October 2024",
+}) {
   var bucket;
   if (type === "article") {
     bucket = (
@@ -52,11 +57,6 @@ Blogtile.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 };
-Blogtile.defaultProps = {
-  imgurl: "/image.png",
-  type: "article",
-  title: "5 Essential needs to consider for developing a web App",
-  date: "22, October 2024",
-};
+
 
 export default Blogtile;

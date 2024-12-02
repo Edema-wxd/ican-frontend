@@ -20,7 +20,7 @@ function Mainheader() {
   const pathname = usePathname();
 
   return (
-    <div className="w-full h-32 relative bg-white flex-col justify-start items-start flex">
+    <div className="w-full h-32 fixed top-0 z-50 bg-white flex-col justify-start items-start flex">
       <div className="h-12 px-40 py-2 bg-primary flex-row justify-between items-center w-50 gap-4 flex">
         <div className="justify-start items-center gap-1  w-fit  flex">
           <HiOutlineMail className=" stroke-white " />

@@ -7,7 +7,12 @@ import Findus from "@/components/Findus";
 function ContactUs() {
   return (
     <div>
-      <Heroimg subtxt={""} toggle={false} maintxt="Contact Us" />
+      <Heroimg
+        subtxt={""}
+        toggle={false}
+        maintxt="Contact Us"
+        imageUrl="/contactushero.png"
+      />
       <Getin />
       <Cinfo />
       <Findus />

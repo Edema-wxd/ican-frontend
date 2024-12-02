@@ -29,12 +29,12 @@ function Blogtile({
     );
   }
   return (
-    <div className="max-w-[500px] w-fit h-64 pr-4 rounded-lg border border-gray-300 justify-start items-center gap-8 flex flex-row">
+    <div className="w-[500px] h-64 pr-4 rounded-lg border border-gray-300 justify-start items-center gap-8 flex flex-row">
       <img
         className="w-64 h-64 relative rounded-tl-2xl rounded-bl-2xl"
         src={imgurl}
       />
-      <div className="grow shrink basis-0 py-8 flex-col justify-start items-start gap-4 inline-flex">
+      <div className="   py-8 flex-col justify-start items-start gap-4 inline-flex">
         {bucket}
         <h4 className="text-gray-950 text-xl font-semibold">{title}</h4>
         <p className="text-gray-600 text-sm font-medium">{date}</p>

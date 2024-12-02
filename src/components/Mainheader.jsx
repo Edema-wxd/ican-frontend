@@ -100,7 +100,9 @@ function Mainheader() {
                 Media & Resources
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white">
-                <DropdownMenuItem>Blog</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/blog">Blog</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem>Gallery</DropdownMenuItem>
                 <DropdownMenuItem>Publication and Resources</DropdownMenuItem>
                 <DropdownMenuItem>Jobs</DropdownMenuItem>

@@ -23,20 +23,30 @@ function Blog() {
           </button>
         </div>
       </Heroimg>
-      <Blogtile type="news" />
-      <Blogtile type="article" />
-      <Blogtile type="video" />
-      <Blogtile type="video" />
-      <Tabs defaultValue="account" className="w-[400px]">
-        <TabsList>
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="password">Password</TabsTrigger>
-        </TabsList>
-        <TabsContent value="account">
-          Make changes to your account here.
-        </TabsContent>
-        <TabsContent value="password">Change your password here.</TabsContent>
-      </Tabs>
+      <div className="flex px-40 py-20 flex-col gap-12 items-start justify-start">
+        <h2>All Blog Post</h2>
+
+        <Tabs defaultValue="articles" className="w-full">
+          <TabsList>
+            <TabsTrigger value="articles">Articles</TabsTrigger>
+            <TabsTrigger value="news">News</TabsTrigger>
+            <TabsTrigger value="video">Video</TabsTrigger>
+          </TabsList>
+          <TabsContent value="articles">
+            <div className="flex w-full flex-row gap-6">
+              <Blogtile type="article" />
+              <Blogtile type="article" />
+            </div>
+          </TabsContent>
+          <TabsContent value="news">
+            <Blogtile type="news" />
+          </TabsContent>
+          <TabsContent value="video">
+            <Blogtile type="video" />
+            <Blogtile type="video" />
+          </TabsContent>
+        </Tabs>
+      </div>
     </div>
   );
 }

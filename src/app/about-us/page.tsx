@@ -7,7 +7,12 @@ import Aims from "../../components/Aims";
 function Aboutus() {
   return (
     <div>
-      <Heroimg subtxt={""} toggle={false} maintxt="About Us">
+      <Heroimg
+        subtxt={""}
+        toggle={false}
+        maintxt="About Us"
+        imageUrl="/aboutushero.png"
+      >
         <></>
       </Heroimg>
       <div className="bg-white flex flex-col  items-center gap-12 w-full py-20 px-40">

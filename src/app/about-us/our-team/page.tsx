@@ -6,7 +6,12 @@ import Exco from "@/components/genui/Exco";
 function Ourteam() {
   return (
     <>
-      <Heroimg subtxt={""} toggle={false} maintxt="Our Team">
+      <Heroimg
+        subtxt={""}
+        toggle={false}
+        maintxt="Our Team"
+        imageUrl="/ourteamhero.png"
+      >
         <></>
       </Heroimg>
       <div className="flex flex-col items-start text-left gap-12 px-40 py-20 justify-start ">

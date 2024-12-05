@@ -8,9 +8,14 @@ import Dues from "@/components/Dues";
 function Membership() {
   return (
     <>
-      <Heroimg subtxt={""} toggle={false} maintxt="Membership">
+      <Heroimg
+        subtxt={""}
+        toggle={false}
+        maintxt="Membership"
+        imageUrl="/membershiphero.png"
+      >
         <div className="flex gap-12 flex-row justify-center mt-4">
-          <button className="  text-white rounded-full bg-primary py-3 px-8 w-fit hover:bg-blue-900 ">
+          <button className="  text-white rounded-full bg-secondary py-3 px-8 w-fit hover:bg-green-900 ">
             Become a Member
           </button>
           <button className=" outline-1 outline-white text-primary rounded-full bg-blue-100 hover:bg-blue-500 hover:text-white py-3 px-8  w-fit">

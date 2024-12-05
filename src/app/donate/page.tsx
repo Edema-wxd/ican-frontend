@@ -6,7 +6,7 @@ import Dontoday from "@/components/Dontoday";
 function Donate() {
   return (
     <div>
-      <Heroimg subtxt={""} toggle={false} maintxt="Support Our Mission" />
+      <Heroimg subtxt={""} toggle={false} maintxt="Support Our Mission"  imageUrl="/donatehero.png"/>
       <Infocard
         subtitle={"SUPPORT US"}
         title="Support Our Mission"

@@ -257,6 +257,20 @@ export const blogPosts: BlogPost[] = [
     date: '22, October 2024',
     imageUrl: '/image.png'
   },
+  {
+    id: '37',
+    category: 'Articles',
+    title: '5 Essential needs to consider for developing a web App',
+    date: '22, October 2024',
+    imageUrl: '/image.png'
+  },
+  {
+    id: '38',
+    category: 'Articles',
+    title: '5 Essential needs to consider for developing a web App',
+    date: '22, October 2024',
+    imageUrl: '/image.png'
+  },
 ];
 
 export const TABS = ['Articles', 'News', 'Videos'];

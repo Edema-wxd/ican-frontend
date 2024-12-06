@@ -20,7 +20,7 @@ const BlogList: React.FC = () => {
       : blogPosts;
   }, [activeTab]);
 
-  const postsPerPage = 4;
+  const postsPerPage = 6;
   const totalFilteredPosts = filteredPosts.length;
 
   React.useEffect(() => {

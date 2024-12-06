@@ -6,7 +6,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   onPageChange,
   totalFilteredPosts,
 }) => {
-  const postsPerPage = 4;
+  const postsPerPage = 6; // Updated to 6 posts per page
   const totalPages = Math.max(1, Math.ceil(totalFilteredPosts / postsPerPage));
 
   const renderPageNumbers = () => {
@@ -93,8 +93,8 @@ export const Pagination: React.FC<PaginationProps> = ({
   };
 
   return (
-    <div
-      className="flex items-center justify-center   rounded-md p-2"
+    <nav 
+      className="flex items-center justify-center border border-purple-200 rounded-md p-2"
       aria-label="Pagination"
     >
       <button
@@ -122,7 +122,7 @@ export const Pagination: React.FC<PaginationProps> = ({
           <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
         </svg>
       </button>
-    </div>
+    </nav>
   );
 };
 

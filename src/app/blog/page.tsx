@@ -1,7 +1,8 @@
 import React from "react";
 import Heroimg from "@/components/Heroimg";
-import Blogtile from "@/components/genui/Blogtile";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import BlogListSection from "@/components/BlogListSection";
+// import Blogtile from "@/components/genui/Blogtile";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function Blog() {
   return (
@@ -23,20 +24,7 @@ function Blog() {
           </button>
         </div>
       </Heroimg>
-      <Blogtile type="news" />
-      <Blogtile type="article" />
-      <Blogtile type="video" />
-      <Blogtile type="video" />
-      <Tabs defaultValue="account" className="w-[400px]">
-        <TabsList>
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="password">Password</TabsTrigger>
-        </TabsList>
-        <TabsContent value="account">
-          Make changes to your account here.
-        </TabsContent>
-        <TabsContent value="password">Change your password here.</TabsContent>
-      </Tabs>
+      <BlogListSection />
     </div>
   );
 }

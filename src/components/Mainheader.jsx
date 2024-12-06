@@ -50,9 +50,8 @@ function Mainheader() {
           <div className="px-0 py-2 flex-col justify-start items-start gap-2 inline-flex">
             <DropdownMenu>
               <DropdownMenuTrigger
-                className={` ${
-                  pathname === "/about-us" ? "text-primary" : ""
-                } text-sm font-semibold w-fit leading-none`}
+                className={` ${pathname === "/about-us" ? "text-primary" : ""
+                  } text-sm font-semibold w-fit leading-none`}
               >
                 About Us
               </DropdownMenuTrigger>
@@ -69,9 +68,8 @@ function Mainheader() {
           <div className="py-2 px-0 justify-start items-center flex">
             <DropdownMenu>
               <DropdownMenuTrigger
-                className={`${
-                  pathname === "/membership" ? "text-primary" : ""
-                } text-sm font-semibold   leading-none`}
+                className={`${pathname === "/membership" ? "text-primary" : ""
+                  } text-sm font-semibold   leading-none`}
               >
                 Membership
               </DropdownMenuTrigger>
@@ -87,9 +85,8 @@ function Mainheader() {
           <div className="px-0 py-2 rounded-2xl flex-col justify-start items-start gap-2 inline-flex">
             <Link
               href="/donate"
-              className={`${
-                pathname === "/donate" ? "text-primary" : ""
-              } text-sm font-semibold`}
+              className={`${pathname === "/donate" ? "text-primary" : ""
+                } text-sm font-semibold`}
             >
               Donation
             </Link>
@@ -100,7 +97,8 @@ function Mainheader() {
                 Media & Resources
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white">
-                <DropdownMenuItem>Blog</DropdownMenuItem>
+                <DropdownMenuItem
+                > <Link href="/blog">Blog</Link></DropdownMenuItem>
                 <DropdownMenuItem>Gallery</DropdownMenuItem>
                 <DropdownMenuItem>Publication and Resources</DropdownMenuItem>
                 <DropdownMenuItem>Jobs</DropdownMenuItem>
@@ -110,9 +108,8 @@ function Mainheader() {
           <div className="px-4 py-2 rounded-2xl flex-col justify-start items-start gap-2 inline-flex">
             <Link
               href="/contact-us"
-              className={`${
-                pathname === "/contact-us" ? "text-primary" : ""
-              } text-sm font-semibold`}
+              className={`${pathname === "/contact-us" ? "text-primary" : ""
+                } text-sm font-semibold`}
             >
               Contact Us
             </Link>

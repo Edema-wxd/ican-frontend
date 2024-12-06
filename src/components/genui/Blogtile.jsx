@@ -40,7 +40,7 @@ function Blogtile({
         <p className="text-gray-600 text-sm font-medium">{date}</p>
         <Link href={"/"}>
           <p className="self-stretch text-primary text-base font-semibold  ">
-            Read more &gt;&gt;
+            Read more &gt;&gt;                
           </p>
         </Link>
       </div>

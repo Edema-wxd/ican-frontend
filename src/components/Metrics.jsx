@@ -6,6 +6,8 @@ import {
   FaPeopleLine,
 } from "react-icons/fa6";
 
+// Static metrics bar for landing page, can be made dynamic in the future
+
 function Metrics() {
   return (
     <div className="flex flex-row justify-between w-full py-16 px-40 gap-10 items-center">

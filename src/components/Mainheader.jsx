@@ -49,6 +49,7 @@ function Mainheader() {
         <div className="justify-start items-center gap-4 flex">
           <div className="px-0 py-2 flex-col justify-start items-start gap-2 inline-flex">
             <DropdownMenu>
+              {/* Nav bar links and menus */}
               <DropdownMenuTrigger
                 className={` ${
                   pathname === "/about-us" ? "text-primary" : ""

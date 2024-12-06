@@ -2,6 +2,7 @@ import React from "react";
 import { FaLinkedinIn } from "react-icons/fa6";
 
 function Exco({ name, role }) {
+  // Exco image and Info card
   return (
     <div className="w-80 h-[435px] bg-blue-300 rounded-3xl flex-col justify-center items-center inline-flex">
       <div className="w-80 h-full relative rounded-lg flex-col justify-end items-end flex">

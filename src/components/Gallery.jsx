@@ -9,6 +9,8 @@ import {
 import Imgcard from "./genui/Imgcard";
 
 function Gallery() {
+
+  // Gallery component containing a carousel and image cards based on usage, Add specs for dynamic usage w apis
   return (
     <div className="w-full bg-white flex flex-col gap-10 p-20">
       <div className="flex flex-col justify-start text-left items-start">

@@ -28,6 +28,7 @@ function Blogtile({
       </button>
     );
   }
+  // Mini identifier for type of blog post
   return (
     <div className="w-[500px] h-64 pr-4 rounded-lg border border-gray-300 justify-start items-center gap-8 flex flex-row">
       <img
@@ -37,12 +38,14 @@ function Blogtile({
       <div className="   py-8 flex-col justify-start items-start gap-4 inline-flex">
         {bucket}
         <h4 className="text-gray-950 text-xl font-semibold">{title}</h4>
-        <p className="text-gray-600 text-sm font-medium">{date}</p>
+        <p className="text-gray-600 text-sm font-medium">{date}</p> 
+        {/* blog post title and subtext */}
         <Link href={"/"}>
           <p className="self-stretch text-primary text-base font-semibold  ">
             Read more &gt;&gt;
           </p>
         </Link>
+        {/* Dynamic link to the blog post */}
       </div>
     </div>
   );

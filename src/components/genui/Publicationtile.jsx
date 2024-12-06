@@ -3,9 +3,13 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-function Publicationtile({ imgurl= "/image.png",
-  title= "2024- Annual Report & Minutes of AGM",
-  date= "22, October 2024", previewurl, downloadurl }) {
+function Publicationtile({
+  imgurl = "/image.png",
+  title = "2024- Annual Report & Minutes of AGM",
+  date = "22, October 2024",
+  previewurl,
+  downloadurl,
+}) {
   console.log(previewurl, downloadurl);
 
   // async function downloadPublication({downloadurl}) {
@@ -31,6 +35,9 @@ function Publicationtile({ imgurl= "/image.png",
   //     download(data, filename);
   //     console.log("Downloaded");
   //   }
+
+  // Publication Component card based on design
+  // implement dynamic links for downloads and preview urls
 
   return (
     <div className="h-48 pr-4 rounded-lg border border-[#bbbbbb] justify-start items-center gap-8 inline-flex">

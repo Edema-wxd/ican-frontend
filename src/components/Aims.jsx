@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaCheck } from "react-icons/fa";
 
 function Aims() {
+  // Aims tags and info
   return (
     <div className="flex flex-row px-40 py-20 w-full justify-between items-center ">
       <Image width={462} height={694} alt="Aims" src={"/chairspeech.png"} />

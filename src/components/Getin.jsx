@@ -1,5 +1,7 @@
 import React from "react";
 
+
+// get in touch form used on the contact us page of the design
 function Getin() {
   return (
     <div className="px-40 py-20 flex flex-col w-full gap-16">

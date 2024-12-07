@@ -1,8 +1,7 @@
 import React from "react";
 import Heroimg from "@/components/Heroimg";
-import BlogListSection from "@/components/BlogListSection";
-// import Blogtile from "@/components/genui/Blogtile";
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Blogtile from "@/components/genui/Blogtile";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function Blog() {
   return (

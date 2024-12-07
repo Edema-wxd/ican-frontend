@@ -49,6 +49,7 @@ function Mainheader() {
         <div className="justify-start items-center gap-4 flex">
           <div className="px-0 py-2 flex-col justify-start items-start gap-2 inline-flex">
             <DropdownMenu>
+              {/* Nav bar links and menus */}
               <DropdownMenuTrigger
                 className={` ${pathname === "/about-us" ? "text-primary" : ""
                   } text-sm font-semibold w-fit leading-none`}
@@ -98,7 +99,9 @@ function Mainheader() {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white">
                 <DropdownMenuItem
-                > <Link href="/blog">Blog</Link></DropdownMenuItem>
+                > 
+                  <Link href="/blog">Blog
+                </Link></DropdownMenuItem>
                 <DropdownMenuItem>Gallery</DropdownMenuItem>
                 <DropdownMenuItem>Publication and Resources</DropdownMenuItem>
                 <DropdownMenuItem>Jobs</DropdownMenuItem>

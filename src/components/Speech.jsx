@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 function Speech() {
+  // The Speech component for the landing page
   return (
     <div className="py-20 px-40 bg-white flex flex-row gap-40 justify-between items-center w-full h-fit ">
       <div className="flex flex-col w-[550px] gap-12 items-start text-left">
@@ -23,6 +24,7 @@ function Speech() {
           Organization. A year of great possibilities and I am very optimistic
           that it will bring you prosperity in all ramifications of your lives.
         </p>
+        {/* The Chairmans speach */}
         <h5 className="text-black text-2xl font-mono font-semibold">
           Mr. Olabode Williams FCA
         </h5>
@@ -30,7 +32,8 @@ function Speech() {
           Read more
         </button>
       </div>
-      <Image height={530} width={400} alt="Chairman" src="/chairspeech.png" />
+      <Image height={530} width={400} alt="Chairman" src="/chairspeech.png" />{" "}
+      {/* // The Image of the chairman for the landing page */}
     </div>
   );
 }

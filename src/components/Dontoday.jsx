@@ -2,9 +2,10 @@ import React from "react";
 import Image from "next/image";
 
 function Dontoday() {
+
+  // Donation form to collect donaters details for admins to reachout
   return (
     <div>
-      return (
       <div className="px-40 py-20 flex flex-col w-full gap-16">
         <div>
           <h2 className="w-fit font-bold text-4xl text-primary  font-mono ">

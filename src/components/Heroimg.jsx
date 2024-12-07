@@ -13,6 +13,7 @@ function Heroimg({
     <div
       className="flex flex-row py-20 lg:px-40 mt-32  gap-6 justify-between items-center w-full h-fit min-h-[500px] bg-primary"
       style={{ backgroundImage: `url(${imageUrl})`, backgroundSize: "cover" }}
+      // image for hero section for each page, use per page
     >
       <div className="flex flex-col max-w-lg gap-6">
         <h1 className="text-left max-w-3xl text-white text-6xl font-bold font-['Spartan'] leading-20 ">
@@ -28,6 +29,7 @@ function Heroimg({
       ) : (
         ""
       )}
+      {/* switch for use on the home page alone */}
     </div>
   );
 }

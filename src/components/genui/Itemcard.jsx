@@ -19,6 +19,7 @@ function Itemcard({
       className={`max-w-80 font-sans rounded-xl h-fit bg-white p-6 flex flex-col justify-between items-start gap-4  ${boc}`}
     >
       <div className={`flex flex-${type} ${floc}`}>
+        {/* conditional styling based on usage */}
         <div className="rounded-xl w-fit p-2 bg-slate-300">{icon}</div>
         <h6 className="font-semibold text-xl text-left text-gray-900">
           {name}

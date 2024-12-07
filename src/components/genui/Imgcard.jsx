@@ -12,6 +12,7 @@ function Imgcard({
         {title}
       </h6>
       <Image
+        // Dynamic image url
         src={imgurl}
         width={0}
         height={0}

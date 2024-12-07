@@ -15,6 +15,7 @@ function Findus() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
+        {/* Google map image and link to office location */}
       </div>
     </div>
   );

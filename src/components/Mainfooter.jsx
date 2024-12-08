@@ -8,9 +8,9 @@ function Mainfooter() {
   return (
     <footer>
       <div className="h-fit w-full px-20 py-20 bg-primary flex-col justify-start items-center gap-20 inline-flex">
-        <div className="self-stretch justify-between items-start inline-flex">
-          <div className="w-80 self-stretch flex-col justify-center items-start gap-8 inline-flex">
-            <div className="self-stretch h-28 flex-col justify-start items-start gap-2 flex">
+        <div className="justify-between items-start flex flex-col md:flex-row">
+          <div className="w-80 flex-col justify-start items-start gap-8 flex">
+            <div className="h-28 flex-col justify-start items-start gap-2 flex">
               <div className="justify-start items-start gap-4 inline-flex">
                 <Image
                   alt="Logo"
@@ -20,12 +20,12 @@ function Mainfooter() {
                   src="/Logo_small.png"
                 />
               </div>
-              <p className="self-stretch text-white text-base font-normal   leading-tight">
+              <p className=" text-white text-base font-normal ">
                 Tertiary institution as accredited by the Institute of Chartered
                 Accountants of Nigeria
               </p>
             </div>
-            <div className="self-stretch h-16 flex-col justify-start items-start gap-1 flex">
+            <div className="h-16 flex-col justify-start items-start gap-1 flex">
               <div className="justify-center items-center gap-2 inline-flex">
                 <HiOutlineLocationMarker className=" stroke-white w-8 h-8 relative" />
                 <p className="text-white text-sm font-normal   leading-tight">

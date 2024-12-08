@@ -7,10 +7,10 @@ import { FaInstagram, FaMeta, FaTwitter, FaPhone } from "react-icons/fa6";
 function Mainfooter() {
   return (
     <footer className="h-fit w-full p-4 sm:px-20 sm:py-20 bg-primary flex-col justify-start items-center gap-20 flex">
-      <div className="justify-between items-start flex  gap-8 flex-col md:flex-row">
-        <div className="w-80 flex-col justify-start items-start gap-8 flex">
-          <div className="h-28 flex-col justify-start items-start gap-2 flex">
-            <div className="justify-start items-start gap-4 inline-flex">
+      <div className="justify-between  w-full items-start flex  gap-8 flex-col md:flex-row">
+        <div className=" w-full sm:w-80 h-fit flex-col justify-start items-start gap-10  flex">
+          <div className=" flex-col justify-start items-start gap-2 flex">
+            <div className="justify-start items-start gap-4 flex">
               <Image
                 alt="Logo"
                 loading="lazy"
@@ -24,14 +24,13 @@ function Mainfooter() {
               Accountants of Nigeria
             </p>
           </div>
-          <div className="h-16 flex-col justify-start items-start gap-1 flex">
-            <div className="justify-center items-center gap-2 inline-flex">
+          <div className="flex-col justify-start items-start gap-4 flex">
+            <p className="text-white flex flex-row gap-3 items-center text-sm font-normal   leading-tight">
               <HiOutlineLocationMarker className=" stroke-white w-8 h-8 relative" />
-              <p className="text-white text-sm font-normal   leading-tight">
-                Office Address
-              </p>
-            </div>
-            <p className="self-stretch text-white text-sm font-medium ">
+              Office Address
+            </p>
+
+            <p className="text-white text-sm font-medium ">
               30B, Oke-Onijo Street, Off Ogunlana Street,
               <br />
               Ijeshatedo, Surulere, Lagos
@@ -39,51 +38,53 @@ function Mainfooter() {
           </div>
         </div>
         <div className="justify-start items-start gap-10 flex flex-col sm:flex-row">
-          <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
-            <h5 className="w-fit text-white text-base font-bold   leading-tight">
-              Page
-            </h5>
-            <div className="flex-col justify-start items-start gap-4 flex">
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                About
-              </Link>
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                Contact Us
-              </Link>
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                Membership
-              </Link>
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                Donations
-              </Link>
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                Excos
-              </Link>
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                ICAN Website
-              </Link>
+          <div className="flex w-full flex-row justify-between gap-8 ">
+            <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
+              <h5 className="w-fit text-white text-base font-bold   leading-tight">
+                Page
+              </h5>
+              <div className="flex-col justify-start items-start gap-4 flex">
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  About
+                </Link>
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  Contact Us
+                </Link>
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  Membership
+                </Link>
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  Donations
+                </Link>
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  Excos
+                </Link>
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  ICAN Website
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
-            <h5 className="w-fit h-7 text-white text-base font-bold   leading-tight">
-              Resources
-            </h5>
-            <div className="flex-col justify-start items-start gap-4 flex">
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                News
-              </Link>
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                Events
-              </Link>
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                Gallery
-              </Link>
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                Blog
-              </Link>
-              <Link href="/" className="text-gray-300 text-sm font-normal ">
-                Jobs
-              </Link>
+            <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
+              <h5 className="w-fit h-7 text-white text-base font-bold   leading-tight">
+                Resources
+              </h5>
+              <div className="flex-col justify-start items-start gap-4 flex">
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  News
+                </Link>
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  Events
+                </Link>
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  Gallery
+                </Link>
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  Blog
+                </Link>
+                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                  Jobs
+                </Link>
+              </div>
             </div>
           </div>
           <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">

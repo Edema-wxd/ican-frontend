@@ -11,13 +11,15 @@ function Mainfooter() {
         <div className=" w-full sm:w-80 h-fit flex-col justify-start items-start gap-10  flex">
           <div className=" flex-col justify-start items-start gap-2 flex">
             <div className="justify-start items-start gap-4 flex">
-              <Image
-                alt="Logo"
-                loading="lazy"
-                width={145}
-                height={60}
-                src="/Logo_small.png"
-              />
+              <Link href={"/"}>
+                <Image
+                  alt="Logo"
+                  loading="lazy"
+                  width={145}
+                  height={60}
+                  src="/Logo_small.png"
+                />
+              </Link>
             </div>
             <p className=" text-white text-base font-normal ">
               Tertiary institution as accredited by the Institute of Chartered
@@ -44,19 +46,19 @@ function Mainfooter() {
                 Page
               </h5>
               <div className="flex-col justify-start items-start gap-4 flex">
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                <Link href="/about-us" className="text-gray-300 text-sm font-normal ">
                   About
                 </Link>
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                <Link href="/contact-us" className="text-gray-300 text-sm font-normal ">
                   Contact Us
                 </Link>
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                <Link href="/membership" className="text-gray-300 text-sm font-normal ">
                   Membership
                 </Link>
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                <Link href="/donate" className="text-gray-300 text-sm font-normal ">
                   Donations
                 </Link>
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                <Link href="/about-us/our-team" className="text-gray-300 text-sm font-normal ">
                   Excos
                 </Link>
                 <Link href="/" className="text-gray-300 text-sm font-normal ">
@@ -75,13 +77,13 @@ function Mainfooter() {
                 <Link href="/" className="text-gray-300 text-sm font-normal ">
                   Events
                 </Link>
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                <Link href="/gallery" className="text-gray-300 text-sm font-normal ">
                   Gallery
                 </Link>
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                <Link href="/blog" className="text-gray-300 text-sm font-normal ">
                   Blog
                 </Link>
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
+                <Link href="/jobs" className="text-gray-300 text-sm font-normal ">
                   Jobs
                 </Link>
               </div>

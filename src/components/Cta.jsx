@@ -19,7 +19,7 @@ function Cta({ toggle }) {
           </>
         )}
       </h5>
-      <Link href="/membership">
+      <Link href="/membership/signup">
         <button className="rounded-full bg-primary py-3 px-8 w-fit text-base text-white">
           Become a Member
         </button>

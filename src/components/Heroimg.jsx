@@ -11,17 +11,15 @@ function Heroimg({
 }) {
   return (
     <div
-      className="flex flex-row py-20 lg:px-40 mt-32  gap-6 justify-between items-center w-full h-fit min-h-[500px] bg-primary"
-      style={{ backgroundImage: `url(${imageUrl})`, backgroundSize: "cover" }}
+      className="flex sm:text-white text-black rounded-b-3xl sm:rounded-none flex-col sm:flex-row  p-4 sm:py-20 lg:px-40 mt-32  gap-6 justify-between items-center w-full h-fit min-h-[500px] bg-gradient-to-b from-[#4cc9f0] to-[#4361ee] sm:bg-primary"
+      style={{ backgroundImage: `url(${imageUrl})`, backgroundSize: "cover", }}
       // image for hero section for each page, use per page
     >
       <div className="flex flex-col max-w-lg gap-6">
-        <h1 className="text-left max-w-3xl text-white text-6xl font-bold font-['Spartan'] leading-20 ">
+        <h1 className="text-left max-w-3xl  text-6xl font-bold font-['Spartan'] leading-20 ">
           {maintxt}
         </h1>
-        <p className="text-left text-white text-base font-medium  leading-6">
-          {subtxt}
-        </p>
+        <p className="text-left  text-base font-medium  leading-6">{subtxt}</p>
         <div>{children}</div>
       </div>
       {toggle ? (

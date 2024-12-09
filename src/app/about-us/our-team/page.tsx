@@ -24,7 +24,7 @@ function Ourteam() {
             working to serve our community.
           </p>
         </div>
-        <div className="w-full grid grid-flow-row  md:grid-cols-1 xl:grid-cols-3  gap-y-12 gap-x-20">
+        <div className="w-full flex flex-row gap-10 flex-wrap">
           <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
           <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
           <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}

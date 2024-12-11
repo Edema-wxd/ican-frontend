@@ -1,6 +1,11 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+import { ReactNode } from 'react';
+
+
+
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
@@ -14,7 +19,7 @@ export function cn(...inputs: ClassValue[]) {
  * @returns {any[]} - A new array with the elements in random order.
  */
 
-export function shuffleArray(array: any[]) {
+export function shuffleArray(array: ReactNode[]) {
   return array.map((item) => ({
       item,                // Wrap each element in an object with the original item.
       sort: Math.random(), // Add a random value for sorting.
@@ -34,6 +39,6 @@ export function shuffleArray(array: any[]) {
  * @returns {void}
  */
 
-export const handleReadMore = (router: any, id: string) => {
+export const handleReadMore = (router: ReactNode, id: string) => {
   router.push(`/blog/${id}`); // Navigate to the blog post page using the provided ID.
 };

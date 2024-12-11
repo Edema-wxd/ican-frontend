@@ -15,8 +15,7 @@ export function cn(...inputs: ClassValue[]) {
  */
 
 export function shuffleArray(array: any[]) {
-  return array
-    .map((item) => ({
+  return array.map((item) => ({
       item,                // Wrap each element in an object with the original item.
       sort: Math.random(), // Add a random value for sorting.
     }))

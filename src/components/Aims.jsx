@@ -8,7 +8,7 @@ function Aims() {
     <div className="flex flex-row px-40 py-20 w-full justify-between items-center ">
       <Image width={462} height={694} alt="Aims" src={"/chairspeech.png"} />
       <div className="flex max-w-xl flex-col gap-12 items-start justify-start ">
-        <h2 className=" text-5xl font-bold text-primary font-['Spartan'] text-left  ">
+        <h2 className=" text-5xl font-bold text-primary font-mono text-left  ">
           Aims & Objectives
         </h2>
         <div className="flex p-6 rounded-2xl flex-col bg-primary ">

@@ -2,12 +2,12 @@ import React from "react";
 
 
 // get in touch form used on the contact us page of the design
-function Getin() {
+function Getin({ heading, phoneNumber = true, className }) {
   return (
-    <div className="px-40 py-20 flex flex-col w-full gap-16">
+    <div className={` py-20 flex flex-col w-full gap-16 ${className}`}>
       <div>
         <h2 className="w-fit font-bold text-4xl text-primary  font-mono ">
-          GET IN TOUCH
+          {heading}
         </h2>
         <p className="  ">
           Feel free to reach out to us with any questions, feedback or
@@ -39,18 +39,22 @@ function Getin() {
           />
           <p></p>
         </div>
-        <div className="flex flex-col w-full gap-3 ">
-          <label className=" text-base text-black  " htmlFor="phone">
-            Phone number*
-          </label>
-          <input
-            className=" p-3 border rounded-xl border-gray-400 "
-            type="tel"
-            name="phone"
-            placeholder="Enter your phone number"
-          />
-          <p></p>
-        </div>
+
+        {
+          phoneNumber && <div className="flex flex-col w-full gap-3 ">
+            <label className=" text-base text-black  " htmlFor="phone">
+              Phone number*
+            </label>
+            <input
+              className=" p-3 border rounded-xl border-gray-400 "
+              type="tel"
+              name="phone"
+              placeholder="Enter your phone number"
+            />
+            <p></p>
+          </div>
+        }
+
         <div className="flex flex-col w-full gap-3 ">
           <label className=" text-base text-black  " htmlFor="message">
             Message*

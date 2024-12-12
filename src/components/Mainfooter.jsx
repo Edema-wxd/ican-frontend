@@ -46,19 +46,34 @@ function Mainfooter() {
                 Page
               </h5>
               <div className="flex-col justify-start items-start gap-4 flex">
-                <Link href="/about-us" className="text-gray-300 text-sm font-normal ">
+                <Link
+                  href="/about-us"
+                  className="text-gray-300 text-sm font-normal "
+                >
                   About
                 </Link>
-                <Link href="/contact-us" className="text-gray-300 text-sm font-normal ">
+                <Link
+                  href="/contact-us"
+                  className="text-gray-300 text-sm font-normal "
+                >
                   Contact Us
                 </Link>
-                <Link href="/membership" className="text-gray-300 text-sm font-normal ">
+                <Link
+                  href="/membership"
+                  className="text-gray-300 text-sm font-normal "
+                >
                   Membership
                 </Link>
-                <Link href="/donate" className="text-gray-300 text-sm font-normal ">
+                <Link
+                  href="/donate"
+                  className="text-gray-300 text-sm font-normal "
+                >
                   Donations
                 </Link>
-                <Link href="/about-us/our-team" className="text-gray-300 text-sm font-normal ">
+                <Link
+                  href="/about-us/our-team"
+                  className="text-gray-300 text-sm font-normal "
+                >
                   Excos
                 </Link>
                 <Link href="/" className="text-gray-300 text-sm font-normal ">
@@ -77,13 +92,22 @@ function Mainfooter() {
                 <Link href="/" className="text-gray-300 text-sm font-normal ">
                   Events
                 </Link>
-                <Link href="/gallery" className="text-gray-300 text-sm font-normal ">
+                <Link
+                  href="/gallery"
+                  className="text-gray-300 text-sm font-normal "
+                >
                   Gallery
                 </Link>
-                <Link href="/blog" className="text-gray-300 text-sm font-normal ">
+                <Link
+                  href="/blog"
+                  className="text-gray-300 text-sm font-normal "
+                >
                   Blog
                 </Link>
-                <Link href="/jobs" className="text-gray-300 text-sm font-normal ">
+                <Link
+                  href="/jobs"
+                  className="text-gray-300 text-sm font-normal "
+                >
                   Jobs
                 </Link>
               </div>
@@ -112,10 +136,15 @@ function Mainfooter() {
                   </p>
                 </div>
               </div>
-              <div className="self-stretch justify-start items-center gap-6 inline-flex">
-                <FaInstagram className="stroke-white fill-white w-8 h-8 relative" />
-                <FaTwitter className="stroke-white fill-white w-8 h-8 relative" />
-                <FaMeta className=" stroke-white fill-white w-8 h-8 relative" />
+              <div className="self-stretch justify-start items-start flex-col gap-1 inline-flex">
+                <h5 className="w-28 h-7 text-white text-base font-bold   leading-tight">
+                  Follow us on
+                </h5>
+                <div className="inline-flex flex-row  justify-start items-center gap-6">
+                  <FaInstagram className="stroke-white fill-white w-8 h-8 relative" />
+                  <FaTwitter className="stroke-white fill-white w-8 h-8 relative" />
+                  <FaMeta className=" stroke-white fill-white w-8 h-8 relative" />
+                </div>
               </div>
             </div>
           </div>

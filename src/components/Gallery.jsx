@@ -11,8 +11,8 @@ import Imgcard from "./genui/Imgcard";
 function Gallery() {
   // Gallery component containing a carousel and image cards based on usage, Add specs for dynamic usage w apis
   return (
-    <div className="w-full bg-white flex flex-col gap-10 p-12 sm:p-20">
-      <div className="flex flex-col justify-start text-left items-start">
+    <div className="w-full bg-green-100 flex flex-col gap-10 p-12 sm:p-20">
+      <div className="flex flex-col justify-center gap-4 text-center items-center">
         <p className=" p-0 text-sm font-sans w-fit text-black ">
           Our journey in pictures. Explore highlights from past events and
           district gatherings.

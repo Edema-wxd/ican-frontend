@@ -5,7 +5,7 @@ import Metrics from "../components/Metrics";
 
 import Gallery from "../components/Gallery";
 import Speech from "../components/Speech";
-import Infocard from "@/components/genui/Infocard";
+// import Infocard from "@/components/genui/Infocard";
 
 export default function Home() {
   return (
@@ -28,13 +28,14 @@ export default function Home() {
           </div>
         </Heroimg>
         <Speech />
-        <Metrics />
+        <Gallery />
 
+        <Metrics />
+{/* 
         <Infocard
           title={"Our District Activity"}
           subtitle={"ICAN SURULERE DISTRICT"}
-        />
-        <Gallery />
+        /> */}
 
         <Cta />
       </main>

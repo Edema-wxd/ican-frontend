@@ -10,7 +10,7 @@ import {
 
 function Metrics() {
   return (
-    <div className=" flex flex-wrap flex-row justify-between w-full p-4 sm:py-16 sm:px-40 gap-10 items-center">
+    <div className=" flex flex-wrap flex-row justify-between w-full p-4 sm:p-20 lg:40 gap-10 items-center">
       <div className="flex  items-center flex-col gap-4 w-fit ">
         <FaPeopleGroup className="fill-[#919191] w-12 h-12" />
         <h5 className="  text-2xl sm:text-3xl text-primary font-mono font-bold  ">

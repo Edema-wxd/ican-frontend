@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   HiLocationMarker,
   HiOutlineMail,
   HiOutlinePhone,
   HiMenu,
+  HiX,
 } from "react-icons/hi";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,9 +17,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 function Mainheader() {
   const pathname = usePathname();
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <header className="w-full h-fit sm:h-32 fixed top-0 z-50 bg-white flex-col justify-start items-start flex">
@@ -48,6 +56,17 @@ function Mainheader() {
           <Image alt="Logo" width={143} height={60} src="/Logo_big.png" />
         </Link>
         <div className="hidden justify-start items-center gap-4 sm:flex">
+          <div className="py-2 px-0 justify-start items-center flex">
+            <Link
+              className={`${
+                pathname === "/" ? "text-primary" : ""
+              } text-sm font-semibold   leading-none`}
+              href="/"
+            >
+              Home
+            </Link>
+          </div>
+
           <div className="py-2 px-0 justify-start items-center flex">
             <DropdownMenu>
               <DropdownMenuTrigger
@@ -127,24 +146,78 @@ function Mainheader() {
         </div>
         <Link className="hidden sm:flex" href="/membership">
           <button className="px-3 py-2 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white text-sm font-semibold   leading-none">
-            Become a Member
+            Member Login
           </button>
         </Link>
 
-        <DropdownMenu className=" sm:hidden flex ">
-          {/* Nav bar links and menus */}
-          <DropdownMenuTrigger>
+        {/* Nav bar links and menus */}
+        <button
+          onClick={() => setOpenMenu(!openMenu)}
+          className="flex sm:hidden  "
+        >
+          {openMenu ? (
+            <HiX className="stroke-black fill-black w-8 h-8 relative" />
+          ) : (
             <HiMenu className="stroke-black fill-black w-8 h-8 relative" />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-white">
-            <DropdownMenuItem>
-              <Link href="/about-us">Who we are</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Link href="/about-us/our-team">Executive Team</Link>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+          )}
+        </button>
+      </div>
+      <hr />
+      <div
+        className={` ${
+          openMenu ? "flex flex-col w-full bg-white p-4 gap-4" : "hidden"
+        } `}
+      >
+        <div className="p-4 flex flex-col gap-2">
+          <Link
+            className={`${
+              pathname === "/membership" ? "text-primary" : ""
+            } text-sm font-semibold   leading-none`}
+            href="/"
+          >
+            Home
+          </Link>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Membership</AccordionTrigger>
+              <AccordionContent className=" flex flex-col gap-2">
+                <Link href="/membership">Membership registration </Link>
+                <Link href="/membership">Member Login</Link>
+                <Link href="/membership">Student</Link>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>About us</AccordionTrigger>
+              <AccordionContent className=" flex flex-col gap-2">
+                <Link href="/about-us">How it works</Link>
+                <Link href="/about-us">About ICAN SDS</Link>
+                <Link href="/about-us/our-team">Our Excos</Link>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+          <Link
+            className={`${
+              pathname === "/contact-us" ? "text-primary" : ""
+            } text-sm font-semibold  py-4 leading-none`}
+            href="/contact-us"
+          >
+            Contact Us
+          </Link>
+          <br />
+          <Link
+            className={`${
+              pathname === "/donate" ? "text-primary" : ""
+            } text-sm font-semibold py-4  leading-none`}
+            href="/donate"
+          >
+            Donations
+          </Link>
+        </div>
+        <Link className=" w-full " href="/membership">
+          <button className="px-8 py-4 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white w-full text-sm font-semibold ">
+            Member Login
+          </button>
+        </Link>
       </div>
     </header>
   );

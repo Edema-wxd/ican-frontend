@@ -49,6 +49,17 @@ function Mainheader() {
         </Link>
         <div className="hidden justify-start items-center gap-4 sm:flex">
           <div className="py-2 px-0 justify-start items-center flex">
+            <Link
+              className={`${
+                pathname === "/membership" ? "text-primary" : ""
+              } text-sm font-semibold   leading-none`}
+              href="/"
+            >
+              Home
+            </Link>
+          </div>
+
+          <div className="py-2 px-0 justify-start items-center flex">
             <DropdownMenu>
               <DropdownMenuTrigger
                 className={`${
@@ -131,9 +142,9 @@ function Mainheader() {
           </button>
         </Link>
 
-        <DropdownMenu className=" sm:hidden flex ">
+        <DropdownMenu>
           {/* Nav bar links and menus */}
-          <DropdownMenuTrigger>
+          <DropdownMenuTrigger className="flex sm:hidden  ">
             <HiMenu className="stroke-black fill-black w-8 h-8 relative" />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white">

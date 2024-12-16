@@ -146,7 +146,7 @@ function Mainheader() {
         </div>
         <Link className="hidden sm:flex" href="/membership">
           <button className="px-3 py-2 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white text-sm font-semibold   leading-none">
-            Become a Member
+            Member Login
           </button>
         </Link>
 
@@ -215,7 +215,7 @@ function Mainheader() {
         </div>
         <Link className=" w-full " href="/membership">
           <button className="px-8 py-4 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white w-full text-sm font-semibold ">
-            Become a Member
+            Member Login
           </button>
         </Link>
       </div>

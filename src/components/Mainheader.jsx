@@ -11,12 +11,15 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 import {
   Accordion,
   AccordionContent,
@@ -56,78 +59,63 @@ function Mainheader() {
           <Image alt="Logo" width={143} height={60} src="/Logo_big.png" />
         </Link>
         <div className="hidden justify-start items-center gap-4 sm:flex">
-          <div className="py-2 px-0 justify-start items-center flex">
-            <Link
-              className={`${
-                pathname === "/" ? "text-primary" : ""
-              } text-sm font-semibold   leading-none`}
-              href="/"
-            >
-              Home
-            </Link>
-          </div>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <Link
+                  className={`${
+                    pathname === "/" ? "text-primary" : ""
+                  } text-sm font-semibold   leading-none`}
+                  href="/"
+                >
+                  <NavigationMenuLink>Home</NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={`${
+                    pathname === "/membership" ? "text-primary" : ""
+                  } text-sm font-semibold   leading-none`}
+                >
+                  Membership
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="flex flex-col gap-3 p-4 w-[320px]   ">
+                    <Link href="/membership">Membership registration </Link>
+                    <Link href="/membership">Member Login</Link>
+                    <Link href="/membership">Student</Link>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={` ${
+                    pathname === "/about-us" ? "text-primary" : ""
+                  } text-sm font-semibold w-fit leading-none`}
+                >
+                  About Us
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="flex flex-col gap-3 p-4 w-[320px] ">
+                    <Link href="/about-us">How it works</Link>
+                    <Link href="/about-us">About SDS</Link>
+                    <Link href="/about-us/our-team">Our Excos</Link>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link
+                  href="/donate"
+                  className={`${
+                    pathname === "/donate" ? "text-primary" : ""
+                  } text-sm font-semibold`}
+                >
+                  <NavigationMenuLink>Donations</NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
-          <div className="py-2 px-0 justify-start items-center flex">
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className={`${
-                  pathname === "/membership" ? "text-primary" : ""
-                } text-sm font-semibold   leading-none`}
-              >
-                Membership
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white">
-                <DropdownMenuItem>
-                  <Link href="/membership">Membership registration </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>Member Login</DropdownMenuItem>
-                <DropdownMenuItem>Student</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-          <div className="px-0 py-2 flex-col justify-start items-start gap-2 inline-flex">
-            <DropdownMenu>
-              {/* Nav bar links and menus */}
-              <DropdownMenuTrigger
-                className={` ${
-                  pathname === "/about-us" ? "text-primary" : ""
-                } text-sm font-semibold w-fit leading-none`}
-              >
-                About Us
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white">
-                <DropdownMenuItem>
-                  <Link href="/about-us">How it works</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/about-us">About SDS</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/about-us/our-team">Our Excos</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-          <div className="px-4 py-2 rounded-2xl flex-col justify-start items-start gap-2 inline-flex">
-            <Link
-              href="/contact-us"
-              className={`${
-                pathname === "/contact-us" ? "text-primary" : ""
-              } text-sm font-semibold`}
-            >
-              Contact Us
-            </Link>
-          </div>
-          <div className="px-0 py-2 rounded-2xl flex-col justify-start items-start gap-2 inline-flex">
-            <Link
-              href="/donate"
-              className={`${
-                pathname === "/donate" ? "text-primary" : ""
-              } text-sm font-semibold`}
-            >
-              Donations
-            </Link>
-          </div>
           {/* <div className="px-0 py-2 flex-col justify-start items-start gap-2 inline-flex">
             <DropdownMenu>
               <DropdownMenuTrigger className="text-[#3c3c3c] text-sm font-semibold   leading-none">

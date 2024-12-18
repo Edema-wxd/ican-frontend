@@ -80,11 +80,11 @@ function Mainheader() {
                   Membership
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="flex flex-col gap-3 p-4 w-[320px]   ">
+                  <div className="flex flex-col gap-3 p-4 w-56   ">
                     <Link href="/membership">Membership registration </Link>
                     <Link href="/membership">Member Login</Link>
                     <Link href="/membership">Student</Link>
-                  </ul>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -96,11 +96,11 @@ function Mainheader() {
                   About Us
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="flex flex-col gap-3 p-4 w-[320px] ">
+                  <div className="flex flex-col gap-5 p-4 w-56 py-4 px-2  ">
                     <Link href="/about-us">How it works</Link>
                     <Link href="/about-us">About SDS</Link>
                     <Link href="/about-us/our-team">Our Excos</Link>
-                  </ul>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>

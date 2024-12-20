@@ -5,11 +5,11 @@ function Dontoday() {
   // Donation form to collect donaters details for admins to reachout
   return (
     <div className=" p-4 sm:p-20 lg:py-40 flex flex-col w-full gap-16">
-      <div>
-        <h2 className="w-fit font-bold text-4xl text-primary  font-mono ">
+      <div className="text-center flex flex-col gap-4  ">
+        <h2 className="w-fit max-w-[700px] font-bold text-4xl text-primary  font-mono ">
           Donate securely today and support our mission
         </h2>
-        <p className="  ">
+        <p className=" text-gray-800 text-base font-normal font-sans ">
           Your donations support the growth and development of accounting
           professionals, as well as community outreach programs.
         </p>
@@ -78,7 +78,7 @@ function Dontoday() {
         <Image
           height={480}
           width={480}
-          src="/chess.png"
+          src="/donateheart.png"
           alt=""
           className="sm:w-72 sm:h-fit lg:w-96"
         />

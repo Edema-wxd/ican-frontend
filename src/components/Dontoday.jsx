@@ -4,8 +4,8 @@ import Image from "next/image";
 function Dontoday() {
   // Donation form to collect donaters details for admins to reachout
   return (
-    <div className=" p-4 sm:p-20 lg:py-40 flex flex-col w-full gap-16">
-      <div className="text-center flex flex-col gap-4  ">
+    <div className=" p-4 sm:p-20 lg:px-40  flex flex-col w-full gap-16">
+      <div className="items-center text-center flex flex-col gap-4  ">
         <h2 className="w-fit max-w-[700px] font-bold text-4xl text-primary  font-mono ">
           Donate securely today and support our mission
         </h2>
@@ -16,7 +16,7 @@ function Dontoday() {
       </div>
       <div className="flex flex-col sm:flex-row justify-between gap-20">
         <form
-          className="flex w-full flex-col gap-2 sm:gap-8 justify-start items-end"
+          className="flex w-full max-w-xl flex-col gap-2 sm:gap-8 justify-start items-end"
           action=""
         >
           <div className="flex flex-col w-full gap-3">
@@ -80,7 +80,7 @@ function Dontoday() {
           width={480}
           src="/donateheart.png"
           alt=""
-          className="sm:w-72 sm:h-fit lg:w-96"
+          className=" hidden sm:block sm:w-full sm:h-fit max-w-96"
         />
       </div>
     </div>

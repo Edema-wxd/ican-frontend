@@ -18,6 +18,7 @@ function Mainfooter() {
                   width={145}
                   height={60}
                   src="/Logo_small.png"
+                  className="h-auto"
                 />
               </Link>
             </div>

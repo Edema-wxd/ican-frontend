@@ -192,7 +192,7 @@ function Dontoday() {
 
       {/* Success message */}
       {successMessage && (
-        <div className="mt-4 text-center text-green-600 font-bold">
+        <div className="mt-4 hidden text-center text-green-600 font-bold">
           {successMessage}
         </div>
       )}

@@ -20,11 +20,11 @@ export default function Home() {
             "Join the Surulere ICAN District Society and unlock the benefits of a thriving professional community."
           }
         >
-          <div className="flex gap-12 flex-row justify-center mt-4">
-            <button className="  sm:text-white rounded-full bg-secondary py-3 px-8 w-fit hover:bg-green-900 ">
+          <div className="flex sm:gap-12 flex-row justify-between sm:justify-center items-center mt-4">
+            <button className=" h-fit sm:text-white rounded-full bg-secondary p-2 sm:py-3 sm:px-8 w-fit whitespace-nowrap hover:bg-green-500 ">
               Become a Member
             </button>
-            <button className=" outline-1 outline-white sm:text-primary rounded-full bg-blue-100 hover:bg-blue-500 hover:text-white py-3 px-8  w-fit">
+            <button className=" h-fit  sm:border  sm:border-white text-black sm:text-white rounded-full bg-transparent hover:bg-blue-100 hover:text-black p-2 sm:py-3 sm:px-8  w-fit">
               Learn more
             </button>
           </div>

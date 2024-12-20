@@ -19,6 +19,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  NavigationMenuViewport,
+  NavigationMenuIndicator,
 } from "@/components/ui/navigation-menu";
 import {
   Accordion,
@@ -60,7 +62,7 @@ function Mainheader() {
         </Link>
         <div className="hidden justify-start items-center gap-4 sm:flex">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className=" gap-3">
               <NavigationMenuItem>
                 <Link
                   className={`${
@@ -80,10 +82,18 @@ function Mainheader() {
                   Membership
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="flex flex-col gap-3 p-4 w-56   ">
-                    <Link href="/membership">Membership registration </Link>
-                    <Link href="/membership">Member Login</Link>
-                    <Link href="/membership">Student</Link>
+                  <div className="flex flex-col gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
+                    <Link href="/membership" legacyBehavior passHref>
+                      <NavigationMenuLink>
+                        Membership registration
+                      </NavigationMenuLink>
+                    </Link>
+                    <Link href="/membership" legacyBehavior passHref>
+                      <NavigationMenuLink>Member Login</NavigationMenuLink>
+                    </Link>
+                    <Link href="/membership" legacyBehavior passHref>
+                      <NavigationMenuLink>Student</NavigationMenuLink>
+                    </Link>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -96,12 +106,28 @@ function Mainheader() {
                   About Us
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="flex flex-col gap-5 p-4 w-56 py-4 px-2  ">
-                    <Link href="/about-us">How it works</Link>
-                    <Link href="/about-us">About SDS</Link>
-                    <Link href="/about-us/our-team">Our Excos</Link>
+                  <div className="flex flex-col mx-auto gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
+                    <Link href="/about-us" legacyBehavior passHref>
+                      <NavigationMenuLink>How it works</NavigationMenuLink>
+                    </Link>
+                    <Link href="/about-us" legacyBehavior passHref>
+                      <NavigationMenuLink>About SDS</NavigationMenuLink>
+                    </Link>
+                    <Link href="/about-us/our-team" legacyBehavior passHref>
+                      <NavigationMenuLink>Our Excos</NavigationMenuLink>
+                    </Link>
                   </div>
                 </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link
+                  href="/contact-us"
+                  className={`${
+                    pathname === "/contact-us" ? "text-primary" : ""
+                  } text-sm font-semibold`}
+                >
+                  Contact Us
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link
@@ -110,27 +136,13 @@ function Mainheader() {
                     pathname === "/donate" ? "text-primary" : ""
                   } text-sm font-semibold`}
                 >
-                  <NavigationMenuLink>Donations</NavigationMenuLink>
+                  Donations
                 </Link>
               </NavigationMenuItem>
+              <NavigationMenuIndicator />
             </NavigationMenuList>
+            <NavigationMenuViewport className=" justify-self-center  " />
           </NavigationMenu>
-
-          {/* <div className="px-0 py-2 flex-col justify-start items-start gap-2 inline-flex">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="text-[#3c3c3c] text-sm font-semibold   leading-none">
-                Media & Resources
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white">
-                <DropdownMenuItem>
-                  <Link href="/blog">Blog</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>Gallery</DropdownMenuItem>
-                <DropdownMenuItem>Publication and Resources</DropdownMenuItem>
-                <DropdownMenuItem>Jobs</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div> */}
         </div>
         <Link className="hidden sm:flex" href="/membership">
           <button className="px-3 py-2 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white text-sm font-semibold   leading-none">

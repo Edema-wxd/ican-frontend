@@ -11,12 +11,17 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+  NavigationMenuIndicator,
+} from "@/components/ui/navigation-menu";
 import {
   Accordion,
   AccordionContent,
@@ -56,93 +61,88 @@ function Mainheader() {
           <Image alt="Logo" width={143} height={60} src="/Logo_big.png" />
         </Link>
         <div className="hidden justify-start items-center gap-4 sm:flex">
-          <div className="py-2 px-0 justify-start items-center flex">
-            <Link
-              className={`${
-                pathname === "/" ? "text-primary" : ""
-              } text-sm font-semibold   leading-none`}
-              href="/"
-            >
-              Home
-            </Link>
-          </div>
-
-          <div className="py-2 px-0 justify-start items-center flex">
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className={`${
-                  pathname === "/membership" ? "text-primary" : ""
-                } text-sm font-semibold   leading-none`}
-              >
-                Membership
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white">
-                <DropdownMenuItem>
-                  <Link href="/membership">Membership registration </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>Member Login</DropdownMenuItem>
-                <DropdownMenuItem>Student</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-          <div className="px-0 py-2 flex-col justify-start items-start gap-2 inline-flex">
-            <DropdownMenu>
-              {/* Nav bar links and menus */}
-              <DropdownMenuTrigger
-                className={` ${
-                  pathname === "/about-us" ? "text-primary" : ""
-                } text-sm font-semibold w-fit leading-none`}
-              >
-                About Us
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white">
-                <DropdownMenuItem>
-                  <Link href="/about-us">How it works</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/about-us">About SDS</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/about-us/our-team">Our Excos</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-          <div className="px-4 py-2 rounded-2xl flex-col justify-start items-start gap-2 inline-flex">
-            <Link
-              href="/contact-us"
-              className={`${
-                pathname === "/contact-us" ? "text-primary" : ""
-              } text-sm font-semibold`}
-            >
-              Contact Us
-            </Link>
-          </div>
-          <div className="px-0 py-2 rounded-2xl flex-col justify-start items-start gap-2 inline-flex">
-            <Link
-              href="/donate"
-              className={`${
-                pathname === "/donate" ? "text-primary" : ""
-              } text-sm font-semibold`}
-            >
-              Donations
-            </Link>
-          </div>
-          {/* <div className="px-0 py-2 flex-col justify-start items-start gap-2 inline-flex">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="text-[#3c3c3c] text-sm font-semibold   leading-none">
-                Media & Resources
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white">
-                <DropdownMenuItem>
-                  <Link href="/blog">Blog</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>Gallery</DropdownMenuItem>
-                <DropdownMenuItem>Publication and Resources</DropdownMenuItem>
-                <DropdownMenuItem>Jobs</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div> */}
+          <NavigationMenu>
+            <NavigationMenuList className=" gap-3">
+              <NavigationMenuItem>
+                <Link
+                  className={`${
+                    pathname === "/" ? "text-primary" : ""
+                  } text-sm font-semibold   leading-none`}
+                  href="/"
+                >
+                  <NavigationMenuLink>Home</NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={`${
+                    pathname === "/membership" ? "text-primary" : ""
+                  } text-sm font-semibold   leading-none`}
+                >
+                  Membership
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="flex flex-col gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
+                    <Link href="/membership" legacyBehavior passHref>
+                      <NavigationMenuLink>
+                        Membership registration
+                      </NavigationMenuLink>
+                    </Link>
+                    <Link href="/membership" legacyBehavior passHref>
+                      <NavigationMenuLink>Member Login</NavigationMenuLink>
+                    </Link>
+                    <Link href="/membership" legacyBehavior passHref>
+                      <NavigationMenuLink>Student</NavigationMenuLink>
+                    </Link>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={` ${
+                    pathname === "/about-us" ? "text-primary" : ""
+                  } text-sm font-semibold w-fit leading-none`}
+                >
+                  About Us
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="flex flex-col mx-auto gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
+                    <Link href="/about-us" legacyBehavior passHref>
+                      <NavigationMenuLink>How it works</NavigationMenuLink>
+                    </Link>
+                    <Link href="/about-us" legacyBehavior passHref>
+                      <NavigationMenuLink>About SDS</NavigationMenuLink>
+                    </Link>
+                    <Link href="/about-us/our-team" legacyBehavior passHref>
+                      <NavigationMenuLink>Our Excos</NavigationMenuLink>
+                    </Link>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link
+                  href="/contact-us"
+                  className={`${
+                    pathname === "/contact-us" ? "text-primary" : ""
+                  } text-sm font-semibold`}
+                >
+                  Contact Us
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link
+                  href="/donate"
+                  className={`${
+                    pathname === "/donate" ? "text-primary" : ""
+                  } text-sm font-semibold`}
+                >
+                  Donations
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuIndicator />
+            </NavigationMenuList>
+            <NavigationMenuViewport className=" justify-self-center  " />
+          </NavigationMenu>
         </div>
         <Link className="hidden sm:flex" href="/membership">
           <button className="px-3 py-2 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white text-sm font-semibold   leading-none">

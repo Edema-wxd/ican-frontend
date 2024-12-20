@@ -69,16 +69,16 @@ const BlogList: React.FC = () => {
   );
 
   return (
-    <main className="flex flex-col gap-12 px-4 md:px-40 py-20 bg-white">
+    <main className="flex flex-col gap-12 w-full  p-4 lg:p-40  sm:p-20 bg-white">
       {/* Page title */}
-      <h1 className="text-3xl font-bold text-blue-900">All Blog Posts</h1>
+      <h1 className="text-3xl font-bold text-blue-900">Latest Blog Posts</h1>
 
       {/* Blog tabs for category filtering */}
       <BlogTabs activeTab={activeTab} onTabChange={handleTabChange} />
 
       {/* Blog posts section */}
       <section
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8"
         aria-label="Blog posts"
       >
         {paginatedPosts.map((post) => (

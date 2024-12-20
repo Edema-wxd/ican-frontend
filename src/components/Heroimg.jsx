@@ -11,7 +11,9 @@ function Heroimg({
 }) {
   return (
     <div
-      className="flex sm:text-white text-black rounded-b-3xl sm:rounded-none flex-col sm:flex-row  p-4 sm:py-20 lg:px-40 mt-32  gap-6 justify-between items-center w-full  h-fit min-h-80 sm:min-h-[500px] sm:bg-none bg-gradient-to-b from-[#ffffff] to-[#c8d1fa] sm:bg-primary"
+      className={`flex ${
+        toggle ? "text-black sm:text-white" : "text-white  "
+      }  rounded-b-3xl sm:rounded-none flex-col sm:flex-row  p-4 sm:py-20 lg:px-40 mt-32  gap-6 justify-center sm:justify-between items-center w-full  h-fit min-h-80 sm:min-h-[500px] sm:bg-none bg-gradient-to-b from-[#ffffff] to-[#c8d1fa] sm:bg-primary`}
       style={{
         backgroundImage: toggle ? "" : `url(${imageUrl})`,
         backgroundSize: "cover",

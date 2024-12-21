@@ -5,7 +5,7 @@ import Link from "next/link";
 function Cta({ toggle }) {
   // Call to action components that changes tag line based on usage and toggle switch
   return (
-    <div className="flex flex-col gap-8 w-full items-center py-20 bg-blue-100 bg-[url('/ctatexture.svg')] bg-no-repeat bg-right">
+    <div className="flex flex-col gap-8 w-full items-center py-12 bg-green-200 bg-[url('/ctatexture.svg')] bg-no-repeat bg-right">
       <h5 className="text-black font-bold font text-xl items-center text-center">
         {toggle ? (
           <>

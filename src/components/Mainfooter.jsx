@@ -6,9 +6,9 @@ import { FaInstagram, FaMeta, FaTwitter, FaPhone } from "react-icons/fa6";
 
 function Mainfooter() {
   return (
-    <footer className="h-fit w-full p-4 sm:px-20 sm:py-20 bg-primary flex-col justify-start items-center gap-20 flex">
-      <div className="justify-between  w-full items-start flex  gap-8 flex-col md:flex-row">
-        <div className=" w-full sm:w-80 h-fit flex-col justify-start items-start gap-10  flex">
+    <footer className="h-fit w-full p-2 sm:px-16 sm:py-16 bg-primary flex-col justify-start items-center gap-10 flex">
+      <div className="justify-between  w-full items-start flex  gap-4 flex-col md:flex-row">
+        <div className=" w-full sm:w-82 h-fit flex-col justify-start items-start gap-6  flex">
           <div className=" flex-col justify-start items-start gap-2 flex">
             <div className="justify-start items-start gap-4 flex">
               <Link href={"/"}>
@@ -21,8 +21,8 @@ function Mainfooter() {
                 />
               </Link>
             </div>
-            <p className=" text-white text-base font-normal ">
-              Tertiary institution as accredited by the Institute of Chartered
+            <p className="text-sm text-white">
+              Tertiary institution as accredited by the Institute of Chartered<br/>
               Accountants of Nigeria
             </p>
           </div>
@@ -32,18 +32,18 @@ function Mainfooter() {
               Office Address
             </p>
 
-            <p className="text-white text-sm font-medium ">
+            <p className="text-white text-sm">
               30B, Oke-Onijo Street, Off Ogunlana Street,
               <br />
               Ijeshatedo, Surulere, Lagos
             </p>
           </div>
         </div>
-        <div className="justify-start items-start gap-10 flex flex-col sm:flex-row">
-          <div className="flex w-full flex-row justify-between gap-8 ">
-            <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
-              <h5 className="w-fit text-white text-base font-bold   leading-tight">
-                Page
+        <div className="justify-start items-start gap-2 flex flex-col sm:flex-row">
+          <div className="flex w-full flex-row justify-between gap-2">
+            <div className="w-fit flex-col justify-start items-start gap-4 inline-flex w-[150px]">
+              <h5 className="w-fit text-white text-base font-bold w-[150px] leading-tight">
+                Quick Links
               </h5>
               <div className="flex-col justify-start items-start gap-4 flex">
                 <Link
@@ -58,68 +58,21 @@ function Mainfooter() {
                 >
                   Contact Us
                 </Link>
-                <Link
-                  href="/membership"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Membership
-                </Link>
-                <Link
-                  href="/donate"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Donations
-                </Link>
-                <Link
-                  href="/about-us/our-team"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Excos
-                </Link>
+                
                 <Link href="/" className="text-gray-300 text-sm font-normal ">
                   ICAN Website
                 </Link>
               </div>
             </div>
-            <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
-              <h5 className="w-fit h-7 text-white text-base font-bold   leading-tight">
-                Resources
-              </h5>
-              <div className="flex-col justify-start items-start gap-4 flex">
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
-                  News
-                </Link>
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
-                  Events
-                </Link>
-                <Link
-                  href="/gallery"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Gallery
-                </Link>
-                <Link
-                  href="/blog"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/jobs"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Jobs
-                </Link>
-              </div>
-            </div>
+            
           </div>
-          <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
+          <div className="w-fit flex-col justify-start items-start gap-6 inline-flex">
             <h5 className="w-28 h-7 text-white text-base font-bold   leading-tight">
               Contact
             </h5>
             <div className="self-stretch h-32 flex-col justify-start items-start gap-3 flex">
               <div className="self-stretch justify-start items-center gap-1.5 inline-flex">
-                <HiOutlineMail className="w-6 h-6 stroke-white relative" />
+                <HiOutlineMail className="w-4 h-6 stroke-white relative" />
                 <br />
                 <p className="grow w-fit shrink basis-0 text-gray-300 text-sm font-normal text-wrap">
                   icansuruleredistrictsociety@gmail.com
@@ -150,7 +103,8 @@ function Mainfooter() {
           </div>
         </div>
       </div>
-      <div className=" justify-center items-center gap-4 flex">
+      <hr className="bg-white"/>
+      <div className=" justify-center items-center gap-2 flex">
         <p className="text-gray-300 text-sm font-normal ">
           Copyright © 2024 Surulere & District Society All Rights reserved
         </p>

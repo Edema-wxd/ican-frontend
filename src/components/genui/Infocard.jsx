@@ -11,7 +11,7 @@ function Infocard({
 }) {
   console.log(data);
   return (
-    <div className=" w-full p-4 sm:py-16 sm:px-30 lg:py:16 lg:px-30 bg-green-200 flex flex-col items-center justify-center gap-16 ">
+    <div className=" w-full p-4 sm:py-16 sm:px-30 lg:py:16 lg:px-30 bg-green-300 flex flex-col items-center justify-center gap-16 ">
       <div className="flex flex-col w-fit items-center gap-2">
         <h5 className="font-bold font-sans text-black text-lg sm:text-xl mb-1 text-center">
           {subtitle}

@@ -35,11 +35,11 @@ function Mainheader() {
 
   return (
     <header className="w-full h-fit sm:h-30 fixed top-0 z-50 bg-white flex-col justify-start items-start flex">
-      <div className=" hidden px-32 h-10 py-2 bg-primary flex-row justify-center items-center max-w-[3000px]  gap-6 sm:flex">
+      <div className=" hidden px-32 h-8 bg-primary flex-row justify-center items-center max-w-[3000px]  gap-6 sm:flex">
       
         <div className="justify-start items-center gap-1 px-4 w-fit flex">
           <HiOutlineMail className=" stroke-white" />
-          <p className="text-white text-sm font-medium leading-none px-2">
+          <p className="text-white text-sm leading-none px-2">
             info@suruleredistrictsociety.org.ng
           </p>
         </div>

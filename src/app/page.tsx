@@ -4,11 +4,11 @@ import Cta from "../components/Cta";
 // import Metrics from "../components/Metrics";
 import Infocard from "@/components/genui/Infocard";
 import Gallery from "../components/Gallery";
-// import Adverts from "../components/Adverts";
+import Adverts from "../components/Adverts";
 import Speech from "../components/Speech";
 import StatsSection from "../components/StatsSection";
 // import Infocard from "@/components/genui/Infocard";
-// import BlogList from "@/components/BlogListSection";
+import BlogList from "@/components/BlogListSection";
 
 export default function Home() {
   return (

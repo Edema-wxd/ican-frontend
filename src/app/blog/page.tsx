@@ -16,7 +16,7 @@ function Blog() {
         }
       >
         {/** Buttons for membership and more information */}
-        <div className="flex gap-12 flex-row justify-center mt-4">
+        <div className="flex gap-12 flex-row justify-between mt-4">
           {/** Button to become a member */}
           <button className="text-white rounded-full bg-secondary py-3 px-8 w-fit hover:bg-green-900">
             Become a Member

@@ -27,6 +27,31 @@ export interface BlogPost {
   };
 }
 
+export interface DownloadTile {
+  /** Unique identifier for the download item */
+  id: string;
+
+  /** The category of the download item  */
+  category: "Professional" | "Skills";
+
+  /** Title of the download item */
+  title: string;
+
+  /** Filetype of the download item in string format */
+  fileType: string;
+
+  /** URL to the featured image of the blog post */
+  imageUrl: string;
+
+  /** Content details of the blog post */
+  downloadLink: string;
+}
+
+export interface DownloadCardProps {
+  /** The blog post data to be displayed */
+  downloadItem: DownloadTile;
+}
+
 /**
  * Props for rendering a BlogCard component, which displays an individual blog post.
  */

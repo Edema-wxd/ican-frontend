@@ -1,13 +1,11 @@
-// import Image from "next/image";
+"use client";
+
 import Heroimg from "../components/Heroimg";
 import Cta from "../components/Cta";
-// import Metrics from "../components/Metrics";
-
+import Stories from "../components/Stories";
 import Gallery from "../components/Gallery";
 import Adverts from "../components/Adverts";
 import Speech from "../components/Speech";
-// import Infocard from "@/components/genui/Infocard";
-import BlogList from "@/components/BlogListSection";
 
 export default function Home() {
   return (
@@ -31,16 +29,8 @@ export default function Home() {
         </Heroimg>
         <Speech />
         <Gallery />
-        <BlogList />
+        <Stories />
         <Adverts />
-
-        {/* 
-        <Metrics />
-        <Infocard
-          title={"Our District Activity"}
-          subtitle={"ICAN SURULERE DISTRICT"}
-        /> */}
-
         <Cta />
       </main>
     </div>

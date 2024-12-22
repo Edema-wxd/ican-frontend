@@ -34,38 +34,36 @@ function Mainheader() {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <header className="w-full h-fit sm:h-30 fixed top-0 z-50 bg-white flex-col justify-start items-start flex">
-      <div className=" hidden px-32 h-10 py-2 bg-primary flex-row justify-center items-center max-w-[3000px]  gap-6 sm:flex">
-      
-        <div className="justify-start items-center gap-1 px-4 w-fit flex">
-          <HiOutlineMail className=" stroke-white" />
-          <p className="text-white text-sm font-medium leading-none px-2">
+    <header className="w-full h-fit sm:h-32 fixed top-0 z-50 bg-white flex-col justify-start items-start flex">
+      <div className=" hidden  h-12 py-2 bg-primary flex-row justify-center items-center w-full gap-4 sm:flex">
+        <div className="justify-start items-center gap-1  w-fit  flex">
+          <HiOutlineMail className=" stroke-white " />
+          <p className="text-white text-sm font-semibold   leading-none">
             info@suruleredistrictsociety.org.ng
           </p>
         </div>
-        <div className="w-fit justify-start items-center gap-1 px-4 w-fit flex">
-          <HiOutlinePhone className=" stroke-white" />
-          <p className="text-white text-sm font-semibold leading-none px-2">
+        <div className="w-fit justify-start items-center gap-1 flex">
+          <HiOutlinePhone className=" stroke-white  " />
+          <p className="text-white text-sm font-semibold   leading-none">
             +234 808 816 8895
           </p>
         </div>
-        <div className="w-fit justify-start items-center gap-1 px-4 w-fit flex">
-          <HiLocationMarker className=" stroke-white fill-white gap-2" />
-          <p className="text-white text-sm leading-none px-2">
+        <div className="w-fit justify-start items-center gap-1 flex">
+          <HiLocationMarker className=" stroke-white fill-white" />
+          <p className="text-white text-sm font-normal leading-none">
             Surulere, Lagos, Nigeria
           </p>
-        
         </div>
       </div>
 
-      <div className=" w-full sm:w-full m-2 px-28  justify-between sm:justify-around items-center sm:gap-2 flex flex-row">
+      <div className=" w-full sm:w-full mt-4 p-2  justify-between sm:justify-around items-center sm:gap-10 flex flex-row">
         <Link href="/">
-          <Image alt="Logo" width={143} height={60} src="/Logo_big.png"/>
+          <Image alt="Logo" width={143} height={60} src="/Logo_big.png" />
         </Link>
-        <div className="hidden justify-start items-center gap-1 sm:flex">
-          <NavigationMenu className="relative">
-            <NavigationMenuList className=" gap-2">
-              {/* <NavigationMenuItem>
+        <div className="hidden justify-start items-center gap-4 sm:flex">
+          <NavigationMenu>
+            <NavigationMenuList className=" gap-3">
+              <NavigationMenuItem>
                 <Link
                   className={`${
                     pathname === "/" ? "text-primary" : ""
@@ -74,84 +72,49 @@ function Mainheader() {
                 >
                   <NavigationMenuLink>Home</NavigationMenuLink>
                 </Link>
-              </NavigationMenuItem> */}<NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={` ${
-                    pathname === "/about-us" ? "text-primary" : ""
-                  } text-sm font-medium w-fit leading-none`}
-                >
-                  About Us
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="relative">
-                  <div className="flex flex-col mx-auto gap-5 p-2 md:w-[200px] lg:w-[190px] py-4 px-1 font-normal">
-                    {/* <Link href="/about-us" legacyBehavior passHref>
-                      <NavigationMenuLink>How it works</NavigationMenuLink>
-                    </Link> */}
-                    <Link href="/about-us" legacyBehavior passHref>
-                      <NavigationMenuLink>Who we are</NavigationMenuLink>
-                    </Link>
-                    <Link href="/about-us/our-team" legacyBehavior passHref>
-                      <NavigationMenuLink>Executive Team</NavigationMenuLink>
-                    </Link>
-                  </div>
-                </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className={`${
                     pathname === "/membership" ? "text-primary" : ""
-                  } text-sm font-medium   leading-none`}
+                  } text-sm font-semibold   leading-none`}
                 >
                   Membership
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="flex flex-col gap-5 p-4 md:w-[400px] lg:w-[200px] py-4 px-2">
+                  <div className="flex flex-col gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
                     <Link href="/membership" legacyBehavior passHref>
                       <NavigationMenuLink>
-                        Become a Member
+                        Membership registration
                       </NavigationMenuLink>
                     </Link>
                     <Link href="/membership" legacyBehavior passHref>
-                      <NavigationMenuLink>Login as Member</NavigationMenuLink>
+                      <NavigationMenuLink>Member Login</NavigationMenuLink>
                     </Link>
                     <Link href="/membership" legacyBehavior passHref>
-                      <NavigationMenuLink>ICAN Website</NavigationMenuLink>
+                      <NavigationMenuLink>Student</NavigationMenuLink>
                     </Link>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link
-                  href="/donate"
-                  className={`${
-                    pathname === "/donate" ? "text-primary" : ""
-                  } text-sm font-medium`}
-                >
-                  Donation
-                </Link>
-              </NavigationMenuItem><NavigationMenuItem>
                 <NavigationMenuTrigger
-                  className={`${
-                    pathname === "/Media" ? "text-primary" : ""
-                  } text-sm font-medium   leading-none`}
+                  className={` ${
+                    pathname === "/about-us" ? "text-primary" : ""
+                  } text-sm font-semibold w-fit leading-none`}
                 >
-                  Media & Resources
+                  About Us
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="flex flex-col gap-5 p-4 md:w-[200px] lg:w-[250px] py-4 px-2  ">
-                    <Link href="/Media" legacyBehavior passHref>
-                      <NavigationMenuLink>
-                        Blog
-                      </NavigationMenuLink>
+                  <div className="flex flex-col mx-auto gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
+                    <Link href="/about-us" legacyBehavior passHref>
+                      <NavigationMenuLink>How it works</NavigationMenuLink>
                     </Link>
-                    <Link href="/Media" legacyBehavior passHref>
-                      <NavigationMenuLink>Gallery</NavigationMenuLink>
+                    <Link href="/about-us" legacyBehavior passHref>
+                      <NavigationMenuLink>About SDS</NavigationMenuLink>
                     </Link>
-                    <Link href="/Media" legacyBehavior passHref>
-                      <NavigationMenuLink>Publication and Resources</NavigationMenuLink>
-                    </Link>
-                    <Link href="/Media" legacyBehavior passHref>
-                      <NavigationMenuLink>Job</NavigationMenuLink>
+                    <Link href="/about-us/our-team" legacyBehavior passHref>
+                      <NavigationMenuLink>Our Excos</NavigationMenuLink>
                     </Link>
                   </div>
                 </NavigationMenuContent>
@@ -161,13 +124,21 @@ function Mainheader() {
                   href="/contact-us"
                   className={`${
                     pathname === "/contact-us" ? "text-primary" : ""
-                  } text-sm font-medium`}
+                  } text-sm font-semibold`}
                 >
                   Contact Us
                 </Link>
               </NavigationMenuItem>
-              
-              
+              <NavigationMenuItem>
+                <Link
+                  href="/donate"
+                  className={`${
+                    pathname === "/donate" ? "text-primary" : ""
+                  } text-sm font-semibold`}
+                >
+                  Donations
+                </Link>
+              </NavigationMenuItem>
               <NavigationMenuIndicator />
             </NavigationMenuList>
             <NavigationMenuViewport className=" justify-self-center  " />
@@ -175,7 +146,7 @@ function Mainheader() {
         </div>
         <Link className="hidden sm:flex" href="/membership">
           <button className="px-3 py-2 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white text-sm font-semibold   leading-none">
-            Become a Member
+            Member Login
           </button>
         </Link>
 

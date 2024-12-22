@@ -7,20 +7,21 @@ function Imgcard({
   title = "ICAN Award & Dinner",
 }) {
   return (
-    <div className="relative rounded-3xl overflow-hidden drop-shadow-lg">
-      <img
+    <div className=" relative w-fit max-w-md ">
+      <h6 className=" absolute p-4 sm:p-12 bottom-0 z-20 text-left font-bold drop-shadow-2xl text-2xl font-mono text-white ">
+        {title}
+      </h6>
+      <Image
+        // Dynamic image url
         src={imgurl}
-        alt={title}
-        className="w-full h-[350px] object-cover"
+        width={0}
+        height={0}
+        sizes="100vw"
+        alt="image"
+        className="h-auto w-60 sm:w-full z-10 rounded-3xl  relative"
       />
-      <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-transparent">
-        <h4 className="text-white text-xl font-semibold drop-shadow-xl">
-          {title}
-        </h4>
-      </div>
     </div>
   );
-
 }
 Imgcard.propTypes = {
   imgurl: PropTypes.string.isRequired,

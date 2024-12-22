@@ -13,7 +13,7 @@ function Heroimg({
     <div
       className={`flex ${
         toggle ? "text-black sm:text-white" : "text-white  "
-      }  rounded-b-3xl p-4 sm:rounded-none flex-col sm:flex-row sm:py-20 lg:px-32 mt-32  gap-30 justify-center sm:justify-between items-center w-full  h-fit min-h-80 sm:min-h-[500px] sm:bg-none bg-gradient-to-b from-[#ffffff] to-[#c8d1fa] sm:bg-primary`}
+      }  rounded-b-3xl sm:rounded-none flex-col sm:flex-row  p-4 sm:py-20 lg:px-40 mt-32  gap-6 justify-center sm:justify-between items-center w-full  h-fit min-h-80 sm:min-h-[500px] sm:bg-none bg-gradient-to-b from-[#ffffff] to-[#c8d1fa] sm:bg-primary`}
       style={{
         backgroundImage: toggle ? "" : `url(${imageUrl})`,
         backgroundSize: "cover",
@@ -21,16 +21,11 @@ function Heroimg({
 
       // image for hero section for each page, use per page
     >
-      <div className="flex flex-col max-w-lg gap-6 lg:pr-10">
-        <h1 className="text-left max-w-10xl 
-            text-4xl sm:text-5xl 
-            font-semibold font-mono 
-            leading-tight
-            tracking-[2.5px]
-            sm:leading-[1.2]">
+      <div className="flex flex-col max-w-lg gap-6">
+        <h1 className="text-left max-w-3xl text-4xl sm:text-6xl font-bold font-mono leading-20 ">
           {maintxt}
         </h1>
-        <p className="text-left text-sm text-base pr-8">{subtxt}</p>
+        <p className="text-left text-base font-medium  leading-6">{subtxt}</p>
         <div>{children}</div>
       </div>
       {toggle ? (
@@ -52,7 +47,3 @@ Heroimg.propTypes = {
 };
 
 export default Heroimg;
-
-
-
-

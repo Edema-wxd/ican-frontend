@@ -15,7 +15,7 @@ function Membership() {
         maintxt="Membership"
         imageUrl="/membershiphero.png"
       >
-        {/* <div className="flex gap-12 flex-row justify-center mt-4">
+        <div className="flex gap-12 flex-row justify-center mt-4">
           <Link href={"/membership/signup"}>
             <button className="  text-white rounded-full bg-secondary py-3 px-8 w-fit hover:bg-green-900 ">
               Become a Member
@@ -24,7 +24,7 @@ function Membership() {
           <button className=" outline-1 outline-white text-primary rounded-full bg-blue-100 hover:bg-blue-500 hover:text-white py-3 px-8  w-fit">
             Login as Member
           </button>
-        </div> */}
+        </div>
       </Heroimg>
       <Meminfo />
       <Infocard

@@ -30,6 +30,22 @@ function Infocard({
           icon={<FaPeopleRoof className="w-9 h-9 fill-primary" />}
           type="col"
         />
+        <Itemcard
+          name={"Monthly Meeting"}
+          info={
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+          icon={<FaPeopleRoof className="w-9 h-9 fill-primary" />}
+          type="col"
+        />
+        <Itemcard
+          name={"Monthly Meeting"}
+          info={
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+          icon={<FaPeopleRoof className="w-9 h-9 fill-primary" />}
+          type="col"
+        />
       </div>
     </div>
   );

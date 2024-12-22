@@ -25,18 +25,30 @@ function Ourteam() {
           </p>
         </div>
         <div className="w-full flex flex-row gap-10 flex-wrap">
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
-          <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />{" "}
+          <Exco name="Dr Aderopo Oladapo, FCA" role="Chairman" />
+          <Exco name="Tosin D. Akinwummi, FCA" role="Vice Chairman" />
           <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />
+          <Exco name="Dcns. Abosede Ogunjobi, FCA" role="Trasurer " />
+          <Exco name="Dr Anthonia Alebiosu, FCA" role="Technical Secretary " />
+          <Exco name="Durowoju A. Olatunde, FCA" role="Financial Secretary " />
+          <Exco name="Idiat Omotola Steven, ACA" role="Membership Secretary " />
+          <Exco
+            name="Temitope Oyeyipo, ACA"
+            role="Social and publicity Secretary "
+          />
+          <Exco name="Ajayi-Owoeye Auooluwa, ACA" role="General Secretary " />
+          <Exco
+            name="Aliu Kamiyo, ACA"
+            role="Chairman, Community Relations Committee "
+          />
+          <Exco
+            name="Goodnedd Opaleye, ACA"
+            role="Chairman, Publications Commitee"
+          />
+          <Exco
+            name="Sunkanmi Sesan Ogungbaiye, ACA"
+            role="General Secretary "
+          />
         </div>
       </div>
 

@@ -22,13 +22,19 @@ function Speech() {
           accountants can connect, learn, and thrive, ensuring their continued
           leadership in the field and contributions to the economy.
         </p>
-        {/* The Chairmans speach */}
+        {/* The Chairmans speech */}
 
         <button className="bg-primary sm:w-fit w-full rounded-full text-white py-2 px-4">
           Read more
         </button>
       </div>
-      <Image height={530} width={400} alt="Chairman" src="/chairspeech.png" />{" "}
+      <Image
+        height={530}
+        width={400}
+        className="w-full h-auto max-w-[550px]"
+        alt="Chairman"
+        src="/chairspeech2.png"
+      />{" "}
       {/* // The Image of the chairman for the landing page */}
     </div>
   );

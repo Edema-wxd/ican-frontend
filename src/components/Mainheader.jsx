@@ -91,7 +91,7 @@ function Mainheader() {
                     <Link href="/membership" legacyBehavior passHref>
                       <NavigationMenuLink>Member Login</NavigationMenuLink>
                     </Link>
-                    <Link href="/membership" legacyBehavior passHref>
+                    <Link href="/student" legacyBehavior passHref>
                       <NavigationMenuLink>Student</NavigationMenuLink>
                     </Link>
                   </div>
@@ -107,7 +107,7 @@ function Mainheader() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="flex flex-col mx-auto gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
-                    <Link href="/about-us" legacyBehavior passHref>
+                    <Link href="/about-us/how-it-works" legacyBehavior passHref>
                       <NavigationMenuLink>How it works</NavigationMenuLink>
                     </Link>
                     <Link href="/about-us" legacyBehavior passHref>
@@ -181,15 +181,14 @@ function Mainheader() {
             <AccordionItem value="item-1">
               <AccordionTrigger>Membership</AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
-                <Link href="/membership">Membership registration </Link>
                 <Link href="/membership">Member Login</Link>
-                <Link href="/membership">Student</Link>
+                <Link href="/student">Student</Link>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>About us</AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
-                <Link href="/about-us">How it works</Link>
+                <Link href="/about-us/how-it-works">How it works</Link>
                 <Link href="/about-us">About ICAN SDS</Link>
                 <Link href="/about-us/our-team">Our Excos</Link>
               </AccordionContent>

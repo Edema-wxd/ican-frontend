@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
-import { FaInstagram, FaMeta, FaTwitter, FaPhone } from "react-icons/fa6";
+import { FaInstagram, FaTwitter, FaPhone, FaFacebookF } from "react-icons/fa6";
 
 function Mainfooter() {
   return (
@@ -41,7 +41,7 @@ function Mainfooter() {
           </div>
         </div>
 
-        <div className="justify-start items-start gap-2 flex flex-col sm:flex-row">
+        <div className="justify-start items-start gap-6 flex flex-col sm:flex-row">
           <div className="flex w-full flex-row justify-between gap-2">
             <div className="w-fit flex-col justify-start items-start gap-4 inline-flex max-w-[150px]">
               <h5 className="w-fit text-white text-base font-bold max-w-[150px] leading-tight">
@@ -60,57 +60,12 @@ function Mainfooter() {
                 >
                   Contact Us
                 </Link>
+
                 <Link
-                  href="/membership"
+                  href="https://www.icanig.org"
                   className="text-gray-300 text-sm font-normal "
                 >
-                  Membership
-                </Link>
-                <Link
-                  href="/donate"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Donations
-                </Link>
-                <Link
-                  href="/about-us/our-team"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Excos
-                </Link>
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
                   ICAN Website
-                </Link>
-              </div>
-            </div>
-            <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
-              <h5 className="w-fit h-7 text-white text-base font-bold   leading-tight">
-                Resources
-              </h5>
-              <div className="flex-col justify-start items-start gap-4 flex">
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
-                  News
-                </Link>
-                <Link href="/" className="text-gray-300 text-sm font-normal ">
-                  Events
-                </Link>
-                <Link
-                  href="/gallery"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Gallery
-                </Link>
-                <Link
-                  href="/blog"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/jobs"
-                  className="text-gray-300 text-sm font-normal "
-                >
-                  Jobs
                 </Link>
               </div>
             </div>
@@ -145,13 +100,14 @@ function Mainfooter() {
                 <div className="inline-flex flex-row  justify-start items-center gap-6">
                   <FaInstagram className="stroke-white fill-white w-8 h-8 relative" />
                   <FaTwitter className="stroke-white fill-white w-8 h-8 relative" />
-                  <FaMeta className=" stroke-white fill-white w-8 h-8 relative" />
+                  <FaFacebookF className=" stroke-white fill-white w-8 h-8 relative" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <hr className="  border opacity-50 w-full border-gray-100   " />
       <div className=" justify-center items-center gap-4 flex">
         <p className="text-gray-300 text-sm font-normal ">
           Copyright © 2024 Surulere & District Society All Rights reserved

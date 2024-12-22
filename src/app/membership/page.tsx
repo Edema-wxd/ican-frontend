@@ -4,7 +4,7 @@ import Cta from "@/components/Cta";
 import Meminfo from "@/components/Meminfo";
 import Infocard from "@/components/genui/Infocard";
 import Dues from "@/components/Dues";
-// import Link from "next/link";
+import Link from "next/link";
 
 function Membership() {
   return (

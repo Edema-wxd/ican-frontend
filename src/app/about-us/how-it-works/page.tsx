@@ -1,6 +1,8 @@
 import Heroimg from "@/components/Heroimg";
 import Meminfo from "@/components/Meminfo";
 import React from "react";
+import Faq from "@/components/Faq";
+import Infocard from "@/components/genui/Infocard";
 
 function Howiw() {
   return (
@@ -13,6 +15,15 @@ function Howiw() {
       />
 
       <Meminfo />
+      <Infocard
+        subtitle={"ICAN SURULERE DISTRICT"}
+        title="Benefits of Being a Member"
+        addtxt={
+          "As a valued member of our ICAN District Society, you gain access to:"
+        }
+      />
+
+      <Faq />
     </div>
   );
 }

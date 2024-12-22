@@ -31,7 +31,7 @@ function Membership() {
         subtitle={"ICAN SURULERE DISTRICT"}
         title="Benefits of Being a Member"
         addtxt={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing eLorem ipsum dolor sit amet, dolor sit amet, consectetur adipiscing elitlitLorem ipsum dolor sit amet, consectetur adipiscing elit"
+          "As a valued member of our ICAN District Society, you gain access to:"
         }
       />
       <Dues />

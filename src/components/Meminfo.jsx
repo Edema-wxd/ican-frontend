@@ -2,7 +2,7 @@ import React from "react";
 import { FaPerson } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
-import Itemcard from "./genui/Itemcard";
+// import Itemcard from "./genui/Itemcard";
 // import { FaPeopleRoof } from "react-icons/fa6";
 
 function Meminfo() {

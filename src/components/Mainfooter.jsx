@@ -39,22 +39,12 @@ function Mainfooter() {
             </p>
           </div>
         </div>
-<<<<<<< HEAD
-        <div className="justify-start items-start gap-10 flex flex-col sm:flex-row">
-          <div className="flex w-full flex-row justify-between gap-8 ">
-            <div className="w-fit flex-col justify-start items-start gap-4 inline-flex">
-              <h5 className="w-fit text-white text-base font-bold   leading-tight">
-                Page
-<<<<<<< HEAD
-=======
+
         <div className="justify-start items-start gap-2 flex flex-col sm:flex-row">
           <div className="flex w-full flex-row justify-between gap-2">
-            <div className="w-fit flex-col justify-start items-start gap-4 inline-flex w-[150px]">
-              <h5 className="w-fit text-white text-base font-bold w-[150px] leading-tight">
+            <div className="w-fit flex-col justify-start items-start gap-4 inline-flex max-w-[150px]">
+              <h5 className="w-fit text-white text-base font-bold max-w-[150px] leading-tight">
                 Quick Links
->>>>>>> parent of dddbd67 (update)
-=======
->>>>>>> parent of b675f23 (update)
               </h5>
               <div className="flex-col justify-start items-start gap-4 flex">
                 <Link

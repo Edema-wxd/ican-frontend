@@ -15,15 +15,15 @@ function Aboutus() {
       >
         <></>
       </Heroimg>
-      <div className="bg-white flex flex-col  items-center gap-12 w-full py-20 px-40">
-        <h3 className="text-primary text-center text-lg w-full">
+      <div className="bg-white flex flex-col items-center gap-12 w-full p-4 md:p-20 lg:px-40">
+        <h3 className="text-primary font-bold text-center text-4xl font-mono w-full">
           Shaping the Future of <br /> Accounting
         </h3>
-        <div className="flex w-full flex-row justify-between">
-          <div className="flex flex-col rounded-xl gap-6 bg-primary max-w-sm p-8 text-white">
-            <h6 className=" text-lg  ">
+        <div className="flex w-fit flex-col sm:flex-row  gap-12 justify-between">
+          <div className="flex flex-col rounded-xl gap-6 bg-primary max-w-sm p-8 lg:px-8 lg:py-12 text-white">
+            <h6 className=" text-xl font-medium   ">
               OUR MISSION
-              <hr />
+              <hr className="  border opacity-50 w-full border-gray-100   " />
             </h6>
             <p className="text-base">
               To produce world-class chartered accountants, regulate and
@@ -32,9 +32,9 @@ function Aboutus() {
             </p>
           </div>
           <div className="flex flex-col rounded-xl gap-6 max-w-sm bg-green-200 text-black p-8">
-            <h6 className=" text-lg ">
+            <h6 className=" text-xl font-medium  ">
               OUR VISION
-              <hr />
+              <hr className="  border opacity-50 w-full border-gray-100   " />
             </h6>
             <p className="text-base">
               To produce world-class chartered accountants, regulate and
@@ -44,7 +44,7 @@ function Aboutus() {
           </div>
         </div>
       </div>
-      <Infocard subtitle={""} title="Our Values" /> 
+      <Infocard subtitle={""} title="Our Values" />
       <Aims />
       <Meminfo />
     </div>

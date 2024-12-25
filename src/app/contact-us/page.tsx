@@ -13,7 +13,7 @@ function ContactUs() {
         maintxt="Contact Us"
         imageUrl="/contactushero.png"
       />
-      <Getin  heading={'GET IN TOUCH'} phoneNumber={true} />
+      <Getin heading={"GET IN TOUCH"} phoneNumber={true} className={""} />
       <Cinfo />
       <Findus />
     </div>
@@ -21,5 +21,3 @@ function ContactUs() {
 }
 
 export default ContactUs;
-
-

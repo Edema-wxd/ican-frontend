@@ -1,9 +1,9 @@
 import React from "react";
 
 // get in touch form used on the contact us page of the design
-function Getin({ heading, phoneNumber = true }) {
+function Getin({ heading, phoneNumber = true, className }) {
   return (
-    <div className={` p-4 md:p-20 lg:px-40 flex flex-col w-full gap-16 `}>
+    <div className={` p-4 md:p-20 lg:px-40 flex flex-col w-full gap-16 ${className} `}>
       <div className="w-fit">
         <h2 className="w-fit font-bold text-4xl text-primary  font-mono ">
           {heading}

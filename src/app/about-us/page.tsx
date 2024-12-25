@@ -44,7 +44,7 @@ function Aboutus() {
           </div>
         </div>
       </div>
-      <Infocard subtitle={""} title="Our Values" />
+      <Infocard subtitle={""} title="Our Values" /> 
       <Aims />
       <Meminfo />
     </div>

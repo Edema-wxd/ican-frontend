@@ -113,7 +113,7 @@ function Mainheader() {
                     <Link href="/about-us" legacyBehavior passHref>
                       <NavigationMenuLink>About SDS</NavigationMenuLink>
                     </Link>
-                    <Link href="/about-us/our-team" legacyBehavior passHref>
+                    <Link href="/about-us/our-excos" legacyBehavior passHref>
                       <NavigationMenuLink>Our Excos</NavigationMenuLink>
                     </Link>
                   </div>
@@ -190,7 +190,7 @@ function Mainheader() {
               <AccordionContent className=" flex flex-col gap-2">
                 <Link href="/about-us/how-it-works">How it works</Link>
                 <Link href="/about-us">About ICAN SDS</Link>
-                <Link href="/about-us/our-team">Our Excos</Link>
+                <Link href="/about-us/our-excos">Our Excos</Link>
               </AccordionContent>
             </AccordionItem>
           </Accordion>

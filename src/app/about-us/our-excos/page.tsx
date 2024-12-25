@@ -9,7 +9,7 @@ function Ourteam() {
       <Heroimg
         subtxt={""}
         toggle={false}
-        maintxt="Our Team"
+        maintxt="Our Excos"
         imageUrl="/ourteamhero.png"
       >
         <></>

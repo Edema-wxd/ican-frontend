@@ -1,7 +1,7 @@
 import React from "react";
-import { FaPerson } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
+import { BsPersonRaisedHand } from "react-icons/bs";
 
 function Meminfo() {
   return (
@@ -19,52 +19,42 @@ function Meminfo() {
           {/* fill according to BA & copy writers design */}
           <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
             <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-              <FaPerson />
-              <h5>Pay for Registration </h5>
+              <BsPersonRaisedHand className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm" />
+              <h5>Click on “ Become a member”</h5>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum
-              dolor sit amet, consectetur adipiscing elit
+              Enter your email address and password to receive a verification
+              link
             </p>
           </div>
           <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
             <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-              <FaPerson />
-              <h5>Pay for Registration </h5>
+              <BsPersonRaisedHand className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm"/>
+              <h5>Verify Email</h5>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum
-              dolor sit amet, consectetur adipiscing elit
+              Click on the verification link in your email and login in to
+              complete registration
             </p>
-          </div>{" "}
+          </div>
           <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
             <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-              <FaPerson />
-              <h5>Pay for Registration </h5>
+              <BsPersonRaisedHand className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm"/>
+              <h5>Complete Registration</h5>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum
-              dolor sit amet, consectetur adipiscing elit
+              Ensure to fill in all the necessary details. Don&apos;t worry, it
+              is a simple process
             </p>
-          </div>{" "}
+          </div>
           <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
             <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-              <FaPerson />
-              <h5>Pay for Registration </h5>
+              <BsPersonRaisedHand className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm"/>
+              <h5>Make Payments and wait for confirmation</h5>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum
-              dolor sit amet, consectetur adipiscing elit
-            </p>
-          </div>{" "}
-          <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
-            <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-              <FaPerson />
-              <h5>Pay for Registration </h5>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum
-              dolor sit amet, consectetur adipiscing elit
+              Choose a payment option and make payments. You will receive a
+              confirmation email to enable you login as a member
             </p>
           </div>
         </div>

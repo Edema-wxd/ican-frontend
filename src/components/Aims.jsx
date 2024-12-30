@@ -5,7 +5,7 @@ import { FaCheck } from "react-icons/fa";
 function Aims() {
   // Aims tags and info
   return (
-    <div className="flex flex-row lg:px-40 md:p-20 p-4 w-full justify-between items-center ">
+    <div className="flex flex-row lg:px-40 md:p-20 p-4 gap-8 w-full justify-between items-center ">
       <Image
         width={462}
         height={694}

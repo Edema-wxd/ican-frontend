@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -83,9 +84,11 @@ function Faq() {
             <p className=" text-xs sm:text-sm sm:whitespace-nowrap w-fit">
               My question is not here.
             </p>
-            <button className="w-fit rounded-full whitespace-nowrap py-2 px-4 text-sm sm:py-4 sm:px-8 sm:text-base bg-primary sm:bg-white text-white sm:text-primary font-sans">
-              Connect with us
-            </button>
+            <Link href="/contact-us">
+              <button className="w-fit rounded-full whitespace-nowrap py-2 px-4 text-sm sm:py-4 sm:px-8 sm:text-base bg-primary sm:bg-white text-white sm:text-primary font-sans">
+                Connect with us
+              </button>
+            </Link>
           </div>
         </div>
       </div>

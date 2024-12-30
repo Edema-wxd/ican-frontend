@@ -11,7 +11,7 @@ function Infocard({
 }) {
   console.log(data);
   return (
-    <div className=" w-full p-4 sm:py-20 sm:px-40 bg-blue-200 flex flex-col items-center justify-center gap-16 ">
+    <div className=" w-full p-4 sm:py-20 sm:px-40 bg-green-100 sm:bg-blue-100 flex flex-col items-center justify-center gap-16 ">
       <div className="flex flex-col w-fit items-center gap-2">
         <h5 className="font-bold font-sans text-black text-lg sm:text-xl text-center">
           {subtitle}
@@ -21,7 +21,7 @@ function Infocard({
         </h4>
         <p>{addtxt}</p>
       </div>
-      <div className="flex flex-row gap-12 items-center justify-center">
+      <div className="flex flex-col sm:flex-row flex-wrap gap-12 items-center justify-center">
         <Itemcard
           name={"Monthly Meeting"}
           info={

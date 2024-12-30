@@ -5,6 +5,7 @@ import Image from "next/image";
 import { RiErrorWarningLine } from "react-icons/ri";
 
 function Dontoday() {
+  const [isHovered, setIsHovered] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -176,7 +177,11 @@ function Dontoday() {
             type="submit"
             className={`${
               isFormValid ? "opacity-100" : "opacity-50"
-            } rounded-full text-white bg-primary py-4 px-8`}
+            } rounded-full text-white bg-primary py-4 px-8 transition-transform duration-300 transform ${
+              isHovered ? "scale-105" : "scale-100"
+            } sm:py-3 sm:px-6`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
             Donate
           </button>

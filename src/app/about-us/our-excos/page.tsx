@@ -9,12 +9,12 @@ function Ourteam() {
       <Heroimg
         subtxt={""}
         toggle={false}
-        maintxt="Our Team"
+        maintxt="Our Excos"
         imageUrl="/ourteamhero.png"
       >
         <></>
       </Heroimg>
-      <div className="flex flex-col items-start text-left gap-12 px-40 py-20 justify-start ">
+      <div className="flex flex-col items-start text-left gap-12 p-4 lg:px-40 md:p-20 justify-start ">
         <div className=" flex flex-col gap-4 items-start justify-between ">
           <h2 className="text-primary font-semibold font-mono text-5xl  ">
             Our Executive Team
@@ -24,7 +24,7 @@ function Ourteam() {
             working to serve our community.
           </p>
         </div>
-        <div className="w-full flex flex-row gap-10 flex-wrap">
+        <div className="w-full flex items-center flex-col sm:flex-row gap-10 flex-wrap">
           <Exco name="Dr Aderopo Oladapo, FCA" role="Chairman" />
           <Exco name="Tosin D. Akinwummi, FCA" role="Vice Chairman" />
           <Exco name="Dr Bode Oguntoke, FCA" role="General Secretary " />

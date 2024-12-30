@@ -85,7 +85,7 @@ function Mainheader() {
                   <div className="flex flex-col gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
                     <Link href="/membership" legacyBehavior passHref>
                       <NavigationMenuLink>
-                        Membership registration
+                        Membership Registration
                       </NavigationMenuLink>
                     </Link>
                     <Link href="/membership" legacyBehavior passHref>
@@ -179,8 +179,9 @@ function Mainheader() {
           </Link>
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
-              <AccordionTrigger>Membership</AccordionTrigger>
+              <AccordionTrigger>Membership </AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
+                <Link href="/membership">Membership Registration</Link>
                 <Link href="/membership">Member Login</Link>
                 <Link href="/student">Student</Link>
               </AccordionContent>
@@ -188,7 +189,7 @@ function Mainheader() {
             <AccordionItem value="item-2">
               <AccordionTrigger>About us</AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
-                <Link href="/about-us/how-it-works">How it works</Link>
+                <Link href="/about-us/how-it-works">How It Works</Link>
                 <Link href="/about-us">About ICAN SDS</Link>
                 <Link href="/about-us/our-excos">Our Excos</Link>
               </AccordionContent>

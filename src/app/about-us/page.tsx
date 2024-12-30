@@ -10,7 +10,7 @@ function Aboutus() {
       <Heroimg
         subtxt={""}
         toggle={false}
-        maintxt="About Us"
+        maintxt="About SDS"
         imageUrl="/aboutushero.png"
       >
         <></>

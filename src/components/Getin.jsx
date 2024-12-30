@@ -1,11 +1,10 @@
 import React from "react";
 
-
 // get in touch form used on the contact us page of the design
 function Getin({ heading, phoneNumber = true, className }) {
   return (
-    <div className={` py-20 flex flex-col w-full gap-16 ${className}`}>
-      <div>
+    <div className={` p-4 md:p-20 lg:px-40 flex flex-col w-full gap-16 ${className} `}>
+      <div className="w-fit">
         <h2 className="w-fit font-bold text-4xl text-primary  font-mono ">
           {heading}
         </h2>
@@ -40,8 +39,8 @@ function Getin({ heading, phoneNumber = true, className }) {
           <p></p>
         </div>
 
-        {
-          phoneNumber && <div className="flex flex-col w-full gap-3 ">
+        {phoneNumber && (
+          <div className="flex flex-col w-full gap-3 ">
             <label className=" text-base text-black  " htmlFor="phone">
               Phone number*
             </label>
@@ -53,7 +52,7 @@ function Getin({ heading, phoneNumber = true, className }) {
             />
             <p></p>
           </div>
-        }
+        )}
 
         <div className="flex flex-col w-full gap-3 ">
           <label className=" text-base text-black  " htmlFor="message">

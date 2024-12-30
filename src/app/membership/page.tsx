@@ -4,7 +4,7 @@ import Cta from "@/components/Cta";
 import Meminfo from "@/components/Meminfo";
 import Infocard from "@/components/genui/Infocard";
 import Dues from "@/components/Dues";
-// import Link from "next/link";
+import Link from "next/link";
 
 function Membership() {
   return (
@@ -15,7 +15,7 @@ function Membership() {
         maintxt="Membership"
         imageUrl="/membershiphero.png"
       >
-        {/* <div className="flex gap-12 flex-row justify-center mt-4">
+        <div className="flex gap-12 flex-row justify-center mt-4">
           <Link href={"/membership/signup"}>
             <button className="  text-white rounded-full bg-secondary py-3 px-8 w-fit hover:bg-green-900 ">
               Become a Member
@@ -24,14 +24,14 @@ function Membership() {
           <button className=" outline-1 outline-white text-primary rounded-full bg-blue-100 hover:bg-blue-500 hover:text-white py-3 px-8  w-fit">
             Login as Member
           </button>
-        </div> */}
+        </div>
       </Heroimg>
       <Meminfo />
       <Infocard
         subtitle={"ICAN SURULERE DISTRICT"}
         title="Benefits of Being a Member"
         addtxt={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing eLorem ipsum dolor sit amet, dolor sit amet, consectetur adipiscing elitlitLorem ipsum dolor sit amet, consectetur adipiscing elit"
+          "As a valued member of our ICAN District Society, you gain access to:"
         }
       />
       <Dues />

@@ -14,7 +14,7 @@ import { handleReadMore } from "@/lib/utils";
 export default function BlogPost({
   params,
 }: {
-  params: Promise<{ id: string }>;// The `params` prop represents the dynamic URL parameter, specifically the `id` of the blog post.
+  params: Promise<{ id: string }>; // The `params` prop represents the dynamic URL parameter, specifically the `id` of the blog post.
 }) {
   const router = useRouter(); // Hook to navigate programmatically
 
@@ -36,9 +36,9 @@ export default function BlogPost({
   ).slice(0, 2);
 
   return (
-    <main className="flex flex-col items-center bg-white max-md:px-5 mt-16 2xl:container mx-auto">
+    <main className="flex flex-col items-center bg-white  mt-16 2xl:container mx-auto">
       {/** First Section: Main Blog Content */}
-      <section className="px-40 py-20 border-b-2 border-gray-200">
+      <section className="p-4 sm:p-20 lg:px-40 border-b-2 border-gray-200">
         <article className="flex flex-col max-w-full">
           {/** Back Button */}
           <div
@@ -79,7 +79,7 @@ export default function BlogPost({
       </section>
 
       {/** Second Section: Comment Section */}
-      <section className="mr-auto px-40">
+      <section className="mr-auto p-4 sm:p-20 lg:px-40">
         <Getin
           heading={"LEAVE A COMMENT"} // Heading for the comment section
           phoneNumber={false} // A boolean flag to toggle phone number visibility
@@ -88,11 +88,11 @@ export default function BlogPost({
       </section>
 
       {/** Third Section: Related Blogs */}
-      <section className="flex flex-col gap-12 px-40 py-20 bg-[#E0F5E6]">
+      <section className="flex flex-col w-full gap-12 p-4 sm:p-20 lg:px-40 sm:bg-[#E0F5E6]">
         <h2 className="text-3xl font-bold text-blue-900">Related Blogs</h2>
 
         {/** Display Related Blog Posts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {relatedBlogs.map((post) => (
             <BlogCard
               key={post.id} // Unique key for each related blog card

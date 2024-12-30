@@ -10,7 +10,7 @@ function Adverts() {
         </h2>
         <div className="flex flex-col sm:flex-row  justify-between items-center">
           <div className="p-6 flex flex-col gap-4 max-w-96">
-            <h5 className="text-white text-xl font-semibold font-sans">
+            <h5 className="text-white text-center sm:text-left text-xl font-semibold font-sans">
               Streamline Your Work with Cutting-Edge Tools!
             </h5>
             <p className="text-neutral-50 hidden sm:block text-base font-normal font-sans">

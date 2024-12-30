@@ -16,11 +16,9 @@ function Aboutus() {
         <></>
       </Heroimg>
       <div className="bg-white flex flex-col  items-center gap-12 w-full py-20 px-40">
-        <p className="text-primary text-center text-lg w-fit">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum
-          dolor sit
-          <br /> amet, consectetur adipiscing elit
-        </p>
+        <h3 className="text-primary text-center text-lg w-full">
+          Shaping the Future of <br /> Accounting
+        </h3>
         <div className="flex w-full flex-row justify-between">
           <div className="flex flex-col rounded-xl gap-6 bg-primary max-w-sm p-8 text-white">
             <h6 className=" text-lg  ">
@@ -46,11 +44,7 @@ function Aboutus() {
           </div>
         </div>
       </div>
-      <Infocard subtitle={""} title="Our Values" />
-      <div className="py-30 px-40">
-        <h3 className="bg-primary text-5xl"></h3>
-        <div className="w-fit flex flex-row justify-center items-center gap-12"></div>
-      </div>
+      <Infocard subtitle={""} title="Our Values" /> 
       <Aims />
       <Meminfo />
     </div>

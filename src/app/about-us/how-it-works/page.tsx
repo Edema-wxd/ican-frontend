@@ -10,7 +10,7 @@ function Howiw() {
       <Heroimg
         subtxt={""}
         toggle={false}
-        maintxt="How it works"
+        maintxt="How It Works"
         imageUrl="/howiwhero.png"
       />
 

@@ -35,9 +35,11 @@ function Studenttile({
         </h2>
 
         {/* Download button */}
-        <button className=" px-4 py-1 rounded-full text-sm text-white  font-semibold bg-blue-900 hover:bg-white hover:border hover:border-primary hover:text-primary  ">
-          Download
-        </button>
+        <a href="/studenthero.png" download={title}>
+          <button className=" px-4 py-1 rounded-full text-sm text-white  font-semibold bg-blue-900 hover:bg-white hover:border hover:border-primary hover:text-primary  ">
+            Download
+          </button>
+        </a>
       </div>
     </div>
   );

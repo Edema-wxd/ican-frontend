@@ -58,7 +58,7 @@ function Meminfo() {
             </p>
           </div>
         </div>
-        <Link href="/membership">
+        <Link href="/sign-up">
           {/* Link to membership signup page */}
           <button className="bg-primary rounded-full py-3 px-8 w-full sm:w-fit hover:bg-blue-900 text-white">
             Become a Member

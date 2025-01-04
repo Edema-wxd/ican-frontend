@@ -7,11 +7,14 @@ export default function AuthLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <div className="mt-40">
-          <h1>Auth layout</h1>
-          <div>{children}</div>
-        </div>
+      <body
+        className="flex h-screen items-center flex-col justify-center "
+        style={{
+          backgroundImage: "url(/bgauth.png)",
+          backgroundSize: "cover",
+        }}
+      >
+        <div>{children}</div>
       </body>
     </html>
   );

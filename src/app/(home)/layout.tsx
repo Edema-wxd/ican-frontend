@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { inter, league_spartan } from "./fonts";
-import Mainheader from "../components/Mainheader";
-import Mainfooter from "../components/Mainfooter";
+import "../globals.css";
+import { inter, league_spartan } from "../fonts";
+import Mainheader from "../../components/Mainheader";
+import Mainfooter from "../../components/Mainfooter";
 
 export const metadata: Metadata = {
   title: "ICAN Surulere",

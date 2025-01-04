@@ -1,11 +1,11 @@
 "use client";
 
-import Heroimg from "../components/Heroimg";
-import Cta from "../components/Cta";
-import Stories from "../components/Stories";
-import Gallery from "../components/Gallery";
-import Adverts from "../components/Adverts";
-import Speech from "../components/Speech";
+import Heroimg from "../../components/Heroimg";
+import Cta from "../../components/Cta";
+import Stories from "../../components/Stories";
+import Gallery from "../../components/Gallery";
+import Adverts from "../../components/Adverts";
+import Speech from "../../components/Speech";
 
 export default function Home() {
   return (

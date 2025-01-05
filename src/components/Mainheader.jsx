@@ -85,10 +85,15 @@ function Mainheader() {
                   <div className="flex flex-col gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
                     <Link href="/membership" legacyBehavior passHref>
                       <NavigationMenuLink>
+                        Membership Information
+                      </NavigationMenuLink>
+                    </Link>
+                    <Link href="/sign-up" legacyBehavior passHref>
+                      <NavigationMenuLink>
                         Membership Registration
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/membership" legacyBehavior passHref>
+                    <Link href="/login" legacyBehavior passHref>
                       <NavigationMenuLink>Member Login</NavigationMenuLink>
                     </Link>
                     <Link href="/student" legacyBehavior passHref>
@@ -144,7 +149,7 @@ function Mainheader() {
             <NavigationMenuViewport className=" justify-self-center  " />
           </NavigationMenu>
         </div>
-        <Link className="hidden sm:flex" href="/membership">
+        <Link className="hidden sm:flex" href="/login">
           <button className="px-3 py-2 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white text-sm font-semibold   leading-none">
             Member Login
           </button>
@@ -181,8 +186,9 @@ function Mainheader() {
             <AccordionItem value="item-1">
               <AccordionTrigger>Membership </AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
-                <Link href="/membership">Membership Registration</Link>
-                <Link href="/membership">Member Login</Link>
+                <Link href="/membership">Membership Information</Link>
+                <Link href="/sign-up">Membership Registration</Link>
+                <Link href="/login">Member Login</Link>
                 <Link href="/student">Student</Link>
               </AccordionContent>
             </AccordionItem>
@@ -213,7 +219,7 @@ function Mainheader() {
             Donations
           </Link>
         </div>
-        <Link className=" w-full " href="/membership">
+        <Link className=" w-full " href="/login">
           <button className="px-8 py-4 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white w-full text-sm font-semibold ">
             Member Login
           </button>

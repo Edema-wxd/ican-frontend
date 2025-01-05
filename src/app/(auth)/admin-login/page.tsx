@@ -1,9 +1,7 @@
-"use client";
-
 import React from "react";
 
 function AdminLogin() {
-  return <div>Admin base</div>;
+  return <div>AdminLogin</div>;
 }
 
 export default AdminLogin;

@@ -7,6 +7,9 @@ import Gallery from "../../components/Gallery";
 import Adverts from "../../components/Adverts";
 import Speech from "../../components/Speech";
 
+import Link from "next/link";
+
+
 export default function Home() {
   return (
     <div className="">
@@ -19,12 +22,18 @@ export default function Home() {
           }
         >
           <div className="flex sm:gap-12 w-full flex-row justify-between items-center mt-4">
-            <button className=" h-fit sm:text-white rounded-full bg-secondary p-2 sm:py-3 sm:px-8 w-fit whitespace-nowrap hover:bg-green-500 ">
-              Become a Member
-            </button>
-            <button className=" h-fit  sm:border  sm:border-white text-black sm:text-white rounded-full bg-transparent hover:bg-blue-100 hover:text-black p-2 sm:py-3 sm:px-8  w-fit">
-              Learn more
-            </button>
+
+            <Link href={"/sign-up"}>
+              <button className=" h-fit sm:text-white rounded-full bg-secondary p-2 sm:py-3 sm:px-8 w-fit whitespace-nowrap hover:bg-green-500 ">
+                Become a Member
+              </button>
+            </Link>
+            <Link href={"/membership"}>
+              <button className=" h-fit  sm:border  sm:border-white text-black sm:text-white rounded-full bg-transparent hover:bg-blue-100 hover:text-black p-2 sm:py-3 sm:px-8  w-fit">
+                Learn more
+              </button>
+            </Link>
+
           </div>
         </Heroimg>
         <Speech />

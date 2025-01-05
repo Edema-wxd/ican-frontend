@@ -1,4 +1,5 @@
 import React from "react";
+
 // import Biodata from "@/components/Biodata";
 import Image from "next/image";
 import Link from "next/link";
@@ -75,6 +76,7 @@ function Login() {
           </Link>
         </p>
       </div>
+
     </div>
   );
 }

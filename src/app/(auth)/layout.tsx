@@ -7,6 +7,7 @@ export default function AuthLayout({
 }) {
   return (
     <html lang="en">
+
       <body
         className="flex h-screen items-center flex-col justify-center "
         style={{
@@ -15,6 +16,7 @@ export default function AuthLayout({
         }}
       >
         <div>{children}</div>
+
       </body>
     </html>
   );

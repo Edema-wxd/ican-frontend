@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 // import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 // import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 
+
 const steps = [
   "Image",
   "BioData",
@@ -20,12 +21,15 @@ const steps = [
   "Reference",
 ];
 
+
 function Biodata() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 
   const isStepOptional = (step) => {
+
     return step === 10;
+
   };
 
   const isStepSkipped = (step) => {
@@ -67,6 +71,7 @@ function Biodata() {
   };
 
   return (
+
     <div className=" p-10 bg-white rounded-2xl ">
       <Box sx={{ width: "100%" }}>
         <Stepper activeStep={activeStep} alternativeLabel>
@@ -126,6 +131,7 @@ function Biodata() {
         )}
       </Box>
     </div>
+
   );
 }
 

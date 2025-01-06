@@ -2,7 +2,7 @@ import React from "react";
 import Heroimg from "@/components/Heroimg";
 import Meminfo from "@/components/Meminfo";
 import Infocard from "@/components/genui/Infocard";
-import Aims from "../../components/Aims";
+import Aims from "../../../components/Aims";
 
 function Aboutus() {
   return (

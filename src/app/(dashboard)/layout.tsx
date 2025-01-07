@@ -9,7 +9,7 @@ export default function AuthLayout({
     <html lang="en">
       <body>
         <div className="mt-40">
-          <h1>Admin layout</h1>
+          <h1>Dashboard layout</h1>
           <div>{children}</div>
         </div>
       </body>

@@ -1,6 +1,13 @@
+"use client";
 import React from "react";
+import { BiodataFormData } from "../Biodata";
 
-function Payment() {
+interface PaymentProps {
+  formData: BiodataFormData;
+  updateFormData: (data: Partial<BiodataFormData>) => void;
+}
+
+function Payment({ formData, updateFormData }: PaymentProps) {
   return <div>Payment</div>;
 }
 

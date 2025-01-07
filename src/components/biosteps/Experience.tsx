@@ -1,9 +1,14 @@
-import React from 'react'
+"use client";
+import React from "react";
+import { BiodataFormData } from "../Biodata";
 
-function Experience() {
-  return (
-    <div>Experience</div>
-  )
+interface ExperienceProps {
+  formData: BiodataFormData;
+  updateFormData: (data: Partial<BiodataFormData>) => void;
 }
 
-export default Experience
+function Experience({ formData, updateFormData }: ExperienceProps) {
+  return <div>Experience</div>;
+}
+
+export default Experience;

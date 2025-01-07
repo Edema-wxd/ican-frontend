@@ -1,9 +1,65 @@
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { BiodataFormData } from "../Biodata";
 
-function Uploadimg() {
+interface UploadimgProps {
+  formData: BiodataFormData;
+  updateFormData: (data: Partial<BiodataFormData>) => void;
+}
+
+function Uploadimg({ formData, updateFormData }: UploadimgProps) {
   const [selectedImage, setSelectedImage] = useState(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
+  useEffect(() => {
+    if (formData.image) {
+      const previewUrl = URL.createObjectURL(formData.image);
+      setImagePreview(previewUrl);
+
+      return () => {
+        if (previewUrl) {
+          URL.revokeObjectURL(previewUrl);
+        }
+      };
+    }
+  }, [formData.image]);
+
+  const handleImageChange = (file: File) => {
+    if (!file.type.startsWith("image/")) {
+      //setToast({ type: "error", message: "Please upload an image file" });
+      return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      //setToast({ type: "error", message: "Image must be less than 5MB" });
+      return;
+    }
+
+    if (imagePreview) {
+      URL.revokeObjectURL(imagePreview);
+    }
+
+    const previewUrl = URL.createObjectURL(file);
+    setImagePreview(previewUrl);
+    updateFormData({ image: file });
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files[0];
+    if (file) handleImageChange(file);
+  };
+
+  const validateForm = () => {
+    if (!formData.image) {
+      // setToast({ type: 'error', message: 'Please upload an image' });
+      return false;
+    }
+  };
   //   const handleImageChange = (e) => {
   //     if (e.target.files && e.target.files[0]) {
   //       //   setSelectedImage(URL.createObjectURL(e.target.files[0]));

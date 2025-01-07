@@ -1,9 +1,15 @@
-import React from 'react'
+"use client"
 
-function Personal() {
-  return (
-    <div>Personal</div>
-  )
+import React from "react";
+import { BiodataFormData } from "../Biodata";
+
+interface PersonalProps {
+  formData: BiodataFormData;
+  updateFormData: (data: Partial<BiodataFormData>) => void;
 }
 
-export default Personal
+function Personal({ formData, updateFormData }: PersonalProps) {
+  return <div>Personal</div>;
+}
+
+export default Personal;

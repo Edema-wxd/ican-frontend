@@ -1,6 +1,13 @@
+"use client";
 import React from "react";
+import { BiodataFormData } from "../Biodata";
 
-function Qualifications() {
+interface QualificationsProps {
+  formData: BiodataFormData;
+  updateFormData: (data: Partial<BiodataFormData>) => void;
+}
+
+function Qualifications({ formData, updateFormData }: QualificationsProps) {
   return <div>Qualifications</div>;
 }
 

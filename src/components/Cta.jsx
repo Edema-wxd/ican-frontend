@@ -9,7 +9,7 @@ function Cta({ toggle }) {
       <h5 className="text-black font-bold font text-xl items-center text-center">
         {toggle ? (
           <>
-            Would you like to maximize your potentials by <br /> joining other
+            Would you like to maximize your potentials by <br /> joining our
             district society?
           </>
         ) : (

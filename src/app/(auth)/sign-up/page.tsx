@@ -27,6 +27,14 @@ function Signup() {
     confirmPassword: "",
     consent: false,
   });
+  const [formErrors, setFormErrors] = useState({
+    firstName: "",
+    surname: "",
+    email: "",
+    password: "",
+    cpassword: "",
+    consent: "",
+  });
   const [showToast, setShowToast] = useState(false);
 
   const [fname, setFname] = useState(false);
@@ -59,43 +67,37 @@ function Signup() {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
   const validateFirstName = (firstName: string): string => {
-    const nameRegex = /^[a-zA-Z]+$/;
+    const nameRegex = /^[a-zA-Z0-9]+$/;
     if (firstName.length < 3) {
-      console.log("First name must be at least 3 characters long");
+      return "First name must be at least 3 characters long.";
     }
     if (!nameRegex.test(firstName)) {
-      console.log("First name must contain only letters.");
-    } else {
-      console.log("First name is valid", firstName);
-      setFname(true);
+      return "First name must contain only alphanumeric characters.";
     }
     return "";
   };
 
   const validateSurname = (surname: string): string => {
-    const nameRegex = /^[a-zA-Z]+$/;
+    const nameRegex = /^[a-zA-Z0-9]+$/;
     if (surname.length < 3) {
       return "Surname must be at least 3 characters long.";
     }
     if (!nameRegex.test(surname)) {
-      console.log("First name must contain only letters.");
-    } else {
-      console.log("First name is valid", surname);
-      setSname(true);
+      return "Surname must contain only alphanumeric characters.";
     }
     return "";
   };
+
   const validateEmail = (email: string): string => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      console.log("Invalid email address.", email);
-    } else {
-      console.log("Email is valid", email);
-      setEvalid(true);
+      return "Invalid email address.";
     }
     return "";
   };
+
   const validatePassword = (password: string): string => {
     if (password.length < 8) {
       setPlength(false);
@@ -112,34 +114,27 @@ function Signup() {
     } else {
       setPlower(true);
     }
-    if (!/\d/.test(password) && !/[@$!%*?&]/.test(password)) {
+    if (!/\d/.test(password)) {
       setPnumber(false);
     } else {
       setPnumber(true);
     }
-    if (
-      password.length >= 8 &&
-      /[A-Z]/.test(password) &&
-      /[a-z]/.test(password) &&
-      /\d/.test(password) &&
-      /[@$!%*?&]/.test(password)
-    ) {
+    if (!/[@$!%*?&]/.test(password)) {
+      setPnumber(false);
+    } else {
       setPvalid(true);
-      console.log("Password is valid");
     }
-
     return "";
   };
+
   const validateConfirmPassword = (
     password: string,
     cpassword: string
   ): string => {
     if (cpassword !== password) {
-      console.log("Passwords do not match");
-    } else {
-      setCvalid(true);
-      console.log("passwords match");
+      return "Passwords do not match.";
     }
+    setCvalid(true);
     return "";
   };
 
@@ -154,40 +149,38 @@ function Signup() {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
+    let error = "";
     if (name === "firstName") {
-      console.log("First Name", value);
-      validateFirstName(value);
-  
+      error = validateFirstName(value);
+      setFname(!error);
     }
     if (name === "surname") {
-      console.log("Surname", value);
-      validateSurname(value);
-    
+      error = validateSurname(value);
+      setSname(!error);
     }
     if (name === "email") {
-      console.log("Email", value);
-      validateEmail(value);
-     
+      error = validateEmail(value);
+      setEvalid(!error);
     }
     if (name === "password") {
-      console.log("Password", value);
-      validatePassword(value);
-     
+      error = validatePassword(value);
     }
     if (name === "cpassword") {
-      console.log("Confirm password", value);
-      validateConfirmPassword(formData.password, value);
-     
+      error = validateConfirmPassword(formData.password, value);
     }
     if (name === "consent") {
-      console.log("Consent checked", checked);
-      setConsent(!consent);
-      
+      setConsent(checked);
     }
+
+    setFormErrors({
+      ...formErrors,
+      [name]: error,
+    });
 
     if (consent && pvalid && cvalid && evalid && fname && sname) {
       setComplete(true);
-      console.log(complete)
+    } else {
+      setComplete(false);
     }
   };
 
@@ -204,9 +197,6 @@ function Signup() {
     const email = (
       document.getElementById("email") as HTMLInputElement
     ).value.trim();
-    const phone = (
-      document.getElementById("phone") as HTMLInputElement
-    ).value.trim();
     const password = (
       document.getElementById("password") as HTMLInputElement
     ).value.trim();
@@ -214,11 +204,25 @@ function Signup() {
       document.getElementById("cpassword") as HTMLInputElement
     ).value.trim();
 
-    if (!firstName || !surname || !email || !phone || !password || !cpassword) {
-      //toast("warning", "All fields are required.");
-      return;
+    const errors = {
+      firstName: validateFirstName(firstName),
+      surname: validateSurname(surname),
+      email: validateEmail(email),
+      password: validatePassword(password),
+      cpassword: validateConfirmPassword(password, cpassword),
+      consent: formData.consent
+        ? ""
+        : "You must agree to the terms and conditions.",
+    };
+
+    setFormErrors(errors);
+
+    if (Object.values(errors).every((error) => error === "")) {
+      // Submit form
+      console.log("Form submitted", formData);
+    } else {
+      setLoading(false);
     }
-    console.log("Form submitted", formData);
   };
 
   return (
@@ -250,7 +254,9 @@ function Signup() {
               type="text"
               onChange={handleChange}
             />
-            <p></p>
+            {formErrors.firstName && (
+              <p className="text-red-600">{formErrors.firstName}</p>
+            )}
           </div>
           <div className="  w-full flex flex-col">
             <label
@@ -268,7 +274,9 @@ function Signup() {
               required
               type="text"
             />
-            <p></p>
+            {formErrors.surname && (
+              <p className="text-red-600">{formErrors.surname}</p>
+            )}
           </div>
           <div className="  w-full flex flex-col">
             <label
@@ -286,7 +294,9 @@ function Signup() {
               required
               type="email"
             />
-            <p></p>
+            {formErrors.email && (
+              <p className="text-red-600">{formErrors.email}</p>
+            )}
           </div>
           <div className="  w-full flex flex-col ">
             <label
@@ -392,7 +402,9 @@ function Signup() {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </button>
             </div>
-            <p></p>
+            {formErrors.cpassword && (
+              <p className="text-red-600">{formErrors.cpassword}</p>
+            )}
           </div>
           <div className=" flex flex-row justify-between gap-2 items-center ">
             <input
@@ -409,8 +421,12 @@ function Signup() {
               along with the Terms and Conditions therein.{" "}
             </p>
           </div>
+          {formErrors.consent && (
+            <p className="text-red-600">{formErrors.consent}</p>
+          )}
+
           <button
-            disabled={complete}
+            disabled={!complete}
             className=" px-8 py-4 disabled:bg-slate-500 bg-primary rounded-full text-white text-base font-semibold "
             type="submit"
           >

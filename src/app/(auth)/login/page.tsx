@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 // import Biodata from "@/components/Biodata";
@@ -10,7 +12,7 @@ function Login() {
 
   return (
     <div className=" m-auto ">
-      <div className="flex flex-col w-[440px] items-center rounded-2xl  bg-white p-8 gap-6 ">
+      <div className="flex flex-col w-96 sm:w-[440px] items-center rounded-2xl  bg-white p-8 gap-6 ">
         <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
         <div className=" w-fit">
           <h4 className=" text-primary text-center text-3xl font-bold font-mono   ">

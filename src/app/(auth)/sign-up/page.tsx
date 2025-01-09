@@ -18,7 +18,7 @@ import Toast from "@/components/genui/Toast";
 function Signup() {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [complete, setComplete] = useState(true);
+  const [complete, setComplete] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     surname: "",
@@ -157,29 +157,37 @@ function Signup() {
     if (name === "firstName") {
       console.log("First Name", value);
       validateFirstName(value);
+  
     }
     if (name === "surname") {
       console.log("Surname", value);
       validateSurname(value);
+    
     }
     if (name === "email") {
       console.log("Email", value);
       validateEmail(value);
+     
     }
     if (name === "password") {
       console.log("Password", value);
       validatePassword(value);
+     
     }
     if (name === "cpassword") {
       console.log("Confirm password", value);
       validateConfirmPassword(formData.password, value);
+     
     }
     if (name === "consent") {
       console.log("Consent checked", checked);
       setConsent(!consent);
+      
     }
+
     if (consent && pvalid && cvalid && evalid && fname && sname) {
-      setComplete(false);
+      setComplete(true);
+      console.log(complete)
     }
   };
 
@@ -402,7 +410,7 @@ function Signup() {
             </p>
           </div>
           <button
-            disabled={!complete}
+            disabled={complete}
             className=" px-8 py-4 disabled:bg-slate-500 bg-primary rounded-full text-white text-base font-semibold "
             type="submit"
           >

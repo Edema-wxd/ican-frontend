@@ -1,6 +1,7 @@
 import "../globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
-export default function AuthLayout({
+export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ export default function AuthLayout({
         <div className="mt-40">
           <h1>Admin layout</h1>
           <div>{children}</div>
+          <Toaster />
         </div>
       </body>
     </html>

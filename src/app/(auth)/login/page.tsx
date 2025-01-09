@@ -3,8 +3,11 @@ import React from "react";
 // import Biodata from "@/components/Biodata";
 import Image from "next/image";
 import Link from "next/link";
+import { useToast } from "@/hooks/use-toast";
 
 function Login() {
+  const { toast } = useToast();
+
   return (
     <div className=" m-auto ">
       <div className="flex flex-col w-[440px] items-center rounded-2xl  bg-white p-8 gap-6 ">
@@ -65,6 +68,12 @@ function Login() {
           <button
             className=" px-8 py-4 bg-primary rounded-full text-white text-base font-semibold "
             type="submit"
+            onClick={() => {
+              toast({
+                title: "Scheduled: Catch up",
+                description: "Friday, February 10, 2023 at 5:57 PM",
+              });
+            }}
           >
             Log In
           </button>
@@ -76,7 +85,6 @@ function Login() {
           </Link>
         </p>
       </div>
-
     </div>
   );
 }

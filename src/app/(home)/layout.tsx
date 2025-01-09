@@ -3,6 +3,7 @@ import "../globals.css";
 import { inter, league_spartan } from "../fonts";
 import Mainheader from "../../components/Mainheader";
 import Mainfooter from "../../components/Mainfooter";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "ICAN Surulere",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Mainheader />
         {children}
         <Mainfooter />
+        <Toaster />
       </body>
     </html>
   );

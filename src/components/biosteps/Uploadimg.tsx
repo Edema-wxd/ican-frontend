@@ -10,9 +10,12 @@ import { BiodataFormData } from "../Biodata";
 interface UploadimgProps {
   formData: BiodataFormData;
   updateFormData: (data: Partial<BiodataFormData>) => void;
+  setToast: (
+    toast: { type: "success" | "error"; message: string } | null
+  ) => void;
 }
 
-function Uploadimg({ formData, updateFormData }: UploadimgProps) {
+function Uploadimg({ formData, updateFormData, setToast }: UploadimgProps) {
   const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -33,12 +36,12 @@ function Uploadimg({ formData, updateFormData }: UploadimgProps) {
 
   const handleImageChange = (file: File) => {
     if (!file.type.startsWith("image/")) {
-      //setToast({ type: "error", message: "Please upload an image file" });
+      setToast({ type: "error", message: "Please upload an image file" });
       return;
     }
 
     if (file.size > 5 * 1024 * 1024) {
-      //setToast({ type: "error", message: "Image must be less than 5MB" });
+      setToast({ type: "error", message: "Image must be less than 5MB" });
       return;
     }
 
@@ -60,7 +63,7 @@ function Uploadimg({ formData, updateFormData }: UploadimgProps) {
 
   const validateForm = () => {
     if (!formData.image) {
-      // setToast({ type: 'error', message: 'Please upload an image' });
+      setToast({ type: 'error', message: 'Please upload an image' });
       return false;
     }
   };

@@ -1,4 +1,5 @@
 import "../globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function AuthLayout({
   children,
@@ -7,7 +8,6 @@ export default function AuthLayout({
 }) {
   return (
     <html lang="en">
-
       <body
         className="flex h-screen items-center flex-col justify-center "
         style={{
@@ -16,7 +16,7 @@ export default function AuthLayout({
         }}
       >
         <div>{children}</div>
-
+        <Toaster />
       </body>
     </html>
   );

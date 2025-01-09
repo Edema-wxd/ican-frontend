@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import Toast from "./genui/Toast";
 
 import Contact from "./biosteps/Contact";
 import Experience from "./biosteps/Experience";
@@ -98,6 +99,10 @@ export type BiodataFormData = {
 function Biodata() {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
+  const [toast, setToast] = useState<{
+    type: "success" | "error" | "info";
+    message: string;
+  } | null>(null);
   const [formData, setFormData] = useState<BiodataFormData>({
     image: null,
     personalData: {
@@ -179,10 +184,10 @@ function Biodata() {
       if (savedImageMeta) {
         try {
           console.log("hwlp");
-          // setToast({
-          //   type: "info",
-          //   message: "Please re-upload your event image for security reasons",
-          // });
+          setToast({
+            type: "info",
+            message: "Please re-upload your event image for security reasons",
+          });
         } catch (error) {
           console.error("Error parsing saved image metadata:", error);
         }
@@ -325,9 +330,9 @@ function Biodata() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeStep}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="w-full"
             >
@@ -362,13 +367,40 @@ function Biodata() {
                   </Box>
                 </Fragment>
               )}{" "}
-              {activeStep === 0 && <Uploadimg  formData={formData} updateFormData={updateFormData} />}
-              {activeStep === 1 && <Personal formData={formData} updateFormData={updateFormData} />}
-              {activeStep === 2 && <Contact formData={formData} updateFormData={updateFormData} />}
-              {activeStep === 3 && <Qualifications formData={formData} updateFormData={updateFormData} />}
-              {activeStep === 4 && <Experience formData={formData} updateFormData={updateFormData} />}
-              {activeStep === 5 && <Reference formData={formData} updateFormData={updateFormData} />}
-              {activeStep === 6 && <Payment formData={formData} updateFormData={updateFormData} />}
+              {activeStep === 0 && (
+                <Uploadimg
+                  setToast={setToast}
+                  formData={formData}
+                  updateFormData={updateFormData}
+                />
+              )}
+              {activeStep === 1 && (
+                <Personal formData={formData} updateFormData={updateFormData} />
+              )}
+              {activeStep === 2 && (
+                <Contact formData={formData} updateFormData={updateFormData} />
+              )}
+              {activeStep === 3 && (
+                <Qualifications
+                  formData={formData}
+                  updateFormData={updateFormData}
+                />
+              )}
+              {activeStep === 4 && (
+                <Experience
+                  formData={formData}
+                  updateFormData={updateFormData}
+                />
+              )}
+              {activeStep === 5 && (
+                <Reference
+                  formData={formData}
+                  updateFormData={updateFormData}
+                />
+              )}
+              {activeStep === 6 && (
+                <Payment formData={formData} updateFormData={updateFormData} />
+              )}
             </motion.div>
           </AnimatePresence>
         </div>

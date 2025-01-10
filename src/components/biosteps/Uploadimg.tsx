@@ -5,8 +5,6 @@ import { FaCloudUploadAlt, FaTrash } from "react-icons/fa";
 
 import { BiodataFormData } from "../Biodata";
 
-
-
 interface UploadimgProps {
   formData: BiodataFormData;
   updateFormData: (data: Partial<BiodataFormData>) => void;
@@ -63,7 +61,7 @@ function Uploadimg({ formData, updateFormData, setToast }: UploadimgProps) {
 
   const validateForm = () => {
     if (!formData.image) {
-      setToast({ type: 'error', message: 'Please upload an image' });
+      setToast({ type: "error", message: "Please upload an image" });
       return false;
     }
   };
@@ -73,18 +71,14 @@ function Uploadimg({ formData, updateFormData, setToast }: UploadimgProps) {
   //     }
   //  };
   return (
-    <div>
-      <h3>UPLOAD IMAGE</h3>
+    <div className="pt-4 flex flex-col justify-between gap-4 ">
+      <h3 className="font-bold font-mono text-2xl text-black ">
+        UPLOAD IMAGE
+        <hr />
+      </h3>
       <div>
-        <Image
-          width={100}
-          height={100}
-          src="/avatar.png"
-          alt="Upload your Image"
-        />
-
         <div
-          className={`relative border-2 border-dashed rounded-xl p-8 text-center cursor-pointer
+          className={` relative border-2 border-dashed rounded-xl p-8 text-center cursor-pointer
             ${
               isDragging
                 ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20"
@@ -154,19 +148,21 @@ function Uploadimg({ formData, updateFormData, setToast }: UploadimgProps) {
               onClick={() => fileInputRef.current?.click()}
               className="flex flex-col items-center justify-center h-full cursor-pointer"
             >
-              <FaCloudUploadAlt className="w-12 h-12 text-gray-400" />
+              <Image
+                width={100}
+                height={100}
+                src="/avatar.png"
+                alt="Upload your Image"
+              />{" "}
               <div className="text-gray-600 dark:text-gray-300">
                 <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Drag and drop your event image here
+                  Drag and drop your profile image here
                 </p>
                 <p className="text-sm">or click to browse</p>
               </div>
             </div>
           )}
         </div>
-        <button className="bg-primary text-white font-medium text-sm">
-          Upload photo
-        </button>
       </div>
     </div>
   );

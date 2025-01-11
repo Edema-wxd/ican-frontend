@@ -1,8 +1,17 @@
 import React from "react";
 import Heroimg from "@/components/Heroimg";
 import Meminfo from "@/components/Meminfo";
-import Infocard from "@/components/genui/Infocard";
+// import Infocard from "@/components/genui/Infocard";
+import Itemcard from "@/components/genui/Itemcard";
 import Aims from "../../../components/Aims";
+import {
+  MdOutlineContacts,
+  MdOutlineSpeaker,
+  MdOutlineLightbulb,
+  MdOutlineEmojiSymbols,
+  MdOutlineEscalatorWarning,
+  MdOutlineLinkedCamera,
+} from "react-icons/md";
 
 function Aboutus() {
   return (
@@ -44,9 +53,39 @@ function Aboutus() {
           </div>
         </div>
       </div>
-      <Infocard subtitle={""} title="Our Values" />
+      <div className=" w-full p-4 sm:py-20 sm:px-40 bg-green-100 sm:bg-blue-100 flex flex-col items-center justify-center gap-16 ">
+        <div className="flex flex-col w-fit items-center gap-2">
+          <h4 className="text-primary font-mono text-2xl sm:text-5xl font-bold text-center">
+            Our Values
+          </h4>
+        </div>
+        <div className="flex flex-col sm:flex-row flex-wrap gap-12 items-center justify-center">
+          <Itemcard
+            name={"Community"}
+            info={"Fostering collaboration and unity among our members."}
+            icon={<MdOutlineContacts className="w-9 h-9 fill-[#916103]" />}
+            type="col"
+          />
+          <Itemcard
+            name={"Integrity"}
+            info={
+              "Upholding the highest ethical standards in all our endeavors."
+            }
+            icon={<MdOutlineSpeaker className="w-9 h-9 fill-[#916103]" />}
+            type="col"
+          />
+          <Itemcard
+            name={"Excellence"}
+            info={
+              "Striving for  quality in education, service, and professional growth of our members"
+            }
+            icon={<MdOutlineLightbulb className="w-9 h-9 fill-[#916103]" />}
+            type="col"
+          />
+        </div>
+      </div>
       <Aims />
-      <Meminfo />
+      {/* <Meminfo /> */}
     </div>
   );
 }

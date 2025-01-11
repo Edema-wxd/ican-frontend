@@ -1,7 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BsPersonRaisedHand } from "react-icons/bs";
+import {
+  MdOutlineSupervisorAccount,
+  MdOutlineMarkEmailRead,
+  MdOutlineCheckBox,
+  MdOutlinePayments,
+} from "react-icons/md";
 
 function Meminfo() {
   return (
@@ -19,7 +24,7 @@ function Meminfo() {
           {/* fill according to BA & copy writers design */}
           <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
             <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-              <BsPersonRaisedHand className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm" />
+              <MdOutlineSupervisorAccount className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm" />
               <h5>Click on “ Become a member”</h5>
             </div>
             <p>
@@ -29,7 +34,7 @@ function Meminfo() {
           </div>
           <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
             <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-              <BsPersonRaisedHand className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm"/>
+              <MdOutlineMarkEmailRead className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm" />
               <h5>Verify Email</h5>
             </div>
             <p>
@@ -39,7 +44,7 @@ function Meminfo() {
           </div>
           <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
             <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-              <BsPersonRaisedHand className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm"/>
+              <MdOutlineCheckBox className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm" />
               <h5>Complete Registration</h5>
             </div>
             <p>
@@ -49,7 +54,7 @@ function Meminfo() {
           </div>
           <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
             <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-              <BsPersonRaisedHand className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm"/>
+              <MdOutlinePayments className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm" />
               <h5>Make Payments and wait for confirmation</h5>
             </div>
             <p>

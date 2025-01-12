@@ -31,6 +31,25 @@ function InputEle({
       </div>
     );
   }
+  if (type=== "email"){
+    return (
+      <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
+        <label className=" text-base font-sans font-semibold  " htmlFor={id}>
+          {label} {required ? <span className="text-red-600">*</span> : ""}
+        </label>
+        <input
+          className=" p-3 rounded border border-gray-400  "
+          placeholder={placeholder}
+          name={id}
+          id={id}
+          required={required}
+          type={type}
+        />
+
+        <p>{errorMsg}</p>
+      </div>
+    );
+  }
   if (type === "number") {
     return (
       <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>

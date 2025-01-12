@@ -2,8 +2,7 @@
 
 import React from "react";
 import { BiodataFormData } from "../Biodata";
-
-
+import InputEle from "@/components/genui/InputEle";
 
 interface PersonalProps {
   formData: BiodataFormData;
@@ -19,6 +18,12 @@ function Personal({ formData, updateFormData }: PersonalProps) {
       </h3>
 
       <div className="grid grid-cols-2  gap-10 ">
+        <InputEle
+          id="surname"
+          placeholder="Enter your surname"
+          type="text"
+          label="Surname"
+        />
         <div className=" w-full h-fit flex flex-col gap-3">
           <label
             className=" text-base font-sans font-semibold  "

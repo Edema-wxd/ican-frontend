@@ -8,7 +8,7 @@ function InputEle({
   id,
   required = true,
   label,
-  placeholder="",
+  placeholder = "",
   addStyle = "",
   errorMsg = "",
 }) {
@@ -31,7 +31,7 @@ function InputEle({
       </div>
     );
   }
-  if (type=== "email"){
+  if (type === "email") {
     return (
       <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
         <label className=" text-base font-sans font-semibold  " htmlFor={id}>
@@ -58,11 +58,14 @@ function InputEle({
         </label>
         <input
           className=" p-3 rounded border border-gray-400  "
-          placeholder={placeholder}
           name={id}
           id={id}
           required={required}
           type={type}
+          min={1900}
+          max={2099}
+          step={1}
+          placeholder="2024"
         />
 
         <p>{errorMsg}</p>

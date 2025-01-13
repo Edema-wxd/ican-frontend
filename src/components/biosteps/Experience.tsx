@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { BiodataFormData } from "../Biodata";
+import InputEle from "../genui/InputEle";
 
 interface ExperienceProps {
   formData: BiodataFormData;
@@ -14,91 +15,23 @@ function Experience({ formData, updateFormData }: ExperienceProps) {
         WORK EXPERIENCE
         <hr />
       </h3>
-      <div className=" w-full h-fit flex flex-col gap-3">
-        <label
-          className=" text-base font-sans font-semibold  "
-          htmlFor="currentJob"
-        >
-          Current Job <span className="text-red-600">*</span>
-        </label>
-        <input
-          className=" p-3 rounded border border-gray-400  "
-          placeholder="Enter your current job"
-          name="currentJob"
-          id="currentJob"
-          required
-          type="text"
-        />
-        <p></p>
-      </div>
-      <div className=" w-full h-fit flex flex-col gap-3">
-        <label
-          className=" text-base font-sans font-semibold  "
-          htmlFor="companyName"
-        >
-          Company Name <span className="text-red-600">*</span>
-        </label>
-        <input
-          className=" p-3 rounded border border-gray-400  "
-          placeholder="Enter your company name"
-          name="companyName"
-          id="companyName"
-          required
-          type="text"
-        />
-        <p></p>
-      </div>
-      <div className="grid grid-cols-2  gap-10 ">
-        <div className=" w-full h-fit flex flex-col gap-3">
-          <label
-            className=" text-base font-sans font-semibold  "
-            htmlFor="department"
-          >
-            Department <span className="text-red-600">*</span>
-          </label>
-          <input
-            className=" p-3 rounded border border-gray-400  "
-            placeholder="Enter your middle name"
-            name="department"
-            id="department"
-            required
-            type="text"
-          />
-          <p></p>
-        </div>
-        <div className=" w-full h-fit flex flex-col gap-3">
-          <label
-            className=" text-base font-sans font-semibold  "
-            htmlFor="currentPosition"
-          >
-            Current Position <span className="text-red-600">*</span>
-          </label>
-          <input
-            className=" p-3 rounded border bg-white border-gray-400  "
-            name="currentPosition"
-            id="currentPosition"
-            required
-            type="text"
-          />
+      <InputEle id="currentJob" type="text" label="Current Job " />
+      <InputEle id="companyName" type="text" label="Company Name" />
 
-          <p></p>
-        </div>
-        <div className=" w-full h-fit flex flex-col gap-3">
-          <label
-            className=" text-base font-sans font-semibold  "
-            htmlFor="startDate"
-          >
-            Start Date <span className="text-red-600">*</span>
-          </label>
-          <input
-            className=" p-3 rounded border border-gray-400  "
-            name="startDate"
-            id="startDate"
-            required
-            type="date"
-          />
-          <p></p>
-        </div>
+      <div className="grid grid-cols-2  gap-10 ">
+        <InputEle
+          id="department"
+          placeholder="Enter your department"
+          type="text"
+          label="Department"
+        />
+        <InputEle
+          id="currentPosition"
+          placeholder="Enter your Current Position"
+          type="text"
+          label="Current Position"
+        />
+        <InputEle id="startDate" type="date" label="Start Date" />
       </div>
     </div>
   );

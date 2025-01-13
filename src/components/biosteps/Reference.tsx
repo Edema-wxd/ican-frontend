@@ -2,6 +2,8 @@
 import React from "react";
 import { BiodataFormData } from "../Biodata";
 
+import InputEle from "../genui/InputEle";
+
 interface ReferenceProps {
   formData: BiodataFormData;
   updateFormData: (data: Partial<BiodataFormData>) => void;
@@ -13,76 +15,33 @@ function Reference({ formData, updateFormData }: ReferenceProps) {
       <h3 className="font-bold font-mono text-2xl text-black ">
         REFERENCE <hr />
       </h3>
-      <div className=" w-full h-fit flex flex-col gap-3">
-        <label
-          className=" text-base font-sans font-semibold  "
-          htmlFor="refereeName"
-        >
-          Referee Name <span className="text-red-600">*</span>
-        </label>
-        <input
-          className=" p-3 rounded border border-gray-400  "
-          placeholder="Enter your Referee Name"
-          name="refereeName"
-          id="refereeName"
-          required
-          type="text"
-        />
-        <p></p>
-      </div>
+      <InputEle
+        id="refereeName"
+        placeholder="Enter your Referee Name"
+        type="text"
+        label="Referee Name"
+      />
 
       <div className="grid grid-cols-2  gap-10 ">
-        <div className=" w-full h-fit flex flex-col gap-3">
-          <label
-            className=" text-base font-sans font-semibold  "
-            htmlFor="refereeIcanNo"
-          >
-            Referee&apos;s ICAN Membership Number{" "}
-            <span className="text-red-600">*</span>
-          </label>
-          <input
-            className=" p-3 rounded border border-gray-400  "
-            placeholder="Enter your middle name"
-            name="refereeIcanNo"
-            id="refereeIcanNo"
-            required
-            type="text"
-          />
-          <p></p>
-        </div>
-        <div className=" w-full h-fit flex flex-col gap-3">
-          <label
-            className=" text-base font-sans font-semibold  "
-            htmlFor="refereePhone"
-          >
-            Referee&apos;s Phone Number <span className="text-red-600">*</span>
-          </label>
-          <input
-            className=" p-3 rounded border bg-white border-gray-400  "
-            name="refereePhone"
-            id="refereePhone"
-            required
-            type="text"
-          />
+        <InputEle
+          id="refereeIcanNo"
+          placeholder="Enter your Referee's ICAN Membership Number"
+          type="text"
+          label="Referee's ICAN Membership Number"
+        />
+        <InputEle
+          id="refereePhone"
+          type="phone"
+          label="Referee's Phone Number"
+        />
+        <InputEle
+          id="refereeEmail"
+          type="email"
+          label="Referee's Email Address"
+          placeholder="example@gmail.com"
+        />
 
-          <p></p>
-        </div>
-        <div className=" w-full h-fit flex flex-col gap-3">
-          <label
-            className=" text-base font-sans font-semibold  "
-            htmlFor="refereeEmail"
-          >
-            Referee&apos;s Email Address <span className="text-red-600">*</span>
-          </label>
-          <input
-            className=" p-3 rounded border border-gray-400  "
-            name="refereeEmail"
-            id="refereeEmail"
-            required
-            type="email"
-          />
-          <p></p>
-        </div>
+      
       </div>
     </div>
   );

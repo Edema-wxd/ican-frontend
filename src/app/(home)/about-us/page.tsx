@@ -85,7 +85,7 @@ function Aboutus() {
         </div>
       </div>
       <Aims />
-      {/* <Meminfo /> */}
+      <Meminfo toggle={true} />
     </div>
   );
 }

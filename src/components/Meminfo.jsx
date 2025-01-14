@@ -29,7 +29,7 @@ function Meminfo({ toggle = false }) {
             {/* fill according to BA & copy writers design */}
             <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
               <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-                <MdPeopleOutline className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm" />
+                <MdPeopleOutline className="w-12 h-12 bg-[#feebc4] fill-[#916103] p-1 rounded-sm" />
                 <h5>Growing Membership</h5>
               </div>
               <p>
@@ -39,7 +39,7 @@ function Meminfo({ toggle = false }) {
             </div>
             <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
               <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-                <MdOutlineCleanHands className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm" />
+                <MdOutlineCleanHands className="w-12 h-12 bg-[#feebc4] fill-[#916103] p-1 rounded-sm" />
                 <h5>Community Impact</h5>
               </div>
               <p>
@@ -50,7 +50,7 @@ function Meminfo({ toggle = false }) {
             </div>
             <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
               <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-                <MdOutlineTimer className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm" />
+                <MdOutlineTimer className="w-12 h-12 bg-[#feebc4] fill-[#916103] p-1 rounded-sm" />
                 <h5>Years of Dedication</h5>
               </div>
               <p>
@@ -60,7 +60,7 @@ function Meminfo({ toggle = false }) {
             </div>
             <div className="p-6 rounded-2xl h-fit outline-1 outline  flex flex-col gap-6 max-w-md ">
               <div className=" h-fit flex flex-row justify-start gap-2 items-center ">
-                <MdOutlineGroupAdd className="w-12 h-12 bg-green-400 fill-white p-1 rounded-sm" />
+                <MdOutlineGroupAdd className="w-12 h-12 bg-[#feebc4] fill-[#916103] p-1 rounded-sm" />
                 <h5>Accelerating Growth</h5>
               </div>
               <p>
@@ -94,7 +94,7 @@ function Meminfo({ toggle = false }) {
             <p className="text-base font-semibold text-black">
               Ican Surulere District
             </p>
-            <h1 className="text-primary text-5xl w-fit">
+            <h1 className="text-primary font-bold text-5xl w-fit">
               How to Become a Member
             </h1>
           </div>

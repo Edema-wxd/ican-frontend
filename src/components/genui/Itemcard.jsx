@@ -17,7 +17,7 @@ function Itemcard({
   }
   return (
     <div
-      className={`max-w-80 font-sans rounded-xl h-fit bg-white p-6 flex flex-col justify-between items-start gap-4  ${boc}`}
+      className={`max-w-80 font-sans rounded-xl min-h-80 h-fit bg-white p-6 flex flex-col justify-start items-start gap-4  ${boc}`}
     >
       <div className={`flex flex-${type} ${floc}`}>
         {/* conditional styling based on usage */}

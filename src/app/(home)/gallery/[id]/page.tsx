@@ -7,8 +7,8 @@ import { notFound } from "next/navigation";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
 import GalleryCard from "@/components/GalleryCard"; // Assuming you have a GalleryCard component
-import { shuffleArray } from "@/lib/utils";
-import Getin from "@/components/Getin";
+// import { shuffleArray } from "@/lib/utils";
+// import Getin from "@/components/Getin";
 import { handleReadMore } from "@/lib/utils";
 import CommentSection from "@/components/CommentSection";
 
@@ -89,6 +89,20 @@ export default function GalleryPage({
               {item.galleryContent.subtitle}
             </h2>
             <p>{item.galleryContent.content}</p>
+          </section>
+
+          {/** Additional Gallery Images */}
+          <section className="flex flex-wrap gap-4 mt-8">
+            {item.galleryContent.galleryImages.map((image, index) => (
+              <Image
+                key={index}
+                src={image}
+                width={200}
+                height={150}
+                alt={`${item.title} - ${index + 1}`}
+                className="object-cover rounded-lg"
+              />
+            ))}
           </section>
         </article>
       </section>

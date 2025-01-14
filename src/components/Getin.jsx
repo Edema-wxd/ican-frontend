@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react";
 
 // get in touch form used on the contact us page of the design

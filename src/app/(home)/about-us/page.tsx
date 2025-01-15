@@ -62,6 +62,7 @@ function Aboutus() {
             info={"Fostering collaboration and unity among our members."}
             icon={<MdFamilyRestroom className="w-9 h-9 fill-primary" />}
             type="col"
+            size=" "
             bg="bg-[#dce2f9]"
           />
           <Itemcard
@@ -71,6 +72,7 @@ function Aboutus() {
             }
             icon={<MdOutlineLightbulb className="w-9 h-9 fill-primary" />}
             type="col"
+            size=" "
             bg="bg-[#dce2f9]"
           />
           <Itemcard
@@ -80,6 +82,7 @@ function Aboutus() {
             }
             icon={<MdBrightness5 className="w-9 h-9 fill-primary" />}
             type="col"
+            size=" "
             bg="bg-[#dce2f9]"
           />
         </div>

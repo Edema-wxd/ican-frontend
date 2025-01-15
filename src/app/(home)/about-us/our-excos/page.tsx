@@ -16,7 +16,7 @@ function Ourteam() {
       </Heroimg>
       <div className="flex flex-col items-start text-left gap-12 p-4 lg:px-40 md:p-20 justify-start ">
         <div className=" flex flex-col gap-4 items-start justify-between ">
-          <h2 className="text-primary font-semibold font-mono text-5xl  ">
+          <h2 className="text-primary font-semibold font-mono text-3xl sm:text-5xl  ">
             Our Executive Team
           </h2>
           <p className="text-base text-sans font-normal text-black">

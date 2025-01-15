@@ -22,7 +22,7 @@ function Aboutus() {
         <></>
       </Heroimg>
       <div className="bg-white flex flex-col items-center gap-12 w-full p-4 md:p-20 lg:px-40">
-        <h3 className="text-primary font-bold text-center text-4xl font-mono w-full">
+        <h3 className="text-primary font-bold text-center text-3xl sm:text-4xl font-mono w-full">
           Shaping the Future of <br /> Accounting
         </h3>
         <div className="flex w-fit flex-col sm:flex-row  gap-12 justify-between">
@@ -32,7 +32,8 @@ function Aboutus() {
               <hr className="  border opacity-50 w-full border-gray-100   " />
             </h6>
             <p className="text-base">
-              To provide an incubation and nurturing centre for professional excellence in young and vibrant accountants
+              To provide an incubation and nurturing centre for professional
+              excellence in young and vibrant accountants
             </p>
           </div>
           <div className="flex flex-col rounded-xl gap-6 max-w-sm bg-green-200 text-black p-8">
@@ -41,7 +42,8 @@ function Aboutus() {
               <hr className="  border opacity-50 w-full border-gray-100   " />
             </h6>
             <p className="text-base">
-              To be a foremost District Society of ICAN and home to shining stars in the accounting profession
+              To be a foremost District Society of ICAN and home to shining
+              stars in the accounting profession
             </p>
           </div>
         </div>

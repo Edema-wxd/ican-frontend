@@ -146,7 +146,7 @@ function Gallery() {
     <div className="w-full bg-green-50">
       <div className="py-16 px-4 sm:px-8 lg:px-32">
         <div className="text-center mb-12">
-          <h3 className="text-blue-900 font-bold text-4xl mb-4">
+          <h3 className="text-blue-900 font-bold text-3xl sm:text-4xl mb-4">
             Our Gallery
           </h3>
           <p className="text-gray-600 text-lg">

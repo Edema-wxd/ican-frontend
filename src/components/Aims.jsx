@@ -6,7 +6,7 @@ function Aims() {
   // Aims tags and info
   return (
     <div className="flex flex-col lg:px-40 md:p-20 p-4 gap-8 w-full justify-between items-center ">
-      <h2 className=" text-5xl font-bold text-primary font-mono text-left  ">
+      <h2 className=" text-3xl sm:text-5xl font-bold text-primary font-mono text-left  ">
         Why You Should Join the Surulere & District Society (SDS)
       </h2>
       <Image

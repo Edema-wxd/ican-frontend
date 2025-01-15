@@ -75,7 +75,7 @@ function Getin({ heading, phoneNumber = true, className }) {
       className={` p-4 md:p-20 lg:px-40 flex flex-col w-full gap-16 ${className} `}
     >
       <div className="w-fit">
-        <h2 className="w-fit font-bold text-4xl text-primary  font-mono ">
+        <h2 className="w-fit font-bold text-3xl sm:text-4xl text-primary  font-mono ">
           {heading}
         </h2>
         <p className="  ">

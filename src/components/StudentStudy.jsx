@@ -30,7 +30,7 @@ function StudentStudy() {
 
   return (
     <div className=" p-4  sm:p-20 lg:px-40 w-full flex flex-col gap-12 justify-start items-start ">
-      <h3 className="text-primary text-4xl font-bold font-mono ">
+      <h3 className="text-primary text-3xl sm:text-4xl font-bold font-mono ">
         Student Study Pack
       </h3>
       <section

@@ -36,7 +36,7 @@ function Signup() {
   });
   const [showToast, setShowToast] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
   const [popError, setPopError] = useState(false);
 
   const [fname, setFname] = useState(false);
@@ -257,7 +257,7 @@ function Signup() {
   };
 
   return (
-    <div className=" mx-auto ">
+    <div className=" mx-auto  ">
       <div className="flex flex-col w-96 sm:w-[440px] items-center rounded-2xl  bg-white p-8 gap-6 ">
         <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
         <div className=" w-fit">

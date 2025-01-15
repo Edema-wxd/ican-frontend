@@ -9,7 +9,7 @@ export default function AuthLayout({
   return (
     <html lang="en">
       <body
-        className="flex h-screen items-center flex-col justify-center "
+        className="flex h-screen bg-fixed items-center flex-col justify-center "
         style={{
           backgroundImage: "url(/bgauth.png)",
           backgroundSize: "cover",

@@ -11,6 +11,7 @@ import {
   FaEyeSlash,
   FaRegCheckCircle,
 } from "react-icons/fa";
+import { MdOutlineMarkEmailUnread} from"react-icons/md";
 import Toast from "@/components/genui/Toast";
 
 function Signup() {
@@ -35,7 +36,8 @@ function Signup() {
   });
   const [showToast, setShowToast] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
+  const [popError, setPopError] = useState(false);
 
   const [fname, setFname] = useState(false);
   const [sname, setSname] = useState(false);
@@ -240,8 +242,10 @@ function Signup() {
         const response = await axios.request(config);
         setPopupMessage(response.data.message);
         setShowPopup(true);
+        setPopError(false);
       } catch (error) {
         setPopupMessage("An error occurred during registration.");
+        setPopError(true);
         setShowPopup(true);
       } finally {
         setLoading(false);
@@ -469,8 +473,27 @@ function Signup() {
       </div>
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
+          <div className="bg-white flex flex-col items-center gap-3 p-6 rounded-lg shadow-lg">
+            <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
+
+            {popError ? (
+<>
+<h3 className="text-primary font-semibold text-3xl">Registration Failed</h3>
             <p>{popupMessage}</p>
+</>            ) : (
+
+<>
+<h3 className="text-primary font-semibold text-3xl">Verify your Email</h3>
+            
+            <MdOutlineMarkEmailUnread className="w-16 h-16 fill-primary" />
+            
+            <p className="text-center w-3/4 font-sans">A verification link has been sent to your email. Please check your email and select the link provided to continue</p>
+
+            <p className="font-medium">
+              Didn&apos;t receive an email? Check your spam folder.
+            </p>
+            </>            )}
+
             <button
               className="mt-4 px-4 py-2 bg-primary text-white rounded"
               onClick={() => setShowPopup(false)}

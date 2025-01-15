@@ -73,8 +73,10 @@ export type BiodataFormData = {
     qualification?: string;
     graduation?: string;
     professionalQualification?: {
-      name: string;
-      date: string;
+      firstQualName: string;
+      firstQualDate: string;
+      secQualName: string;
+      secQualDate: string;
     }[];
   };
   experience?: {

@@ -1,18 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import Biodata from "@/components/Biodata";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  FaUser,
-  FaEnvelope,
   FaRegCircle,
   FaLock,
   FaEye,
   FaEyeSlash,
   FaRegCheckCircle,
 } from "react-icons/fa";
+import { MdOutlineMarkEmailUnread} from"react-icons/md";
 import Toast from "@/components/genui/Toast";
 
 function Signup() {
@@ -36,6 +35,9 @@ function Signup() {
     consent: "",
   });
   const [showToast, setShowToast] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [popError, setPopError] = useState(false);
 
   const [fname, setFname] = useState(false);
   const [sname, setSname] = useState(false);
@@ -216,17 +218,46 @@ function Signup() {
     };
 
     setFormErrors(errors);
+    const data = JSON.stringify({
+      firstName: firstName,
+      lastName: surname,
+      email: email,
+      password: password,
+    });
+    const config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'https://ican-sds-api.onrender.com/api/v1/auth/register',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+
 
     if (Object.values(errors).every((error) => error === "")) {
       // Submit form
-      console.log("Form submitted", formData);
+      try {
+        const response = await axios.request(config);
+        setPopupMessage(response.data.message);
+        setShowPopup(true);
+        setPopError(false);
+      } catch (error) {
+        setPopupMessage("An error occurred during registration.");
+        setPopError(true);
+        setShowPopup(true);
+      } finally {
+        setLoading(false);
+      }
+
     } else {
       setLoading(false);
     }
   };
 
   return (
-    <div className=" mx-auto ">
+    <div className=" mx-auto  ">
       <div className="flex flex-col w-96 sm:w-[440px] items-center rounded-2xl  bg-white p-8 gap-6 ">
         <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
         <div className=" w-fit">
@@ -237,7 +268,7 @@ function Signup() {
             Welcome, Let&apos;s get started
           </p>
         </div>
-        <form className="w-full flex flex-col gap-4 " action="">
+        <form className="w-full flex flex-col gap-4 " onSubmit={handleSignup}>
           <div className="  w-full flex flex-col">
             <label
               className=" text-base font-sans font-semibold  "
@@ -426,7 +457,7 @@ function Signup() {
           )}
 
           <button
-            disabled={!complete}
+            disabled={!complete && loading}
             className=" px-8 py-4 disabled:bg-slate-500 bg-primary rounded-full text-white text-base font-semibold "
             type="submit"
           >
@@ -440,6 +471,38 @@ function Signup() {
           </Link>
         </p>
       </div>
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white flex flex-col items-center gap-3 p-6 rounded-lg shadow-lg">
+            <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
+
+            {popError ? (
+<>
+<h3 className="text-primary font-semibold text-3xl">Registration Failed</h3>
+            <p>{popupMessage}</p>
+</>            ) : (
+
+<>
+<h3 className="text-primary font-semibold text-3xl">Verify your Email</h3>
+            
+            <MdOutlineMarkEmailUnread className="w-16 h-16 fill-primary" />
+            
+            <p className="text-center w-3/4 font-sans">A verification link has been sent to your email. Please check your email and select the link provided to continue</p>
+
+            <p className="font-medium">
+              Didn&apos;t receive an email? Check your spam folder.
+            </p>
+            </>            )}
+
+            <button
+              className="mt-4 px-4 py-2 bg-primary text-white rounded"
+              onClick={() => setShowPopup(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

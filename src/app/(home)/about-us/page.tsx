@@ -5,12 +5,9 @@ import Meminfo from "@/components/Meminfo";
 import Itemcard from "@/components/genui/Itemcard";
 import Aims from "../../../components/Aims";
 import {
-  MdOutlineContacts,
-  MdOutlineSpeaker,
   MdOutlineLightbulb,
-  MdOutlineEmojiSymbols,
-  MdOutlineEscalatorWarning,
-  MdOutlineLinkedCamera,
+  MdFamilyRestroom,
+  MdBrightness5,
 } from "react-icons/md";
 
 function Aboutus() {
@@ -19,7 +16,7 @@ function Aboutus() {
       <Heroimg
         subtxt={""}
         toggle={false}
-        maintxt="About SDS"
+        maintxt="About ICAN SDS"
         imageUrl="/aboutushero.png"
       >
         <></>
@@ -63,24 +60,27 @@ function Aboutus() {
           <Itemcard
             name={"Community"}
             info={"Fostering collaboration and unity among our members."}
-            icon={<MdOutlineContacts className="w-9 h-9 fill-[#916103]" />}
+            icon={<MdFamilyRestroom className="w-9 h-9 fill-primary" />}
             type="col"
+            bg="bg-[#dce2f9]"
           />
           <Itemcard
             name={"Integrity"}
             info={
               "Upholding the highest ethical standards in all our endeavors."
             }
-            icon={<MdOutlineSpeaker className="w-9 h-9 fill-[#916103]" />}
+            icon={<MdOutlineLightbulb className="w-9 h-9 fill-primary" />}
             type="col"
+            bg="bg-[#dce2f9]"
           />
           <Itemcard
             name={"Excellence"}
             info={
               "Striving for  quality in education, service, and professional growth of our members"
             }
-            icon={<MdOutlineLightbulb className="w-9 h-9 fill-[#916103]" />}
+            icon={<MdBrightness5 className="w-9 h-9 fill-primary" />}
             type="col"
+            bg="bg-[#dce2f9]"
           />
         </div>
       </div>

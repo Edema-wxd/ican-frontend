@@ -39,7 +39,7 @@ function Mainheader() {
         <div className="justify-start items-center gap-1  w-fit  flex">
           <HiOutlineMail className=" stroke-white " />
           <p className="text-white text-sm font-semibold   leading-none">
-            info@suruleredistrictsociety.org.ng
+            icansuruleredistrictsociety@gmail.com
           </p>
         </div>
         <div className="w-fit justify-start items-center gap-1 flex">

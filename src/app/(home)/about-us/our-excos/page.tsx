@@ -76,7 +76,7 @@ function Ourteam() {
             imgurl="/excos/Exco-9.png"
           />
           <Exco
-            name="Goodnedd Opaleye, ACA"
+            name="Goodness Opaleye, ACA"
             role="Chairman, Publications Commitee"
             imgurl="/excos/Exco-10.png"
           />

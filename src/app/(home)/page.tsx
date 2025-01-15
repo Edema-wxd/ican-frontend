@@ -26,7 +26,7 @@ export default function Home() {
                 Become a Member
               </button>
             </Link>
-            <Link href={"/membership"}>
+            <Link href={"/about-us"}>
               <button className=" h-fit  sm:border  sm:border-white text-black sm:text-white rounded-full bg-transparent hover:bg-blue-100 hover:text-black p-2 sm:py-3 sm:px-8  w-fit">
                 Learn more
               </button>

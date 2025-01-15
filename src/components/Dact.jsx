@@ -8,7 +8,7 @@ function Dact() {
         <h5 className="font-bold font-sans text-black text-xl text-center">
           ICAN SURULERE DISTRICT
         </h5>
-        <h4 className="text-primary font-mono text-5xl font-bold text-center">
+        <h4 className="text-primary font-mono text-3xl sm:text-5xl font-bold text-center">
           Our District Activity
         </h4>
       </div>

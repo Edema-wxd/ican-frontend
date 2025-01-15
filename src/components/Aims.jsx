@@ -23,7 +23,7 @@ function Aims() {
         />{" "}
         <Reason
           name="Exclusive Sponsorship Opportunities"
-          info="Be part of a district filled with young, dynamic chartered accountants and seasoned professionals who nurture and guide the next generation."
+          info="Access ICAN conference and training sponsorships to elevate your professional journey."
         />{" "}
         <Reason
           name="Free Trainings on Contemporary Topics"

@@ -1,12 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import Biodata from "@/components/Biodata";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  FaUser,
-  FaEnvelope,
   FaRegCircle,
   FaLock,
   FaEye,
@@ -36,6 +34,8 @@ function Signup() {
     consent: "",
   });
   const [showToast, setShowToast] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
   const [fname, setFname] = useState(false);
   const [sname, setSname] = useState(false);
@@ -216,10 +216,37 @@ function Signup() {
     };
 
     setFormErrors(errors);
+    const data = JSON.stringify({
+      firstName: firstName,
+      lastName: surname,
+      email: email,
+      password: password,
+    });
+    const config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'https://ican-sds-api.onrender.com/api/v1/auth/register',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+
 
     if (Object.values(errors).every((error) => error === "")) {
       // Submit form
-      console.log("Form submitted", formData);
+      try {
+        const response = await axios.request(config);
+        setPopupMessage(response.data.message);
+        setShowPopup(true);
+      } catch (error) {
+        setPopupMessage("An error occurred during registration.");
+        setShowPopup(true);
+      } finally {
+        setLoading(false);
+      }
+
     } else {
       setLoading(false);
     }
@@ -237,7 +264,7 @@ function Signup() {
             Welcome, Let&apos;s get started
           </p>
         </div>
-        <form className="w-full flex flex-col gap-4 " action="">
+        <form className="w-full flex flex-col gap-4 " onSubmit={handleSignup}>
           <div className="  w-full flex flex-col">
             <label
               className=" text-base font-sans font-semibold  "
@@ -426,7 +453,7 @@ function Signup() {
           )}
 
           <button
-            disabled={!complete}
+            disabled={!complete && loading}
             className=" px-8 py-4 disabled:bg-slate-500 bg-primary rounded-full text-white text-base font-semibold "
             type="submit"
           >
@@ -440,6 +467,19 @@ function Signup() {
           </Link>
         </p>
       </div>
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <p>{popupMessage}</p>
+            <button
+              className="mt-4 px-4 py-2 bg-primary text-white rounded"
+              onClick={() => setShowPopup(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

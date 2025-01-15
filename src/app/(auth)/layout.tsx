@@ -15,7 +15,7 @@ export default function AuthLayout({
           backgroundSize: "cover",
         }}
       >
-        <div>{children}</div>
+        <div className="pt-20">{children}</div>
         <Toaster />
       </body>
     </html>

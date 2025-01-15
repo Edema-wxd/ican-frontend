@@ -32,9 +32,7 @@ function Aboutus() {
               <hr className="  border opacity-50 w-full border-gray-100   " />
             </h6>
             <p className="text-base">
-              To produce world-class chartered accountants, regulate and
-              continually enhance their ethical standards and technical
-              competence in the public interest.
+              To provide an incubation and nurturing centre for professional excellence in young and vibrant accountants
             </p>
           </div>
           <div className="flex flex-col rounded-xl gap-6 max-w-sm bg-green-200 text-black p-8">
@@ -43,9 +41,7 @@ function Aboutus() {
               <hr className="  border opacity-50 w-full border-gray-100   " />
             </h6>
             <p className="text-base">
-              To produce world-class chartered accountants, regulate and
-              continually enhance their ethical standards and technical
-              competence in the public interest.
+              To be a foremost District Society of ICAN and home to shining stars in the accounting profession
             </p>
           </div>
         </div>

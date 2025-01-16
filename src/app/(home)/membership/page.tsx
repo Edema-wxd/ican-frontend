@@ -1,10 +1,10 @@
 import React from "react";
 import Heroimg from "@/components/Heroimg";
-import Cta from "@/components/Cta";
 import Meminfo from "@/components/Meminfo";
 import Infocard from "@/components/genui/Infocard";
-import Dues from "@/components/Dues";
 import Link from "next/link";
+// import Cta from "@/components/Cta";
+// import Dues from "@/components/Dues";
 
 function Membership() {
   return (
@@ -12,7 +12,7 @@ function Membership() {
       <Heroimg
         subtxt={""}
         toggle={false}
-        maintxt="Membership"
+        maintxt="Member Benefits"
         imageUrl="/memberhero.png"
       >
         <div className="flex gap-12 flex-row justify-center mt-4">

@@ -14,10 +14,10 @@ export default function Home() {
     <div className="">
       <main className="flex flex-col items-center ">
         <Heroimg
-          toggle={true}
+          imageUrl="/homehero.png"
           maintxt={"Empowering Professionals, Building Futures"}
           subtxt={
-            "Join the Surulere ICAN District Society and unlock the benefits of a thriving professional community."
+            "Join Surulere & District Society (SDS) and unlock the benefits of a thriving professional community."
           }
         >
           <div className="flex sm:gap-12 w-full flex-row justify-around items-center mt-4">

@@ -49,7 +49,7 @@ export default function BlogPost({
           </div>
 
           {/** Blog Title */}
-          <h1 className="mt-4 text-4xl font-bold leading-[50px] text-neutral-800 max-md:max-w-full">
+          <h1 className="mt-4 text-3xl sm:text-4xl font-bold leading-[50px] text-neutral-800 max-md:max-w-full">
             {post.title}
           </h1>
 

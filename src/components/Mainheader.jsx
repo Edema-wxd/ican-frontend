@@ -226,7 +226,7 @@ function Mainheader() {
             onClick={() => setOpenMenu(!openMenu)}
             className={`${
               pathname === "/contact-us" ? "text-primary" : ""
-            } text-sm font-semibold  py-4 leading-none`}
+            } text-sm font-semibold  py-2 leading-none`}
             href="/contact-us"
           >
             Contact Us
@@ -236,7 +236,7 @@ function Mainheader() {
             onClick={() => setOpenMenu(!openMenu)}
             className={`${
               pathname === "/donate" ? "text-primary" : ""
-            } text-sm font-semibold py-4  leading-none`}
+            } text-sm font-semibold py-2  leading-none`}
             href="/donate"
           >
             Donations

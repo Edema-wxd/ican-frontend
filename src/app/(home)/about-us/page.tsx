@@ -25,6 +25,12 @@ function Aboutus() {
         <h3 className="text-primary font-bold text-center text-3xl sm:text-4xl font-mono w-full">
           Shaping the Future of <br /> Accounting
         </h3>
+        <div className="flex flex-col items-center gap-0">
+          <h5 className="font-semibold font-sans text-xl">Slogan </h5>
+          <h4 className=" font-mono text-primary font-bold text-2xl ">
+            All-Star District
+          </h4>
+        </div>
         <div className="flex w-fit flex-col sm:flex-row  gap-12 justify-between">
           <div className="flex flex-col rounded-xl gap-6 bg-primary max-w-sm p-8 lg:px-8 lg:py-12 text-white">
             <h6 className=" text-xl font-medium   ">

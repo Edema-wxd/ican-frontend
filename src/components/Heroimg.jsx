@@ -28,11 +28,7 @@ function Heroimg({
         <p className="text-left text-base font-medium  leading-6">{subtxt}</p>
         <div>{children}</div>
       </div>
-      {toggle ? (
-        <Image width={464} height={431} src="/landhero.png" alt="Main image" />
-      ) : (
-        ""
-      )}
+
       {/* switch for use on the home page alone */}
     </div>
   );

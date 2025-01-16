@@ -8,6 +8,7 @@ import {
   MdOutlineLightbulb,
   MdFamilyRestroom,
   MdBrightness5,
+  MdFlipCameraAndroid,
 } from "react-icons/md";
 
 function Aboutus() {
@@ -25,6 +26,12 @@ function Aboutus() {
         <h3 className="text-primary font-bold text-center text-3xl sm:text-4xl font-mono w-full">
           Shaping the Future of <br /> Accounting
         </h3>
+        <div className="flex flex-col items-center gap-0">
+          <h5 className="font-semibold font-sans text-xl">Slogan </h5>
+          <h4 className=" font-mono text-primary font-bold text-2xl ">
+            All-Star District
+          </h4>
+        </div>
         <div className="flex w-fit flex-col sm:flex-row  gap-12 justify-between">
           <div className="flex flex-col rounded-xl gap-6 bg-primary max-w-sm p-8 lg:px-8 lg:py-12 text-white">
             <h6 className=" text-xl font-medium   ">
@@ -51,22 +58,22 @@ function Aboutus() {
       <div className=" w-full p-4 sm:py-20 sm:px-40 bg-green-100 sm:bg-blue-100 flex flex-col items-center justify-center gap-16 ">
         <div className="flex flex-col w-fit items-center gap-2">
           <h4 className="text-primary font-mono text-2xl sm:text-5xl font-bold text-center">
-            Our Values
+            Our Core Values
           </h4>
         </div>
         <div className="flex flex-col sm:flex-row flex-wrap gap-12 items-center justify-center">
           <Itemcard
-            name={"Community"}
-            info={"Fostering collaboration and unity among our members."}
-            icon={<MdFamilyRestroom className="w-9 h-9 fill-primary" />}
+            name={"Discipline"}
+            info={"Members maintain self-control and adhere to ethical and professional standards"}
+            icon={<MdBrightness5 className="w-9 h-9 fill-primary" />}
             type="col"
             size=" "
             bg="bg-[#dce2f9]"
           />
           <Itemcard
-            name={"Integrity"}
+            name={"Aspiration"}
             info={
-              "Upholding the highest ethical standards in all our endeavors."
+              "Members have the mindset of growth in career, business and family"
             }
             icon={<MdOutlineLightbulb className="w-9 h-9 fill-primary" />}
             type="col"
@@ -74,11 +81,21 @@ function Aboutus() {
             bg="bg-[#dce2f9]"
           />
           <Itemcard
-            name={"Excellence"}
+            name={"Agility"}
             info={
-              "Striving for  quality in education, service, and professional growth of our members"
+              "Members experiment, learn from failures and iterate on successes quickly and efficiently"
             }
-            icon={<MdBrightness5 className="w-9 h-9 fill-primary" />}
+            icon={<MdFamilyRestroom className="w-9 h-9 fill-primary" />}
+            type="col"
+            size=" "
+            bg="bg-[#dce2f9]"
+          />
+          <Itemcard
+            name={"Synergy"}
+            info={
+              "Members collaborate and unite for collective success."
+            }
+            icon={<MdFlipCameraAndroid className="w-9 h-9 fill-primary" />}
             type="col"
             size=" "
             bg="bg-[#dce2f9]"

@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Speech() {
   // The Speech component for the landing page
@@ -12,28 +15,32 @@ function Speech() {
           </h2>
         </div>
         <p className="text-sans font-normal text-base text-gray-600">
-          The ICAN Surulere District Society (ICAN SDS) is a dynamic chapter of
+          
+          The <span className=" text-black font-medium">
+            ICAN Surulere & District Society (ICAN SDS) </span>is a dynamic chapter of
           the Institute of Chartered Accountants of Nigeria, dedicated to
           advancing the accounting profession through professional development,
-          networking, and mentorship. Our goal is to support members with
+          networking, and mentorship. <br />Our goal is to support members with
           resources, training, and events that foster ethical practices and
-          career growth. With a commitment to professionalism, accountability,
-          and community engagement, ICAN SDS creates a platform where
+          career growth. <br /> With a commitment to professionalism, accountability,
+          and community engagement, <span className=" text-black font-medium">ICAN SDS</span> creates a platform where
           accountants can connect, learn, and thrive, ensuring their continued
           leadership in the field and contributions to the economy.
         </p>
         {/* The Chairmans speech */}
 
-        <button className="bg-primary sm:w-fit w-full rounded-full text-white py-2 px-4">
-          Read more
-        </button>
+        <Link href={"/about-us"}>
+          <button className="bg-primary sm:w-fit w-full rounded-full text-white py-2 px-4">
+            Read more
+          </button>
+        </Link>
       </div>
       <Image
         height={530}
         width={400}
         className="w-full h-auto max-w-[550px]"
-        alt="Chairman"
-        src="/chairspeech2.png"
+        alt="Chairman, Dr Aderopo Oladapo, FCA"
+        src="/chairmans.png"
       />{" "}
       {/* // The Image of the chairman for the landing page */}
     </div>

@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Link, X } from "lucide-react";
 
 const ImageOverlay = ({ isOpen, onClose, currentImage, totalImages, currentIndex, onNext, onPrevious }) => {
   if (!isOpen) return null;
@@ -145,8 +145,10 @@ function Gallery() {
   return (
     <div className="w-full bg-green-50">
       <div className="py-16 px-4 sm:px-8 lg:px-32">
+        <div className=" flex flex-row justify-between items-center  ">
+
         <div className="text-center mb-12">
-          <h3 className="text-blue-900 font-bold text-4xl mb-4">
+          <h3 className="text-blue-900 font-bold text-3xl sm:text-4xl mb-4">
             Our Gallery
           </h3>
           <p className="text-gray-600 text-lg">
@@ -154,7 +156,11 @@ function Gallery() {
             district gatherings.
           </p>
         </div>
+        <Link href="/gallery">
+        <button className="bg-primary text-white-px-4 py-2 rounded-full ">View All</button>
+        </Link>
         
+        </div>
         <div className="relative"> 
           <Carousel className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">

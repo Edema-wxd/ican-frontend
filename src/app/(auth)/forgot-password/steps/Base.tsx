@@ -11,7 +11,7 @@ function Base({ onNext }: Propsval) {
     <div className="flex flex-col w-full sm:w-[440px] items-center  gap-6 ">
       <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
       <div className=" w-fit">
-        <h4 className=" text-primary text-center text-3xl font-bold font-mono   ">
+        <h4 className=" text-primary text-center  text-3xl font-bold font-mono   ">
           Forgot Password
         </h4>
         <p className=" text-base font-normal font-sans  ">

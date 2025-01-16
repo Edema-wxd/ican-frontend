@@ -6,7 +6,7 @@ function Aims() {
   // Aims tags and info
   return (
     <div className="flex flex-col lg:px-40 md:p-20 p-4 gap-8 w-full justify-between items-center ">
-      <h2 className=" text-5xl font-bold text-primary font-mono text-left  ">
+      <h2 className=" text-3xl sm:text-5xl font-bold text-primary font-mono text-left  ">
         Why You Should Join the Surulere & District Society (SDS)
       </h2>
       <Image
@@ -23,7 +23,7 @@ function Aims() {
         />{" "}
         <Reason
           name="Exclusive Sponsorship Opportunities"
-          info="Be part of a district filled with young, dynamic chartered accountants and seasoned professionals who nurture and guide the next generation."
+          info="Access ICAN conference and training sponsorships to elevate your professional journey."
         />{" "}
         <Reason
           name="Free Trainings on Contemporary Topics"

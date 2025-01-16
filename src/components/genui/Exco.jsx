@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa6";
 
-function Exco({ name, role, imgurl = "/excos/Exco.png" }) {
+function Exco({ name, role, imgurl = "/excos/Exco.png", linkedin = "" }) {
   // Exco image and Info card
   return (
     <div className=" relative w-80 h-[435px] bg-gray-400 rounded-3xl flex-col justify-center items-center inline-flex">
@@ -22,7 +25,9 @@ function Exco({ name, role, imgurl = "/excos/Exco.png" }) {
           <p className="text-white text-base font-normal  ">{role}</p>
         </div>
         <div className="w-8 h-8 p-1 bg-[#1a379a] rounded justify-center items-center flex">
-          <FaLinkedinIn className="fill-white h-6 w-6" />
+          <Link href={linkedin}>
+            <FaLinkedinIn className="fill-white h-6 w-6" />
+          </Link>
         </div>
       </div>
     </div>

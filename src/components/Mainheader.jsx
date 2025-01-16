@@ -148,9 +148,9 @@ Blog                      </NavigationMenuLink>
                       <NavigationMenuLink>
 Technical Session                      </NavigationMenuLink>
                     </Link>
-                    <Link href="/publications" legacyBehavior passHref>
+                    {/* <Link href="/publications" legacyBehavior passHref>
                       <NavigationMenuLink>Publication</NavigationMenuLink>
-                    </Link>
+                    </Link> */}
                     
                   </div>
                 </NavigationMenuContent>
@@ -264,10 +264,10 @@ Blog                </Link> <Link onClick={() => setOpenMenu(!openMenu)} href="/
                 </Link>
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/technical">
 Technical Session                </Link>
-                <Link onClick={() => setOpenMenu(!openMenu)} href="/publications">
-                  Member Login
+                {/* <Link onClick={() => setOpenMenu(!openMenu)} href="/publications">
+                  Publications
                 </Link>
-               
+                */}
               </AccordionContent>
             </AccordionItem>
           </Accordion>

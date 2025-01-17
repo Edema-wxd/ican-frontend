@@ -27,13 +27,13 @@ function PaymentInfo() {
             <p className="text-base font-normal font-sans">Registration Fee:    <span className="font-semibold">₦10,000</span></p>
             <p className="text-base font-normal font-sans">Annual Dues:  <span className="font-semibold">₦10,000</span></p>
         </div>
-        <div className="w-1/2 flex flex-col">
+        <div className="w-1/2 flex flex-col gap-3">
             <h4 className="font-semibold">ACCOUNT DETAILS </h4>
             <Image width={137} height={37} src={"/first.png"} />
             <p className="text-base font-normal text-neutral-700 font-sans">Account Number</p>
-            <p className="text-base font-normal font-sans"><span className="font-semibold text-2xl">2045417438</span> <MdContentCopy className="w-5 h-5 " />  </p>
+            <p className="text-base font-normal font-sans flex flex-row gap-4 items-center"><span className="font-semibold text-2xl">2045417438</span> <MdContentCopy className="w-5 h-5 " />  </p>
             <p className="text-base font-normal text-neutral-700 font-sans">Account Name</p>
-            <p className="text-base font-normal font-sans"><span className="font-semibold text-2xl">ICAN Surulere & District Society</span>   </p>
+            <p className="text-base font-normal font-sans flex flex-row gap-4 items-center"><span className=" whitespace-nowrap font-semibold text-2xl">ICAN Surulere & District Society</span>   </p>
 
         </div>
       </div>

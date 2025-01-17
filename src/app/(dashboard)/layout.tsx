@@ -2,6 +2,13 @@ import "../globals.css";
 import { Header } from "./ui/Header";
 import { Sidebar } from "./ui/Sidebar";
 
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "ICAN Surulere",
+  description: "Empowering Professionals, Building Futures",
+};
+
+
 export default function AuthLayout({
   children,
 }: {

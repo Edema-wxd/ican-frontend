@@ -74,14 +74,14 @@ export default function GalleryPage({
           </time>
 
           {/** Gallery Image */}
-          <Image
+          {/* <Image
             loading="lazy"
             width={100}
             height={100}
             src={item.imageUrl}
             className="object-cover mt-12 max-w-full rounded-2xl aspect-[2.27] w-full max-md:mt-10"
             alt={item.title} // Alt text for the image
-          />
+          /> */}
 
           {/** Gallery Content */}
           <section className="flex flex-col items-start mt-12 max-w-full text-base leading-6 text-neutral-800 max-md:mt-10 mx-auto">

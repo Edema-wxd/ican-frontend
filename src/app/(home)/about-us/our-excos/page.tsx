@@ -25,13 +25,13 @@ function Ourteam() {
         </div>
         <div className="w-full flex items-center flex-col sm:flex-row gap-10 flex-wrap">
           <Exco
-            name="Dcn Aderopo Olatunji OLADAPO, PhD, FCA"
+            name="Dcn. Aderopo Olatunji OLADAPO, PhD, FCA"
             role="Chairman"
             imgurl="/excos/Exco.png"
             linkedin="https://www.linkedin.com/in/aderopo-oladapo-6053a623?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           />
           <Exco
-            name="Tosin Daniel AKINWUNMImi, FCA"
+            name="Tosin Daniel AKINWUNMI, FCA"
             role="Vice Chairman"
             imgurl="/excos/Exco-1.png"
             linkedin="https://www.linkedin.com/in/tos%C4%B1n-ak%C4%B1nwunm%C4%B1-fca-fcti-msc-bsc-hnd-3904a453?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app%20"

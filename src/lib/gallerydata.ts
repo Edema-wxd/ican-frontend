@@ -17,7 +17,7 @@ export const galleryItems: GalleryItem[] = [
     id: "1",
     category: "Events",
     title: "ICAN Award & Dinner",
-    date: "22, October 2024",
+    date: "",
     imageUrl: "/gallery/Gallery-1.png",
     galleryContent: {
       subtitle: "A Night to Remember",
@@ -40,7 +40,7 @@ export const galleryItems: GalleryItem[] = [
     id: "2",
     category: "Meetings",
     title: "Monthly Meeting",
-    date: "15, December 2024",
+    date: "",
     imageUrl: "/month/mm (1).jpg",
     galleryContent: {
       subtitle: "Monthly Meeting Highlights",

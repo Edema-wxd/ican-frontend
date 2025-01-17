@@ -83,9 +83,9 @@ function Mainheader() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="flex flex-col mx-auto gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
-                    <Link href="/about-us/how-it-works" legacyBehavior passHref>
+                    {/* <Link href="/about-us/how-it-works" legacyBehavior passHref>
                       <NavigationMenuLink>How It Works</NavigationMenuLink>
-                    </Link>
+                    </Link> */}
                     <Link href="/about-us" legacyBehavior passHref>
                       <NavigationMenuLink>About SDS</NavigationMenuLink>
                     </Link>
@@ -216,12 +216,12 @@ function Mainheader() {
             <AccordionItem value="item-1">
               <AccordionTrigger>About us</AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
-                <Link
+                {/* <Link
                   onClick={() => setOpenMenu(!openMenu)}
                   href="/about-us/how-it-works"
                 >
                   How It Works
-                </Link>
+                </Link> */}
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/about-us">
                   About ICAN SDS
                 </Link>

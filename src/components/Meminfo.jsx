@@ -149,7 +149,7 @@ function Meminfo({ toggle = false }) {
           </Link>
         </div>
         <div className="hidden sm:flex">
-          <Image alt="members" width={582} height={695} src={"/mem_how.png"} />
+          <Image alt="members" width={582} height={695} src={"/mem-how.png"} />
         </div>
       </div>
     );

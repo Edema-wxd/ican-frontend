@@ -106,11 +106,9 @@ function Mainheader() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="flex flex-col gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
-                     <Link href="/membership" legacyBehavior passHref>
-                      <NavigationMenuLink>
-                        Member Benefits
-                      </NavigationMenuLink>
-                    </Link> 
+                    <Link href="/membership" legacyBehavior passHref>
+                      <NavigationMenuLink>Member Benefits</NavigationMenuLink>
+                    </Link>
                     <Link href="/student" legacyBehavior passHref>
                       <NavigationMenuLink>Student</NavigationMenuLink>
                     </Link>
@@ -122,7 +120,6 @@ function Mainheader() {
                     <Link href="/login" legacyBehavior passHref>
                       <NavigationMenuLink>Member Login</NavigationMenuLink>
                     </Link>
-                    
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -137,21 +134,20 @@ function Mainheader() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="flex flex-col gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
-                     <Link href="/blog" legacyBehavior passHref>
-                      <NavigationMenuLink>
-Blog                      </NavigationMenuLink>
-                    </Link> 
+                    <Link href="/blog" legacyBehavior passHref>
+                      <NavigationMenuLink>Blog </NavigationMenuLink>
+                    </Link>
                     <Link href="/gallery" legacyBehavior passHref>
                       <NavigationMenuLink>Gallery</NavigationMenuLink>
                     </Link>
-                    <Link href="/technical" legacyBehavior passHref>
+                   {/* <Link href="/technical" legacyBehavior passHref>
                       <NavigationMenuLink>
-Technical Session                      </NavigationMenuLink>
+                        Technical Session{" "}
+                      </NavigationMenuLink>
                     </Link>
-                    {/* <Link href="/publications" legacyBehavior passHref>
+                     <Link href="/publications" legacyBehavior passHref>
                       <NavigationMenuLink>Publication</NavigationMenuLink>
                     </Link> */}
-                    
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -176,7 +172,7 @@ Technical Session                      </NavigationMenuLink>
                   Contact Us
                 </Link>
               </NavigationMenuItem>
-              
+
               <NavigationMenuIndicator />
             </NavigationMenuList>
             <NavigationMenuViewport className=" justify-self-center  " />
@@ -217,7 +213,6 @@ Technical Session                      </NavigationMenuLink>
             Home
           </Link>
           <Accordion type="single" collapsible>
-            
             <AccordionItem value="item-1">
               <AccordionTrigger>About us</AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
@@ -243,7 +238,8 @@ Technical Session                      </NavigationMenuLink>
               <AccordionContent className=" flex flex-col gap-2">
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/membership">
                   Member Benefits
-                </Link> <Link onClick={() => setOpenMenu(!openMenu)} href="/student">
+                </Link>{" "}
+                <Link onClick={() => setOpenMenu(!openMenu)} href="/student">
                   Student
                 </Link>
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/sign-up">
@@ -252,19 +248,21 @@ Technical Session                      </NavigationMenuLink>
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/login">
                   Member Login
                 </Link>
-               
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>Media & Resources </AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/blog">
-Blog                </Link> <Link onClick={() => setOpenMenu(!openMenu)} href="/gallery">
+                  Blog{" "}
+                </Link>{" "}
+                <Link onClick={() => setOpenMenu(!openMenu)} href="/gallery">
                   Gallery
                 </Link>
-                <Link onClick={() => setOpenMenu(!openMenu)} href="/technical">
-Technical Session                </Link>
-                {/* <Link onClick={() => setOpenMenu(!openMenu)} href="/publications">
+               {/* <Link onClick={() => setOpenMenu(!openMenu)} href="/technical">
+                  Technical Session{" "}
+                </Link>
+                 <Link onClick={() => setOpenMenu(!openMenu)} href="/publications">
                   Publications
                 </Link>
                 */}
@@ -290,7 +288,6 @@ Technical Session                </Link>
           >
             Contact Us
           </Link>
-         
         </div>
         <Link className=" w-full " href="/login">
           <button className="px-8 py-4 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white w-full text-sm font-semibold ">

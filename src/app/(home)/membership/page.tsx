@@ -13,12 +13,10 @@ function Membership() {
         subtxt={""}
         toggle={false}
         maintxt="Membership"
-        imageUrl="/membershiphero.png"
+        imageUrl="/memberhero.png"
       >
         <div className="flex gap-12 flex-row justify-center mt-4">
-
           <Link href={"/sign-up"}>
-
             <button className="  text-white rounded-full bg-secondary py-3 px-8 w-fit hover:bg-green-900 ">
               Become a Member
             </button>
@@ -28,7 +26,6 @@ function Membership() {
               Login as Member
             </button>
           </Link>
-
         </div>
       </Heroimg>
       <Meminfo />
@@ -39,9 +36,9 @@ function Membership() {
           "As a valued member of our ICAN District Society, you gain access to:"
         }
       />
-      <Dues />
+      {/* <Dues />
 
-      <Cta toggle={false} />
+      <Cta toggle={false} /> */}
     </>
   );
 }

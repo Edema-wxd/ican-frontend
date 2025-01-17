@@ -224,7 +224,7 @@ function Mainheader() {
                   How It Works
                 </Link> */}
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/about-us">
-                  About SDS
+                  About ICAN SDS
                 </Link>
                 <Link
                   onClick={() => setOpenMenu(!openMenu)}
@@ -292,7 +292,7 @@ function Mainheader() {
           </Link>
         </div>
         <Link className=" w-full " href="/login">
-          <button className="p-24 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white w-full text-sm font-semibold ">
+          <button className="px-8 py-4 bg-primary rounded-2xl justify-center items-center gap-2 flex text-white w-full text-sm font-semibold ">
             Member Login
           </button>
         </Link>

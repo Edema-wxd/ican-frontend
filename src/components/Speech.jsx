@@ -36,7 +36,7 @@ function Speech() {
           that foster ethical practices and career growth. <br /> <br />
           With a commitment to professionalism, accountability, and community
           engagement, <span className=" text-black font-medium">
-            ICAN SDS
+          Surulere & District Society (SDS){" "}
           </span>{" "}
           creates a platform where accountants can connect, learn, and thrive,
           ensuring their continued leadership in the field and contributions to

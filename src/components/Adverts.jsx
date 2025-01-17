@@ -16,7 +16,7 @@ function Adverts() {
             <p className="text-neutral-50 hidden sm:block text-base font-normal font-sans">
               As a certified professional, take your accounting practice to the
               next level with Sage Accounting Software. <br /> Special Offer for
-              ICAN Members:Enjoy 20% off your first year subscription! 🔗 Learn
+              SDS Members:Enjoy 20% off your first year subscription! 🔗 Learn
               More and Sign Up Today
             </p>
           </div>

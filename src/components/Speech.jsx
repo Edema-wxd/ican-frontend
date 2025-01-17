@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { MdStar } from "react-icons/md";
 
 function Speech() {
   // The Speech component for the landing page
@@ -19,14 +20,19 @@ function Speech() {
             <h4 className="font-semibold text-xl font-sans text-neutral-700">
               All-Star District
             </h4>
+            <div className="flex flex-row ">
+              <MdStar className="w-6 h-6 fill-yellow-500 stroke-yellow-500 " />
+              <MdStar className="w-6 h-6 fill-yellow-500 stroke-yellow-500 " />
+              <MdStar className="w-6 h-6 fill-yellow-500 stroke-yellow-500 " />
+              <MdStar className="w-6 h-6 fill-yellow-500 stroke-yellow-500 " />
+              <MdStar className="w-6 h-6 fill-yellow-500 stroke-yellow-500 " />
+            </div>
           </div>
         </div>
         <p className="text-sans font-normal text-base text-gray-600 text-justify">
           The{" "}
           <span className=" text-black font-medium">
-
             Surulere & District Society (SDS){" "}
-
           </span>
           is a dynamic chapter of the Institute of Chartered Accountants of
           Nigeria, dedicated to advancing the accounting profession through
@@ -35,8 +41,9 @@ function Speech() {
           Our goal is to support members with resources, training, and events
           that foster ethical practices and career growth. <br /> <br />
           With a commitment to professionalism, accountability, and community
-          engagement, <span className=" text-black font-medium">
-          Surulere & District Society (SDS){" "}
+          engagement,{" "}
+          <span className=" text-black font-medium">
+            Surulere & District Society (SDS){" "}
           </span>{" "}
           creates a platform where accountants can connect, learn, and thrive,
           ensuring their continued leadership in the field and contributions to

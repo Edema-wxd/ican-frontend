@@ -35,7 +35,7 @@ function Membership() {
         subtitle={"SURULERE & DISTRICT SOCIETY (SDS)"}
         title="Benefits of Being a Member"
         addtxt={
-          "As a valued member of our ICAN District Society, you gain access to:"
+          "As a valued member of our District Society, you gain access to:"
         }
       />
       {/* <Dues />

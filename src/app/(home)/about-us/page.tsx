@@ -17,7 +17,7 @@ function Aboutus() {
       <Heroimg
         subtxt={""}
         toggle={false}
-        maintxt="About ICAN SDS"
+        maintxt="About Surulere & District Society"
         imageUrl="/aboutushero.png"
       >
         <></>

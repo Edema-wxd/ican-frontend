@@ -25,7 +25,7 @@ function Ourteam() {
         </div>
         <div className="w-full flex items-center flex-col sm:flex-row gap-10 flex-wrap">
           <Exco
-            name="Dn Aderopo Olatunji OLADAPO, PhD, FCA"
+            name="Dcn Aderopo Olatunji OLADAPO, PhD, FCA"
             role="Chairman"
             imgurl="/excos/Exco.png"
             linkedin="https://www.linkedin.com/in/aderopo-oladapo-6053a623?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
@@ -98,7 +98,7 @@ function Ourteam() {
           />
           <Exco
             name="Sunkanmi Sesan OGUNGBAIYE, ACA"
-            role="Chairman, Students' Affairs Committee"
+            role="Chairman, Students Affairs Committee"
             imgurl="/excos/Exco-11.png"
             linkedin="https://www.linkedin.com/in/ogungbaiyesunkanmi08035019078/"
           />

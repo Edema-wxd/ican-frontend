@@ -14,7 +14,7 @@ export default function Home() {
     <div className="">
       <main className="flex flex-col items-center ">
         <Heroimg
-          imageUrl="/homehero.png"
+        toggle={true}
           maintxt={"Empowering Professionals, Building Futures"}
           subtxt={
             "Join Surulere & District Society (SDS) and unlock the benefits of a thriving professional community."

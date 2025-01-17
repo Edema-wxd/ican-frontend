@@ -4,7 +4,7 @@ import {MdContentCopy} from "react-icons/md"
 
 function PaymentInfo() {
   return (
-    <div className=" p-4 sm:p-20 lg:p-40 bg-white flex flex-col sm:flex-row gap-6 justify-between items-center w-full h-fit ">
+    <div id="payment" className=" p-4 sm:p-20 lg:p-40 bg-white flex flex-col sm:flex-row gap-6 justify-between items-center w-full h-fit ">
       <Image
         height={530}
         width={400}

@@ -16,13 +16,13 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "1",
     category: "Events",
-    title: "ICAN Award & Dinner",
+    title: "54th Annual Accountants Conference",
     date: "",
     imageUrl: "/gallery/Gallery-1.png",
     galleryContent: {
-      subtitle: "A Night to Remember",
+      subtitle: "",
       content:
-        "The ICAN Award & Dinner was a night filled with celebration and recognition of outstanding achievements...",
+        "",
       galleryImages: [
         "/gallery/Gallery-1.png",
         "/gallery/Gallery-2.png",
@@ -45,7 +45,7 @@ export const galleryItems: GalleryItem[] = [
     galleryContent: {
       subtitle: "Monthly Meeting Highlights",
       content:
-        "The Monthly Meeting was a great success with a lot of important decisions made...",
+        "",
       galleryImages: [
         "/month/mm (1).jpg",
         "/month/mm (2).jpg",

@@ -64,14 +64,14 @@ function Mainheader() {
           <NavigationMenu>
             <NavigationMenuList className=" gap-3">
               <NavigationMenuItem>
-                <Link
+                <NavigationMenuLink
+                  href="/"
                   className={`${
                     pathname === "/" ? "text-primary" : ""
                   } text-sm font-semibold   leading-none`}
-                  href="/"
                 >
-                  <NavigationMenuLink>Home</NavigationMenuLink>
-                </Link>
+                  Home
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger
@@ -127,7 +127,7 @@ function Mainheader() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className={`${
-                    pathname === "/membership" ? "text-primary" : ""
+                    pathname === "/gallery" ? "text-primary" : ""
                   } text-sm font-semibold   leading-none`}
                 >
                   Media & Resources

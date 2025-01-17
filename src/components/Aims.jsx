@@ -6,8 +6,8 @@ function Aims() {
   // Aims tags and info
   return (
     <div className="flex flex-col lg:px-40 md:p-20 p-4 gap-8 w-full justify-between items-center ">
-      <h2 className=" text-3xl sm:text-5xl font-bold text-primary font-mono text-left  ">
-        Why You Should Join Surulere & District Society (SDS)
+      <h2 className=" text-3xl sm:text-5xl font-bold text-primary font-mono text-center  ">
+        Why You Should Join  <span className="block">Surulere & District Society (SDS)</span>
       </h2>
       <Image
         width={462}
@@ -16,7 +16,7 @@ function Aims() {
         className="hidden w-full sm:flex"
         src={"/aims_banner.png"}
       />
-      <div className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 items-center justify-center ">
+      <div className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center items-center justify-center">
         <Reason
           name="A Vibrant Community"
           info="Be part of a district filled with young, dynamic chartered accountants and seasoned professionals who nurture and guide the next generation."

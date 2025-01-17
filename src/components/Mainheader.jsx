@@ -140,11 +140,12 @@ function Mainheader() {
                     <Link href="/gallery" legacyBehavior passHref>
                       <NavigationMenuLink>Gallery</NavigationMenuLink>
                     </Link>
-                   {/* <Link href="/technical" legacyBehavior passHref>
+                    <Link href="/technical" legacyBehavior passHref>
                       <NavigationMenuLink>
                         Technical Session{" "}
                       </NavigationMenuLink>
                     </Link>
+                    {/* 
                      <Link href="/publications" legacyBehavior passHref>
                       <NavigationMenuLink>Publication</NavigationMenuLink>
                     </Link> */}
@@ -259,14 +260,15 @@ function Mainheader() {
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/gallery">
                   Gallery
                 </Link>
-               {/* <Link onClick={() => setOpenMenu(!openMenu)} href="/technical">
+                <Link onClick={() => setOpenMenu(!openMenu)} href="/technical">
                   Technical Session{" "}
-                </Link>
+                </Link>{" "}
+                {/*
                  <Link onClick={() => setOpenMenu(!openMenu)} href="/publications">
                   Publications
                 </Link>
                 */}
-              </AccordionContent>
+              </AccordionConstent>
             </AccordionItem>
           </Accordion>
           <Link

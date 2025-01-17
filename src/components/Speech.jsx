@@ -51,9 +51,9 @@ function Speech() {
       <Image
         height={530}
         width={400}
-        className="w-full h-auto max-w-[550px]"
+        className="w-full h-auto rounded-2xl max-w-[550px]"
         alt="Chairman, Dr Aderopo Oladapo, FCA"
-        src="/chairmans.png"
+        src="/Gallery1.jpg"
       />{" "}
       {/* // The Image of the chairman for the landing page */}
     </div>

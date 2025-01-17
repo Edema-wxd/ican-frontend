@@ -11,7 +11,7 @@ function Speech() {
       <div className="flex flex-col sm:w-[550px] gap-12 items-start text-left">
         <div className="gap-4 w-fit text-left">
           <h2 className="text-primary w-fit font-semibold text-4xl sm:text-5xl font-mono">
-            About ICAN Surulere & District Society
+            About Surulere & District Society
             <br /> (SDS)
           </h2>
           <div className="flex mt-4 flex-row items-center justify-start gap-2">
@@ -24,7 +24,7 @@ function Speech() {
         <p className="text-sans font-normal text-base text-gray-600 text-justify">
           The{" "}
           <span className=" text-black font-medium">
-            ICAN Surulere & District Society (ICAN SDS){" "}
+            Surulere & District Society (SDS){" "}
           </span>
           is a dynamic chapter of the Institute of Chartered Accountants of
           Nigeria, dedicated to advancing the accounting profession through

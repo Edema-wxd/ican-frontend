@@ -89,7 +89,7 @@ function Gallery() {
     {
       id: 3,
       title: "ICAN Surulere District Society Team Photos",
-      imgurl: "/Gallery3.jpg",
+      imgurl: "/Gallery_3.jpg",
     },
     {
       id: 4,

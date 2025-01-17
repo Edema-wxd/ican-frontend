@@ -48,8 +48,8 @@ function Cinfo() {
               Physical Meeting Address
             </h4>
             <p className="   whitespace-nowrap ">
-              Surulere Local Government Secretariat <br /> Senator Oluremi
-              Tinubu Hall <br />
+              Surulere Local Government Secretariat, <br /> Senator Oluremi
+              Tinubu Hall,<br />
               24, Hakeem Olaogun Dickson Close <br /> Off Alhaji Masha,
               Onilegogoro Bus Stop <br/> Lagos State
             </p>

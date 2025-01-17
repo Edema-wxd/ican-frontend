@@ -43,7 +43,7 @@ function Ourteam() {
             linkedin="https://www.linkedin.com/in/dr-bode-oguntoke-3a87731a"
           />
           <Exco
-            name="Dcns. Abosede Abidemi OGUNJOBI"
+            name="Dcns. Abosede Abidemi OGUNJOBI, FCA"
             role="Treasurer "
             imgurl="/excos/Exco-3.png"
             linkedin="https://www.linkedin.com/in/abosede-ogunjobi-fca-acti-19292631?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"

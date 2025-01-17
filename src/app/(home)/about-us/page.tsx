@@ -17,7 +17,7 @@ function Aboutus() {
       <Heroimg
         subtxt={""}
         toggle={false}
-        maintxt="About Surulere & District Society"
+        maintxt="About Surulere & District Society (SDS)"
         imageUrl="/aboutushero.png"
       >
         <></>
@@ -33,7 +33,7 @@ function Aboutus() {
           </h4>
         </div>
         <div className="flex w-fit flex-col sm:flex-row  gap-12 justify-between">
-        <div className="flex flex-col rounded-xl gap-6 max-w-sm bg-green-200 text-black p-8">
+          <div className="flex flex-col rounded-xl gap-6 max-w-sm bg-green-200 text-black p-8">
             <h6 className=" text-xl font-medium  ">
               OUR VISION
               <hr className="  border opacity-50 w-full border-gray-100   " />
@@ -53,7 +53,6 @@ function Aboutus() {
               excellence in young and vibrant accountants
             </p>
           </div>
-          
         </div>
       </div>
       <div className=" w-full p-4 sm:py-20 sm:px-40 bg-green-100 sm:bg-blue-100 flex flex-col items-center justify-center gap-16 ">
@@ -65,7 +64,9 @@ function Aboutus() {
         <div className="flex flex-col sm:grid sm:grid-cols-2 flex-wrap gap-12 items-center justify-center">
           <Itemcard
             name={"Discipline"}
-            info={"Members maintain self-control and adhere to ethical and professional standards"}
+            info={
+              "Members maintain self-control and adhere to ethical and professional standards"
+            }
             icon={<MdBrightness5 className="w-9 h-9 fill-primary" />}
             type="col"
             size=" w-full "
@@ -93,9 +94,7 @@ function Aboutus() {
           />
           <Itemcard
             name={"Synergy"}
-            info={
-              "Members collaborate and unite for collective success."
-            }
+            info={"Members collaborate and unite for collective success."}
             icon={<MdFlipCameraAndroid className="w-9 h-9 fill-primary" />}
             type="col"
             size=" "

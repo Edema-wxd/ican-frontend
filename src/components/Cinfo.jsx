@@ -51,7 +51,7 @@ function Cinfo() {
               Surulere Local Government Secretariat <br /> Senator Oluremi
               Tinubu Hall <br />
               24, Hakeem Olaogun Dickson Close <br /> Off Alhaji Masha,
-              Onilegogoro Bus Stop Lagos State
+              Onilegogoro Bus Stop <br/> Lagos State
             </p>
           </div>
         </div>

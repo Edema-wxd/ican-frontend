@@ -6,6 +6,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
+import InputEle from "@/components/genui/InputEle";
 
 function Login() {
   const { toast } = useToast();
@@ -23,19 +24,20 @@ function Login() {
           </p>
         </div>
         <form className="w-full flex flex-col gap-4 " action="">
+          {/* <InputEle /> */}
           <div className="  w-full flex flex-col">
             <label
               className=" text-base font-sans font-semibold  "
-              htmlFor="username"
+              htmlFor="email"
             >
-              Username <span className="text-red-600">*</span>
+              Email Address <span className="text-red-600">*</span>
             </label>
             <input
               className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your username"
-              name="username"
+              placeholder="Enter your email address"
+              name="email"
               required
-              type="text"
+              type="email"
             />
             <p></p>
           </div>

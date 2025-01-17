@@ -83,47 +83,47 @@ function Gallery() {
     },
     {
       id: 2,
-      title: "ICAN Surulere District Society Team Photos",
+      title: " Surulere District Society Team Photos",
       imgurl: "/Gallery2.jpg",
     },
     {
       id: 3,
-      title: "ICAN Surulere District Society Team Photos",
+      title: " Surulere District Society Team Photos",
       imgurl: "/Gallery_3.jpg",
     },
     {
       id: 4,
-      title: "ICAN Surulere District Society Team Photos",
+      title: " Surulere District Society Team Photos",
       imgurl: "/Gallery4.jpg",
     },
     {
       id: 5,
-      title: "ICAN Surulere District Society Team Photos",
+      title: " Surulere District Society Team Photos",
       imgurl: "/Gallery5.jpg",
     },
     {
       id: 6,
-      title: "ICAN Surulere District Society Team Photos",
+      title: " Surulere District Society Team Photos",
       imgurl: "/Gallery6.jpg",
     },
     {
       id: 7,
-      title: "ICAN Surulere District Society Team Photos",
+      title: " Surulere District Society Team Photos",
       imgurl: "/Gallery7.jpg",
     },
     {
       id: 8,
-      title: "ICAN Surulere District Society Team Photos",
+      title: " Surulere District Society Team Photos",
       imgurl: "/Gallery8.jpg",
     },
     {
       id: 9,
-      title: "ICAN Surulere District Society Team Photos",
+      title: " Surulere District Society Team Photos",
       imgurl: "/Gallery9.jpg",
     },
     {
       id: 10,
-      title: "ICAN Surulere District Society Team Photos",
+      title: " Surulere District Society Team Photos",
       imgurl: "/Gallery10.jpg",
     },
   ];

@@ -71,9 +71,9 @@ export default function BlogPost({
           {/** Blog Content */}
           <section className="flex flex-col items-start mt-12 max-w-full text-base leading-6 text-neutral-800 max-md:mt-10 mx-auto">
             <h2 className="text-xl font-semibold mb-4">
-              {post.blogContent.subtitle}
+              {post.blogContent?.subtitle}
             </h2>
-            <p>{post.blogContent.content}</p>
+            <p>{post.blogContent?.content}</p>
           </section>
         </article>
       </section>

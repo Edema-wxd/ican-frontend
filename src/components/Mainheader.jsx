@@ -58,7 +58,7 @@ function Mainheader() {
 
       <div className=" w-full sm:w-full mt-4 p-2  justify-between sm:justify-around items-center sm:gap-10 flex flex-row">
         <Link href="/">
-          <Image alt="Logo" width={143} height={60} src="/Logo_big.png" />
+          <Image alt="Logo" width={184} height={60} src="/sdslogo.png" />
         </Link>
         <div className="hidden justify-start items-center gap-4 sm:flex">
           <NavigationMenu>

@@ -224,7 +224,7 @@ function Mainheader() {
                   How It Works
                 </Link> */}
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/about-us">
-                  About SDS
+                  About ICAN SDS
                 </Link>
                 <Link
                   onClick={() => setOpenMenu(!openMenu)}

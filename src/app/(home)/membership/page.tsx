@@ -3,6 +3,7 @@ import Heroimg from "@/components/Heroimg";
 import Meminfo from "@/components/Meminfo";
 import Infocard from "@/components/genui/Infocard";
 import Link from "next/link";
+import PaymentInfo from "@/components/PaymentInfo";
 // import Cta from "@/components/Cta";
 // import Dues from "@/components/Dues";
 
@@ -29,6 +30,7 @@ function Membership() {
         </div>
       </Heroimg>
       <Meminfo />
+      <PaymentInfo />
       <Infocard
         subtitle={"SURULERE & DISTRICT SOCIETY (SDS)"}
         title="Benefits of Being a Member"

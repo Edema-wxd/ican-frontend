@@ -78,7 +78,7 @@ function Gallery() {
   const galleryItems = [
     {
       id: 1,
-      title: "54th ICAN Annual Accountant's Conference",
+      title: "54th Annual Accountant's Conference",
       imgurl: "/Gallery1.jpg",
     },
     {

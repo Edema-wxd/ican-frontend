@@ -7,7 +7,7 @@ import {
 
 function Cinfo() {
   return (
-    <div className="flex flex-row flex-wrap gap-8 w-full justify-center items-start  p-4 md:p-20 lg:py-20 lg:px-40 bg-blue-100">
+    <div className="flex flex-row flex-wrap gap-8 w-full justify-around items-start  p-4 md:p-20 lg:py-20 lg:px-40 bg-blue-100">
       <div className="flex gap-8 w-fit flex-col">
         <div className="flex flex-row  items-start gap-4">
           <MdOutlineLocalPhone className=" fill-primary h-8 w-8" />

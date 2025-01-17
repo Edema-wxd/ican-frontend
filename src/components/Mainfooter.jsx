@@ -44,9 +44,9 @@ function Mainfooter() {
 
             <p className="text-white text-sm font-medium ">
               Surulere Local Government Secretariat, <br /> Senator Oluremi
-              Tinubu Hall <br />
-              24, Hakeem Olaogun Dickson Close Off Alhaji Masha, <br />{" "}
-              Onilegogoro Bus Stop Lagos State
+              Tinubu Hall, <br />
+              24, Hakeem Olaogun Dickson Close <br /> Off Alhaji Masha,
+              Onilegogoro Bus Stop, <br/> Lagos State
             </p>
           </div>
         </div>

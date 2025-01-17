@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}  ${league_spartan.variable}`}>
       <head>
+      
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </head>
       <body>

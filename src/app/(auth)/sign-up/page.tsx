@@ -295,7 +295,7 @@ function Signup() {
             </label>
             <input
               className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your first name"
+              placeholder="Enter your surname"
               name="surname"
               id="surname"
               onChange={handleChange}
@@ -315,7 +315,7 @@ function Signup() {
             </label>
             <input
               className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your first name"
+              placeholder="Enter your email address"
               name="email"
               onChange={handleChange}
               id="email"
@@ -397,7 +397,7 @@ function Signup() {
                 id="cpassword"
                 onChange={handleChange}
                 name="cpassword"
-                placeholder="Create a password"
+                placeholder="Confirm your password"
                 className="w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />

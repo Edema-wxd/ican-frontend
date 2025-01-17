@@ -17,7 +17,7 @@ function Aboutus() {
       <Heroimg
         subtxt={""}
         toggle={false}
-        maintxt="About Surulere & District Society"
+        maintxt="About ICAN SDS"
         imageUrl="/aboutushero.png"
       >
         <></>
@@ -33,11 +33,10 @@ function Aboutus() {
           </h4>
         </div>
         <div className="flex w-fit flex-col sm:flex-row  gap-12 justify-between">
-        
-          <div className="flex flex-col rounded-xl gap-6 max-w-sm bg-green-200 text-black p-8">
-            <h6 className=" text-xl font-medium  ">
+          <div className="flex flex-col rounded-xl gap-6 bg-[#C1EBCD] max-w-sm p-8 lg:px-8 lg:py-12 text-black">
+            <h6 className=" text-xl font-medium">
               OUR VISION
-              <hr className="  border opacity-50 w-full border-gray-100   " />
+              <hr className="border opacity-50 w-full border-[#36A757]  my-4" />
             </h6>
             <p className="text-base">
               To be a foremost District Society of ICAN and home to shining
@@ -45,9 +44,9 @@ function Aboutus() {
             </p>
           </div>
           <div className="flex flex-col rounded-xl gap-6 bg-primary max-w-sm p-8 lg:px-8 lg:py-12 text-white">
-            <h6 className=" text-xl font-medium   ">
+            <h6 className=" text-xl font-medium">
               OUR MISSION
-              <hr className="  border opacity-50 w-full border-gray-100   " />
+              <hr className="border opacity-50 w-full border-gray-100 my-4" />
             </h6>
             <p className="text-base">
               To provide an incubation and nurturing centre for professional
@@ -64,13 +63,13 @@ function Aboutus() {
             Our Core Values
           </h4>
         </div>
-        <div className="flex flex-col sm:flex-row flex-wrap gap-12 items-center justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 items-center justify-center">
           <Itemcard
             name={"Discipline"}
             info={"Members maintain self-control and adhere to ethical and professional standards"}
             icon={<MdBrightness5 className="w-8 h-8 fill-primary" />}
             type="col"
-            size=" w-full "
+            size=" "
             bg="bg-[#dce2f9]"
           />
           <Itemcard

@@ -105,7 +105,7 @@ function Aboutus() {
         </div>
       </div> */}
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 p-4 sm:p-40 bg-[#d9f5e3] rounded-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 p-4 md:p-40 bg-[#d9f5e3] rounded-lg">
         <h4 className="text-2xl font-bold text-center col-span-1 sm:col-span-2 text-primary font-mono text-2xl sm:text-5xl">
           Our Core Values
         </h4>

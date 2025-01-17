@@ -32,7 +32,8 @@ function Faq() {
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger className="text-lg">
-                How can I become a member of the ICAN Surulere District?
+                How can I become a member of the Surulere & District Society
+                (SDS)?
               </AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
                 <p className=" text-base">

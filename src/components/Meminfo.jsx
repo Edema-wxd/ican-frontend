@@ -19,7 +19,7 @@ function Meminfo({ toggle = false }) {
         <div className="flex flex-col gap-12 max-w-[470px] text-left">
           <div>
             <p className="text-base font-semibold text-black">
-              Ican Surulere District
+              Surulere & District Society (SDS)
             </p>
             <h1 className="text-primary text-5xl w-fit">
               Achievements and Milestones
@@ -92,7 +92,7 @@ function Meminfo({ toggle = false }) {
         <div className="flex flex-col gap-12 max-w-[470px] text-left">
           <div>
             <p className="text-base font-semibold text-black">
-              Ican Surulere District
+              Surulere & District Society (SDS)
             </p>
             <h1 className="text-primary font-bold text-5xl w-fit">
               How to Become a Member

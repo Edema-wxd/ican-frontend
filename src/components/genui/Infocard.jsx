@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import Itemcard from "@/components/genui/Itemcard";
 
 function Infocard({
-  subtitle = "ICAN SURULERE DISTRICT",
+  subtitle = "Surulere & District Society (SDS)",
   title,
   data,
   addtxt,

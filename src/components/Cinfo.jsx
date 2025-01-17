@@ -7,7 +7,7 @@ import {
 
 function Cinfo() {
   return (
-    <div className="flex flex-row flex-wrap gap-8 w-full justify-center items-start  p-4 md:p-20 lg:py-20 lg:px-40 bg-blue-100">
+    <div className="flex flex-row flex-wrap gap-8 w-full justify-around items-start  p-4 md:p-20 lg:py-20 lg:px-40 bg-blue-100">
       <div className="flex gap-8 w-fit flex-col">
         <div className="flex flex-row  items-start gap-4">
           <MdOutlineLocalPhone className=" fill-primary h-8 w-8" />
@@ -47,10 +47,11 @@ function Cinfo() {
             <h4 className=" text-2xl font-bold font-mono text-black ">
               Physical Meeting Address
             </h4>
-            <p className="  ">
-              Surulere Local Government Secretariat Senator Oluremi Tinubu Hall
-              24, Hakeem Olaogun Dickson Close Off Alhaji Masha, Onilegogoro Bus
-              Stop Lagos State
+            <p className="   whitespace-nowrap ">
+              Surulere Local Government Secretariat, <br /> Senator Oluremi
+              Tinubu Hall,<br />
+              24, Hakeem Olaogun Dickson Close <br /> Off Alhaji Masha,
+              Onilegogoro Bus Stop <br/> Lagos State
             </p>
           </div>
         </div>

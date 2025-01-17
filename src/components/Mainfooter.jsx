@@ -26,13 +26,27 @@ function Mainfooter() {
           <div className="flex-col justify-start items-start gap-4 flex">
             <p className="text-white flex flex-row gap-3 items-center text-sm font-normal   leading-tight">
               <HiOutlineLocationMarker className=" stroke-white w-8 h-8 relative" />
-              Office Address
+              Secretariat Address
             </p>
 
             <p className="text-white text-sm font-medium ">
               30B, Oke-Onijo Street, Off Ogunlana Street,
               <br />
               Ijeshatedo, Surulere, Lagos
+            </p>
+          </div>
+
+          <div className="flex-col justify-start items-start gap-4 flex">
+            <p className="text-white flex flex-row gap-3 items-center text-sm font-normal   leading-tight">
+              <HiOutlineLocationMarker className=" stroke-white w-8 h-8 relative" />
+              Physical Meeting Address
+            </p>
+
+            <p className="text-white text-sm font-medium ">
+              Surulere Local Government Secretariat, <br /> Senator Oluremi
+              Tinubu Hall, <br />
+              24, Hakeem Olaogun Dickson Close <br /> Off Alhaji Masha,
+              Onilegogoro Bus Stop, <br/> Lagos State
             </p>
           </div>
         </div>

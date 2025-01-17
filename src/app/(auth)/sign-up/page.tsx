@@ -352,56 +352,35 @@ function Signup() {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </button>
             </div>
-            <div className="pt-4 grid grid-cols-2 gap-4">
-              <div
-                className={`text-sm w-fit h-fit justify-start ${
-                  pupper ? " text-green-500 " : "text-gray-500"
-                } items-center flex flex-row gap-3`}
-              >
-                {" "}
-                {pupper ? (
-                  <FaRegCheckCircle className="w-6 h-6 m-1" />
-                ) : (
-                  <FaRegCircle className="w-6 h-6 m-1" />
-                )}
-                <p>One upper case character</p>
-              </div>
-              <div
-                className={`text-sm w-fit h-fit justify-start ${
-                  plength ? " text-green-500 " : "text-gray-500"
-                } items-center flex flex-row gap-3`}
-              >
-                {plength ? (
-                  <FaRegCheckCircle className="w-6 h-6 m-1" />
-                ) : (
-                  <FaRegCircle className="w-6 h-6 m-1" />
-                )}
-                <p className="w-fit">8 characters minimum</p>
-              </div>
-              <div
-                className={`text-sm w-fit h-fit justify-start ${
-                  plower ? " text-green-500 " : "text-gray-500"
-                } items-center flex flex-row gap-3`}
-              >
-                {plower ? (
-                  <FaRegCheckCircle className="w-6 h-6 m-1" />
-                ) : (
-                  <FaRegCircle className="w-6 h-6 m-1" />
-                )}
-                <p className="w-fit">One lower case character</p>
-              </div>
-              <div
-                className={`text-sm w-fit h-fit justify-start ${
-                  pnumber ? " text-green-500 " : "text-gray-500"
-                } items-center flex flex-row gap-3`}
-              >
-                {pnumber ? (
-                  <FaRegCheckCircle className="w-6 h-6 m-1" />
-                ) : (
-                  <FaRegCircle className="w-6 h-6 m-1" />
-                )}
-                <p className="w-fit">One number & one special character</p>
-              </div>
+            <div className="pt-4  ">
+              <p className="text-xs  text-gray-500">
+                Must be at least{" "}
+                <span
+                  className={`${
+                    plength ? " text-green-500 " : "text-gray-500"
+                  }`}
+                >
+                  8 characters long,{" "}
+                </span>
+                including{" "}
+                <span
+                  className={`${pupper ? " text-green-500 " : "text-gray-500"}`}
+                >
+                  upper case,{" "}
+                </span>
+                <span
+                  className={`${plower ? " text-green-500 " : "text-gray-500"}`}
+                >
+                  lower case,{" "}
+                </span>
+                <span
+                  className={`${
+                    pnumber ? " text-green-500 " : "text-gray-500"
+                  }`}
+                >
+                  one number & one symbol.
+                </span>
+              </p>
             </div>
           </div>
           <div className="  w-full flex flex-col">

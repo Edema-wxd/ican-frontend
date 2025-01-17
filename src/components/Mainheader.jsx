@@ -58,7 +58,7 @@ function Mainheader() {
 
       <div className=" w-full sm:w-full mt-4 p-2  justify-between sm:justify-around items-center sm:gap-10 flex flex-row">
         <Link href="/">
-          <Image alt="Logo" width={143} height={60} src="/Logo_big.png" />
+          <Image alt="Logo" width={184} height={60} src="/sdslogo.png" />
         </Link>
         <div className="hidden justify-start items-center gap-4 sm:flex">
           <NavigationMenu>
@@ -134,17 +134,18 @@ function Mainheader() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="flex flex-col gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
-                    <Link href="/blog" legacyBehavior passHref>
+                    {/* <Link href="/blog" legacyBehavior passHref>
                       <NavigationMenuLink>Blog </NavigationMenuLink>
-                    </Link>
+                    </Link> */}
                     <Link href="/gallery" legacyBehavior passHref>
                       <NavigationMenuLink>Gallery</NavigationMenuLink>
                     </Link>
-                   {/* <Link href="/technical" legacyBehavior passHref>
+                    <Link href="/technical" legacyBehavior passHref>
                       <NavigationMenuLink>
                         Technical Session{" "}
                       </NavigationMenuLink>
                     </Link>
+                    {/* 
                      <Link href="/publications" legacyBehavior passHref>
                       <NavigationMenuLink>Publication</NavigationMenuLink>
                     </Link> */}
@@ -253,15 +254,16 @@ function Mainheader() {
             <AccordionItem value="item-3">
               <AccordionTrigger>Media & Resources </AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
-                <Link onClick={() => setOpenMenu(!openMenu)} href="/blog">
+                {/* <Link onClick={() => setOpenMenu(!openMenu)} href="/blog">
                   Blog{" "}
-                </Link>{" "}
+                </Link>{" "} */}
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/gallery">
                   Gallery
                 </Link>
-               {/* <Link onClick={() => setOpenMenu(!openMenu)} href="/technical">
+                <Link onClick={() => setOpenMenu(!openMenu)} href="/technical">
                   Technical Session{" "}
-                </Link>
+                </Link>{" "}
+                {/*
                  <Link onClick={() => setOpenMenu(!openMenu)} href="/publications">
                   Publications
                 </Link>

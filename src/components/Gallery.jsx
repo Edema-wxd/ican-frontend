@@ -6,9 +6,18 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ChevronLeft, ChevronRight, Link, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import Link from "next/link";
 
-const ImageOverlay = ({ isOpen, onClose, currentImage, totalImages, currentIndex, onNext, onPrevious }) => {
+const ImageOverlay = ({
+  isOpen,
+  onClose,
+  currentImage,
+  totalImages,
+  currentIndex,
+  onNext,
+  onPrevious,
+}) => {
   if (!isOpen) return null;
 
   return (
@@ -22,7 +31,7 @@ const ImageOverlay = ({ isOpen, onClose, currentImage, totalImages, currentIndex
             alt={currentImage.title}
             className="max-h-[85vh] w-auto"
           />
-          
+
           {/* Top Navigation Bar */}
           <div className="absolute top-[277px] left-0 right-0 flex justify-between items-center px-4 py-2">
             <button
@@ -67,57 +76,56 @@ function Gallery() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const galleryItems = [
-    { 
-      id: 1, 
-      title: "54th ICAN Annual Accountant's Conference", 
-      imgurl: "/Gallery1.jpg" 
+    {
+      id: 1,
+      title: "54th Annual Accountant's Conference",
+      imgurl: "/Gallery1.jpg",
     },
-    { 
-      id: 2, 
-      title: "ICAN Surulere District Society Team Photos", 
-      imgurl: "/Gallery2.jpg" 
+    {
+      id: 2,
+      title: " Surulere District Society Team Photos",
+      imgurl: "/Gallery2.jpg",
     },
-    { 
-      id: 3, 
-      title: "ICAN Surulere District Society Team Photos", 
-      imgurl: "/Gallery3.jpg" 
+    {
+      id: 3,
+      title: " Surulere District Society Team Photos",
+      imgurl: "/Gallery_3.jpg",
     },
-    { 
-      id: 4, 
-      title: "ICAN Surulere District Society Team Photos", 
-      imgurl: "/Gallery4.jpg" 
+    {
+      id: 4,
+      title: " Surulere District Society Team Photos",
+      imgurl: "/Gallery4.jpg",
     },
-    { 
-      id: 5, 
-      title: "ICAN Surulere District Society Team Photos", 
-      imgurl: "/Gallery5.jpg" 
+    {
+      id: 5,
+      title: " Surulere District Society Team Photos",
+      imgurl: "/Gallery5.jpg",
     },
-    { 
-      id: 6, 
-      title: "ICAN Surulere District Society Team Photos", 
-      imgurl: "/Gallery6.jpg" 
+    {
+      id: 6,
+      title: " Surulere District Society Team Photos",
+      imgurl: "/Gallery6.jpg",
     },
-    { 
-      id: 7, 
-      title: "ICAN Surulere District Society Team Photos", 
-      imgurl: "/Gallery7.jpg" 
+    {
+      id: 7,
+      title: " Surulere District Society Team Photos",
+      imgurl: "/Gallery7.jpg",
     },
-    { 
-      id: 8, 
-      title: "ICAN Surulere District Society Team Photos", 
-      imgurl: "/Gallery8.jpg" 
+    {
+      id: 8,
+      title: " Surulere District Society Team Photos",
+      imgurl: "/Gallery8.jpg",
     },
-    { 
-      id: 9, 
-      title: "ICAN Surulere District Society Team Photos", 
-      imgurl: "/Gallery9.jpg" 
+    {
+      id: 9,
+      title: " Surulere District Society Team Photos",
+      imgurl: "/Gallery9.jpg",
     },
-    { 
-      id: 10, 
-      title: "ICAN Surulere District Society Team Photos", 
-      imgurl: "/Gallery10.jpg" 
+    {
+      id: 10,
+      title: " Surulere District Society Team Photos",
+      imgurl: "/Gallery10.jpg",
     },
-    
   ];
 
   const handleNext = () => {
@@ -146,29 +154,29 @@ function Gallery() {
     <div className="w-full bg-green-50">
       <div className="py-16 px-4 sm:px-8 lg:px-32">
         <div className=" flex flex-row justify-between items-center  ">
-
-        <div className="text-center mb-12">
-          <h3 className="text-blue-900 font-bold text-3xl sm:text-4xl mb-4">
-            Our Gallery
-          </h3>
-          <p className="text-gray-600 text-lg">
-            Our journey in pictures. Explore highlights from past events and
-            district gatherings.
-          </p>
+          <div className="text-left mb-12">
+            <h3 className="text-blue-900 font-bold text-3xl sm:text-4xl mb-4">
+              Our Gallery
+            </h3>
+            <p className="text-gray-600 text-lg">
+              Our journey in pictures. Explore highlights from past events and
+              district gatherings.
+            </p>
+          </div>
+          <Link href="/gallery">
+            <button className="bg-primary text-white px-4 py-2 rounded-full ">
+              View All
+            </button>
+          </Link>
         </div>
-        <Link href="/gallery">
-        <button className="bg-primary text-white-px-4 py-2 rounded-full ">View All</button>
-        </Link>
-        
-        </div>
-        <div className="relative"> 
+        <div className="relative">
           <Carousel className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">
               {pairedGalleryItems.map((pair, pairIndex) => (
                 <CarouselItem key={pairIndex} className="pl-2 md:pl-4 w-full">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                     {pair.map((item, index) => (
-                      <div 
+                      <div
                         key={item.id}
                         onClick={() => {
                           setCurrentImageIndex(pairIndex * 2 + index);

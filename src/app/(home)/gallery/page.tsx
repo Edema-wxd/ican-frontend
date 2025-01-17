@@ -26,7 +26,7 @@ function MainGalleryPage() {
                 width={300}
                 height={200}
                 alt={item.title}
-                className="w-full h-auto rounded-lg"
+                className=" w-full h-[350px] rounded-lg"
               />
               <h2 className="text-xl font-semibold mt-4">{item.title}</h2>
               <time className="text-base text-gray-500">{item.date}</time>

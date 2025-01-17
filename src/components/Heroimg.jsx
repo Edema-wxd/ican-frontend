@@ -21,10 +21,8 @@ const Heroimg = ({
       }}
     >
       {/* Background Image Layer */}
-      
 
       {/* Mobile Gradient Background */}
-
 
       {/* Content Layer */}
       <div className="relative z-10 flex flex-col max-w-lg gap-6">
@@ -35,7 +33,12 @@ const Heroimg = ({
         <div>{children}</div>
       </div>
       {toggle ? (
-        <Image width={464} height={431} src="/chairmans.png" alt="Main image" />
+        <Image
+          width={464}
+          height={431}
+          src="/chair-v2.png"
+          alt="Chairman Dn. Aderopo Olatunji OLADAPO, PhD, FCA  "
+        />
       ) : (
         ""
       )}

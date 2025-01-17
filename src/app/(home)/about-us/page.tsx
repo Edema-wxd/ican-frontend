@@ -17,7 +17,8 @@ function Aboutus() {
       <Heroimg
         subtxt={""}
         toggle={false}
-        maintxt="About ICAN SDS"
+
+        maintxt="About Surulere and District Society"
         imageUrl="/aboutushero.png"
       >
         <></>
@@ -33,8 +34,10 @@ function Aboutus() {
           </h4>
         </div>
         <div className="flex w-fit flex-col sm:flex-row  gap-12 justify-between">
+
           <div className="flex flex-col rounded-xl gap-6 bg-[#C1EBCD] max-w-sm p-8 lg:px-8 lg:py-12 text-black">
             <h6 className=" text-xl font-medium">
+
               OUR VISION
               <hr className="border opacity-50 w-full border-[#36A757]  my-4" />
             </h6>
@@ -53,7 +56,6 @@ function Aboutus() {
               excellence in young and vibrant accountants
             </p>
           </div>
-          
         </div>
       </div>
       
@@ -66,8 +68,13 @@ function Aboutus() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 items-center justify-center">
           <Itemcard
             name={"Discipline"}
-            info={"Members maintain self-control and adhere to ethical and professional standards"}
-            icon={<MdBrightness5 className="w-8 h-8 fill-primary" />}
+
+          
+            info={
+              "Members maintain self-control and adhere to ethical and professional standards"
+            }
+            icon={<MdBrightness5 className="w-9 h-9 fill-primary" />}
+
             type="col"
             size=" "
             bg="bg-[#dce2f9]"
@@ -94,9 +101,7 @@ function Aboutus() {
           />
           <Itemcard
             name={"Synergy"}
-            info={
-              "Members collaborate and unite for collective success."
-            }
+            info={"Members collaborate and unite for collective success."}
             icon={<MdFlipCameraAndroid className="w-9 h-9 fill-primary" />}
             type="col"
             size=" "

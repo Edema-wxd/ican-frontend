@@ -6,7 +6,7 @@ function Adverts() {
     <div className="bg-white p-4 sm:p-20 lg:p-40  flex gap-6 justify-between items-center w-full h-fit">
       <div className="bg-primary rounded-2xl flex flex-col w-full gap-10 p-6 sm:p-10  lg:px-28">
         <h2 className=" text-center text-white text-3xl font-bold">
-          Advert Placement
+          Place Your Advert Here
         </h2>
         <div className="flex flex-col sm:flex-row  justify-between items-center">
           <div className="p-6 flex flex-col gap-4 max-w-96">

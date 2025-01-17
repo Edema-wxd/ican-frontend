@@ -6,11 +6,11 @@ import Studenttile from "./genui/Studenttile";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { handleReadMore } from "@/lib/utils";
-import { blogPosts } from "@/lib/data";
+import { technicalPosts } from "@/lib/technicaldata";
 
 function Stories() {
   const router = useRouter();
-  var raw = blogPosts.slice(0, 4);
+  var raw = technicalPosts.slice(0, 4);
 
   return (
     <div className="p-4 sm:p-20 lg:p-40 bg-white flex flex-col  gap-6 justify-between items-center w-full h-fit">
@@ -30,7 +30,7 @@ function Stories() {
         aria-label="Blog posts"
       >
         {raw.map((post) => (
-          <Studenttile
+          <BlogCard
             key={post.id}
             post={post}
             onReadMore={() => handleReadMore(router, post.id)}

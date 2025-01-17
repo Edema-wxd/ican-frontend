@@ -134,9 +134,9 @@ function Mainheader() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="flex flex-col gap-5 p-4 md:w-[400px] lg:w-[500px] py-4 px-2  ">
-                    <Link href="/blog" legacyBehavior passHref>
+                    {/* <Link href="/blog" legacyBehavior passHref>
                       <NavigationMenuLink>Blog </NavigationMenuLink>
-                    </Link>
+                    </Link> */}
                     <Link href="/gallery" legacyBehavior passHref>
                       <NavigationMenuLink>Gallery</NavigationMenuLink>
                     </Link>
@@ -254,9 +254,9 @@ function Mainheader() {
             <AccordionItem value="item-3">
               <AccordionTrigger>Media & Resources </AccordionTrigger>
               <AccordionContent className=" flex flex-col gap-2">
-                <Link onClick={() => setOpenMenu(!openMenu)} href="/blog">
+                {/* <Link onClick={() => setOpenMenu(!openMenu)} href="/blog">
                   Blog{" "}
-                </Link>{" "}
+                </Link>{" "} */}
                 <Link onClick={() => setOpenMenu(!openMenu)} href="/gallery">
                   Gallery
                 </Link>
@@ -268,7 +268,7 @@ function Mainheader() {
                   Publications
                 </Link>
                 */}
-              </AccordionConstent>
+              </AccordionContent>
             </AccordionItem>
           </Accordion>
           <Link

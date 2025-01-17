@@ -110,46 +110,46 @@ function Aboutus() {
           Our Core Values
         </h4>
 
-      <div className="bg-white  rounded-lg shadow-md p-6 border border-dotted border-[#dce2f9] flex flex-col items-start">
-        <div className="mb-4 bg-[#dce2f9] rounded-full p-2">
-          <MdBrightness5 className="w-8 h-8 fill-primary" />
+        <div className="bg-white  rounded-lg shadow-md p-6 border border-dotted border-[#dce2f9] flex flex-col items-start">
+          <div className="mb-4 bg-[#dce2f9] rounded-full p-2">
+            <MdBrightness5 className="w-8 h-8 fill-primary" />
+          </div>
+          <h3 className="font-semibold text-xl mb-2">Discipline</h3>
+          <p className="text-base text-gray-600">
+            Members maintain self-control and adhere to ethical and professional standards
+          </p>
         </div>
-        <h3 className="font-semibold text-xl mb-2">Discipline</h3>
-        <p className="text-base text-gray-600">
-          Members maintain self-control and adhere to ethical and professional standards
-        </p>
-      </div>
 
-      <div className="bg-white  rounded-lg shadow-md p-6 border border-dotted border-[#dce2f9] flex flex-col items-start">
-        <div className="mb-4 bg-[#dce2f9] rounded-full p-2">
-          <MdOutlineLightbulb className="w-8 h-8 fill-primary" />
+        <div className="bg-white  rounded-lg shadow-md p-6 border border-dotted border-[#dce2f9] flex flex-col items-start">
+          <div className="mb-4 bg-[#dce2f9] rounded-full p-2">
+            <MdOutlineLightbulb className="w-8 h-8 fill-primary" />
+          </div>
+          <h3 className="font-semibold text-xl mb-2">Aspiration</h3>
+          <p className="text-base text-gray-600">
+            Members have the mindset of growth in career, business and family
+          </p>
         </div>
-        <h3 className="font-semibold text-xl mb-2">Aspiration</h3>
-        <p className="text-base text-gray-600">
-          Members have the mindset of growth in career, business and family
-        </p>
-      </div>
 
-      <div className="bg-white  rounded-lg shadow-md p-6 border border-dotted border-[#dce2f9] flex flex-col items-start">
-        <div className="mb-4 bg-[#dce2f9] rounded-full p-2">
-          <MdFamilyRestroom className="w-8 h-8 fill-primary" />
+        <div className="bg-white  rounded-lg shadow-md p-6 border border-dotted border-[#dce2f9] flex flex-col items-start">
+          <div className="mb-4 bg-[#dce2f9] rounded-full p-2">
+            <MdFamilyRestroom className="w-8 h-8 fill-primary" />
+          </div>
+          <h3 className="font-semibold text-xl mb-2">Agility</h3>
+          <p className="text-base text-gray-600">
+            Members experiment, learn from failures and iterate on successes quickly and efficiently
+          </p>
         </div>
-        <h3 className="font-semibold text-xl mb-2">Agility</h3>
-        <p className="text-base text-gray-600">
-          Members experiment, learn from failures and iterate on successes quickly and efficiently
-        </p>
-      </div>
 
-      <div className="bg-white  rounded-lg shadow-md p-6 border border-dotted border-[#dce2f9] flex flex-col items-start">
-        <div className="mb-4 bg-[#dce2f9] rounded-full p-2">
-          <MdFlipCameraAndroid className="w-8 h-8 fill-primary" />
+        <div className="bg-white  rounded-lg shadow-md p-6 border border-dotted border-[#dce2f9] flex flex-col items-start">
+          <div className="mb-4 bg-[#dce2f9] rounded-full p-2">
+            <MdFlipCameraAndroid className="w-8 h-8 fill-primary" />
+          </div>
+          <h3 className="font-semibold text-xl mb-2">Synergy</h3>
+          <p className="text-base text-gray-600">
+            Members collaborate and unite for collective success.
+          </p>
         </div>
-        <h3 className="font-semibold text-xl mb-2">Synergy</h3>
-        <p className="text-base text-gray-600">
-          Members collaborate and unite for collective success.
-        </p>
       </div>
-    </div>
       <Aims />
       {/* <Meminfo toggle={true} /> */}
     </div>

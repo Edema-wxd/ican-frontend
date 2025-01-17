@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import BlogCard from "@/components/BlogCard";
-import Studenttile from "./genui/Studenttile";
-import Link from "next/link";
+import TechnicalTile from "@/components/pubntech/TechnicalTile";
+
 import { useRouter } from "next/navigation";
 import { handleReadMore } from "@/lib/utils";
 import { technicalPosts } from "@/lib/technicaldata";
@@ -27,13 +26,12 @@ function Stories() {
       </div>
       <section
         className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-        aria-label="Blog posts"
+        aria-label="Posts"
       >
         {raw.map((post) => (
-          <BlogCard
+          <TechnicalTile
             key={post.id}
             post={post}
-            onReadMore={() => handleReadMore(router, post.id)}
           />
         ))}
       </section>

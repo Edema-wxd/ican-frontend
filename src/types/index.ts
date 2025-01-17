@@ -6,7 +6,7 @@ export interface BlogPost {
   id: string;
 
   /** The category of the blog post */
-  category: "Articles" | "News" | "Videos" | "Technical_Session";
+  category: "Articles" | "News" | "Videos" ;
 
   /** Title of the blog post */
   title: string;
@@ -18,14 +18,13 @@ export interface BlogPost {
   imageUrl: string;
 
   /** Content details of the blog post */
-  blogContent?: {
+  blogContent: {
     /** Subtitle of the blog post */
     subtitle: string;
 
     /** Main content of the blog post */
     content: string;
   };
-  downloadLink?: string;
 }
 
 export interface DownloadTile {

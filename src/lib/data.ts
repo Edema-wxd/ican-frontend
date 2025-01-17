@@ -139,4 +139,4 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-export const TABS = ["Articles", "News", "Videos", "Technical Session"];
+export const TABS = ["Articles", "News", "Videos"];

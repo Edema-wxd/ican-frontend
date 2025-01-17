@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 
+
 // get in touch form used on the contact us page of the design
 function Getin({ heading, phoneNumber = true, className }) {
   const [formData, setFormData] = useState({
@@ -63,10 +64,26 @@ function Getin({ heading, phoneNumber = true, className }) {
       name: nameError,
       email: emailError,
     });
+    const templateParams = {
+      from_name: formData.name + " (" + formData.email + ")",
+      to_name: "icansuruleredistrictsociety@gmail.com",
+      feedback: this.state.feedback
+    };
+
 
     if (!nameError && !emailError) {
+      
+
       // Submit form
       console.log("Form submitted", formData);
+
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      })
     }
   };
 

@@ -3,6 +3,21 @@ import PropTypes from "prop-types";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 
+interface InputEleProps {
+  type: string;
+  id: string;
+  required?: boolean;
+  placeholder?: string;
+  label: string;
+  addStyle?: string;
+  errorMsg?: string;
+  onChange: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => void;
+}
+
 function InputEle({
   type,
   id,
@@ -11,7 +26,8 @@ function InputEle({
   placeholder = "",
   addStyle = "",
   errorMsg = "",
-}) {
+  onChange = () => {},
+}: InputEleProps) {
   if (type === "text") {
     return (
       <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
@@ -25,6 +41,7 @@ function InputEle({
           id={id}
           required={required}
           type={type}
+          onChange={onChange}
         />
 
         <p>{errorMsg}</p>
@@ -44,6 +61,7 @@ function InputEle({
           id={id}
           required={required}
           type={type}
+          onChange={onChange}
         />
 
         <p>{errorMsg}</p>
@@ -66,6 +84,7 @@ function InputEle({
           max={2099}
           step={1}
           placeholder="2024"
+          onChange={onChange}
         />
 
         <p>{errorMsg}</p>
@@ -85,6 +104,7 @@ function InputEle({
           id={id}
           required={required}
           type={type}
+          onChange={onChange}
         />
 
         <p>{errorMsg}</p>
@@ -102,7 +122,10 @@ function InputEle({
           name={id}
           id={id}
           required={required}
+          onChange={onChange}
+          defaultValue={"select"}
         >
+          <option value="select">Select...</option>
           <option value="male">Male </option>
           <option value="female">Female</option>
         </select>
@@ -122,7 +145,10 @@ function InputEle({
           name={id}
           id={id}
           required={required}
+          onChange={onChange}
+          defaultValue={"select"}
         >
+          <option value="select">Select...</option>
           <option value="single">Single </option>
           <option value="married">Married </option>
           <option value="divorced">Divorced </option>
@@ -143,6 +169,7 @@ function InputEle({
           name={id}
           id={id}
           required={required}
+          onChange={onChange}
         >
           <option value="">country</option>
           <optgroup label="Asia">
@@ -470,6 +497,9 @@ function InputEle({
           defaultCountry="ng"
           value={id}
           required={required}
+          onChange={(id) => {
+            onChange
+          }}
         />
         <p></p>
       </div>

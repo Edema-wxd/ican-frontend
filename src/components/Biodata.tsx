@@ -40,7 +40,7 @@ export type BiodataFormData = {
   personalData: {
     surname: string;
     firstName: string;
-    middleName?: string;
+    middleName: string;
     gender: string;
     dob: string;
     maritalStatus: string;
@@ -73,10 +73,10 @@ export type BiodataFormData = {
     qualification?: string;
     graduation?: string;
     professionalQualification?: {
-      firstQualName: string;
-      firstQualDate: string;
-      secQualName: string;
-      secQualDate: string;
+      firstQualName?: string;
+      firstQualDate?: string;
+      secQualName?: string;
+      secQualDate?: string;
     }[];
   };
   experience?: {
@@ -110,6 +110,7 @@ function Biodata() {
     personalData: {
       surname: "",
       firstName: "",
+      middleName: "",
       gender: "",
       dob: "",
       maritalStatus: "",
@@ -166,6 +167,7 @@ function Biodata() {
       console.error("Error saving form progress:", error);
     }
   };
+
   const updateFormData = (data: Partial<BiodataFormData>) => {
     setFormData((prev) => ({ ...prev, ...data }));
   };
@@ -185,10 +187,10 @@ function Biodata() {
       const savedImageMeta = localStorage.getItem("biodataFormImageMeta");
       if (savedImageMeta) {
         try {
-          console.log("hwlp");
+          console.log("help");
           setToast({
             type: "info",
-            message: "Please re-upload your event image for security reasons",
+            message: "Please re-upload your image for security reasons",
           });
         } catch (error) {
           console.error("Error parsing saved image metadata:", error);
@@ -307,7 +309,7 @@ function Biodata() {
   };
 
   return (
-    <div className=" p-10 bg-white rounded-2xl ">
+    <div className="flex flex-col w-auto  lg:w-[850px] items-center rounded-2xl  bg-white  p-8 m-2 gap-6  ">
       <Box sx={{ width: "100%" }}>
         <Stepper activeStep={activeStep} alternativeLabel>
           {steps.map((step, index) => {
@@ -323,7 +325,7 @@ function Biodata() {
             }
             return (
               <Step key={step.number} {...stepProps}>
-                <StepLabel {...labelProps}>{step.title}</StepLabel>
+                <StepLabel {...labelProps}></StepLabel>
               </Step>
             );
           })}
@@ -369,16 +371,19 @@ function Biodata() {
                   </Box>
                 </Fragment>
               )}{" "}
-              {activeStep === 0 && (
-                <Uploadimg
-                  setToast={setToast}
+              <Uploadimg
+                isShown={activeStep === 0}
+                setToast={setToast}
+                formData={formData}
+                updateFormData={updateFormData}
+              />
+           
+                <Personal
+                  isShown={activeStep === 1}
                   formData={formData}
                   updateFormData={updateFormData}
                 />
-              )}
-              {activeStep === 1 && (
-                <Personal formData={formData} updateFormData={updateFormData} />
-              )}
+           
               {activeStep === 2 && (
                 <Contact formData={formData} updateFormData={updateFormData} />
               )}

@@ -4,11 +4,19 @@ import { BiodataFormData } from "../Biodata";
 import InputEle from "../genui/InputEle";
 
 interface ExperienceProps {
+  isShown: boolean;
+
   formData: BiodataFormData;
   updateFormData: (data: Partial<BiodataFormData>) => void;
 }
 
-function Experience({ formData, updateFormData }: ExperienceProps) {
+function Experience({ isShown, formData, updateFormData }: ExperienceProps) {
+  var bucket = "";
+  if (isShown) {
+    bucket = "flex";
+  } else {
+    bucket = "hidden";
+  }
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -25,7 +33,7 @@ function Experience({ formData, updateFormData }: ExperienceProps) {
     console.log(formData);
   };
   return (
-    <div className="pt-4 flex flex-col justify-between gap-4 ">
+    <div className={` ${bucket} pt-4 flex flex-col justify-between gap-4 `}>
       <h3 className="font-bold font-mono text-2xl text-black ">
         WORK EXPERIENCE
         <hr />
@@ -63,8 +71,8 @@ function Experience({ formData, updateFormData }: ExperienceProps) {
           label="Current Position"
         />
         <InputEle
-          onChange={handleChange}            required={false}
-
+          onChange={handleChange}
+          required={false}
           id="startDate"
           type="date"
           label="Start Date"

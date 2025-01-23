@@ -4,11 +4,20 @@ import { BiodataFormData } from "../Biodata";
 import InputEle from "../genui/InputEle";
 
 interface ContactProps {
+  isShown: boolean;
+
   formData: BiodataFormData;
   updateFormData: (data: Partial<BiodataFormData>) => void;
 }
 
-function Contact({ formData, updateFormData }: ContactProps) {
+function Contact({ isShown, formData, updateFormData }: ContactProps) {
+  var bucket = "";
+  if (isShown) {
+    bucket = "flex";
+  } else {
+    bucket = "hidden";
+  }
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -25,7 +34,7 @@ function Contact({ formData, updateFormData }: ContactProps) {
     console.log(formData);
   };
   return (
-    <div className="pt-4 flex flex-col justify-between gap-4 ">
+    <div className={` ${bucket} pt-4 flex flex-col justify-between gap-4 `}>
       <h3 className="font-bold font-mono text-2xl text-black ">
         CONTACT DETAILS
         <hr />

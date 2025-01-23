@@ -4,11 +4,19 @@ import { BiodataFormData } from "../Biodata";
 import InputEle from "../genui/InputEle";
 
 interface ReferenceProps {
+  isShown: boolean;
+
   formData: BiodataFormData;
   updateFormData: (data: Partial<BiodataFormData>) => void;
 }
 
-function Reference({ formData, updateFormData }: ReferenceProps) {
+function Reference({ isShown, formData, updateFormData }: ReferenceProps) {
+  var bucket = "";
+  if (isShown) {
+    bucket = "flex";
+  } else {
+    bucket = "hidden";
+  }
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -25,7 +33,7 @@ function Reference({ formData, updateFormData }: ReferenceProps) {
     console.log(formData);
   };
   return (
-    <div className="pt-4 flex flex-col justify-between gap-4 ">
+    <div className={`${bucket} pt-4 flex flex-col justify-between gap-4 `}>
       <h3 className="font-bold font-mono text-2xl text-black ">
         REFERENCE <hr />
       </h3>

@@ -371,43 +371,44 @@ function Biodata() {
                   </Box>
                 </Fragment>
               )}{" "}
-              <Uploadimg
-                isShown={activeStep === 0}
-                setToast={setToast}
-                formData={formData}
-                updateFormData={updateFormData}
-              />
-           
+              <form action="">
+                <Uploadimg
+                  isShown={activeStep === 0}
+                  setToast={setToast}
+                  formData={formData}
+                  updateFormData={updateFormData}
+                />
                 <Personal
                   isShown={activeStep === 1}
                   formData={formData}
                   updateFormData={updateFormData}
                 />
-           
-              {activeStep === 2 && (
-                <Contact formData={formData} updateFormData={updateFormData} />
-              )}
-              {activeStep === 3 && (
+                <Contact
+                  isShown={activeStep === 2}
+                  formData={formData}
+                  updateFormData={updateFormData}
+                />
                 <Qualifications
+                  isShown={activeStep === 3}
                   formData={formData}
                   updateFormData={updateFormData}
                 />
-              )}
-              {activeStep === 4 && (
                 <Experience
+                  isShown={activeStep === 4}
                   formData={formData}
                   updateFormData={updateFormData}
                 />
-              )}
-              {activeStep === 5 && (
                 <Reference
+                  isShown={activeStep === 5}
                   formData={formData}
                   updateFormData={updateFormData}
                 />
-              )}
-              {activeStep === 6 && (
-                <Payment formData={formData} updateFormData={updateFormData} />
-              )}
+                <Payment
+                  isShown={activeStep === 6}
+                  formData={formData}
+                  updateFormData={updateFormData}
+                />
+              </form>
             </motion.div>
           </AnimatePresence>
         </div>

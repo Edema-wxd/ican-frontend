@@ -4,12 +4,24 @@ import InputEle from "../genui/InputEle";
 import React from "react";
 
 interface QualificationsProps {
+  isShown: boolean;
+
   formData: BiodataFormData;
   updateFormData: (data: Partial<BiodataFormData>) => void;
 }
 
-function Qualifications({ formData, updateFormData }: QualificationsProps) {
-    const handleChange = (
+function Qualifications({
+  isShown,
+  formData,
+  updateFormData,
+}: QualificationsProps) {
+  var bucket = "";
+  if (isShown) {
+    bucket = "flex";
+  } else {
+    bucket = "hidden";
+  }
+  const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
@@ -25,7 +37,7 @@ function Qualifications({ formData, updateFormData }: QualificationsProps) {
     console.log(formData);
   };
   return (
-    <div className="pt-4 flex flex-col justify-between gap-4 ">
+    <div className={`${bucket}  pt-4 flex flex-col justify-between gap-4 `}>
       <h3 className="font-bold font-mono text-2xl text-black ">
         EDUCATION AND PROFESSIONAL QUALIFICATION
         <hr />

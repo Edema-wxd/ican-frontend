@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import { FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
 
 interface InputEleProps {
   type: string;
@@ -28,6 +29,12 @@ function InputEle({
   errorMsg = "",
   onChange = () => {},
 }: InputEleProps) {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   if (type === "text") {
     return (
       <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
@@ -498,10 +505,39 @@ function InputEle({
           value={id}
           required={required}
           onChange={(id) => {
-            onChange
+            onChange;
           }}
         />
         <p></p>
+      </div>
+    );
+  }
+  if (type === "password") {
+    return (
+      <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
+        <label className=" text-base font-sans font-semibold  " htmlFor={id}>
+          {label} {required ? <span className="text-red-600">*</span> : ""}
+        </label>
+        <div className="relative">
+          <FaLock className="absolute left-3 top-[.8rem] text-gray-400 text-md" />
+          <input
+            className=" w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 "
+            type={showPassword ? "text" : "password"}
+            id={id}
+            name={id}
+            placeholder={placeholder}
+            onChange={onChange}
+            required={required}
+          />
+          <button
+            type="button"
+            onClick={togglePasswordVisibility}
+            className="absolute right-3 top-3 text-gray-400 text-md focus:outline-none"
+          >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </button>
+        </div>
+        <p>{errorMsg}</p>
       </div>
     );
   }

@@ -5,14 +5,11 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  FaRegCircle,
   FaLock,
   FaEye,
   FaEyeSlash,
-  FaRegCheckCircle,
 } from "react-icons/fa";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
-import Toast from "@/components/genui/Toast";
 
 function Signup() {
   const [loading, setLoading] = useState(false);

@@ -11,11 +11,12 @@ import {
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from 'next/link';
 
 
 
 const topMenuItems = [
-  { icon: Home, label: 'Overview', href: '/' },
+  { icon: Home, label: 'Overview', href: '/dashboard' },
   { icon: CreditCard, label: 'Payment', href: '/payment' },
   { icon: Calendar, label: 'Events', href: '/events' },
   { icon: FileText, label: 'Resources', href: '/resources' },
@@ -23,7 +24,7 @@ const topMenuItems = [
 ];
 
 const bottomMenuItems = [
-  { icon: User, label: 'Profile', href: '/profile' },
+  { icon: User, label: 'Profile', href: '/Profile' },
   { icon: Settings, label: 'Settings', href: '/settings' }
 ];
 
@@ -61,18 +62,19 @@ export const Sidebar = () => {
           {/* Bottom Menu Group */}
           <div className="mt-32 space-y-8">
             {bottomMenuItems.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className={cn(
-                  "flex items-center space-x-3 px-6 rounded-lg",
-                  "transition-colors",
-                  "text-white"
-                )}
-              >
-                <item.icon className="w-5 h-5" />
-                <span className="hover:text-green-500">{item.label}</span>
-              </a>
+               <Link 
+               key={index} 
+               href={item.href}
+               className={cn(
+                "flex items-center space-x-3 px-6 rounded-lg",
+                "transition-colors",
+                "text-white"
+              )}>
+               
+                 <item.icon className="w-5 h-5" />
+                 <span className="hover:text-green-500">{item.label}</span>
+               
+             </Link>
             ))}
           </div>
         </div>

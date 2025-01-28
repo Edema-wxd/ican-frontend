@@ -9,14 +9,14 @@ function Dashboard() {
         <p className="text-gray-600 mt-6">
           Find the resources you need and the latest events related to ICAN and Surulere district here.
         </p>
-        <hr className="mt-4 border-gray-300" />
+        <hr className="mt-4 border-gray-400" />
       </div>
 
       {/* Centered Welcome Box */}
       <div className="flex flex-grow items-center justify-center mt-10">
-        <div className="bg-white shadow-xl rounded-xl p-10 max-w-xl h-full text-center">
-          <h2 className="text-3xl font-bold text-gray-800 ">Welcome!</h2>
-          <p className="text-gray-600 mt-10 text-base p-4">
+        <div className="bg-white shadow-2xl rounded-xl p-14 max-w-4xl h-full text-center">
+          <h2 className="text-5xl font-bold text-gray-800 ">Welcome!</h2>
+          <p className="mt-10 text-2xl px-10 text-gray-700">
             Your account is being reviewed. We will send an email to you once the review is complete.
             Please keep an eye on your email.
           </p>

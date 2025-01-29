@@ -25,7 +25,7 @@ export default function AuthLayout({
           <Sidebar />
           <div className="flex-1 pt-12 bg-gray-50">
             <Header />
-            <main className="pt-12 p-6">
+            <main className="pt-16 p-6">
               {children}
             </main>
           </div>

@@ -133,7 +133,7 @@ function AdminLogin() {
           <h4 className=" text-primary text-center text-3xl font-bold font-mono   ">
             Login to your account
           </h4>
-          <p className=" text-base font-normal font-sans  ">
+          <p className=" text-base text-center font-normal font-sans  ">
             Please, enter your details below
           </p>
         </div>

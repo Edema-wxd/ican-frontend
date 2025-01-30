@@ -14,9 +14,9 @@ export default function AdminAuthLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex min-h-0  bg-white items-center flex-col justify-center w-full ">
+      <body className="flex min-h-0 pt-20 pl-20 bg-white items-start flex-col justify-center w-full ">
         <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
-        <div className="pt-20">{children}</div>
+        <div className="pt-20 mx-auto">{children}</div>
         <Toaster />
       </body>
     </html>

@@ -521,7 +521,7 @@ function InputEle({
         <div className="relative">
           <FaLock className="absolute left-3 top-[.8rem] text-gray-400 text-md" />
           <input
-            className=" w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 "
+            className=" border-gray-400 w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 "
             type={showPassword ? "text" : "password"}
             id={id}
             name={id}

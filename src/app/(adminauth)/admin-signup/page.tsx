@@ -4,19 +4,27 @@ import React, { useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import InputEle from "@/components/genui/InputEle";
+import { Fira_Code } from "next/font/google";
 
-function AdminLogin() {
+function AdminSignup() {
   const [loading, setLoading] = useState(false);
   const [complete, setComplete] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    status: false,
+    address: "",
     email: "",
-    password: "",
-    remember: false,
+    phone: "",
   });
   const [formErrors, setFormErrors] = useState({
+    firstName: "",
+    lastName: "",
+    status: "",
+    address: "",
     email: "",
-    password: "",
+    phone: "",
   });
   // const [showToast, setShowToast] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
@@ -81,21 +89,40 @@ function AdminLogin() {
     const email = (
       document.getElementById("email") as HTMLInputElement
     ).value.trim();
-    const password = (
-      document.getElementById("password") as HTMLInputElement
+    const firstName = (
+      document.getElementById("firstName") as HTMLInputElement
+    ).value.trim();
+    const lastName = (
+      document.getElementById("lastName") as HTMLInputElement
+    ).value.trim();
+    const status = (
+      document.getElementById("status") as HTMLInputElement
+    ).value.trim();
+    const address = (
+      document.getElementById("address") as HTMLInputElement
+    ).value.trim();
+    const phone = (
+      document.getElementById("phone") as HTMLInputElement
     ).value.trim();
 
     const errors = {
+      firstName: firstName,
+      lastName: lastName,
+      status: status,
+      phone: phone,
+      address: address,
       email: validateEmail(email),
-      password: password,
     };
 
     setFormErrors(errors);
 
     const data = JSON.stringify({
+      firstName: firstName,
+      lastName: lastName,
+      status: false,
+      address: address,
       email: email,
-      password: password,
-      remember: remember,
+      phone: phone,
     });
     const config = {
       method: "post",
@@ -131,21 +158,21 @@ function AdminLogin() {
       <div className="flex flex-col w-96 sm:w-[550px] items-center rounded-2xl  bg-white p-8 gap-6 ">
         <div className=" w-fit">
           <h4 className=" text-primary text-center text-3xl font-bold font-mono   ">
-            Login to your account
+            Let's get you started
           </h4>
           <p className=" text-base text-center font-normal font-sans  ">
-            Please, enter your details below
+            Enter your details carefully
           </p>
         </div>
         <form className="w-full flex flex-col gap-4 " action="">
           {/* <InputEle /> */}
           <InputEle
-            id="email"
+            id="firstName"
             type="text"
-            placeholder="Enter your email address or username"
-            label="Email Address / Username"
+            placeholder="Enter your First Name"
+            label="First Name"
             onChange={handleChange}
-            errorMsg={formErrors.email}
+            errorMsg={formErrors.firstName}
           />
           <InputEle
             id="password"
@@ -153,7 +180,7 @@ function AdminLogin() {
             placeholder="Enter password"
             label="Password"
             onChange={handleChange}
-            errorMsg={formErrors.password}
+            errorMsg={formErrors.phone}
           />
 
           <div className=" flex flex-row justify-between  ">
@@ -186,4 +213,4 @@ function AdminLogin() {
   );
 }
 
-export default AdminLogin;
+export default AdminSignup;

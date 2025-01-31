@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import InputEle from "@/components/genui/InputEle";
-import { Fira_Code } from "next/font/google";
 
 function AdminSignup() {
   const [loading, setLoading] = useState(false);
@@ -31,8 +30,16 @@ function AdminSignup() {
   const [showPopup, setShowPopup] = useState(false);
   const [popError, setPopError] = useState(false);
 
-  const [pvalid, setPvalid] = useState(false);
+  const [fname, setFname] = useState(false);
+  const [sname, setSname] = useState(false);
+  const [address, setAddress] = useState(false);
   const [evalid, setEvalid] = useState(false);
+
+  const [pvalid, setPvalid] = useState(false);
+  const [plength, setPlength] = useState(false);
+  const [pupper, setPupper] = useState(false);
+  const [pnumber, setPnumber] = useState(false);
+  const [plower, setPlower] = useState(false);
 
   const [remember, setRemember] = useState(false);
 
@@ -44,6 +51,55 @@ function AdminSignup() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return "Invalid email address.";
+    }
+    return "";
+  };
+  const validateFirstName = (firstName: string): string => {
+    const nameRegex = /^[a-zA-Z0-9]+$/;
+    if (firstName.length < 3) {
+      return "First name must be at least 3 characters long.";
+    }
+    if (!nameRegex.test(firstName)) {
+      return "First name must contain only alphanumeric characters.";
+    }
+    return "";
+  };
+
+  const validateSurname = (surname: string): string => {
+    const nameRegex = /^[a-zA-Z0-9]+$/;
+    if (surname.length < 3) {
+      return "Surname must be at least 3 characters long.";
+    }
+    if (!nameRegex.test(surname)) {
+      return "Surname must contain only alphanumeric characters.";
+    }
+    return "";
+  };
+  const validatePassword = (password: string): string => {
+    if (password.length < 8) {
+      setPlength(false);
+    } else {
+      setPlength(true);
+    }
+    if (!/[A-Z]/.test(password)) {
+      setPupper(false);
+    } else {
+      setPupper(true);
+    }
+    if (!/[a-z]/.test(password)) {
+      setPlower(false);
+    } else {
+      setPlower(true);
+    }
+    if (!/\d/.test(password)) {
+      setPnumber(false);
+    } else {
+      setPnumber(true);
+    }
+    if (!/[@$!%*?&]/.test(password)) {
+      setPnumber(false);
+    } else {
+      setPvalid(true);
     }
     return "";
   };
@@ -59,15 +115,26 @@ function AdminSignup() {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
+    console.log(formData);
     let error = "";
-
+    if (name === "firstName") {
+      error = validateFirstName(value);
+      setFname(!error);
+    }
+    if (name === "surname") {
+      error = validateSurname(value);
+      setSname(!error);
+    }
+    if (name === "address") {
+      error = validateFirstName(value);
+      setAddress(!error);
+    }
     if (name === "email") {
       error = validateEmail(value);
       setEvalid(!error);
     }
-
-    if (name === "remember") {
-      setRemember(checked);
+    if (name === "password") {
+      error = validatePassword(value);
     }
 
     setFormErrors({
@@ -75,7 +142,7 @@ function AdminSignup() {
       [name]: error,
     });
 
-    if (pvalid && evalid) {
+    if (pvalid && evalid && fname && sname) {
       setComplete(true);
     } else {
       setComplete(false);
@@ -127,7 +194,7 @@ function AdminSignup() {
     const config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://ican-sds-api.onrender.com/api/v1/auth/register", // Change to admin login
+      url: "", // Change to admin login
       headers: {
         "Content-Type": "application/json",
       },
@@ -175,10 +242,42 @@ function AdminSignup() {
             errorMsg={formErrors.firstName}
           />
           <InputEle
-            id="password"
-            type="password"
-            placeholder="Enter password"
-            label="Password"
+            id="lastName"
+            type="text"
+            placeholder="Enter your Last Name"
+            label="Last Name"
+            onChange={handleChange}
+            errorMsg={formErrors.lastName}
+          />
+          <InputEle
+            id="status"
+            type="text"
+            placeholder="Enter your status"
+            label="Status"
+            onChange={handleChange}
+            errorMsg={formErrors.status}
+          />
+          <InputEle
+            id="address"
+            type="text"
+            placeholder="Enter your home address"
+            label="Home address"
+            onChange={handleChange}
+            errorMsg={formErrors.address}
+          />
+          <InputEle
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            label="Email address"
+            onChange={handleChange}
+            errorMsg={formErrors.email}
+          />
+          <InputEle
+            id="phone"
+            type="phone"
+            placeholder="Enter phone number"
+            label="Phone"
             onChange={handleChange}
             errorMsg={formErrors.phone}
           />

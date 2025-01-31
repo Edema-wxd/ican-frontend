@@ -10,7 +10,6 @@ import Typography from "@mui/material/Typography";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import Toast from "./genui/Toast";
 
 import Contact from "./biosteps/Contact";
 import Experience from "./biosteps/Experience";
@@ -20,9 +19,6 @@ import Qualifications from "./biosteps/Qualifications";
 import Reference from "./biosteps/Reference";
 import Uploadimg from "./biosteps/Uploadimg";
 
-// import MobileStepper from "@mui/material/MobileStepper";
-// import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-// import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 
 const steps = [
   { number: 0, title: "Upload Image" },
@@ -213,67 +209,6 @@ function Biodata() {
     saveFormProgress(dataToSave);
   }, [formData]);
 
-  // const validateStep = (currentStep: number): boolean => {
-  //   switch (currentStep) {
-  //     case 1:
-  //       if (!formData.title.trim()) {
-  //         setToast({ type: "error", message: "Please enter an event title" });
-  //         return false;
-  //       }
-  //       if (!formData.description.trim()) {
-  //         setToast({
-  //           type: "error",
-  //           message: "Please enter an event description",
-  //         });
-  //         return false;
-  //       }
-  //       if (!formData.image) {
-  //         setToast({ type: "error", message: "Please upload an event image" });
-  //         return false;
-  //       }
-  //       if (!formData.date || !formData.time) {
-  //         setToast({
-  //           type: "error",
-  //           message: "Please set event date and time",
-  //         });
-  //         return false;
-  //       }
-  //       if (!formData.venue || !formData.location) {
-  //         setToast({
-  //           type: "error",
-  //           message: "Please enter event venue and location",
-  //         });
-  //         return false;
-  //       }
-  //       return true;
-
-  //     case 2:
-  //       if (formData.ticketType.length === 0) {
-  //         setToast({
-  //           type: "error",
-  //           message: "Please add at least one ticket type",
-  //         });
-  //         return false;
-  //       }
-  //       for (const ticket of formData.ticketType) {
-  //         if (!ticket.name || !ticket.price || !ticket.quantity) {
-  //           setToast({
-  //             type: "error",
-  //             message: "Please fill in all ticket details",
-  //           });
-  //           return false;
-  //         }
-  //       }
-  //       return true;
-
-  //     case 3:
-  //       return true;
-
-  //     default:
-  //       return true;
-  //   }
-  // };
-
   const handleNext = () => {
     let newSkipped = skipped;
     if (isStepSkipped(activeStep)) {
@@ -291,8 +226,6 @@ function Biodata() {
 
   const handleSkip = () => {
     if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
       throw new Error("You can't skip a step that isn't optional.");
     }
 
@@ -371,7 +304,7 @@ function Biodata() {
                   </Box>
                 </Fragment>
               )}{" "}
-              <form action="">
+              <form className="mt-6" action="">
                 <Uploadimg
                   isShown={activeStep === 0}
                   setToast={setToast}

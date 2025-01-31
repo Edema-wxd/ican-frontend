@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
 
@@ -491,22 +490,14 @@ function InputEle({
           {label} {required ? <span className="text-red-600">*</span> : ""}
         </label>
 
-        <PhoneInput
-          countrySelectorStyleProps={{
-            buttonStyle: {
-              background: "transparent",
-              border: "none",
-            },
-          }}
-          className="border rounded p-1 border-gray-400 "
-          inputStyle={{ background: "transparent", border: "none" }}
-          inputClassName="w-full text-base  "
-          defaultCountry="ng"
-          value={id}
+        <input
+          className=" p-3 rounded border border-gray-400  "
+          placeholder={placeholder}
+          name={id}
+          id={id}
           required={required}
-          onChange={(id) => {
-            onChange;
-          }}
+          type={type}
+          onChange={onChange}
         />
         <p></p>
       </div>

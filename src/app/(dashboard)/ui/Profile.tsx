@@ -150,7 +150,7 @@ function Profile() {
         <hr className="mb-8 border-gray-400" />
 
         {/* Contact Details Section */}
-        <div className="w-full mb-8 flex flex-col md:flex-row md:gap-[7rem]">
+        <div className="w-full mb-8 flex flex-col md:flex-row md:gap-[6.5rem]">
           <h2 className="text-base font-medium mb-4">Contact Details</h2>
           <div className="w-full md:w-[60%] grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>

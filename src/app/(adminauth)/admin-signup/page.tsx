@@ -107,6 +107,10 @@ function AdminSignup() {
 
     const errors = {
       firstName: firstName,
+      lastName: lastName,
+      status: status,
+      phone: phone,
+      address: address,
       email: validateEmail(email),
     };
 

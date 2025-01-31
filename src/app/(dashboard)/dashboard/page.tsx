@@ -15,7 +15,7 @@ function Dashboard() {
       {/* Centered Welcome Box */}
       <div className="flex flex-grow items-center justify-center mt-10">
         <div className="bg-white shadow-2xl rounded-xl p-14 max-w-4xl h-full text-center">
-          <h2 className="text-5xl font-bold text-gray-800 ">Welcome!</h2>
+          <h2 className="text-5xl font-semibold text-gray-800 ">Welcome!</h2>
           <p className="mt-10 text-2xl px-10 text-gray-700">
             Your account is being reviewed. We will send an email to you once the review is complete.
             Please keep an eye on your email.

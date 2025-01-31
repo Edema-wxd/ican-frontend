@@ -20,7 +20,7 @@ const topMenuItems = [
   { icon: CreditCard, label: 'Payment', href: '/payment' },
   { icon: Calendar, label: 'Events', href: '/events' },
   { icon: FileText, label: 'Resources', href: '/resources' },
-  { icon: Notebook, label: 'MCPD Records', href: '/mcpd-records' },
+  { icon: Notebook, label: 'MCPD Records', href: '/MCPDRecords' },
 ];
 
 const bottomMenuItems = [

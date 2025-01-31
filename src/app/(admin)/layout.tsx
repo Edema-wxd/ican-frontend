@@ -1,5 +1,6 @@
 import "../globals.css";
-import { Toaster } from "@/components/ui/toaster";
+import Toast from "@/components/genui/Toast";
+
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "ICAN Surulere",
@@ -17,7 +18,9 @@ export default function AdminLayout({
         <div className="mt-40">
           <h1>Admin layout</h1>
           <div>{children}</div>
-          <Toaster />
+          {/* <Toast type="error" message="error" />
+          <Toast type="warning" message="warning" />
+          <Toast type="info" message="info" /> */}
         </div>
       </body>
     </html>

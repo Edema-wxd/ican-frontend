@@ -7,7 +7,6 @@ import Sent from "./steps/Sent";
 
 function ForgotPassword() {
   const [step, setStep] = useState(1);
-  //   const [toast, setToast] = useState<{ type: 'success' | 'error' | 'info'; message: string; } | null>(null);
 
   const steps = [
     { number: 1, title: "Forgot Password" },

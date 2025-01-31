@@ -19,6 +19,7 @@ import Qualifications from "./biosteps/Qualifications";
 import Reference from "./biosteps/Reference";
 import Uploadimg from "./biosteps/Uploadimg";
 
+import Toast from "./genui/Toast";
 
 const steps = [
   { number: 0, title: "Upload Image" },
@@ -97,10 +98,7 @@ export type BiodataFormData = {
 function Biodata() {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
-  const [toast, setToast] = useState<{
-    type: "success" | "error" | "info";
-    message: string;
-  } | null>(null);
+
   const [formData, setFormData] = useState<BiodataFormData>({
     image: null,
     personalData: {
@@ -183,11 +181,10 @@ function Biodata() {
       const savedImageMeta = localStorage.getItem("biodataFormImageMeta");
       if (savedImageMeta) {
         try {
-          console.log("help");
-          setToast({
-            type: "info",
-            message: "Please re-upload your image for security reasons",
-          });
+          <Toast
+            type="info"
+            message="Please re-upload your image for security reasons"
+          />;
         } catch (error) {
           console.error("Error parsing saved image metadata:", error);
         }
@@ -307,7 +304,6 @@ function Biodata() {
               <form className="mt-6" action="">
                 <Uploadimg
                   isShown={activeStep === 0}
-                  setToast={setToast}
                   formData={formData}
                   updateFormData={updateFormData}
                 />

@@ -1,5 +1,4 @@
 import "../globals.css";
-import { Toaster } from "@/components/ui/toaster";
 import Image from "next/image";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
@@ -17,7 +16,6 @@ export default function AdminAuthLayout({
       <body className="flex min-h-0 pt-20 pl-20 bg-white items-start flex-col justify-center w-full ">
         <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
         <div className="pt-20 mx-auto">{children}</div>
-        <Toaster />
       </body>
     </html>
   );

@@ -25,7 +25,6 @@ function AdminSignup() {
     email: "",
     phone: "",
   });
-  // const [showToast, setShowToast] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const [popError, setPopError] = useState(false);

@@ -177,7 +177,7 @@ function AdminLogin() {
         </form>
         <p className=" text-base font-medium   ">
           Don&apos;t have an account? {"       "}
-          <Link className=" text-primary " href={"/sign-up"}>
+          <Link className=" text-primary " href={"/admin-signup"}>
             Sign Up
           </Link>
         </p>

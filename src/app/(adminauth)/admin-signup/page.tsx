@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import InputEle from "@/components/genui/InputEle";
+import Toast from "@/components/genui/Toast";
 
 function AdminSignup() {
   const [loading, setLoading] = useState(false);
   const [complete, setComplete] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -25,9 +25,7 @@ function AdminSignup() {
     email: "",
     phone: "",
   });
-  const [popupMessage, setPopupMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
-  const [popError, setPopError] = useState(false);
+
 
   const [fname, setFname] = useState(false);
   const [sname, setSname] = useState(false);
@@ -42,9 +40,7 @@ function AdminSignup() {
 
   const [remember, setRemember] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+
 
   const validateEmail = (email: string): string => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -204,13 +200,9 @@ function AdminSignup() {
       // Submit form
       try {
         const response = await axios.request(config);
-        setPopupMessage(response.data.message);
-        setShowPopup(true);
-        setPopError(false);
+        return <Toast type="success" message={response.data.message} />;
       } catch (error) {
-        setPopupMessage("An error occurred during login.");
-        setPopError(true);
-        setShowPopup(true);
+        return <Toast type="error" message="An error occurred during login." />;
       } finally {
         setLoading(false);
       }

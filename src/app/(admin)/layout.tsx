@@ -1,6 +1,6 @@
 import "../globals.css";
-import Toast from "@/components/genui/Toast";
-
+import Sidebar from "@/components/admincomps/Sidebar";
+import Header from "@/components/admincomps/Header";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "ICAN Surulere",
@@ -14,13 +14,11 @@ export default function AdminLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <div className="mt-40">
-          <h1>Admin layout</h1>
-          <div>{children}</div>
-          {/* <Toast type="error" message="error" />
-          <Toast type="warning" message="warning" />
-          <Toast type="info" message="info" /> */}
+      <body className=" flex flex-row">
+        <Sidebar />
+        <div className=" w-full ">
+          <Header />
+          <main className="pt-16 p-6">{children}</main>
         </div>
       </body>
     </html>

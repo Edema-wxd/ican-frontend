@@ -3,11 +3,13 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import All from "./tabs/All";
+
 function Content() {
   return (
     <div>
       {/* Tab sections */}{" "}
-      <Tabs  defaultValue="all">
+      <Tabs defaultValue="all">
         <TabsList className="">
           <TabsTrigger value="all">All</TabsTrigger>
           <TabsTrigger value="adverts">Adverts</TabsTrigger>
@@ -17,7 +19,9 @@ function Content() {
           <TabsTrigger value="technical">Technical Session</TabsTrigger>
           <TabsTrigger value="student">Student Pack</TabsTrigger>
         </TabsList>
-        <TabsContent value="all">All </TabsContent>
+        <TabsContent value="all">
+          <All />{" "}
+        </TabsContent>
         <TabsContent value="adverts">Advert </TabsContent>
         <TabsContent value="blogs">Blogs </TabsContent>
         <TabsContent value="publication">Publication </TabsContent>

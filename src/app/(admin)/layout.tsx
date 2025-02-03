@@ -16,7 +16,7 @@ export default function AdminLayout({
     <html lang="en">
       <body className=" flex flex-row">
         <Sidebar />
-        <div className=" w-full ">
+        <div className=" w-full bg-neutral-100">
           <Header />
           <main className="pt-16 p-6">{children}</main>
         </div>

@@ -223,12 +223,12 @@ function Profile() {
             <div className='md:w-[60%] grid grid-cols-1 sm:grid-cols-2 gap-6'>
           <button
             type="submit"
-            className="sm:w-auto bg-[#27378C] text-white px-8 py-2 rounded-full hover:bg-blue-700">
+            className="sm:w-auto bg-primary text-white px-8 py-2 rounded-full hover:bg-blue-700">
             Save changes
           </button>
           <button
             type="button"
-            className="sm:w-auto bg-[#E7EAFF] text-[#27378C] px-8 py-2 rounded-full hover:bg-gray-200"
+            className="sm:w-auto bg-primary text-[#27378C] px-8 py-2 rounded-full hover:bg-gray-200"
           >
             Cancel
           </button>

@@ -1,6 +1,7 @@
-import React from 'react';
+'use client';
+import React, { useState, useRef, useEffect } from 'react';
 import { Search, BellIcon,ChevronDown} from 'lucide-react';
-
+import Notification from '@/components/Notification';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,6 +14,25 @@ import {
 
 
 export const Header = () => {
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const notificationRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (notificationRef.current && !notificationRef.current.contains(event.target as Node)) {
+        setIsNotificationOpen(false);
+      }
+    };
+
+    if (isNotificationOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isNotificationOpen]);
+
   return (
     <header className="h-[6rem] fixed top-0 right-0 left-60 z-30 p-2">
       <div className="h-full bg-white rounded-[50px] border border-gray-400 shadow-sm px-12 flex items-center justify-between">
@@ -39,9 +59,20 @@ export const Header = () => {
         <div className="flex items-center space-x-8"> 
         <div className="relative">
             <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-              <BellIcon className="w-6 h-6 " />
+              <BellIcon
+              onClick={() => setIsNotificationOpen(!isNotificationOpen)}
+               className="w-6 h-6 " />
               <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">5</span>
-            </div></div>
+            </div>
+            {isNotificationOpen && (
+              <div
+                ref={notificationRef}
+                className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg z-50"
+              >
+                <Notification />
+              </div>
+            )}
+            </div>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center space-x-2 outline-none">
               <div className="w-10 h-10 rounded-full overflow-hidden">

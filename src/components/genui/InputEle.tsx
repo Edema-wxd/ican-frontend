@@ -50,7 +50,7 @@ function InputEle({
           onChange={onChange}
         />
 
-        <p>{errorMsg}</p>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );
   }
@@ -70,7 +70,7 @@ function InputEle({
           onChange={onChange}
         />
 
-        <p>{errorMsg}</p>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );
   }
@@ -93,7 +93,7 @@ function InputEle({
           onChange={onChange}
         />
 
-        <p>{errorMsg}</p>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );
   }
@@ -113,7 +113,7 @@ function InputEle({
           onChange={onChange}
         />
 
-        <p>{errorMsg}</p>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );
   }
@@ -528,7 +528,7 @@ function InputEle({
             {showPassword ? <FaEyeSlash /> : <FaEye />}
           </button>
         </div>
-        <p>{errorMsg}</p>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );
   }

@@ -8,8 +8,7 @@ import Toast from "@/components/genui/Toast";
 import axios from "axios";
 
 function Login() {
-  const [loading, setLoading] = useState(false);
-
+  const [validreq, setValidreq] = useState(true);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -31,27 +30,31 @@ function Login() {
   const validatePassword = (password: string): string => {
     if (password.length < 8) {
       setPlength(false);
+      return "No Password too short ";
     } else {
       setPlength(true);
     }
     if (!/[A-Z]/.test(password)) {
       setPupper(false);
+      return "No Uppercase letters";
     } else {
       setPupper(true);
     }
     if (!/[a-z]/.test(password)) {
       setPlower(false);
+      return "No Lowercase letters";
     } else {
       setPlower(true);
     }
     if (!/\d/.test(password)) {
       setPnumber(false);
+      return "No Number Charcter";
     } else {
       setPnumber(true);
     }
     if (!/[@$!%*?&]/.test(password)) {
       setPnumber(false);
-      return("no special charcter")
+      return "No Special Charcter";
     } else {
       setPvalid(true);
     }
@@ -75,7 +78,6 @@ function Login() {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
-    console.log(formData);
     let error = "";
 
     if (name === "email") {
@@ -99,7 +101,6 @@ function Login() {
   };
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
 
     const email = (
       document.getElementById("email") as HTMLInputElement
@@ -107,6 +108,7 @@ function Login() {
     const password = (
       document.getElementById("password") as HTMLInputElement
     ).value.trim();
+    console.log(email, password);
 
     const errors = {
       password: validatePassword(password),
@@ -137,10 +139,10 @@ function Login() {
       } catch (error) {
         return <Toast type="error" message="An error occurred during login." />;
       } finally {
-        setLoading(false);
+        setValidreq(false);
       }
     } else {
-      setLoading(false);
+      setValidreq(false);
     }
   };
 
@@ -187,7 +189,7 @@ function Login() {
             </Link>
           </div>
           <button
-            disabled={ !loading}
+            disabled={!validreq}
             className=" px-8 py-4 bg-primary rounded-full text-white text-base disabled:bg-gray-600 font-semibold "
             type="submit"
           >

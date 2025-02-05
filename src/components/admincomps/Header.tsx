@@ -26,7 +26,7 @@ function Header() {
 
   const item = findMenuItem(pathname);
   return (
-    <header className="h-24 w-full py-6 bg-white  border border-gray-400 shadow-sm px-8 flex items-center justify-between">
+    <header className="h-24 w-full py-6 bg-white shadow-sm px-8 flex items-center justify-between">
       <div className="flex flex-row items-center gap-4">
         {item && <item.icon className="w-6 h-6 fill-primary" />}
         <p className=" text-black  whitespace-nowrap">{item?.label}</p>

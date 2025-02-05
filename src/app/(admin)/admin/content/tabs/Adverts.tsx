@@ -3,14 +3,14 @@
 import React, { useEffect, useState } from "react";
 // import { Pagination } from "@/components/ui/pagination";
 import { ContentTable } from "@/components/genui/ContentTable";
-import { allcolumns } from "@/components/genui/columns";
+import { advertscolumns } from "@/components/genui/columns";
 import { Content, contents } from "@/components/genui/colsdata";
 
 async function getData(): Promise<Content[]> {
   return contents;
 }
 
-function All() {
+function Adverts() {
   const [data, setData] = useState<Content[]>([]);
 
   useEffect(() => {
@@ -25,10 +25,10 @@ function All() {
     <div className="rounded-3xl px-8 py-6 flex flex-col gap-4 border border-neutral-200 bg-white">
       <h2 className="text-xl font-semibold text-left">All Content</h2>
       <div>
-        <ContentTable columns={allcolumns} data={data} />
+        <ContentTable columns={advertscolumns} data={data} />
       </div>
     </div>
   );
 }
 
-export default All;
+export default Adverts;

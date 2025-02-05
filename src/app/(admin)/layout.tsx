@@ -14,11 +14,11 @@ export default function AdminLayout({
 }) {
   return (
     <html lang="en">
-      <body className=" flex flex-row">
+      <body className=" h-full flex flex-row">
         <Sidebar />
         <div className=" w-full bg-neutral-100">
           <Header />
-          <main className="pt-16 p-6">{children}</main>
+          <main className="p-6">{children}</main>
         </div>
       </body>
     </html>

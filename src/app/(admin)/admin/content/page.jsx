@@ -4,6 +4,7 @@ import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import All from "./tabs/All";
+import Adverts from "./tabs/Adverts";
 
 function Content() {
   return (
@@ -22,7 +23,9 @@ function Content() {
         <TabsContent value="all">
           <All />{" "}
         </TabsContent>
-        <TabsContent value="adverts">Advert </TabsContent>
+        <TabsContent value="adverts">
+          <Adverts />{" "}
+        </TabsContent>
         <TabsContent value="blogs">Blogs </TabsContent>
         <TabsContent value="publication">Publication </TabsContent>
         <TabsContent value="galleries">Galleries </TabsContent>

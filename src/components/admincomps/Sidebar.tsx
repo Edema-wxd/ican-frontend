@@ -41,7 +41,7 @@ function Sidebar() {
   const activePage = item?.label;
 
   return (
-    <aside className="sticky top-0 flex-shrink-0 w-fit bg-white text-black border-r flex flex-col p-4">
+    <aside className="h-fit w-fit bg-white text-black border-r flex flex-col p-4">
       {/* Logo */}
       <div className="h-16 flex items-center px-6 py-12 border-b border-gray-200">
         <Image alt="Logo" width={200} height={80} src="/Logo_big.png" />
@@ -50,8 +50,8 @@ function Sidebar() {
       {/* Navigation Menu */}
       <nav className="flex flex-col">
         {/* Top Menu Group */}
-        <div className="flex-grow py-12">
-          <div className="space-y-8">
+        <div className="flex flex-col py-12">
+          <div className="my-4 flex flex-col gap-2">
             {topMenuItems.map((item, index) => (
               <Link
                 key={index}
@@ -66,11 +66,9 @@ function Sidebar() {
               </Link>
             ))}
           </div>
-          {/* 
-          <div className="my-6" /> */}
 
           {/* Bottom Menu Group */}
-          <div className="mt-32 space-y-8">
+          <div className="mt-10 flex flex-col gap-2">
             {bottomMenuItems.map((item, index) => (
               <Link
                 key={index}

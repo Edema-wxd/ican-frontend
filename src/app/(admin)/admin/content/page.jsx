@@ -7,9 +7,9 @@ import All from "./tabs/All";
 
 function Content() {
   return (
-    <div className="rounded-3xl bg-white p-6">
+    <div className="rounded-3xl p-6">
       {/* Tab sections */}{" "}
-      <Tabs defaultValue="all">
+      <Tabs defaultValue="all" className="flex flex-col gap-4">
         <TabsList>
           <TabsTrigger value="all">All</TabsTrigger>
           <TabsTrigger value="adverts">Adverts</TabsTrigger>

@@ -5,6 +5,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import All from "./tabs/All";
 import Adverts from "./tabs/Adverts";
+import Blogs from "./tabs/Blogs";
+import Publications from "./tabs/Publications";
+import Galleries from "./tabs/Galleries";
+import Technical from "./tabs/Technical";
+import Student from "./tabs/Student";
 
 function Content() {
   return (
@@ -26,11 +31,21 @@ function Content() {
         <TabsContent value="adverts">
           <Adverts />{" "}
         </TabsContent>
-        <TabsContent value="blogs">Blogs </TabsContent>
-        <TabsContent value="publication">Publication </TabsContent>
-        <TabsContent value="galleries">Galleries </TabsContent>
-        <TabsContent value="technical">Technical Session </TabsContent>
-        <TabsContent value="student">Student Pack</TabsContent>
+        <TabsContent value="blogs">
+          <Blogs />{" "}
+        </TabsContent>
+        <TabsContent value="publication">
+          <Publications />{" "}
+        </TabsContent>
+        <TabsContent value="galleries">
+          <Galleries />{" "}
+        </TabsContent>
+        <TabsContent value="technical">
+          <Technical />{" "}
+        </TabsContent>
+        <TabsContent value="student">
+          <Student />
+        </TabsContent>
       </Tabs>
     </div>
   );

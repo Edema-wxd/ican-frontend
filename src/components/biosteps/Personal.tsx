@@ -43,6 +43,7 @@ function Personal({ isShown, formData, updateFormData }: PersonalProps) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 ">
         <InputEle
+          value={formData.personalData.surname}
           onChange={handleChange}
           id="surname"
           placeholder="Enter your surname"
@@ -50,6 +51,7 @@ function Personal({ isShown, formData, updateFormData }: PersonalProps) {
           label="Surname"
         />
         <InputEle
+          value={formData.personalData.firstName}
           onChange={handleChange}
           id="firstName"
           placeholder="Enter your first name"
@@ -57,6 +59,7 @@ function Personal({ isShown, formData, updateFormData }: PersonalProps) {
           label="First Name"
         />
         <InputEle
+          value={formData.personalData?.middleName}
           onChange={handleChange}
           id="middleName"
           placeholder="Enter your middle name"
@@ -64,30 +67,35 @@ function Personal({ isShown, formData, updateFormData }: PersonalProps) {
           label="Middle Name"
         />
         <InputEle
+          value={formData.personalData?.gender}
           onChange={handleChange}
           id="gender"
           type="gender"
           label="Gender"
         />
         <InputEle
+          value={formData.personalData?.dob}
           onChange={handleChange}
           id="dob"
           type="date"
           label="Date of birth"
         />
         <InputEle
+          value={formData.personalData?.maritalStatus}
           onChange={handleChange}
           id="maritalStatus"
           type="marriage"
           label="Marital Status"
         />
         <InputEle
+          value={formData.personalData?.nationality}
           onChange={handleChange}
           id="nationality"
           type="country"
           label="Nationality"
         />
         <InputEle
+          value={formData.personalData?.state}
           onChange={handleChange}
           id="state"
           type="text"
@@ -95,6 +103,7 @@ function Personal({ isShown, formData, updateFormData }: PersonalProps) {
           placeholder="Enter your state of origin"
         />
         <InputEle
+          value={formData.personalData?.lga}
           onChange={handleChange}
           id="lga"
           type="text"

@@ -6,9 +6,10 @@ import { FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
 interface InputEleProps {
   type: string;
   id: string;
+  label: string;
+  value?: string;
   required?: boolean;
   placeholder?: string;
-  label: string;
   addStyle?: string;
   errorMsg?: string;
   onChange: (
@@ -26,6 +27,7 @@ function InputEle({
   placeholder = "",
   addStyle = "",
   errorMsg = "",
+  value = "",
   onChange = () => {},
 }: InputEleProps) {
   const [showPassword, setShowPassword] = useState(false);
@@ -45,6 +47,7 @@ function InputEle({
           placeholder={placeholder}
           name={id}
           id={id}
+          value={value}
           required={required}
           type={type}
           onChange={onChange}
@@ -65,6 +68,7 @@ function InputEle({
           placeholder={placeholder}
           name={id}
           id={id}
+          value={value}
           required={required}
           type={type}
           onChange={onChange}
@@ -84,6 +88,7 @@ function InputEle({
           className=" p-3 rounded border border-gray-400  "
           name={id}
           id={id}
+          value={value}
           required={required}
           type={type}
           min={1900}
@@ -108,6 +113,7 @@ function InputEle({
           placeholder={placeholder}
           name={id}
           id={id}
+          value={value}
           required={required}
           type={type}
           onChange={onChange}
@@ -127,6 +133,7 @@ function InputEle({
           className=" p-3 rounded border bg-white border-gray-400  "
           name={id}
           id={id}
+          value={value}
           required={required}
           onChange={onChange}
           defaultValue={"select"}
@@ -150,6 +157,7 @@ function InputEle({
           className=" p-3 rounded border bg-white border-gray-400  "
           name={id}
           id={id}
+          value={value}
           required={required}
           onChange={onChange}
           defaultValue={"select"}
@@ -174,6 +182,7 @@ function InputEle({
           className=" bg-white p-3 rounded border border-gray-400  "
           name={id}
           id={id}
+          value={value}
           required={required}
           onChange={onChange}
         >
@@ -495,6 +504,7 @@ function InputEle({
           placeholder={placeholder}
           name={id}
           id={id}
+          value={value}
           required={required}
           type={type}
           onChange={onChange}
@@ -515,6 +525,7 @@ function InputEle({
             className=" border-gray-400 w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 "
             type={showPassword ? "text" : "password"}
             id={id}
+            value={value}
             name={id}
             placeholder={placeholder}
             onChange={onChange}

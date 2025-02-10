@@ -21,6 +21,10 @@ const ActionsCell: React.FC<CellProps> = ({ row }) => {
   const [showUnpublishModal, setShowUnpublishModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
+  const capitalizeWords = (str: string): string => {
+    return str.replace(/\b\w/g, (char) => char.toUpperCase());
+  };
+
   return (
     <>
       <DropdownMenu>
@@ -40,7 +44,7 @@ const ActionsCell: React.FC<CellProps> = ({ row }) => {
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
-            className="hover:bg-red-600 hover:text-white"
+            className="bg-red-600 text-white"
             onClick={() => setShowDeleteModal(true)}
           >
             Delete
@@ -51,7 +55,7 @@ const ActionsCell: React.FC<CellProps> = ({ row }) => {
         <UnpublishContent
           id={row.original.id}
           title={row.original.title}
-          category={row.original.category ?? ""}
+          category={capitalizeWords(row.original.category ?? "")}
           date={row.original.published_date ?? ""}
           onClose={() => setShowUnpublishModal(false)}
         />
@@ -60,7 +64,7 @@ const ActionsCell: React.FC<CellProps> = ({ row }) => {
         <DeleteContent
           id={row.original.id}
           title={row.original.title}
-          category={row.original.category ?? ""}
+          category={capitalizeWords(row.original.category ?? "")}
           date={row.original.published_date ?? ""}
           onClose={() => setShowDeleteModal(false)}
         />

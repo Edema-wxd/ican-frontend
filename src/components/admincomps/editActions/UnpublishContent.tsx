@@ -26,6 +26,7 @@ function UnpublishContent({
     console.log({ id, title, category, date });
   };
 
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="flex flex-col p-4 rounded-xl gap-4 bg-white">
@@ -47,7 +48,9 @@ function UnpublishContent({
                 <p className="flex text-neutral-700 font-medium text-base flex-row  items-center gap-2">
                   <MdSubtitles className="w-4 h-4" /> Title:
                 </p>
-                <p className="text-black font-medium text-base ">{title}</p>
+                <p className="text-black font-medium text-base ">
+                  {title}
+                </p>
               </div>
               <div className="flex flex-row items-center gap-4">
                 <p className="flex text-neutral-700 font-medium text-base  items-center flex-row gap-2">
@@ -59,7 +62,9 @@ function UnpublishContent({
                 <p className="flex text-neutral-700 font-medium text-base   items-centerflex-row gap-2">
                   <HiOutlineTag className="w-4 h-4" /> Category:
                 </p>
-                <p className="text-black font-medium text-base ">{category}</p>
+                <p className="text-black font-medium text-base ">
+                  {category}
+                </p>
               </div>
             </div>
           </div>

@@ -136,7 +136,6 @@ function InputEle({
           value={value}
           required={required}
           onChange={onChange}
-          defaultValue={"select"}
         >
           <option value="select">Select...</option>
           <option value="male">Male </option>
@@ -160,7 +159,6 @@ function InputEle({
           value={value}
           required={required}
           onChange={onChange}
-          defaultValue={"select"}
         >
           <option value="select">Select...</option>
           <option value="single">Single </option>

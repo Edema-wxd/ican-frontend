@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import { FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
+
+interface InputEleProps {
+  type: string;
+  id: string;
+  required?: boolean;
+  placeholder?: string;
+  label: string;
+  addStyle?: string;
+  errorMsg?: string;
+  onChange: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => void;
+}
 
 function InputEle({
   type,
@@ -11,7 +27,14 @@ function InputEle({
   placeholder = "",
   addStyle = "",
   errorMsg = "",
-}) {
+  onChange = () => {},
+}: InputEleProps) {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   if (type === "text") {
     return (
       <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
@@ -25,6 +48,7 @@ function InputEle({
           id={id}
           required={required}
           type={type}
+          onChange={onChange}
         />
 
         <p>{errorMsg}</p>
@@ -44,6 +68,7 @@ function InputEle({
           id={id}
           required={required}
           type={type}
+          onChange={onChange}
         />
 
         <p>{errorMsg}</p>
@@ -66,6 +91,7 @@ function InputEle({
           max={2099}
           step={1}
           placeholder="2024"
+          onChange={onChange}
         />
 
         <p>{errorMsg}</p>
@@ -85,6 +111,7 @@ function InputEle({
           id={id}
           required={required}
           type={type}
+          onChange={onChange}
         />
 
         <p>{errorMsg}</p>
@@ -102,7 +129,10 @@ function InputEle({
           name={id}
           id={id}
           required={required}
+          onChange={onChange}
+          defaultValue={"select"}
         >
+          <option value="select">Select...</option>
           <option value="male">Male </option>
           <option value="female">Female</option>
         </select>
@@ -122,7 +152,10 @@ function InputEle({
           name={id}
           id={id}
           required={required}
+          onChange={onChange}
+          defaultValue={"select"}
         >
+          <option value="select">Select...</option>
           <option value="single">Single </option>
           <option value="married">Married </option>
           <option value="divorced">Divorced </option>
@@ -143,6 +176,7 @@ function InputEle({
           name={id}
           id={id}
           required={required}
+          onChange={onChange}
         >
           <option value="">country</option>
           <optgroup label="Asia">
@@ -470,8 +504,40 @@ function InputEle({
           defaultCountry="ng"
           value={id}
           required={required}
+          onChange={(id) => {
+            onChange;
+          }}
         />
         <p></p>
+      </div>
+    );
+  }
+  if (type === "password") {
+    return (
+      <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
+        <label className=" text-base font-sans font-semibold  " htmlFor={id}>
+          {label} {required ? <span className="text-red-600">*</span> : ""}
+        </label>
+        <div className="relative">
+          <FaLock className="absolute left-3 top-[.8rem] text-gray-400 text-md" />
+          <input
+            className=" border-gray-400 w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 "
+            type={showPassword ? "text" : "password"}
+            id={id}
+            name={id}
+            placeholder={placeholder}
+            onChange={onChange}
+            required={required}
+          />
+          <button
+            type="button"
+            onClick={togglePasswordVisibility}
+            className="absolute right-3 top-3 text-gray-400 text-md focus:outline-none"
+          >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </button>
+        </div>
+        <p>{errorMsg}</p>
       </div>
     );
   }

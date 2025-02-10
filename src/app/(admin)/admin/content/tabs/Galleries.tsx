@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 // import { Pagination } from "@/components/ui/pagination";
-import { ContentTable } from "@/components/genui/ContentTable";
-import { galleriescolumns } from "@/components/genui/columns";
-import { Content, contents } from "@/components/genui/colsdata";
+import { ContentTable } from "@/components/admincomps/datatable/ContentTable";
+import { galleriescolumns } from "@/components/admincomps/datatable/columns";
+import { Content, contents } from "@/components/admincomps/datatable/colsdata";
 
 async function getData(): Promise<Content[]> {
   return contents;

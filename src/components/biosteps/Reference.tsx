@@ -43,6 +43,7 @@ function Reference({ isShown, formData, updateFormData }: ReferenceProps) {
         placeholder="Enter your Referee Name"
         type="text"
         label="Referee Name"
+        value={formData.reference.refereeName}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 ">
@@ -52,12 +53,14 @@ function Reference({ isShown, formData, updateFormData }: ReferenceProps) {
           placeholder="Enter your Referee's ICAN Membership Number"
           type="text"
           label="Referee's ICAN Membership Number"
+          value={formData.reference.refereeIcanNo}
         />
         <InputEle
           onChange={handleChange}
           id="refereePhone"
           type="phone"
           label="Referee's Phone Number"
+          value={formData.reference.refereePhone}
         />
         <InputEle
           onChange={handleChange}
@@ -65,6 +68,7 @@ function Reference({ isShown, formData, updateFormData }: ReferenceProps) {
           type="email"
           label="Referee's Email Address"
           placeholder="example@gmail.com"
+          value={formData.reference.refereeEmail}
         />
       </div>
     </div>

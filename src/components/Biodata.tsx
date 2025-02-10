@@ -94,7 +94,7 @@ export type BiodataFormData = {
   };
   payment?: {
     receipt?: File | null;
-    waiver?: File | null;
+    waiver?: string ;
   };
 };
 

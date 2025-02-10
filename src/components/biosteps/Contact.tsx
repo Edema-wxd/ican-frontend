@@ -5,7 +5,6 @@ import InputEle from "../genui/InputEle";
 
 interface ContactProps {
   isShown: boolean;
-
   formData: BiodataFormData;
   updateFormData: (data: Partial<BiodataFormData>) => void;
 }
@@ -48,6 +47,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
           label="Contact Address"
           addStyle="col-span-2"
           onChange={handleChange}
+          value={formData.contactDetails.contactAddress}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
@@ -56,6 +56,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             type="country"
             label=" Contact Country"
             onChange={handleChange}
+            value={formData.contactDetails.contactCountry}
           />
           <InputEle
             id="contactState"
@@ -63,6 +64,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             type="text"
             label="Contact state"
             onChange={handleChange}
+            value={formData.contactDetails.contactState}
           />
           <InputEle
             id="contactCity"
@@ -70,6 +72,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             type="text"
             label="Contact City"
             onChange={handleChange}
+            value={formData.contactDetails.contactCity}
           />
           <InputEle
             id="email"
@@ -77,12 +80,14 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             type="email"
             label="Email Address"
             onChange={handleChange}
+            value={formData.contactDetails.email}
           />
           <InputEle
             id="mobileNumber"
             type="phone"
             label="Mobile Number"
             onChange={handleChange}
+            value={formData.contactDetails.mobileNumber}
           />
           <InputEle
             id="residentialAddress"
@@ -91,6 +96,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label="Residential Address"
             required={false}
             onChange={handleChange}
+            value={formData.contactDetails?.residentialAddress}
           />
           <InputEle
             id="residentialCountry"
@@ -98,6 +104,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label=" Residential Country"
             onChange={handleChange}
             required={false}
+            value={formData.contactDetails?.residentialCountry}
           />
           <InputEle
             id="residentialState"
@@ -106,6 +113,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label="Residential State"
             onChange={handleChange}
             required={false}
+            value={formData.contactDetails?.residentialState}
           />
           <InputEle
             id="residentialLga"
@@ -114,6 +122,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label="Residential LGA"
             onChange={handleChange}
             required={false}
+            value={formData.contactDetails?.residentialLga}
           />
           <InputEle
             id="residentialTelephone"
@@ -121,6 +130,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label="Residential Telephone"
             onChange={handleChange}
             required={false}
+            value={formData.contactDetails?.residentialTelephone}
           />
           <InputEle
             id="officeAddress"
@@ -129,6 +139,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label="Office Address"
             onChange={handleChange}
             required={false}
+            value={formData.contactDetails?.officeAddress}
           />
           <InputEle
             id="officeCountry"
@@ -136,6 +147,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label="Office Country"
             onChange={handleChange}
             required={false}
+            value={formData.contactDetails?.officeCountry}
           />
           <InputEle
             id="officeState"
@@ -144,6 +156,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label="Office State"
             onChange={handleChange}
             required={false}
+            value={formData.contactDetails?.officeState}
           />
           <InputEle
             id="officeCity"
@@ -152,6 +165,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label="Office City"
             onChange={handleChange}
             required={false}
+            value={formData.contactDetails?.officeCity}
           />
           <InputEle
             id="officeLga"
@@ -160,6 +174,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label="Office Lga"
             onChange={handleChange}
             required={false}
+            value={formData.contactDetails?.officeLga}
           />
           <InputEle
             id="officeTelephone"
@@ -167,6 +182,7 @@ function Contact({ isShown, formData, updateFormData }: ContactProps) {
             label="Office Telephone"
             onChange={handleChange}
             required={false}
+            value={formData.contactDetails?.officeTelephone}
           />
         </div>
       </div>

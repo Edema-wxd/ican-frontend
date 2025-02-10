@@ -44,6 +44,7 @@ function Experience({ isShown, formData, updateFormData }: ExperienceProps) {
         id="currentJob"
         type="text"
         label="Current Job "
+        value={formData?.experience?.currentJob}
       />
       <InputEle
         onChange={handleChange}
@@ -51,6 +52,7 @@ function Experience({ isShown, formData, updateFormData }: ExperienceProps) {
         id="companyName"
         type="text"
         label="Company Name"
+        value={formData?.experience?.companyName}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 ">
@@ -61,6 +63,7 @@ function Experience({ isShown, formData, updateFormData }: ExperienceProps) {
           placeholder="Enter your department"
           type="text"
           label="Department"
+          value={formData?.experience?.department}
         />
         <InputEle
           onChange={handleChange}
@@ -69,6 +72,7 @@ function Experience({ isShown, formData, updateFormData }: ExperienceProps) {
           placeholder="Enter your Current Position"
           type="text"
           label="Current Position"
+          value={formData?.experience?.currentPosition}
         />
         <InputEle
           onChange={handleChange}
@@ -76,6 +80,7 @@ function Experience({ isShown, formData, updateFormData }: ExperienceProps) {
           id="startDate"
           type="date"
           label="Start Date"
+          value={formData?.experience?.startDate}
         />
       </div>
     </div>

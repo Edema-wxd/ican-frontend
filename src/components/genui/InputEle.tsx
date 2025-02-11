@@ -6,9 +6,13 @@ import { FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
 interface InputEleProps {
   type: string;
   id: string;
+  value?: string;
+
   required?: boolean;
   placeholder?: string;
   label: string;
+  selectOptions?: string[];
+
   addStyle?: string;
   errorMsg?: string;
   onChange: (
@@ -23,9 +27,12 @@ function InputEle({
   id,
   required = true,
   label,
+  selectOptions = [],
   placeholder = "",
   addStyle = "",
   errorMsg = "",
+  value = "",
+
   onChange = () => {},
 }: InputEleProps) {
   const [showPassword, setShowPassword] = useState(false);
@@ -44,7 +51,7 @@ function InputEle({
           className=" p-3 rounded border border-gray-400  "
           placeholder={placeholder}
           name={id}
-          id={id}
+           value={value} id={id}
           required={required}
           type={type}
           onChange={onChange}
@@ -64,7 +71,7 @@ function InputEle({
           className=" p-3 rounded border border-gray-400  "
           placeholder={placeholder}
           name={id}
-          id={id}
+           value={value} id={id}
           required={required}
           type={type}
           onChange={onChange}
@@ -83,7 +90,7 @@ function InputEle({
         <input
           className=" p-3 rounded border border-gray-400  "
           name={id}
-          id={id}
+           value={value} id={id}
           required={required}
           type={type}
           min={1900}
@@ -107,7 +114,7 @@ function InputEle({
           className=" p-3 rounded border border-gray-400  "
           placeholder={placeholder}
           name={id}
-          id={id}
+           value={value} id={id}
           required={required}
           type={type}
           onChange={onChange}
@@ -126,10 +133,8 @@ function InputEle({
         <select
           className=" p-3 rounded border bg-white border-gray-400  "
           name={id}
-          id={id}
+           value={value} id={id}
           required={required}
-          onChange={onChange}
-          defaultValue={"select"}
         >
           <option value="select">Select...</option>
           <option value="male">Male </option>
@@ -152,7 +157,6 @@ function InputEle({
           id={id}
           required={required}
           onChange={onChange}
-          defaultValue={"select"}
         >
           <option value="select">Select...</option>
           <option value="single">Single </option>
@@ -173,7 +177,7 @@ function InputEle({
         <select
           className=" bg-white p-3 rounded border border-gray-400  "
           name={id}
-          id={id}
+           value={value} id={id}
           required={required}
           onChange={onChange}
         >
@@ -494,7 +498,7 @@ function InputEle({
           className=" p-3 rounded border border-gray-400  "
           placeholder={placeholder}
           name={id}
-          id={id}
+           value={value} id={id}
           required={required}
           type={type}
           onChange={onChange}
@@ -514,7 +518,7 @@ function InputEle({
           <input
             className=" border-gray-400 w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 "
             type={showPassword ? "text" : "password"}
-            id={id}
+             value={value} id={id}
             name={id}
             placeholder={placeholder}
             onChange={onChange}
@@ -529,6 +533,31 @@ function InputEle({
           </button>
         </div>
         <p className="text-red-500 text-base font-medium">{errorMsg}</p>
+      </div>
+    );
+  }
+  if (type === "select") {
+    return (
+      <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
+        <label className=" text-base font-sans font-semibold  " htmlFor={id}>
+          {label} {required ? <span className="text-red-600">*</span> : ""}
+        </label>
+        <select
+          value={value}
+          className=" p-3 rounded border bg-white border-gray-400  "
+          name={id}
+          id={id}
+          required={required}
+          onChange={onChange}
+        >
+          <option value="select">Select...</option>
+          {selectOptions?.map((option, index) => (
+            <option key={index} value={option.toLowerCase()}>
+              {option}
+            </option>
+          ))}
+        </select>
+        <p></p>
       </div>
     );
   }

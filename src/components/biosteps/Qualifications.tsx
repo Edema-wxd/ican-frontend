@@ -51,6 +51,7 @@ function Qualifications({
           label="Insitution"
           onChange={handleChange}
           required={false}
+          value={formData?.education?.insitution}
         />
         <InputEle
           id="discipline"
@@ -59,6 +60,7 @@ function Qualifications({
           label="Discipline"
           onChange={handleChange}
           required={false}
+          value={formData?.education?.discipline}
         />
         <InputEle
           id="qualification"
@@ -67,6 +69,7 @@ function Qualifications({
           label="Qualification"
           onChange={handleChange}
           required={false}
+          value={formData?.education?.qualification}
         />
         <InputEle
           id="graduation"
@@ -74,6 +77,7 @@ function Qualifications({
           label="Year of Graduation"
           onChange={handleChange}
           required={false}
+          value={formData?.education?.graduation}
         />
         <InputEle
           onChange={handleChange}
@@ -81,6 +85,9 @@ function Qualifications({
           id="firstQualName"
           type="text"
           label="First professional Qualification"
+          value={
+            formData?.education?.professionalQualification?.[0]?.firstQualName
+          }
         />
         <InputEle
           onChange={handleChange}
@@ -88,6 +95,9 @@ function Qualifications({
           id="firstQualDate"
           type="number"
           label="Year of First Qualification"
+          value={
+            formData?.education?.professionalQualification?.[0]?.firstQualDate
+          }
         />
         <InputEle
           onChange={handleChange}
@@ -95,6 +105,9 @@ function Qualifications({
           id="secQualName"
           type="text"
           label="Second professional Qualification"
+          value={
+            formData?.education?.professionalQualification?.[1]?.secQualName
+          }
         />
         <InputEle
           onChange={handleChange}
@@ -102,6 +115,9 @@ function Qualifications({
           id="secQualDate"
           type="number"
           label="Year of Second Qualification"
+          value={
+            formData?.education?.professionalQualification?.[1]?.secQualDate
+          }
         />
       </div>
     </div>

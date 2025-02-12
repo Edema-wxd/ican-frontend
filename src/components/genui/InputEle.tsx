@@ -7,7 +7,6 @@ interface InputEleProps {
   type: string;
   id: string;
   value?: string;
-
   required?: boolean;
   placeholder?: string;
   label: string;
@@ -32,7 +31,6 @@ function InputEle({
   addStyle = "",
   errorMsg = "",
   value = "",
-
   onChange = () => {},
 }: InputEleProps) {
   const [showPassword, setShowPassword] = useState(false);
@@ -51,7 +49,8 @@ function InputEle({
           className=" p-3 rounded border border-gray-400  "
           placeholder={placeholder}
           name={id}
-           value={value} id={id}
+          id={id}
+          value={value}
           required={required}
           type={type}
           onChange={onChange}
@@ -71,7 +70,8 @@ function InputEle({
           className=" p-3 rounded border border-gray-400  "
           placeholder={placeholder}
           name={id}
-           value={value} id={id}
+          id={id}
+          value={value}
           required={required}
           type={type}
           onChange={onChange}
@@ -90,7 +90,8 @@ function InputEle({
         <input
           className=" p-3 rounded border border-gray-400  "
           name={id}
-           value={value} id={id}
+          id={id}
+          value={value}
           required={required}
           type={type}
           min={1900}
@@ -114,7 +115,8 @@ function InputEle({
           className=" p-3 rounded border border-gray-400  "
           placeholder={placeholder}
           name={id}
-           value={value} id={id}
+          id={id}
+          value={value}
           required={required}
           type={type}
           onChange={onChange}
@@ -133,8 +135,10 @@ function InputEle({
         <select
           className=" p-3 rounded border bg-white border-gray-400  "
           name={id}
-           value={value} id={id}
+          id={id}
+          value={value}
           required={required}
+          onChange={onChange}
         >
           <option value="select">Select...</option>
           <option value="male">Male </option>
@@ -155,6 +159,7 @@ function InputEle({
           className=" p-3 rounded border bg-white border-gray-400  "
           name={id}
           id={id}
+          value={value}
           required={required}
           onChange={onChange}
         >
@@ -177,7 +182,8 @@ function InputEle({
         <select
           className=" bg-white p-3 rounded border border-gray-400  "
           name={id}
-           value={value} id={id}
+          id={id}
+          value={value}
           required={required}
           onChange={onChange}
         >
@@ -498,7 +504,8 @@ function InputEle({
           className=" p-3 rounded border border-gray-400  "
           placeholder={placeholder}
           name={id}
-           value={value} id={id}
+          id={id}
+          value={value}
           required={required}
           type={type}
           onChange={onChange}
@@ -518,7 +525,8 @@ function InputEle({
           <input
             className=" border-gray-400 w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 "
             type={showPassword ? "text" : "password"}
-             value={value} id={id}
+            id={id}
+            value={value}
             name={id}
             placeholder={placeholder}
             onChange={onChange}

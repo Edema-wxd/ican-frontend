@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const ImageOverlay = ({
   isOpen,
@@ -26,7 +27,8 @@ const ImageOverlay = ({
         {/* Image Container with Navigation */}
         <div className="relative">
           {/* Image */}
-          <img
+          <Image
+            fill={true}
             src={currentImage.imgurl}
             alt={currentImage.title}
             className="max-h-[85vh] w-auto"
@@ -185,7 +187,8 @@ function Gallery() {
                         className="relative group cursor-pointer overflow-hidden rounded-2xl"
                       >
                         <div className="aspect-[4/3] w-full">
-                          <img
+                          <Image
+                            fill={true}
                             src={item.imgurl}
                             alt={item.title}
                             className="w-full h-full object-cover"

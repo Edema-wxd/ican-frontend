@@ -1,7 +1,7 @@
-'use client';
-import React, { useState, useRef, useEffect } from 'react';
-import { Search, BellIcon,ChevronDown} from 'lucide-react';
-import Notification from '@/components/Notification';
+"use client";
+import React, { useState, useRef, useEffect } from "react";
+import { Search, BellIcon, ChevronDown } from "lucide-react";
+import Notification from "@/components/Notification";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,8 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-
+import Image from "next/image";
 
 export const Header = () => {
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -19,17 +18,20 @@ export const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (notificationRef.current && !notificationRef.current.contains(event.target as Node)) {
+      if (
+        notificationRef.current &&
+        !notificationRef.current.contains(event.target as Node)
+      ) {
         setIsNotificationOpen(false);
       }
     };
 
     if (isNotificationOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isNotificationOpen]);
 
@@ -56,13 +58,16 @@ export const Header = () => {
         </div>
 
         {/* Profile Section */}
-        <div className="flex items-center space-x-8"> 
-        <div className="relative">
+        <div className="flex items-center space-x-8">
+          <div className="relative">
             <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
               <BellIcon
-              onClick={() => setIsNotificationOpen(!isNotificationOpen)}
-               className="w-6 h-6 " />
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">5</span>
+                onClick={() => setIsNotificationOpen(!isNotificationOpen)}
+                className="w-6 h-6 "
+              />
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">
+                5
+              </span>
             </div>
             {isNotificationOpen && (
               <div
@@ -72,13 +77,15 @@ export const Header = () => {
                 <Notification />
               </div>
             )}
-            </div>
+          </div>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center space-x-2 outline-none">
               <div className="w-10 h-10 rounded-full overflow-hidden">
-                <img 
-                  src="/Ellipse 1732.png" 
-                  alt="Profile" 
+                <Image
+                  width={40}
+                  height={40}
+                  src="/Ellipse 1732.png"
+                  alt="Profile"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -89,7 +96,9 @@ export const Header = () => {
               <DropdownMenuSeparator />
               <DropdownMenuItem>Profile</DropdownMenuItem>
               <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem className="text-red-600">Logout</DropdownMenuItem>
+              <DropdownMenuItem className="text-red-600">
+                Logout
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

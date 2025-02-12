@@ -135,7 +135,7 @@ function Biodata() {
         const { data, lastUpdated } = JSON.parse(saved);
         if (
           new Date().getTime() - new Date(lastUpdated).getTime() >
-          24 * 60 * 60 * 1000
+          1 * 60 * 60 * 1000
         ) {
           localStorage.removeItem("biodataFormProgress");
           return null;

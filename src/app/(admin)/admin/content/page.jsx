@@ -14,6 +14,14 @@ import Student from "./tabs/Student";
 function Content() {
   return (
     <div className="rounded-3xl p-6">
+      <div className="flex flex-row mb-6 w-full items-center justify-between">
+        <h2 className="font-semibol text-2xl text-black">
+          ICAN SDS Content Management System
+        </h2>
+        <button className="bg-primary text-white text-base rounded-full w-fit p-2">
+          Add New Content
+        </button>
+      </div>
       {/* Tab sections */}{" "}
       <Tabs defaultValue="all" className="flex flex-col gap-4">
         <TabsList>
@@ -23,7 +31,8 @@ function Content() {
           <TabsTrigger value="publication">Publication</TabsTrigger>
           <TabsTrigger value="galleries">Galleries</TabsTrigger>
           <TabsTrigger value="technical">Technical Session</TabsTrigger>
-          <TabsTrigger value="student">Student Pack</TabsTrigger>
+          <TabsTrigger value="student">Study Pack</TabsTrigger>
+          <TabsTrigger value="faq">FAQ</TabsTrigger>
         </TabsList>
         <TabsContent value="all">
           <All />{" "}
@@ -45,6 +54,9 @@ function Content() {
         </TabsContent>
         <TabsContent value="student">
           <Student />
+        </TabsContent>
+        <TabsContent value="faq">
+          <h3>FAQ</h3>{" "}
         </TabsContent>
       </Tabs>
     </div>

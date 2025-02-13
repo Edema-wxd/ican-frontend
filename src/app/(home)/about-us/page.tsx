@@ -18,7 +18,7 @@ function Aboutus() {
         subtxt={""}
         toggle={false}
 
-        maintxt="About Surulere and District Society"
+        maintxt="About Surulere and District Society (SDS)"
         imageUrl="/aboutushero.png"
       >
         <></>

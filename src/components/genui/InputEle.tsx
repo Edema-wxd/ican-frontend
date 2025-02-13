@@ -6,10 +6,12 @@ import { FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
 interface InputEleProps {
   type: string;
   id: string;
-  label: string;
+
   value?: string;
   required?: boolean;
   placeholder?: string;
+  label: string;
+  selectOptions?: string[];
   addStyle?: string;
   errorMsg?: string;
   onChange: (
@@ -24,6 +26,7 @@ function InputEle({
   id,
   required = true,
   label,
+  selectOptions = [],
   placeholder = "",
   addStyle = "",
   errorMsg = "",
@@ -538,6 +541,31 @@ function InputEle({
           </button>
         </div>
         <p className="text-red-500 text-base font-medium">{errorMsg}</p>
+      </div>
+    );
+  }
+  if (type === "select") {
+    return (
+      <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
+        <label className=" text-base font-sans font-semibold  " htmlFor={id}>
+          {label} {required ? <span className="text-red-600">*</span> : ""}
+        </label>
+        <select
+          value={value}
+          className=" p-3 rounded border bg-white border-gray-400  "
+          name={id}
+          id={id}
+          required={required}
+          onChange={onChange}
+        >
+          <option value="select">Select...</option>
+          {selectOptions?.map((option, index) => (
+            <option key={index} value={option.toLowerCase()}>
+              {option}
+            </option>
+          ))}
+        </select>
+        <p></p>
       </div>
     );
   }

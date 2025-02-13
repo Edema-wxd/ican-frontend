@@ -10,6 +10,7 @@ import {
   FaEyeSlash,
 } from "react-icons/fa";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
+import Toast from "@/components/genui/Toast";
 
 function Signup() {
   const [loading, setLoading] = useState(false);
@@ -206,6 +207,7 @@ function Signup() {
       email: email,
       password: password,
     });
+
     const config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -219,11 +221,17 @@ function Signup() {
     if (Object.values(errors).every((error) => error === "")) {
       // Submit form
       try {
-        const response = await axios.request(config);
+        const response = await axios.post(
+          "https://ican-sds-api.onrender.com/api/v1/auth/register",
+          data,
+          config
+        );
+
         setPopupMessage(response.data.message);
         setShowPopup(true);
         setPopError(false);
       } catch (error) {
+        console.error("error: ", error);
         setPopupMessage("An error occurred during registration.");
         setPopError(true);
         setShowPopup(true);

@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-  Home, 
+  LayoutGridIcon,
   Calendar, 
-  CreditCard,
-  FileText, Notebook,
-  User,
+  Banknote,
+  FileText, ListOrderedIcon,
   Settings,
   LogOut
 } from 'lucide-react';
+import { FaRegUser, FaRegCalendarCheck } from 'react-icons/fa';
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -16,16 +16,16 @@ import Link from 'next/link';
 
 
 const topMenuItems = [
-  { icon: Home, label: 'Overview', href: '/dashboard' },
-  { icon: CreditCard, label: 'Payment', href: '/payment' },
-  { icon: Calendar, label: 'Events', href: '/events' },
+  { icon: LayoutGridIcon, label: 'Overview', href: '/dashboard' },
+  { icon: Banknote, label: 'Payment', href: '/payment' },
+  { icon: FaRegCalendarCheck, label: 'Events', href: '/events' },
   { icon: FileText, label: 'Resources', href: '/resources' },
-  { icon: Notebook, label: 'MCPD Records', href: '/MCPDRecords' },
+  { icon: ListOrderedIcon, label: 'MCPD Records', href: '/MCPDRecords' },
 ];
 
 const bottomMenuItems = [
-  { icon: User, label: 'Profile', href: '/Profile' },
-  { icon: Settings, label: 'Settings', href: '/settings' }
+  { icon: FaRegUser, label: 'Profile', href: '/Profile' },
+  { icon: Settings, label: 'Settings', href: '/Setting' }
 ];
 
 export const Sidebar = () => {

@@ -334,7 +334,7 @@ function SettingsPage() {
             <h3 className="text-base font-semibold text-grey-700">
               General Notifications
             </h3>
-            <p className="pt-1 text-xs font-normal text-gray-500 text-base">
+            <p className="pt-1  font-normal text-gray-500 text-base">
               Get updates on new features, system updates, and policy changes.
             </p>
           </div>
@@ -357,7 +357,7 @@ function SettingsPage() {
             <h2 className="text-base font-semibold text-grey-900">
               Event Registrations
             </h2>
-            <p className="pt-1 text-xs font-normal text-gray-500 text-base">
+            <p className="pt-1  font-normal text-gray-500 text-base">
               Get updates on successful or failed event registrations.
             </p>
           </div>
@@ -378,7 +378,7 @@ function SettingsPage() {
         <div className="flex flex-row items-center justify-between gap-4">
           <div className="max-w-[80%]">
             <h2 className="text-base font-semibold text-grey-900">Payments</h2>
-            <p className="pt-1 text-xs font-normal text-gray-500 text-base">
+            <p className="pt-1  font-normal text-gray-500 text-base">
               Be notified about successful payments, failed transactions, and
               receipts.
             </p>
@@ -400,7 +400,7 @@ function SettingsPage() {
             <h2 className="text-base font-semibold text-grey-900">
               MCPD Updates
             </h2>
-            <p className="pt-1 text-xs font-normal text-gray-500 text-base">
+            <p className="pt-1  font-normal text-gray-500 text-base">
               Stay updated on your MCPD points after completing qualifying
               activities.
             </p>

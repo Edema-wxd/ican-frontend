@@ -6,12 +6,12 @@ import { FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
 interface InputEleProps {
   type: string;
   id: string;
+
   value?: string;
   required?: boolean;
   placeholder?: string;
   label: string;
   selectOptions?: string[];
-
   addStyle?: string;
   errorMsg?: string;
   onChange: (

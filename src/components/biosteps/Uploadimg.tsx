@@ -4,22 +4,15 @@ import Image from "next/image";
 import { FaCloudUploadAlt, FaTrash } from "react-icons/fa";
 
 import { BiodataFormData } from "../Biodata";
+import Toast from "../genui/Toast";
 
 interface UploadimgProps {
   isShown: boolean;
   formData: BiodataFormData;
   updateFormData: (data: Partial<BiodataFormData>) => void;
-  setToast: (
-    toast: { type: "success" | "error"; message: string } | null
-  ) => void;
 }
 
-function Uploadimg({
-  isShown,
-  formData,
-  updateFormData,
-  setToast,
-}: UploadimgProps) {
+function Uploadimg({ isShown, formData, updateFormData }: UploadimgProps) {
   const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -46,13 +39,11 @@ function Uploadimg({
 
   const handleImageChange = (file: File) => {
     if (!file.type.startsWith("image/")) {
-      setToast({ type: "error", message: "Please upload an image file" });
-      return;
+      return <Toast type="error" message="Please upload an image file" />;
     }
 
     if (file.size > 5 * 1024 * 1024) {
-      setToast({ type: "error", message: "Image must be less than 5MB" });
-      return;
+      return <Toast type="error" message="Image must be less than 5MB" />;
     }
 
     if (imagePreview) {
@@ -73,7 +64,7 @@ function Uploadimg({
 
   const validateForm = () => {
     if (!formData.image) {
-      setToast({ type: "error", message: "Please upload an image" });
+      <Toast type="error" message="Please upload an image" />;
       return false;
     }
   };

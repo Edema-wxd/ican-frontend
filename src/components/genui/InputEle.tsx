@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
 
 interface InputEleProps {
   type: string;
   id: string;
-  label: string;
   value?: string;
   required?: boolean;
   placeholder?: string;
+  label: string;
+  selectOptions?: string[];
+
   addStyle?: string;
   errorMsg?: string;
   onChange: (
@@ -25,6 +26,7 @@ function InputEle({
   id,
   required = true,
   label,
+  selectOptions = [],
   placeholder = "",
   addStyle = "",
   errorMsg = "",
@@ -54,7 +56,7 @@ function InputEle({
           onChange={onChange}
         />
 
-        <p>{errorMsg}</p>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );
   }
@@ -75,7 +77,7 @@ function InputEle({
           onChange={onChange}
         />
 
-        <p>{errorMsg}</p>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );
   }
@@ -99,7 +101,7 @@ function InputEle({
           onChange={onChange}
         />
 
-        <p>{errorMsg}</p>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );
   }
@@ -120,7 +122,7 @@ function InputEle({
           onChange={onChange}
         />
 
-        <p>{errorMsg}</p>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );
   }
@@ -505,9 +507,8 @@ function InputEle({
           id={id}
           value={value}
           required={required}
-          onChange={(id) => {
-            onChange;
-          }}
+          type={type}
+          onChange={onChange}
         />
         <p></p>
       </div>
@@ -539,7 +540,32 @@ function InputEle({
             {showPassword ? <FaEyeSlash /> : <FaEye />}
           </button>
         </div>
-        <p>{errorMsg}</p>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
+      </div>
+    );
+  }
+  if (type === "select") {
+    return (
+      <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
+        <label className=" text-base font-sans font-semibold  " htmlFor={id}>
+          {label} {required ? <span className="text-red-600">*</span> : ""}
+        </label>
+        <select
+          value={value}
+          className=" p-3 rounded border bg-white border-gray-400  "
+          name={id}
+          id={id}
+          required={required}
+          onChange={onChange}
+        >
+          <option value="select">Select...</option>
+          {selectOptions?.map((option, index) => (
+            <option key={index} value={option.toLowerCase()}>
+              {option}
+            </option>
+          ))}
+        </select>
+        <p></p>
       </div>
     );
   }

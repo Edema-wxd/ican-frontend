@@ -32,7 +32,6 @@ function Signup() {
     cpassword: "",
     consent: "",
   });
-  const [showToast, setShowToast] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const [popError, setPopError] = useState(false);
@@ -48,21 +47,7 @@ function Signup() {
   const [plower, setPlower] = useState(false);
   const [consent, setConsent] = useState(false);
 
-  const [toastProps, setToastProps] = useState<{
-    type: "success" | "error" | "warning" | "info";
-    message: string;
-  }>({
-    type: "success",
-    message: "",
-  });
 
-  const toast = (
-    type: "success" | "error" | "warning" | "info",
-    message: string
-  ) => {
-    setToastProps({ type, message });
-    setShowToast(true);
-  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);

@@ -8,7 +8,6 @@ import {
   MdOutlinePerson,
 } from "react-icons/md";
 import { IoMdCalendar } from "react-icons/io";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

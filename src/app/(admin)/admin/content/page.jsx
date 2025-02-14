@@ -18,7 +18,7 @@ function Content() {
         <h2 className="font-semibol text-2xl text-black">
           ICAN SDS Content Management System
         </h2>
-        <button className="bg-primary text-white text-base rounded-full w-fit p-2">
+        <button className="bg-primary text-white text-base font-semibold  rounded-full w-fit px-4 py-3 h-fit">
           Add New Content
         </button>
       </div>

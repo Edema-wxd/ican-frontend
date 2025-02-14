@@ -51,11 +51,9 @@ export function ContentTable<TData, TValue>({
     getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
-    onRowSelectionChange: setRowSelection,
     state: {
       sorting,
       columnFilters,
-      rowSelection,
     },
   });
 
@@ -126,10 +124,7 @@ export function ContentTable<TData, TValue>({
         </Table>
       </div>
       <div className="flex flex-row items-center justify-between">
-        <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>
+        
         <div className="flex items-center justify-end space-x-2 py-4">
           <Button
             variant="outline"

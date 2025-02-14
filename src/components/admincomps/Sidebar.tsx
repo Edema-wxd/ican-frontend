@@ -56,7 +56,7 @@ function Sidebar() {
               <Link
                 key={index}
                 href={item.href}
-                className={`py-3 px-4 flex flex-row gap-4 ${
+                className={`py-3 px-4 flex flex-row gap-2 ${
                   activePage === item.label &&
                   "bg-primary text-white fill-white"
                 } hover:bg-blue-500 hover:text-white hover:fill-white justify-start items-center rounded-lg text-neutral-900`}
@@ -66,15 +66,16 @@ function Sidebar() {
               </Link>
             ))}
           </div>
+          <hr className="border border-neutral-300" />
 
           {/* Bottom Menu Group */}
-          <div className="mt-10 flex flex-col gap-2">
+          <div className="mt-4 flex flex-col gap-2">
             {bottomMenuItems.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
                 className={
-                  "py-3 px-4 flex flex-row gap-4 hover:bg-blue-500 hover:text-white hover:fill-white  justify-start items-center rounded-lg text-neutral-900"
+                  "py-3 px-4 flex flex-row gap-2 hover:bg-blue-500 hover:text-white hover:fill-white  justify-start items-center rounded-lg text-neutral-900"
                 }
               >
                 <item.icon className="w-6 h-6" />
@@ -87,7 +88,7 @@ function Sidebar() {
         <div>
           <Link
             href="/logout"
-            className="flex hover:text-red-500 hover:fill-red-500 items-center space-x-3 px-6 py-2 rounded-lg mt-32 mb-20"
+            className="flex text-red-500 fill-red-500 items-center space-x-3 px-6 py-2 rounded-lg mt-32 mb-20"
           >
             <LogOut className="w-5 h-5 transform scale-x-[-1]" />
             <span className=" test-xs">Logout</span>

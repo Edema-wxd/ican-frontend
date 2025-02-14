@@ -41,7 +41,6 @@ export function ContentTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );
-  const [rowSelection, setRowSelection] = React.useState({});
   const table = useReactTable({
     data,
     columns,

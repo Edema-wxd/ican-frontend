@@ -12,31 +12,11 @@ import CellActions from "@/components/admincomps/editActions/CellActions";
 
 export const allcolumns: ColumnDef<Content>[] = [
   {
-    id: "select",
-    header: ({ table }) => (
-      <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
-        }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
-    ),
-    enableSorting: false,
-  },
-  {
     accessorKey: "title",
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -51,6 +31,7 @@ export const allcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -69,6 +50,7 @@ export const allcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -83,6 +65,7 @@ export const allcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -109,6 +92,7 @@ export const advertscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -123,6 +107,7 @@ export const advertscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -137,6 +122,7 @@ export const advertscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -151,6 +137,7 @@ export const advertscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -165,6 +152,7 @@ export const advertscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -191,6 +179,7 @@ export const blogscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -205,6 +194,7 @@ export const blogscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -219,6 +209,7 @@ export const blogscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -233,6 +224,7 @@ export const blogscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -250,6 +242,7 @@ export const blogscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -274,6 +267,7 @@ export const publicationscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -288,6 +282,7 @@ export const publicationscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -302,6 +297,7 @@ export const publicationscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -316,6 +312,7 @@ export const publicationscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -330,6 +327,7 @@ export const publicationscolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -356,6 +354,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -370,6 +369,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -384,6 +384,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -398,6 +399,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -412,6 +414,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -429,6 +432,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -453,6 +457,7 @@ export const technicalcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -467,6 +472,7 @@ export const technicalcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -481,6 +487,7 @@ export const technicalcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -495,6 +502,7 @@ export const technicalcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -520,6 +528,7 @@ export const studentcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -534,6 +543,7 @@ export const studentcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -547,6 +557,7 @@ export const studentcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -561,6 +572,7 @@ export const studentcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -575,6 +587,7 @@ export const studentcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -601,6 +614,7 @@ export const faqcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -615,6 +629,7 @@ export const faqcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -628,6 +643,7 @@ export const faqcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -642,6 +658,7 @@ export const faqcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -656,6 +673,7 @@ export const faqcolumns: ColumnDef<Content>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="pl-0 text-left"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >

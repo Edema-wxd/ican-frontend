@@ -51,11 +51,9 @@ export function ContentTable<TData, TValue>({
     getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
-    onRowSelectionChange: setRowSelection,
     state: {
       sorting,
       columnFilters,
-      rowSelection,
     },
   });
 
@@ -125,11 +123,7 @@ export function ContentTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      <div className="flex flex-row items-center justify-between">
-        <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>
+      <div className="flex flex-row items-center justify-center">
         <div className="flex items-center justify-end space-x-2 py-4">
           <Button
             variant="outline"
@@ -139,6 +133,33 @@ export function ContentTable<TData, TValue>({
           >
             Previous
           </Button>
+            {Array.from({ length: table.getPageCount() }, (_, index) => {
+              const pageIndex = table.getState().pagination.pageIndex;
+              const pageCount = table.getPageCount();
+              if (
+              index === 0 ||
+              index === pageCount - 1 ||
+              (index >= pageIndex - 1 && index <= pageIndex + 1)
+              ) {
+              return (
+                <Button
+                key={index}
+                variant={pageIndex === index ? "default" : "outline"}
+                size="sm"
+                onClick={() => table.setPageIndex(index)}
+                >
+                {index + 1}
+                </Button>
+              );
+              } else if (
+              (index === pageIndex - 2 && index > 1) ||
+              (index === pageIndex + 2 && index < pageCount - 2)
+              ) {
+              return <span key={index}>...</span>;
+              } else {
+              return null;
+              }
+            })}
           <Button
             variant="outline"
             size="sm"

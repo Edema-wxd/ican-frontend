@@ -7,7 +7,6 @@ import { Content } from "./colsdata";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,37 +16,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import Statbtn from "@/components/genui/Statbtn";
-import UnpublishContent from "@/components/admincomps/editActions/UnpublishContent";
-import DeleteContent from "@/components/admincomps/editActions/DeleteContent";
 import CellActions from "@/components/admincomps/editActions/CellActions";
 
 export const allcolumns: ColumnDef<Content>[] = [
-  {
-    id: "select",
-    header: ({ table }) => (
-      <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
-        }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
-    ),
-    enableSorting: false,
-  },
+ 
   {
     accessorKey: "title",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0" 
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -61,7 +38,7 @@ export const allcolumns: ColumnDef<Content>[] = [
     accessorKey: "category",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0" 
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -79,7 +56,7 @@ export const allcolumns: ColumnDef<Content>[] = [
     accessorKey: "date_created",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -93,7 +70,7 @@ export const allcolumns: ColumnDef<Content>[] = [
     accessorKey: "status",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -119,7 +96,7 @@ export const advertscolumns: ColumnDef<Content>[] = [
     accessorKey: "title",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -133,7 +110,7 @@ export const advertscolumns: ColumnDef<Content>[] = [
     accessorKey: "advertiser",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -147,7 +124,7 @@ export const advertscolumns: ColumnDef<Content>[] = [
     accessorKey: "start_date",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -161,7 +138,7 @@ export const advertscolumns: ColumnDef<Content>[] = [
     accessorKey: "end_date",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -175,7 +152,7 @@ export const advertscolumns: ColumnDef<Content>[] = [
     accessorKey: "status",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -201,7 +178,7 @@ export const blogscolumns: ColumnDef<Content>[] = [
     accessorKey: "title",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -215,7 +192,7 @@ export const blogscolumns: ColumnDef<Content>[] = [
     accessorKey: "author",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -229,7 +206,7 @@ export const blogscolumns: ColumnDef<Content>[] = [
     accessorKey: "date_created",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -243,7 +220,7 @@ export const blogscolumns: ColumnDef<Content>[] = [
     accessorKey: "status",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -260,7 +237,7 @@ export const blogscolumns: ColumnDef<Content>[] = [
     accessorKey: "published_date",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -284,7 +261,7 @@ export const publicationscolumns: ColumnDef<Content>[] = [
     accessorKey: "title",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -298,7 +275,7 @@ export const publicationscolumns: ColumnDef<Content>[] = [
     accessorKey: "author",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -312,7 +289,7 @@ export const publicationscolumns: ColumnDef<Content>[] = [
     accessorKey: "date_created",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -326,7 +303,7 @@ export const publicationscolumns: ColumnDef<Content>[] = [
     accessorKey: "materials",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -340,7 +317,7 @@ export const publicationscolumns: ColumnDef<Content>[] = [
     accessorKey: "status",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -366,7 +343,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     accessorKey: "title",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -380,7 +357,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     accessorKey: "author",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -394,7 +371,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     accessorKey: "date_created",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -408,7 +385,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     accessorKey: "materials",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -422,7 +399,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     accessorKey: "status",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -439,7 +416,7 @@ export const galleriescolumns: ColumnDef<Content>[] = [
     accessorKey: "published_date",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -463,7 +440,7 @@ export const technicalcolumns: ColumnDef<Content>[] = [
     accessorKey: "title",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -477,7 +454,7 @@ export const technicalcolumns: ColumnDef<Content>[] = [
     accessorKey: "materials",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -491,7 +468,7 @@ export const technicalcolumns: ColumnDef<Content>[] = [
     accessorKey: "date_created",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -505,7 +482,7 @@ export const technicalcolumns: ColumnDef<Content>[] = [
     accessorKey: "status",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -530,7 +507,7 @@ export const studentcolumns: ColumnDef<Content>[] = [
     accessorKey: "title",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -544,7 +521,7 @@ export const studentcolumns: ColumnDef<Content>[] = [
     accessorKey: "materials",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -557,7 +534,7 @@ export const studentcolumns: ColumnDef<Content>[] = [
     accessorKey: "author",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -571,7 +548,7 @@ export const studentcolumns: ColumnDef<Content>[] = [
     accessorKey: "date_created",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -585,7 +562,7 @@ export const studentcolumns: ColumnDef<Content>[] = [
     accessorKey: "status",
     header: ({ column }) => {
       return (
-        <Button
+        <Button className="text-left pl-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >

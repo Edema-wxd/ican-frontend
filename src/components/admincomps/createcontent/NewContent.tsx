@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import InputEle from "@/components/genui/InputEle";
 
-import { MdClose } from "react-icons/md";
+import { MdClose, MdOutlineLibraryBooks } from "react-icons/md";
 
 // Importing the edit components
 import AdvertEdit from "./editcomps/AdvertEdit";
@@ -70,14 +70,19 @@ function NewContent({ showModal, setShowModal }: NewContentProps) {
         <hr />
         {/* Variable display body for content creation */}
         <div>
-          <h3>Add New {contentType}</h3>
-          {contentType === "adverts" && <AdvertEdit />}
-          {contentType === "blog" && <BlogEdit />}
-          {contentType === "gallery" && <GalleryEdit />}
-          {contentType === "publication" && <PublicationEdit />}
-          {contentType === "technical" && <TechnicalEdit />}
-          {contentType === "student" && <StudentEdit />}
-          {contentType === "faq" && <FaqEdit />}
+          <h3 className="flex flex-row items-center justify-start text-lg font-bold font-mono text-neutral-900">
+            <MdOutlineLibraryBooks className="w-4 h-4 mr-3" /> Add New{" "}
+            {contentType}
+          </h3>
+          <div>
+            {contentType === "adverts" && <AdvertEdit />}
+            {contentType === "blog" && <BlogEdit />}
+            {contentType === "gallery" && <GalleryEdit />}
+            {contentType === "publication" && <PublicationEdit />}
+            {contentType === "technical" && <TechnicalEdit />}
+            {contentType === "student" && <StudentEdit />}
+            {contentType === "faq" && <FaqEdit />}
+          </div>
         </div>
       </div>
     </div>

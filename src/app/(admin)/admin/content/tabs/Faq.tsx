@@ -2,14 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { ContentTable } from "@/components/admincomps/datatable/ContentTable";
-import { allcolumns } from "@/components/admincomps/datatable/columns";
+import { faqcolumns } from "@/components/admincomps/datatable/columns";
 import { Content, contents } from "@/components/admincomps/datatable/colsdata";
 
-export async function getData(): Promise<Content[]> {
+async function getData(): Promise<Content[]> {
   return contents;
 }
-
-function All() {
+function Faq() {
   const [data, setData] = useState<Content[]>([]);
 
   useEffect(() => {
@@ -22,12 +21,12 @@ function All() {
 
   return (
     <div className="rounded-3xl px-8 py-6 flex flex-col gap-4 border border-neutral-200 bg-white">
-      <h2 className="text-xl font-semibold text-left">All Content</h2>
+      <h2 className="text-xl font-semibold text-left">FAQ</h2>
       <div>
-        <ContentTable columns={allcolumns} data={data} />
+        <ContentTable columns={faqcolumns} data={data} />
       </div>
     </div>
   );
 }
 
-export default All;
+export default Faq;

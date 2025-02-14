@@ -558,7 +558,6 @@ function InputEle({
           required={required}
           onChange={onChange}
         >
-          <option value="select">Select...</option>
           {selectOptions?.map((option, index) => (
             <option key={index} value={option.toLowerCase()}>
               {option}

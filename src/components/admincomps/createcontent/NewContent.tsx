@@ -1,47 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 import InputEle from "@/components/genui/InputEle";
 
+import { MdClose } from "react-icons/md";
+
+// Importing the edit components
+import AdvertEdit from "./editcomps/AdvertEdit";
 import BlogEdit from "./editcomps/BlogEdit";
 import GalleryEdit from "./editcomps/GalleryEdit";
 import PublicationEdit from "./editcomps/PublicationEdit";
+import TechnicalEdit from "./editcomps/TechnicalEdit";
+import StudentEdit from "./editcomps/StudentEdit";
+import FaqEdit from "./editcomps/FaqEdit";
 
-function NewContent() {
+interface NewContentProps {
+  showModal: boolean;
+  setShowModal: (show: boolean) => void;
+}
+
+function NewContent({ showModal, setShowModal }: NewContentProps) {
+  const [contentType, setContentType] = useState("blog");
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="flex flex-col p-4 rounded-xl gap-4 bg-white">
         {/* Header */}
-        <div>
+        <div className="flex flex-col items-center justify-between gap-4">
           {/* Title section  */}
+          <button
+            className="ml-auto  fill-neutral-800 rounded-full px-3 py-1"
+            onClick={() => setShowModal(false)}
+          >
+            <MdClose className="w-5 h-5 " />
+          </button>
           <div>
-            <h3>Add New Content</h3>
-            <p>
+            <h3 className="text-2xl font-bold font-mono text-neutral-900 ">
+              Add New Content
+            </h3>
+            <p className=" text-sm text-neutral-700 ">
               Fill in the required details to create new content for the
               selected category
             </p>
           </div>
 
           {/* Content Type Section */}
-          <div>
+          <div className="w-full">
             <InputEle
               label="Content Type"
               type="select"
               id="contentType"
+              value={contentType}
               selectOptions={[
-                "Blog",
                 "Adverts",
+                "Blog",
                 "Publication",
                 "Gallery",
                 "Technical",
                 "Student",
+                "Faq",
               ]}
-              onChange={() => {}}
+              onChange={(e) => setContentType(e.target.value)}
             />
+
+            <p className="text-xs text-neutral-700">
+              Choose the type of content you want to create. The required fields
+              will adjust accordingly.
+            </p>
           </div>
         </div>
         <hr />
         {/* Variable display body for content creation */}
         <div>
-          <h3></h3>
+          <h3>Add New {contentType}</h3>
+          {contentType === "adverts" && <AdvertEdit />}
+          {contentType === "blog" && <BlogEdit />}
+          {contentType === "gallery" && <GalleryEdit />}
+          {contentType === "publication" && <PublicationEdit />}
+          {contentType === "technical" && <TechnicalEdit />}
+          {contentType === "student" && <StudentEdit />}
+          {contentType === "faq" && <FaqEdit />}
         </div>
       </div>
     </div>

@@ -2,23 +2,11 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown } from "lucide-react";
-import { MoreHorizontal } from "lucide-react";
 import { Content } from "./colsdata";
-import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
 import Statbtn from "@/components/genui/Statbtn";
-import UnpublishContent from "@/components/admincomps/editActions/UnpublishContent";
-import DeleteContent from "@/components/admincomps/editActions/DeleteContent";
 import CellActions from "@/components/admincomps/editActions/CellActions";
 
 export const allcolumns: ColumnDef<Content>[] = [

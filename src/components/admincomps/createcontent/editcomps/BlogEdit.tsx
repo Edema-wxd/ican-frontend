@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import InputEle from "@/components/genui/InputEle";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 interface BlogEditProps {}
 
 function BlogEdit({}: BlogEditProps) {
+  const [blog, setBlog] = useState("");
+
   return (
     <div>
       <div>
@@ -14,13 +18,17 @@ function BlogEdit({}: BlogEditProps) {
           id="author"
           onChange={() => {}}
         />
+        <div>
+          <h5>Content Body</h5>
+          <ReactQuill theme="snow" value={blog} onChange={setBlog} />
+        </div>
       </div>
       <div className="flex flex-col gap-2">
         <button className="rounded-full bg-primary text-white text-base w-full">
-          Publish Blog{" "}
+          Publish Blog
         </button>
         <button className="text-primary border border-primary text-base rounded-full w-full">
-          Save as Draft{" "}
+          Save as Draft
         </button>
         <button className="text-primary text-base rounded-full w-full">
           Preview

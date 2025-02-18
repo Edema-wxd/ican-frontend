@@ -4,17 +4,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaLock,
-  FaEye,
-  FaEyeSlash,
-} from "react-icons/fa";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import Toast from "@/components/genui/Toast";
+import InputEle from "@/components/genui/InputEle";
 
 function Signup() {
   const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
   const [complete, setComplete] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -46,12 +41,6 @@ function Signup() {
   const [pnumber, setPnumber] = useState(false);
   const [plower, setPlower] = useState(false);
   const [consent, setConsent] = useState(false);
-
-
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
 
   const validateFirstName = (firstName: string): string => {
     const nameRegex = /^[a-zA-Z0-9]+$/;
@@ -256,92 +245,41 @@ function Signup() {
           </p>
         </div>
         <form className="w-full flex flex-col gap-4 " onSubmit={handleSignup}>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="firstName"
-            >
-              First Name <span className="text-red-600">*</span>
-            </label>
-            <input
-              className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your first name"
-              name="firstName"
-              id="firstName"
-              required
-              type="text"
-              onChange={handleChange}
-            />
-            {formErrors.firstName && (
-              <p className="text-red-600">{formErrors.firstName}</p>
-            )}
-          </div>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="surname"
-            >
-              Surname <span className="text-red-600">*</span>
-            </label>
-            <input
-              className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your surname"
-              name="surname"
-              id="surname"
-              onChange={handleChange}
-              required
-              type="text"
-            />
-            {formErrors.surname && (
-              <p className="text-red-600">{formErrors.surname}</p>
-            )}
-          </div>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="email"
-            >
-              Email Address <span className="text-red-600">*</span>
-            </label>
-            <input
-              className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your email address"
-              name="email"
-              onChange={handleChange}
-              id="email"
-              required
-              type="email"
-            />
-            {formErrors.email && (
-              <p className="text-red-600">{formErrors.email}</p>
-            )}
-          </div>
+          <InputEle
+            label="First Name"
+            id="firstName"
+            type="text"
+            onChange={handleChange}
+            required
+            errorMsg={formErrors.firstName}
+          />
+          <InputEle
+            label="Surname"
+            id="surname"
+            type="text"
+            onChange={handleChange}
+            required
+            errorMsg={formErrors.surname}
+          />
+          <InputEle
+            label="Email Address"
+            id="email"
+            type="email"
+            onChange={handleChange}
+            required
+            errorMsg={formErrors.email}
+          />
+
           <div className="  w-full flex flex-col ">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="password"
-            >
-              Password <span className="text-red-600">*</span>
-            </label>
-            <div className="relative">
-              <FaLock className="absolute left-3 top-[.8rem] text-gray-400 text-md" />
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                name="password"
-                placeholder="Create a password"
-                className="w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                onChange={handleChange}
-                required
-              />
-              <button
-                type="button"
-                onClick={togglePasswordVisibility}
-                className="absolute right-3 top-3 text-gray-400 text-md focus:outline-none"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button>
-            </div>
+            <InputEle
+              label="Password"
+              id="password"
+              type="password"
+              placeholder="Enter your new password"
+              required
+              onChange={handleChange}
+            />
+
             <div className="pt-4  ">
               <p className="text-xs  text-gray-500">
                 Must be at least{" "}
@@ -373,36 +311,16 @@ function Signup() {
               </p>
             </div>
           </div>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="cpassword"
-            >
-              Confirm Password <span className="text-red-600">*</span>
-            </label>
-            <div className="relative">
-              <FaLock className="absolute left-3 top-[.8rem] text-gray-400 text-md" />
-              <input
-                type={showPassword ? "text" : "password"}
-                id="cpassword"
-                onChange={handleChange}
-                name="cpassword"
-                placeholder="Confirm your password"
-                className="w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-              />
-              <button
-                type="button"
-                onClick={togglePasswordVisibility}
-                className="absolute right-3 top-3 text-gray-400 text-md focus:outline-none"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button>
-            </div>
-            {formErrors.cpassword && (
-              <p className="text-red-600">{formErrors.cpassword}</p>
-            )}
-          </div>
+          <InputEle
+            label="Confirm Password"
+            id="cpassword"
+            type="password"
+            placeholder="Confirm your password"
+            required
+            onChange={handleChange}
+            errorMsg={formErrors.cpassword}
+          />
+
           <div className=" flex flex-row justify-between gap-2 items-center ">
             <input
               type="checkbox"

@@ -26,7 +26,6 @@ function AdminSignup() {
     phone: "",
   });
 
-
   const [fname, setFname] = useState(false);
   const [sname, setSname] = useState(false);
   const [address, setAddress] = useState(false);
@@ -39,8 +38,6 @@ function AdminSignup() {
   const [plower, setPlower] = useState(false);
 
   const [remember, setRemember] = useState(false);
-
-
 
   const validateEmail = (email: string): string => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -280,7 +277,7 @@ function AdminSignup() {
             </div>
             <Link
               className=" text-primary text-base font-medium  "
-              href={"/forgot-password"}
+              href={"/admin-pass-reset"}
             >
               Forgot Password
             </Link>

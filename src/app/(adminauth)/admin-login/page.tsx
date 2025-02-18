@@ -4,11 +4,18 @@ import React, { useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import InputEle from "@/components/genui/InputEle";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
 
 function AdminLogin() {
   const [loading, setLoading] = useState(false);
   const [complete, setComplete] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
+  const [otp, setOtp] = useState("");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -18,18 +25,11 @@ function AdminLogin() {
     email: "",
     password: "",
   });
-  const [popupMessage, setPopupMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
-  const [popError, setPopError] = useState(false);
 
   const [pvalid, setPvalid] = useState(false);
   const [evalid, setEvalid] = useState(false);
 
   const [remember, setRemember] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
 
   const validateEmail = (email: string): string => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -108,15 +108,12 @@ function AdminLogin() {
 
     if (Object.values(errors).every((error) => error === "")) {
       // Submit form
+
       try {
         const response = await axios.request(config);
-        setPopupMessage(response.data.message);
-        setShowPopup(true);
-        setPopError(false);
+        setIsSwitchOn(true);
       } catch (error) {
-        setPopupMessage("An error occurred during login.");
-        setPopError(true);
-        setShowPopup(true);
+        console.error(error);
       } finally {
         setLoading(false);
       }
@@ -128,58 +125,112 @@ function AdminLogin() {
   return (
     <div className=" m-auto ">
       <div className="flex flex-col w-96 sm:w-[550px] items-center rounded-2xl  bg-white p-8 gap-6 ">
-        <div className=" w-fit">
-          <h4 className=" text-primary text-center text-3xl font-bold font-mono   ">
-            Login to your account
-          </h4>
-          <p className=" text-base text-center font-normal font-sans  ">
-            Please, enter your details below
-          </p>
-        </div>
-        <form className="w-full flex flex-col gap-4 " action="">
-          {/* <InputEle /> */}
-          <InputEle
-            id="email"
-            type="text"
-            placeholder="Enter your email address or username"
-            label="Email Address / Username"
-            onChange={handleChange}
-            errorMsg={formErrors.email}
-          />
-          <InputEle
-            id="password"
-            type="password"
-            placeholder="Enter password"
-            label="Password"
-            onChange={handleChange}
-            errorMsg={formErrors.password}
-          />
+        <h4 className=" text-black w-full text-left text-3xl font-semibold font-mono   ">
+          Login to your account
+        </h4>
 
-          <div className=" flex flex-row justify-between  ">
-            <div className=" flex flex-row gap-2 ">
-              <input type="checkbox" name="remember" id="remember" />
-              <p className=" text-base font-medium   ">Remember me</p>
-            </div>
-            <Link
-              className=" text-primary text-base font-medium  "
-              href={"/forgot-password"}
+        {isSwitchOn ? (
+          <div className="space-y-2 flex items-center flex-col">
+            <p className="text-base text-black font-sans">
+              Enter the 6-digit verification code sent to your email address
+            </p>
+            <InputOTP
+              className="flex gap-3"
+              maxLength={6}
+              value={otp}
+              onChange={(otp) => setOtp(otp)}
             >
-              Forgot Password
-            </Link>
+              <InputOTPGroup>
+                <InputOTPSlot className=" outline-blue-600 " index={0} />
+              </InputOTPGroup>
+              <InputOTPGroup>
+                <InputOTPSlot
+                  className=" focus-visible:outline-primary "
+                  index={1}
+                />
+              </InputOTPGroup>
+              <InputOTPGroup>
+                <InputOTPSlot
+                  className=" focus-visible:outline-primary "
+                  index={2}
+                />
+              </InputOTPGroup>
+              <InputOTPGroup>
+                <InputOTPSlot
+                  className=" focus-visible:outline-primary "
+                  index={3}
+                />
+              </InputOTPGroup>
+              <InputOTPGroup>
+                <InputOTPSlot
+                  className=" focus-visible:outline-primary "
+                  index={4}
+                />
+              </InputOTPGroup>
+              <InputOTPGroup>
+                <InputOTPSlot
+                  className=" focus-visible:outline-primary "
+                  index={5}
+                />
+              </InputOTPGroup>
+            </InputOTP>
+            <button
+              className=" w-full px-8 py-4 bg-primary  rounded-full text-white text-base font-semibold "
+              type="submit"
+            >
+              Log In
+            </button>
+            <p className="text-left w-full text-sm">
+              {otp === "" ? (
+                <>Enter your one-time password.</>
+              ) : (
+                <>You entered: {otp}</>
+              )}
+            </p>
           </div>
-          <button
-            className=" px-8 py-4 bg-primary rounded-full text-white text-base font-semibold "
-            type="submit"
-          >
-            Log In
-          </button>
-        </form>
-        <p className=" text-base font-medium   ">
-          Don&apos;t have an account? {"       "}
-          <Link className=" text-primary " href={"/admin-signup"}>
-            Sign Up
-          </Link>
-        </p>
+        ) : (
+          <form className="w-full flex flex-col gap-4 " action="">
+            {/* <InputEle /> */}
+            <InputEle
+              id="email"
+              type="text"
+              placeholder="Enter email address"
+              label="Email Address"
+              onChange={handleChange}
+              errorMsg={formErrors.email}
+            />
+            <InputEle
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              label="Password"
+              onChange={handleChange}
+              errorMsg={formErrors.password}
+            />
+
+            <button
+              className=" px-8 py-4 bg-primary  rounded-full text-white text-base font-semibold "
+              type="submit"
+              disabled={!complete}
+            >
+              Log In
+            </button>
+            <div className=" flex flex-row justify-between  ">
+              <p className=" text-base font-medium   ">
+                Don&apos;t have an account? {"       "}
+                <Link className=" text-primary " href={"/admin-signup"}>
+                  Sign Up
+                </Link>
+              </p>
+              <Link
+                className=" text-gray-500 text-base font-medium  "
+                href={"/admin-pass-reset"}
+              >
+                Forgot Password
+              </Link>
+            </div>
+          </form>
+        )}
       </div>
     </div>
   );

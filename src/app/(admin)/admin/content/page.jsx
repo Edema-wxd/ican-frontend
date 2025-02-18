@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import All from "./tabs/All";
@@ -19,6 +19,11 @@ function Content() {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+  useEffect(() => {
+    // Any code that accesses the document object should be placed here
+  }, []);
+
   return (
     <div className="rounded-3xl p-6">
       <div className="flex flex-row mb-6 w-full items-center justify-between">

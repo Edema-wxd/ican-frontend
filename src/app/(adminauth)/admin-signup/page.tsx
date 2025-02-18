@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import InputEle from "@/components/genui/InputEle";
 import Toast from "@/components/genui/Toast";
+import InputEle from "@/components/genui/InputEle";
 
 function AdminSignup() {
   const [loading, setLoading] = useState(false);
@@ -12,32 +12,29 @@ function AdminSignup() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    status: false,
-    address: "",
     email: "",
-    phone: "",
+    password: "",
+    cpassword: "",
   });
   const [formErrors, setFormErrors] = useState({
     firstName: "",
     lastName: "",
-    status: "",
-    address: "",
     email: "",
-    phone: "",
+    password: "",
+    cpassword: "",
   });
 
   const [fname, setFname] = useState(false);
   const [sname, setSname] = useState(false);
-  const [address, setAddress] = useState(false);
   const [evalid, setEvalid] = useState(false);
 
   const [pvalid, setPvalid] = useState(false);
+  const [cvalid, setCvalid] = useState(false);
+
   const [plength, setPlength] = useState(false);
   const [pupper, setPupper] = useState(false);
   const [pnumber, setPnumber] = useState(false);
   const [plower, setPlower] = useState(false);
-
-  const [remember, setRemember] = useState(false);
 
   const validateEmail = (email: string): string => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -95,6 +92,16 @@ function AdminSignup() {
     }
     return "";
   };
+  const validateConfirmPassword = (
+    password: string,
+    cpassword: string
+  ): string => {
+    if (cpassword !== password) {
+      return "Passwords do not match.";
+    }
+    setCvalid(true);
+    return "";
+  };
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -117,16 +124,15 @@ function AdminSignup() {
       error = validateSurname(value);
       setSname(!error);
     }
-    if (name === "address") {
-      error = validateFirstName(value);
-      setAddress(!error);
+    if (name === "password") {
+      error = validatePassword(value);
+    }
+    if (name === "cpassword") {
+      error = validateConfirmPassword(formData.password, value);
     }
     if (name === "email") {
       error = validateEmail(value);
       setEvalid(!error);
-    }
-    if (name === "password") {
-      error = validatePassword(value);
     }
 
     setFormErrors({
@@ -154,23 +160,19 @@ function AdminSignup() {
     const lastName = (
       document.getElementById("lastName") as HTMLInputElement
     ).value.trim();
-    const status = (
-      document.getElementById("status") as HTMLInputElement
+    const password = (
+      document.getElementById("password") as HTMLInputElement
     ).value.trim();
-    const address = (
-      document.getElementById("address") as HTMLInputElement
-    ).value.trim();
-    const phone = (
-      document.getElementById("phone") as HTMLInputElement
+    const cpassword = (
+      document.getElementById("cpassword") as HTMLInputElement
     ).value.trim();
 
     const errors = {
       firstName: firstName,
       lastName: lastName,
-      status: status,
-      phone: phone,
-      address: address,
       email: validateEmail(email),
+      password: validatePassword(password),
+      cpassword: validateConfirmPassword(password, cpassword),
     };
 
     setFormErrors(errors);
@@ -178,10 +180,8 @@ function AdminSignup() {
     const data = JSON.stringify({
       firstName: firstName,
       lastName: lastName,
-      status: false,
-      address: address,
       email: email,
-      phone: phone,
+      password: password,
     });
     const config = {
       method: "post",
@@ -213,46 +213,30 @@ function AdminSignup() {
       <div className="flex flex-col w-96 sm:w-[550px] items-center rounded-2xl  bg-white p-8 gap-6 ">
         <div className=" w-fit">
           <h4 className=" text-primary text-center text-3xl font-bold font-mono   ">
-            Let's get you started
+            Create an Account{" "}
           </h4>
-          <p className=" text-base text-center font-normal font-sans  ">
-            Enter your details carefully
-          </p>
         </div>
         <form className="w-full flex flex-col gap-4 " action="">
           {/* <InputEle /> */}
-          <InputEle
-            id="firstName"
-            type="text"
-            placeholder="Enter your First Name"
-            label="First Name"
-            onChange={handleChange}
-            errorMsg={formErrors.firstName}
-          />
-          <InputEle
-            id="lastName"
-            type="text"
-            placeholder="Enter your Last Name"
-            label="Last Name"
-            onChange={handleChange}
-            errorMsg={formErrors.lastName}
-          />
-          <InputEle
-            id="status"
-            type="text"
-            placeholder="Enter your status"
-            label="Status"
-            onChange={handleChange}
-            errorMsg={formErrors.status}
-          />
-          <InputEle
-            id="address"
-            type="text"
-            placeholder="Enter your home address"
-            label="Home address"
-            onChange={handleChange}
-            errorMsg={formErrors.address}
-          />
+          <div className="grid grid-cols-2">
+            <InputEle
+              id="firstName"
+              type="text"
+              placeholder="Enter your First Name"
+              label="First Name"
+              onChange={handleChange}
+              errorMsg={formErrors.firstName}
+            />
+            <InputEle
+              id="lastName"
+              type="text"
+              placeholder="Enter your Last Name"
+              label="Last Name"
+              onChange={handleChange}
+              errorMsg={formErrors.lastName}
+            />
+          </div>
+
           <InputEle
             id="email"
             type="email"
@@ -262,12 +246,46 @@ function AdminSignup() {
             errorMsg={formErrors.email}
           />
           <InputEle
-            id="phone"
-            type="phone"
-            placeholder="Enter phone number"
-            label="Phone"
+            label="Password"
+            id="password"
+            type="password"
+            placeholder="Enter your password"
+            required
             onChange={handleChange}
-            errorMsg={formErrors.phone}
+          />
+          <div className="pt-4  ">
+            <p className="text-xs  text-gray-500">
+              Must be at least{" "}
+              <span
+                className={`${plength ? " text-green-500 " : "text-gray-500"}`}
+              >
+                8 characters long,{" "}
+              </span>
+              including{" "}
+              <span
+                className={`${pupper ? " text-green-500 " : "text-gray-500"}`}
+              >
+                upper case,{" "}
+              </span>
+              <span
+                className={`${plower ? " text-green-500 " : "text-gray-500"}`}
+              >
+                lower case,{" "}
+              </span>
+              <span
+                className={`${pnumber ? " text-green-500 " : "text-gray-500"}`}
+              >
+                one number & one symbol.
+              </span>
+            </p>
+          </div>
+          <InputEle
+            label="Confirm Password"
+            id="cpassword"
+            type="password"
+            placeholder="Confirm your new password"
+            required
+            onChange={handleChange}
           />
 
           <div className=" flex flex-row justify-between  ">
@@ -285,6 +303,7 @@ function AdminSignup() {
           <button
             className=" px-8 py-4 bg-primary rounded-full text-white text-base font-semibold "
             type="submit"
+            disabled={!complete}
           >
             Log In
           </button>

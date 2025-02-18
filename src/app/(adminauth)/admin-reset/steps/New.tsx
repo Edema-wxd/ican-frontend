@@ -12,7 +12,7 @@ function New({ onNext }: Propsval) {
 
   const [formData, setFormData] = useState({
     password: "",
-    confirmPassword: "",
+    cpassword: "",
   });
   const [formErrors, setFormErrors] = useState({
     password: "",

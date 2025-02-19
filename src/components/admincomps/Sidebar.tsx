@@ -59,7 +59,7 @@ function Sidebar() {
       <nav className="flex flex-col">
         {/* Top Menu Group */}
         <div className="flex flex-col py-12">
-          <div className="my-4 flex flex-col gap-2">
+          <div className="my-4 flex flex-col gap-4">
             {topMenuItems.map((item, index) => (
               <Link
                 key={index}
@@ -78,7 +78,7 @@ function Sidebar() {
           <hr className="border border-neutral-300" />
 
           {/* Bottom Menu Group */}
-          <div className="mt-4 flex flex-col gap-2">
+          <div className="mt-4 flex flex-col gap-4">
             {bottomMenuItems.map((item, index) => (
               <Link
                 key={index}

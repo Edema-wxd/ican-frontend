@@ -1,11 +1,14 @@
 "use client";
 import React from "react";
-import { Settings, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 import {
   MdOutlinePeopleAlt,
   MdCollectionsBookmark,
   MdAttachMoney,
   MdOutlinePerson,
+  MdOutlineCardGiftcard,
+  MdOutlineHome,
+  MdOutlineSettings,
 } from "react-icons/md";
 import { IoMdCalendar } from "react-icons/io";
 import Image from "next/image";
@@ -13,6 +16,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const topMenuItems = [
+  { icon: MdOutlineHome, label: "Dashboard", href: "/admin" },
   { icon: MdOutlinePeopleAlt, label: "User Management", href: "/admin/users" },
   {
     icon: MdCollectionsBookmark,
@@ -20,12 +24,17 @@ const topMenuItems = [
     href: "/admin/content",
   },
   { icon: IoMdCalendar, label: "Event Management", href: "/admin/events" },
+  {
+    icon: MdOutlineCardGiftcard,
+    label: "MCPD Points",
+    href: "/admin/mcpd-points",
+  },
   { icon: MdAttachMoney, label: "Payment", href: "/admin/payment" },
 ];
 
 const bottomMenuItems = [
   { icon: MdOutlinePerson, label: "Profile", href: "/admin/profile" },
-  { icon: Settings, label: "Settings", href: "/admin/settings" },
+  { icon: MdOutlineSettings, label: "Settings", href: "/admin/settings" },
 ];
 
 function Sidebar() {
@@ -56,9 +65,10 @@ function Sidebar() {
                 key={index}
                 href={item.href}
                 className={`py-3 px-4 flex flex-row gap-2 ${
-                  activePage === item.label &&
-                  "bg-primary text-white fill-white"
-                } hover:bg-blue-500 hover:text-white hover:fill-white justify-start items-center rounded-lg text-neutral-900`}
+                  activePage === item.label
+                    ? "bg-primary text-white fill-white"
+                    : "hover:bg-gray-200"
+                } justify-start items-center rounded-lg text-neutral-600`}
               >
                 <item.icon className="w-6 h-6" />
                 <p className="whitespace-nowrap test-xs">{item.label}</p>
@@ -73,9 +83,11 @@ function Sidebar() {
               <Link
                 key={index}
                 href={item.href}
-                className={
-                  "py-3 px-4 flex flex-row gap-2 hover:bg-blue-500 hover:text-white hover:fill-white  justify-start items-center rounded-lg text-neutral-900"
-                }
+                className={`py-3 px-4 flex flex-row gap-2 ${
+                  activePage === item.label
+                    ? "bg-primary text-white fill-white"
+                    : "hover:bg-gray-200"
+                }   justify-start items-center rounded-lg text-neutral-600 font-sans `}
               >
                 <item.icon className="w-6 h-6" />
                 <p className="whitespace-nowrap test-xs">{item.label}</p>
@@ -86,7 +98,7 @@ function Sidebar() {
 
         <div>
           <Link
-            href="/logout"
+            href="/"
             className="flex text-red-500 fill-red-500 items-center space-x-3 px-6 py-2 rounded-lg mt-32 mb-20"
           >
             <LogOut className="w-5 h-5 transform scale-x-[-1]" />

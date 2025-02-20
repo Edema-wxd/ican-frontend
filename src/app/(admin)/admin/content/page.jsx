@@ -12,7 +12,7 @@ import Technical from "./tabs/Technical";
 import Student from "./tabs/Student";
 import Faq from "./tabs/Faq";
 
-import NewContent from "@/components/admincomps/createcontent/NewContent";
+import NewContent from "@/components/admincomps/content/create/NewContent";
 
 function Content() {
   const [showModal, setShowModal] = useState(false);

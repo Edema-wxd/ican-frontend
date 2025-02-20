@@ -1,20 +1,17 @@
 import React from "react";
-import {
-  MdSubtitles,
-  MdDeleteOutline,
-} from "react-icons/md";
+import { MdSubtitles, MdDeleteOutline } from "react-icons/md";
 import { HiOutlineTag } from "react-icons/hi";
 
-interface DeleteAdminProps {
+interface CancelEventProps {
   id: string;
-  fullName: string;
-  role: string;
+  eventName: string;
+  date: string;
   onClose: () => void;
 }
 
-function DeleteAdmin({ id, fullName, role, onClose }: DeleteAdminProps) {
+function CancelEvent({ id, eventName, date, onClose }: CancelEventProps) {
   const handleDelete = () => {
-    console.log({ id, fullName, role });
+    console.log({ id, eventName, date });
   };
 
   return (
@@ -26,9 +23,11 @@ function DeleteAdmin({ id, fullName, role, onClose }: DeleteAdminProps) {
           </div>
           <div>
             <div className="flex flex-col gap-2">
-              <h5 className="font-semibold text-xl text-black">Delete Admin</h5>
+              <h5 className="font-semibold text-xl text-black">Cancel Event</h5>
               <p className="text-sm text-neutral-600">
-                Are you sure you want to delete this admin?
+                If you cancel this event, the event will no longer take place
+                and members will be notified via email. Are you sure you want to
+                proceed?{" "}
               </p>
             </div>
             <div className="flex flex-col gap-2 mt-4">
@@ -36,13 +35,13 @@ function DeleteAdmin({ id, fullName, role, onClose }: DeleteAdminProps) {
                 <p className="flex text-neutral-700 font-medium text-base flex-row  items-center gap-2">
                   <MdSubtitles className="w-4 h-4" /> Name:
                 </p>
-                <p className="text-black font-medium text-base ">{fullName}</p>
+                <p className="text-black font-medium text-base ">{eventName}</p>
               </div>
               <div className="flex flex-row items-center gap-4">
                 <p className="flex text-neutral-700 font-medium text-base   items-centerflex-row gap-2">
-                  <HiOutlineTag className="w-4 h-4" /> Role:
+                  <HiOutlineTag className="w-4 h-4" /> Date:
                 </p>
-                <p className="text-black font-medium text-base ">{role}</p>
+                <p className="text-black font-medium text-base ">{date}</p>
               </div>
             </div>
           </div>
@@ -52,7 +51,7 @@ function DeleteAdmin({ id, fullName, role, onClose }: DeleteAdminProps) {
             onClick={handleDelete}
             className="flex items-center w-2/5 text-center justify-center bg-red-600 font-semibold text-base text-white rounded-full py-3 px-4 h-10"
           >
-            Delete
+            Yes, Please
           </button>
           <button
             onClick={onClose}
@@ -66,4 +65,4 @@ function DeleteAdmin({ id, fullName, role, onClose }: DeleteAdminProps) {
   );
 }
 
-export default DeleteAdmin;
+export default CancelEvent;

@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import "react-international-phone/style.css";
-import { FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
+import { FaLock, FaEyeSlash, FaEye,FaUpload } from "react-icons/fa";
 
 interface InputEleProps {
   type: string;
   id: string;
-
   value?: string;
   required?: boolean;
   placeholder?: string;
@@ -34,9 +32,33 @@ function InputEle({
   onChange = () => {},
 }: InputEleProps) {
   const [showPassword, setShowPassword] = useState(false);
+  const [images, setImages] = useState<File[]>([]);  const [files, setFiles] = useState<File[]>([]);
+
+
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setImages([...images, ...Array.from(e.target.files)]);
+    }
+  };
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setFiles([...files, ...Array.from(e.target.files)]);
+    }
+  };
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    if (e.dataTransfer.files) {
+      setImages([...images, ...Array.from(e.dataTransfer.files)]);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
   };
 
   if (type === "text") {
@@ -568,11 +590,106 @@ function InputEle({
       </div>
     );
   }
+
+  if(type === "images"){
+    return (
+      <div className={`w-full h-fit flex flex-col gap-3 ${addStyle}`}>
+        <label className="text-base font-sans font-semibold" htmlFor={id}>
+          {label} {required ? <span className="text-red-600">*</span> : ""}
+        </label>
+        <div
+          className="border-dashed border-2 border-gray-400 p-4 rounded flex flex-col items-center justify-center"
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+        >
+          <p>Drag and drop your images here, or</p>
+          <input
+            type="file"
+            id={id}
+            name={id}
+            accept="image/*"
+            multiple
+            onChange={handleImageChange}
+            className="hidden"
+          />
+          <label
+            htmlFor={id}
+            className="cursor-pointer mt-2 px-4 py-2 bg-primary text-white rounded"
+          >
+            <FaUpload className="inline mr-2" />
+            Upload Images
+          </label>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {images.map((image, index) => (
+            <div key={index} className="w-24 h-24 relative">
+              <img
+                src={URL.createObjectURL(image)}
+                alt={`upload-${index}`}
+                className="w-full h-full object-cover rounded"
+              />
+            </div>
+          ))}
+        </div>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
+      </div>
+    );
+
+  }
+  if (type === "file") {
+    return (
+      <div className={`w-full h-fit flex flex-col gap-3 ${addStyle}`}>
+        <label className="text-base font-sans font-semibold" htmlFor={id}>
+          {label} {required ? <span className="text-red-600">*</span> : ""}
+        </label>
+        <div
+          className="border-dashed border-2 border-gray-400 p-4 rounded flex flex-col items-center justify-center"
+          onDrop={(e) => {
+            e.preventDefault();
+            if (e.dataTransfer.files) {
+              setFiles([...files, ...Array.from(e.dataTransfer.files)]);
+            }
+          }}
+          onDragOver={(e) => e.preventDefault()}
+        >
+          <p>Drag and drop your files here, or</p>
+          <input
+            type="file"
+            id={id}
+            name={id}
+            accept="application/pdf"
+            multiple
+            onChange={(e) => {
+              if (e.target.files) {
+                setFiles([...files, ...Array.from(e.target.files)]);
+              }
+            }}
+            className="hidden"
+          />
+          <label
+            htmlFor={id}
+            className="cursor-pointer mt-2 px-4 py-2 bg-primary text-white rounded"
+          >
+            <FaUpload className="inline mr-2" />
+            Upload Files
+          </label>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+            {files.map((file: File, index: number) => (
+            <div key={index} className="w-full">
+              <p className="truncate">{file.name}</p>
+            </div>
+            ))}
+        </div>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
+      </div>
+    );
+  }
 }
 
 InputEle.propTypes = {
-  id: PropTypes.string.isRequired, // Mandatory string for 'info'
-  required: PropTypes.bool, // Any renderable React node for 'icon'
+  id: PropTypes.string.isRequired,
+  required: PropTypes.bool,
   label: PropTypes.string.isRequired,
   addStyle: PropTypes.string,
   placeholder: PropTypes.string,
@@ -585,6 +702,9 @@ InputEle.propTypes = {
     "marriage",
     "country",
     "phone",
+    "password",
+    "select",
+    "images",
   ]),
 };
 export default InputEle;

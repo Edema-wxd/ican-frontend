@@ -20,6 +20,7 @@ function BlogEdit({}: BlogEditProps) {
         />
         <div>
           <h5>Content Body</h5>
+    <textarea name="blog-content" id="blog-content" cols={30} rows={10}></textarea>
           {/* <ReactQuill theme="snow" value={blog} onChange={setBlog} /> */}
         </div>
       </div>

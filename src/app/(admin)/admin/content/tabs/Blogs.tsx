@@ -19,7 +19,10 @@ function Blogs() {
   useEffect(() => {
     async function fetchData() {
       const result = await getData();
-      setData(result);
+      const filteredData = result.filter(
+        (content) => content.category === "blogs"
+      );
+      setData(filteredData);
     }
     fetchData();
   }, []);

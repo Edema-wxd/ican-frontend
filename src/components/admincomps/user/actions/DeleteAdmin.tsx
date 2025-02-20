@@ -6,7 +6,7 @@ import {
 } from "react-icons/md";
 import { HiOutlineTag } from "react-icons/hi";
 
-interface DeleteContentProps {
+interface DeleteAdminProps {
   id: string;
   title: string;
   category: string;
@@ -14,13 +14,7 @@ interface DeleteContentProps {
   onClose: () => void;
 }
 
-function DeleteContent({
-  id,
-  title,
-  category,
-  date,
-  onClose,
-}: DeleteContentProps) {
+function DeleteAdmin({ id, title, category, date, onClose }: DeleteAdminProps) {
   const handleDelete = () => {
     console.log({ id, title, category, date });
   };
@@ -82,4 +76,4 @@ function DeleteContent({
   );
 }
 
-export default DeleteContent;
+export default DeleteAdmin;

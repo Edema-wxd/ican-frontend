@@ -19,7 +19,11 @@ function Galleries() {
   useEffect(() => {
     async function fetchData() {
       const result = await getData();
-      setData(result);
+      const filteredData = result.filter(
+        (content) => content.category === "gallery"
+      );
+
+      setData(filteredData);
     }
     fetchData();
   }, []);

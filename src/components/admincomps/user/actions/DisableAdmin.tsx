@@ -7,7 +7,7 @@ import {
 } from "react-icons/md";
 import { HiOutlineTag } from "react-icons/hi";
 
-interface UnpublishContentProps {
+interface DisableAdminProps {
   id: string;
   title: string;
   category: string;
@@ -15,13 +15,13 @@ interface UnpublishContentProps {
   onClose: () => void;
 }
 
-function UnpublishContent({
+function DisableAdmin({
   id,
   title,
   category,
   date,
   onClose,
-}: UnpublishContentProps) {
+}: DisableAdminProps) {
   const handleConfirm = () => {
     console.log({ id, title, category, date });
   };
@@ -83,4 +83,4 @@ function UnpublishContent({
   );
 }
 
-export default UnpublishContent;
+export default DisableAdmin;

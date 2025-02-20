@@ -7,6 +7,7 @@ import {
   MdAttachMoney,
   MdOutlinePerson,
   MdOutlineAnalytics,
+  MdHome,
 } from "react-icons/md";
 import { IoMdCalendar } from "react-icons/io";
 import Image from "next/image";
@@ -14,6 +15,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const topMenuItems = [
+  { icon: MdHome, label: "Dashboard", href: "/admin" },
   { icon: MdOutlinePeopleAlt, label: "User Management", href: "/admin/users" },
   {
     icon: MdCollectionsBookmark,

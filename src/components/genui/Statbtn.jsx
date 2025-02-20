@@ -37,6 +37,24 @@ function Statbtn({ status }) {
         <MdOutlineCancel className="w-4 h-4" /> Expired
       </button>
     );
+  } else if (status === "active") {
+    return (
+      <button className="flex flex-row items-center gap-2 bg-green-100 text-green-600 fill-green-600 py-1 px-2 rounded">
+        <MdCheckCircleOutline className="w-4 h-4" /> Active
+      </button>
+    );
+  } else if (status === "suspended") {
+    return (
+      <button className="flex flex-row items-center gap-2 bg-neutral-200 text-neutral-950 fill-neutral-900 py-1 px-2 rounded">
+        <MdAccessTime className="w-4 h-4" /> Suspended
+      </button>
+    );
+  } else if (status === "inactive") {
+    return (
+      <button className="flex flex-row items-center gap-2 bg-red-200 text-red-500 fill-red-500 py-1 px-2 rounded">
+        <MdOutlineCancel className="w-4 h-4" /> Inactive
+      </button>
+    );
   }
 }
 

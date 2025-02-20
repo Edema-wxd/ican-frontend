@@ -19,7 +19,11 @@ function Technical() {
   useEffect(() => {
     async function fetchData() {
       const result = await getData();
-      setData(result);
+      const filteredData = result.filter(
+        (content) => content.category === "technical"
+      );
+
+      setData(filteredData);
     }
     fetchData();
   }, []);

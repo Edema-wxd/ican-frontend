@@ -7,7 +7,8 @@ export type Content = {
     | "publication"
     | "gallery"
     | "technical"
-    | "student";
+    | "student"
+    | "faq";
   author?: string;
   advertiser?: string;
   date_created?: string;

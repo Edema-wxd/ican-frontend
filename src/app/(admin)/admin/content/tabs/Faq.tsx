@@ -17,7 +17,11 @@ function Faq() {
   useEffect(() => {
     async function fetchData() {
       const result = await getData();
-      setData(result);
+      const filteredData = result.filter(
+        (content) => content.category === "faq"
+      );
+
+      setData(filteredData);
     }
     fetchData();
   }, []);

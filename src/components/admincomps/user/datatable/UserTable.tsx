@@ -19,6 +19,8 @@ import { Input } from "@/components/ui/input";
 // For Sorting
 import * as React from "react";
 
+import Image from "next/image";
+
 import {
   Table,
   TableBody,
@@ -61,9 +63,11 @@ export function UserTable<TData, TValue>({
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter by name..."
-          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+          value={
+            (table.getColumn("fullName")?.getFilterValue() as string) ?? ""
+          }
           onChange={(event) =>
-            table.getColumn("name")?.setFilterValue(event.target.value)
+            table.getColumn("fullName")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
@@ -115,7 +119,12 @@ export function UserTable<TData, TValue>({
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No results.
+                  <Image className="mx-auto"
+                    src="/Emptyusertable.png"
+                    alt="Empty"
+                    width={400}
+                    height={400}
+                  />
                 </TableCell>
               </TableRow>
             )}

@@ -5,7 +5,7 @@ import {
   MdOutlinePeopleAlt,
   MdCollectionsBookmark,
   MdAttachMoney,
-  MdOutlinePerson,
+  MdOutlinePerson, MdOutlineAnalytics
 } from "react-icons/md";
 import { IoMdCalendar } from "react-icons/io";
 import Image from "next/image";
@@ -21,6 +21,7 @@ const topMenuItems = [
   },
   { icon: IoMdCalendar, label: "Event Management", href: "/admin/events" },
   { icon: MdAttachMoney, label: "Payment", href: "/admin/payment" },
+  { icon: MdOutlineAnalytics, label: "Analytics", href: "/admin/analytics" },
 ];
 
 const bottomMenuItems = [

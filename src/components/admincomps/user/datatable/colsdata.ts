@@ -19,7 +19,7 @@ export const users: User[] = [
     email: "sheppardmathis@comveyer.com",
     membership_id: "67b5bb8f548c65b8b24776e5",
     role: "member",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8fa8fd6ab4c207da1d",
@@ -29,7 +29,7 @@ export const users: User[] = [
     email: "katharinedrake@comveyer.com",
     membership_id: "67b5bb8f9b19734dbafb2304",
     role: "member",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8fb01524e34fb2623a",
@@ -39,7 +39,7 @@ export const users: User[] = [
     email: "browningkelley@comveyer.com",
     membership_id: "67b5bb8fba049685f196ad75",
     role: "member",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8fd33623bfdbc7adc1",
@@ -49,7 +49,7 @@ export const users: User[] = [
     email: "boltonthompson@comveyer.com",
     membership_id: "67b5bb8f020a93900830f585",
     role: "member",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8f5a829bcbce2bbac3",
@@ -59,7 +59,7 @@ export const users: User[] = [
     email: "mcclurewolfe@comveyer.com",
     membership_id: "67b5bb8f4f52d2e0bebe7247",
     role: "member",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8feb43af77afdd6377",
@@ -69,7 +69,7 @@ export const users: User[] = [
     email: "wadefulton@comveyer.com",
     membership_id: "67b5bb8f5be61e8169845385",
     role: "admin",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8feb2ba2265111d532",
@@ -79,7 +79,7 @@ export const users: User[] = [
     email: "dillonalvarez@comveyer.com",
     membership_id: "67b5bb8f69c7793422c7d7c4",
     role: "member",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8f7bc5e6916af6e34f",
@@ -89,7 +89,7 @@ export const users: User[] = [
     email: "gibsonhines@comveyer.com",
     membership_id: "67b5bb8f5527e0657c37dd13",
     role: "member",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8fa247a4ab2aadb36f",
@@ -99,7 +99,7 @@ export const users: User[] = [
     email: "chericooke@comveyer.com",
     membership_id: "67b5bb8ffeaa1c88a5040cb5",
     role: "admin",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8f5a0c0a879b6c404c",
@@ -109,7 +109,7 @@ export const users: User[] = [
     email: "rachellegoodman@comveyer.com",
     membership_id: "67b5bb8ffabcb8de93137e6d",
     role: "member",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8f2bc12fa8aaf36f73",
@@ -119,7 +119,7 @@ export const users: User[] = [
     email: "oraespinoza@comveyer.com",
     membership_id: "67b5bb8f421cada86765e4dd",
     role: "admin",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8faa04a53e589a7e67",
@@ -129,7 +129,7 @@ export const users: User[] = [
     email: "robbinswilliamson@comveyer.com",
     membership_id: "67b5bb8f3ad86de9c1bc983e",
     role: "member",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8fc753ae9958e41aa2",
@@ -139,7 +139,7 @@ export const users: User[] = [
     email: "churchhumphrey@comveyer.com",
     membership_id: "67b5bb8f44334cd1cbdebdd9",
     role: "super admin",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8f93129be2fce93701",
@@ -149,7 +149,7 @@ export const users: User[] = [
     email: "stoutvalenzuela@comveyer.com",
     membership_id: "67b5bb8fa093d74dd75453ee",
     role: "super admin",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8fad6859e59e59f071",
@@ -159,7 +159,7 @@ export const users: User[] = [
     email: "jamihester@comveyer.com",
     membership_id: "67b5bb8f8311e59f35c853af",
     role: "member",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8ffe3e8ae5c24b739f",
@@ -169,7 +169,7 @@ export const users: User[] = [
     email: "augustalindsey@comveyer.com",
     membership_id: "67b5bb8f2a2e6c26e6bfc87e",
     role: "admin",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8fd9c1924fce613348",
@@ -179,7 +179,7 @@ export const users: User[] = [
     email: "acevedomontoya@comveyer.com",
     membership_id: "67b5bb8f730a3071b63813c7",
     role: "admin",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8f4602fef8c79762c9",
@@ -189,7 +189,7 @@ export const users: User[] = [
     email: "holliediaz@comveyer.com",
     membership_id: "67b5bb8ffac99602d4588325",
     role: "admin",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8f00bc7d4c4b560a74",
@@ -199,7 +199,7 @@ export const users: User[] = [
     email: "carrollworkman@comveyer.com",
     membership_id: "67b5bb8f016b14488d88d592",
     role: "super admin",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8f4de7e4bdf4f30bac",
@@ -209,7 +209,7 @@ export const users: User[] = [
     email: "benitapennington@comveyer.com",
     membership_id: "67b5bb8fe4850e7ad3985e2d",
     role: "super admin",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8fb32600b61e1b3aff",
@@ -219,7 +219,7 @@ export const users: User[] = [
     email: "brockblair@comveyer.com",
     membership_id: "67b5bb8f69e57c898fb10487",
     role: "super admin",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8f1204fad5e03894a4",
@@ -229,7 +229,7 @@ export const users: User[] = [
     email: "bonitamullen@comveyer.com",
     membership_id: "67b5bb8fb63b42fc8ff9bc94",
     role: "admin",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8fb29fece3b3376f48",
@@ -239,7 +239,7 @@ export const users: User[] = [
     email: "bookerfernandez@comveyer.com",
     membership_id: "67b5bb8f331c4a427713f3a6",
     role: "admin",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8f5e96433acd748f64",
@@ -249,7 +249,7 @@ export const users: User[] = [
     email: "maudeknox@comveyer.com",
     membership_id: "67b5bb8f38de05a781053ee4",
     role: "admin",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8f253a6d15e823ec0b",
@@ -259,7 +259,7 @@ export const users: User[] = [
     email: "carsoncastro@comveyer.com",
     membership_id: "67b5bb8f080c06c9eae109a9",
     role: "super admin",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8f63dea13ce84d8c1a",
@@ -269,7 +269,7 @@ export const users: User[] = [
     email: "mcdanielrussell@comveyer.com",
     membership_id: "67b5bb8f7ca0e599ba6645d6",
     role: "super admin",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8f0497334c73f6af85",
@@ -279,7 +279,7 @@ export const users: User[] = [
     email: "gwencummings@comveyer.com",
     membership_id: "67b5bb8f50eba594fac04d5c",
     role: "admin",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8f15e20856cd0c8520",
@@ -289,7 +289,7 @@ export const users: User[] = [
     email: "liliandejesus@comveyer.com",
     membership_id: "67b5bb8ffee0623e0650cc87",
     role: "member",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8f96dcbf1a7af0d88e",
@@ -299,7 +299,7 @@ export const users: User[] = [
     email: "mirandasparks@comveyer.com",
     membership_id: "67b5bb8fa13b00a03db70956",
     role: "admin",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8f7a785fb68f03ced3",
@@ -309,7 +309,7 @@ export const users: User[] = [
     email: "davenportfuentes@comveyer.com",
     membership_id: "67b5bb8f39f296435debd8ab",
     role: "member",
-    status: "active"
+    status: "active",
   },
   {
     id: "67b5bb8fcf7e1efb1904e2fd",
@@ -319,7 +319,7 @@ export const users: User[] = [
     email: "micheleestrada@comveyer.com",
     membership_id: "67b5bb8fbb4ebbfef759f709",
     role: "super admin",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8faea18aded7e6eb1e",
@@ -329,7 +329,7 @@ export const users: User[] = [
     email: "browncohen@comveyer.com",
     membership_id: "67b5bb8f3aa9102599003b3f",
     role: "admin",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8f5cefab0c26bb6dbd",
@@ -339,7 +339,7 @@ export const users: User[] = [
     email: "gabrielayang@comveyer.com",
     membership_id: "67b5bb8f10202ba8412ed818",
     role: "super admin",
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: "67b5bb8f008d395d2f1fa117",
@@ -349,7 +349,7 @@ export const users: User[] = [
     email: "knappkaufman@comveyer.com",
     membership_id: "67b5bb8f670668e91834dd36",
     role: "member",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8f2a3b3884422376f1",
@@ -359,7 +359,7 @@ export const users: User[] = [
     email: "bairdwest@comveyer.com",
     membership_id: "67b5bb8f287b14ca3829cc77",
     role: "member",
-    status: "suspened"
+    status: "suspened",
   },
   {
     id: "67b5bb8f5c8eafbc77231686",
@@ -369,6 +369,6 @@ export const users: User[] = [
     email: "marcievang@comveyer.com",
     membership_id: "67b5bb8f90b0a00823759c12",
     role: "member",
-    status: "suspened"
-  }
-]
+    status: "suspened",
+  },
+];

@@ -5,7 +5,8 @@ import {
   MdOutlinePeopleAlt,
   MdCollectionsBookmark,
   MdAttachMoney,
-  MdOutlinePerson, MdOutlineAnalytics
+  MdOutlinePerson,
+  MdOutlineAnalytics,
 } from "react-icons/md";
 import { IoMdCalendar } from "react-icons/io";
 import Image from "next/image";

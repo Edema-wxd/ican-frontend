@@ -1,4 +1,3 @@
-
 const MIN_ALLOWED_FONT_SIZE = 8;
 const MAX_ALLOWED_FONT_SIZE = 72;
 
@@ -10,9 +9,9 @@ export const parseAllowedFontSize = (input: string): string => {
       return input;
     }
   }
-  return '';
+  return "";
 };
 
 export function parseAllowedColor(input: string) {
-  return /^rgb\(\d+, \d+, \d+\)$/.test(input) ? input : '';
+  return /^rgb\(\d+, \d+, \d+\)$/.test(input) ? input : "";
 }

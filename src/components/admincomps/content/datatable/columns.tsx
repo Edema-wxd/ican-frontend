@@ -6,7 +6,7 @@ import { Content } from "./colsdata";
 
 import { Button } from "@/components/ui/button";
 import Statbtn from "@/components/genui/Statbtn";
-import CellActions from "@/components/admincomps/editActions/CellActions";
+import CellActions from "@/components/admincomps/content/editActions/CellActions";
 
 export const allcolumns: ColumnDef<Content>[] = [
   

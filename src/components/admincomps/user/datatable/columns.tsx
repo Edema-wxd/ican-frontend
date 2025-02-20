@@ -8,6 +8,10 @@ import { Button } from "@/components/ui/button";
 import Statbtn from "@/components/genui/Statbtn";
 import CellActions from "@/components/admincomps/user/actions/CellActions";
 
+const capitalizeWords = (str: string): string => {
+  return str.replace(/\b\w/g, (char) => char.toUpperCase());
+};
+
 export const allcolumns: ColumnDef<User>[] = [
   {
     accessorKey: "fullName",
@@ -40,6 +44,9 @@ export const allcolumns: ColumnDef<User>[] = [
           Role <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
+    },
+    cell: ({ row }) => {
+      return capitalizeWords(row.original.role);
     },
   },
   {
@@ -101,6 +108,9 @@ export const adminscolumns: ColumnDef<User>[] = [
         </Button>
       );
     },
+    cell: ({ row }) => {
+      return capitalizeWords(row.original.role);
+    },
   },
   {
     accessorKey: "status",
@@ -160,6 +170,9 @@ export const memberscolumns: ColumnDef<User>[] = [
           Role <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
+    },
+    cell: ({ row }) => {
+      return capitalizeWords(row.original.role);
     },
   },
   {

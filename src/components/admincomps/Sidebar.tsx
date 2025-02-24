@@ -16,6 +16,7 @@ import { usePathname } from "next/navigation";
 
 const topMenuItems = [
   { icon: MdHome, label: "Dashboard", href: "/admin" },
+  { icon: MdOutlinePeopleAlt, label: "Admin Management", href: "/admin/admins" },
   { icon: MdOutlinePeopleAlt, label: "User Management", href: "/admin/users" },
   {
     icon: MdCollectionsBookmark,

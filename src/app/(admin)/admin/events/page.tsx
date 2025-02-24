@@ -26,9 +26,18 @@ function EventsPage() {
   return (
     <div className="rounded-3xl p-6">
       <div className="flex flex-row mb-6 w-full items-center justify-between">
-        <h2 className="font-semibol text-2xl text-black">
-          ICAN SDS Event Management
-        </h2>
+        <div className="flex flex-col gap-3">
+          <h2 className="font-semibol text-2xl text-black">Event Management</h2>
+          <p>View and Manage all events here</p>
+        </div>
+        <div className="flex flex-row items-center gap-4 justify-end">
+          <button className="rounded-full py-2 px-3 bg-transparent text-primary border-primary text-base w-fit">
+            Manage Roles
+          </button>
+          <button className=" py-2 px-3 text-white bg-primary  text-base rounded-full w-fit">
+            Add Administrator
+          </button>
+        </div>
       </div>
       {/* Tab sections */}
       <div className="rounded-3xl px-8 py-6 flex flex-col gap-4 border border-neutral-200 bg-white">

@@ -10,7 +10,7 @@ function AdminManagementPage() {
   return (
     <div className="rounded-3xl p-6">
       <div className="flex flex-row mb-6 w-full items-center justify-between">
-        <div>
+        <div className="flex flex-col gap-3">
           <h2 className="font-semibol text-2xl text-black">
             All Administrators
           </h2>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { FaLock, FaEyeSlash, FaEye,FaUpload } from "react-icons/fa";
+import { FaLock, FaEyeSlash, FaEye, FaUpload } from "react-icons/fa";
 
 interface InputEleProps {
   type: string;
@@ -32,9 +32,8 @@ function InputEle({
   onChange = () => {},
 }: InputEleProps) {
   const [showPassword, setShowPassword] = useState(false);
-  const [images, setImages] = useState<File[]>([]);  const [files, setFiles] = useState<File[]>([]);
-
-
+  const [images, setImages] = useState<File[]>([]);
+  const [files, setFiles] = useState<File[]>([]);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -590,8 +589,7 @@ function InputEle({
       </div>
     );
   }
-
-  if(type === "images"){
+  if (type === "images") {
     return (
       <div className={`w-full h-fit flex flex-col gap-3 ${addStyle}`}>
         <label className="text-base font-sans font-semibold" htmlFor={id}>
@@ -634,7 +632,6 @@ function InputEle({
         <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );
-
   }
   if (type === "file") {
     return (
@@ -675,12 +672,33 @@ function InputEle({
           </label>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
-            {files.map((file: File, index: number) => (
+          {files.map((file: File, index: number) => (
             <div key={index} className="w-full">
               <p className="truncate">{file.name}</p>
             </div>
-            ))}
+          ))}
         </div>
+        <p className="text-red-500 text-base font-medium">{errorMsg}</p>
+      </div>
+    );
+  }
+  if (type === "time") {
+    return (
+      <div className={` w-full h-fit flex flex-col gap-3 ${addStyle} `}>
+        <label className=" text-base font-sans font-semibold  " htmlFor={id}>
+          {label} {required ? <span className="text-red-600">*</span> : ""}
+        </label>
+        <input
+          className=" p-3 rounded border border-gray-400  "
+          placeholder={placeholder}
+          name={id}
+          id={id}
+          value={value}
+          required={required}
+          type={type}
+          onChange={onChange}
+        />
+
         <p className="text-red-500 text-base font-medium">{errorMsg}</p>
       </div>
     );

@@ -12,6 +12,7 @@ function NewEvent({
   setShowNewEvent: (show: boolean) => void;
 }) {
   const [formData, setFormData] = useState({
+    event_id: "",
     eventName: "",
     venue: "",
     eventDescription: "",

@@ -20,16 +20,19 @@ import { FaUserXmark, FaUserCheck } from "react-icons/fa6";
 import { MoreHorizontal } from "lucide-react";
 import DisableAdmin from "./DisableAdmin";
 import CancelEvent from "./CancelEvent";
-import EnableAdmin from "./EnableAdmin";
+import NewContent from "@/components/admincomps/content/create/NewContent";
+
+import { useRouter } from "next/navigation";
 
 interface CellProps {
   row: any; // Replace 'any' with the actual type of 'row'
 }
 
 const ActionsCell: React.FC<CellProps> = ({ row }) => {
-  const [showDisableModal, setShowDisableModal] = useState(false);
-  const [showEnableModal, setShowEnableModal] = useState(false);
+  const [showEditModal, setshowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+
+  const router = useRouter(); // Hook to navigate programmatically
 
   const capitalizeWords = (str: string): string => {
     return str.replace(/\b\w/g, (char) => char.toUpperCase());
@@ -49,21 +52,12 @@ const ActionsCell: React.FC<CellProps> = ({ row }) => {
             <MdEdit className="w-4 h-4" /> Edit Event Details
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          {row.original.status === "active" ? (
-            <DropdownMenuItem
-              className="flex flex-row items-center"
-              onClick={() => setShowDisableModal(true)}
-            >
-              <MdOutlineToggleOn className="w-4 h-4" /> Disable Admin
-            </DropdownMenuItem>
-          ) : (
-            <DropdownMenuItem
-              className="flex flex-row items-center"
-              onClick={() => setShowEnableModal(true)}
-            >
-              <MdOutlineToggleOff className="w-4 h-4" /> Enable Admin
-            </DropdownMenuItem>
-          )}
+          <DropdownMenuItem
+            className="flex flex-row items-center"
+            onClick={() => router.push(`/admin/events/${row.original.id}`)}
+          >
+            <MdOutlineToggleOn className="w-4 h-4" /> View Event Details
+          </DropdownMenuItem>
 
           <DropdownMenuSeparator />
           <DropdownMenuItem
@@ -75,22 +69,15 @@ const ActionsCell: React.FC<CellProps> = ({ row }) => {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-      {showDisableModal && (
-        <DisableAdmin
+      {showEditModal && (
+        <NewContent
           id={row.original.id}
           fullName={row.original.fullName}
           role={capitalizeWords(row.original.role ?? "")}
-          onClose={() => setShowDisableModal(false)}
+          onClose={() => setshowEditModal(false)}
         />
       )}
-      {showEnableModal && (
-        <EnableAdmin
-          id={row.original.id}
-          fullName={row.original.fullName}
-          role={capitalizeWords(row.original.role ?? "")}
-          onClose={() => setShowDisableModal(false)}
-        />
-      )}
+
       {showDeleteModal && (
         <CancelEvent
           id={row.original.id}

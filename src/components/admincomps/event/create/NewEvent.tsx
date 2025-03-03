@@ -2,8 +2,15 @@
 
 import React, { useState } from "react";
 import InputEle from "@/components/genui/InputEle";
+import { MdClose } from "react-icons/md";
 
-function NewEvent() {
+function NewEvent({
+  showNewEvent,
+  setShowNewEvent,
+}: {
+  showNewEvent: boolean;
+  setShowNewEvent: (show: boolean) => void;
+}) {
   const [formData, setFormData] = useState({
     eventName: "",
     venue: "",
@@ -28,7 +35,19 @@ function NewEvent() {
   };
 
   const handleCancel = () => {
-    // Handle cancel action
+    // Reset form data to initial state
+    setFormData({
+      eventName: "",
+      venue: "",
+      eventDescription: "",
+      eventDate: "",
+      eventTime: "",
+      eventFee: "",
+      mcpdCredit: "",
+      eventPhoto: null,
+    });
+    // Close the modal
+    setShowNewEvent(false);
   };
 
   const handleSaveDraft = () => {
@@ -40,9 +59,18 @@ function NewEvent() {
   };
 
   return (
-    <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+    <div className="fixed z-10 inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg w-1/2">
-        <h2 className="text-2xl font-bold mb-4">Create New Event</h2>
+        <div className="flex flex-row justify-between items-center mb-4">
+          <h2 className="text-2xl font-bold">Create New Event</h2>
+
+          <button
+            className=" text-black hover:text-gray-700"
+            onClick={handleCancel}
+          >
+            <MdClose className="w-5 h-5" />
+          </button>
+        </div>
         <div className="flex flex-row items-center gap-4 justify-between">
           <InputEle
             type="text"
@@ -108,21 +136,21 @@ function NewEvent() {
           label="Upload Event Photo/Flyer"
           onChange={handleChange}
         />
-        <div className="flex justify-end mt-4">
+        <div className="flex justify-between mt-4">
           <button
-            className="bg-gray-500 text-white px-4 py-2 rounded mr-2"
+            className="bg-gray-500 w-full  text-white px-4 py-2 rounded mr-2"
             onClick={handleCancel}
           >
             Cancel
           </button>
           <button
-            className="bg-yellow-500 text-white px-4 py-2 rounded mr-2"
+            className="bg-white text-primary w-full px-4 py-2 rounded mr-2"
             onClick={handleSaveDraft}
           >
             Save as Draft
           </button>
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-primary text-white w-full px-4 py-2 rounded"
             onClick={handlePublish}
           >
             Publish Event

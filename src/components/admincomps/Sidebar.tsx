@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Settings, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 import {
   MdOutlinePeopleAlt,
   MdCollectionsBookmark,
@@ -8,6 +8,7 @@ import {
   MdOutlinePerson,
   MdOutlineAnalytics,
   MdHome,
+  MdOutlineSettings,
 } from "react-icons/md";
 import { IoMdCalendar } from "react-icons/io";
 import Image from "next/image";
@@ -16,7 +17,11 @@ import { usePathname } from "next/navigation";
 
 const topMenuItems = [
   { icon: MdHome, label: "Dashboard", href: "/admin" },
-  { icon: MdOutlinePeopleAlt, label: "Admin Management", href: "/admin/admins" },
+  {
+    icon: MdOutlinePeopleAlt,
+    label: "Admin Management",
+    href: "/admin/admins",
+  },
   { icon: MdOutlinePeopleAlt, label: "User Management", href: "/admin/users" },
   {
     icon: MdCollectionsBookmark,
@@ -30,7 +35,7 @@ const topMenuItems = [
 
 const bottomMenuItems = [
   { icon: MdOutlinePerson, label: "Profile", href: "/admin/profile" },
-  { icon: Settings, label: "Settings", href: "/admin/settings" },
+  { icon: MdOutlineSettings, label: "Settings", href: "/admin/settings" },
 ];
 
 function Sidebar() {
@@ -78,9 +83,10 @@ function Sidebar() {
               <Link
                 key={index}
                 href={item.href}
-                className={
-                  "py-3 px-4 flex flex-row gap-2 hover:bg-blue-500 hover:text-white hover:fill-white  justify-start items-center rounded-lg text-neutral-900"
-                }
+                className={`py-3 px-4 flex flex-row gap-2 ${
+                  activePage === item.label &&
+                  "bg-primary text-white fill-white"
+                } hover:bg-blue-500 hover:text-white hover:fill-white justify-start items-center rounded-lg text-neutral-900`}
               >
                 <item.icon className="w-6 h-6" />
                 <p className="whitespace-nowrap test-xs">{item.label}</p>

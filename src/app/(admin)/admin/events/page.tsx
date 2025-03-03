@@ -8,6 +8,8 @@ import {
   events,
 } from "@/components/admincomps/event/datatable/colsdata";
 
+import NewEvent from "@/components/admincomps/event/create/NewEvent";
+
 export async function getData(): Promise<Event[]> {
   return events;
 }
@@ -23,6 +25,8 @@ function EventsPage() {
     fetchData();
   }, []);
 
+  const [showNewEvent, setShowNewEvent] = useState(false);
+
   return (
     <div className="rounded-3xl p-6">
       <div className="flex flex-row mb-6 w-full items-center justify-between">
@@ -31,12 +35,18 @@ function EventsPage() {
           <p>View and Manage all events here</p>
         </div>
         <div className="flex flex-row items-center gap-4 justify-end">
-          <button className="rounded-full py-2 px-3 bg-transparent text-primary border-primary text-base w-fit">
-            Manage Roles
+          <button
+            className="py-2 px-3 text-white bg-primary text-base rounded-full w-fit"
+            onClick={() => setShowNewEvent(true)}
+          >
+            Create New Event
           </button>
-          <button className=" py-2 px-3 text-white bg-primary  text-base rounded-full w-fit">
-            Add Administrator
-          </button>
+          {showNewEvent && (
+            <NewEvent
+              showNewEvent={showNewEvent}
+              setShowNewEvent={setShowNewEvent}
+            />
+          )}
         </div>
       </div>
       {/* Tab sections */}

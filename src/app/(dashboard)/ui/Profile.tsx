@@ -228,7 +228,7 @@ function Profile() {
           </button>
           <button
             type="button"
-            className="sm:w-auto bg-primary text-[#27378C] px-8 py-2 rounded-full hover:bg-gray-200"
+            className="sm:w-auto text-[#27378C] px-8 py-2 rounded-full bg-gray-200"
           >
             Cancel
           </button>

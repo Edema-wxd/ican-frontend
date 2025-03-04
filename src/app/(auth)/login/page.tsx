@@ -1,15 +1,44 @@
 "use client";
 
 import React from "react";
-
+import { useState } from "react";
 // import Biodata from "@/components/Biodata";
 import Image from "next/image";
 import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 import InputEle from "@/components/genui/InputEle";
 
 function Login() {
   const { toast } = useToast();
+
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault(); // Prevent default form submission
+   
+    if (email && password) {
+      toast({
+        title: "Login Successful",
+        description: "Redirecting to Overview...",
+        variant: "default",
+        duration: 2000,
+      });
+
+      setTimeout(() => {
+        router.push("/Overview");
+      }, 2000); // Match the toast duration
+    } else {
+      toast({
+        title: "Login Failed",
+        description: "Please enter both email and password",
+        variant: "destructive",
+        duration: 2000,
+      });
+    }
+  };
 
   return (
     <div className=" m-auto ">
@@ -23,7 +52,7 @@ function Login() {
             Please, enter your details below
           </p>
         </div>
-        <form className="w-full flex flex-col gap-4 " action="">
+        <form className="w-full flex flex-col gap-4 " action="" onSubmit={handleSubmit}>
           {/* <InputEle /> */}
           <div className="  w-full flex flex-col">
             <label
@@ -36,8 +65,10 @@ function Login() {
               className=" p-3 rounded border border-gray-400  "
               placeholder="Enter your email address"
               name="email"
+              value={email}
               required
               type="email"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <p></p>
           </div>
@@ -52,8 +83,10 @@ function Login() {
               className=" p-3 rounded border border-gray-400  "
               placeholder="Enter password"
               name="password"
+              value={password}
               required
               type="password"
+              onChange={(e) => setPassword(e.target.value)}
             />
             <p></p>
           </div>
@@ -74,9 +107,14 @@ function Login() {
             type="submit"
             onClick={() => {
               toast({
-                title: "Scheduled: Catch up",
-                description: "Friday, February 10, 2023 at 5:57 PM",
+                title: "Login Successful",
+                description: "Redirecting to Overview...",
+                variant: "default",
+                duration: 3000,
               });
+              setTimeout(() => {
+                router.push("/Overview"); 
+              }, 100); 
             }}
           >
             Log In

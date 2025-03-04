@@ -8,7 +8,7 @@ interface Propsval {
 
 function Base({ onNext }: Propsval) {
   return (
-    <div className="flex flex-col w-full sm:w-[440px] items-center  gap-6 ">
+    <div className="flex flex-col w-full sm:w-[440px] items-center  gap-6 p-4">
       <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
       <div className=" w-fit">
         <h4 className=" text-primary text-center  text-3xl font-bold font-mono   ">
@@ -43,7 +43,7 @@ function Base({ onNext }: Propsval) {
           className=" px-8 py-4 bg-primary rounded-full text-white text-base font-semibold "
           type="submit"
         >
-          Reset Password
+          Send reset link
         </button>
       </form>
       <p className=" text-base font-medium   ">

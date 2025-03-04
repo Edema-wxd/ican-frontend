@@ -24,7 +24,7 @@ export function Toaster() {
             {...props}
             className={`${props.className} ${
               props.variant === 'default' 
-                ? 'bg-[#DFF5E0] border-green-500 border-2 text-[#1F2937]' 
+                ? 'bg-[#DFF5E0] border-green-500 border border-l-4 text-[#1F2937]' 
                 : props.variant === 'destructive' 
                   ? 'bg-red-100 border-red-200 text-red-900'
                   : ''

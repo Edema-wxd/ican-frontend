@@ -35,13 +35,13 @@ export const Header = () => {
 
   return (
     <header className="h-[6rem] fixed top-0 right-0 left-60 z-30 p-2">
-      <div className="h-full bg-white rounded-[50px] border border-gray-400 shadow-sm px-12 flex items-center justify-between">
+      <div className="h-full bg-white  border-b border-gray-400 shadow-sm px-12 flex items-center justify-between">
         <div className="flex items-center">
           {/* <Search className="w-6 h-6 text-black" />
           <span className="ml-2 text-xl text-grey-600">Search</span> */}
 
           <div className="relative group">
-            <div className="absolute left-4 top-1/2 -translate-y-1/2">
+            <div className="absolute right-60 top-1/2 -translate-y-1/2">
               <Search className="w-5 h-5 text-black" />
             </div>
             <input

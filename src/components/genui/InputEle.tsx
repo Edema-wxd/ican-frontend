@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { FaLock, FaEyeSlash, FaEye, FaUpload } from "react-icons/fa";
+import Image from "next/image";
 
 // Optimise the country select comp
 
@@ -9,11 +10,14 @@ interface InputEleProps {
   id: string;
   value?: string;
   required?: boolean;
+  disabled?: boolean;
+
   placeholder?: string;
   label: string;
-  selectOptions?: string[];
   addStyle?: string;
   errorMsg?: string;
+  options?: { value: string; label: string }[];
+
   onChange: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -25,8 +29,10 @@ function InputEle({
   type,
   id,
   required = true,
+  disabled = false,
+
   label,
-  selectOptions = [],
+  options = [],
   placeholder = "",
   addStyle = "",
   errorMsg = "",
@@ -75,6 +81,7 @@ function InputEle({
             id={id}
             value={value}
             required={required}
+            disabled={disabled}
             type={type}
             min={1900}
             max={2099}
@@ -98,6 +105,7 @@ function InputEle({
             id={id}
             value={value}
             required={required}
+            disabled={disabled}
             onChange={onChange}
           >
             <option value="select">Select...</option>
@@ -120,6 +128,7 @@ function InputEle({
             id={id}
             value={value}
             required={required}
+            disabled={disabled}
             onChange={onChange}
           >
             <option value="select">Select...</option>
@@ -143,6 +152,7 @@ function InputEle({
             id={id}
             value={value}
             required={required}
+            disabled={disabled}
             onChange={onChange}
           >
             <option value="">country</option>
@@ -480,6 +490,7 @@ function InputEle({
               placeholder={placeholder}
               onChange={onChange}
               required={required}
+              disabled={disabled}
             />
             <button
               type="button"
@@ -504,11 +515,12 @@ function InputEle({
             name={id}
             id={id}
             required={required}
+            disabled={disabled}
             onChange={onChange}
           >
-            {selectOptions?.map((option, index) => (
-              <option key={index} value={option.toLowerCase()}>
-                {option}
+            {options?.map((option, index) => (
+              <option key={index} value={option.value}>
+                {option.label}
               </option>
             ))}
           </select>
@@ -548,7 +560,8 @@ function InputEle({
           <div className="mt-4 flex flex-wrap gap-2">
             {images.map((image, index) => (
               <div key={index} className="w-24 h-24 relative">
-                <img
+                <Image
+                  fill={true}
                   src={URL.createObjectURL(image)}
                   alt={`upload-${index}`}
                   className="w-full h-full object-cover rounded"
@@ -622,6 +635,7 @@ function InputEle({
             id={id}
             value={value}
             required={required}
+            disabled={disabled}
             type={type}
             onChange={onChange}
           />

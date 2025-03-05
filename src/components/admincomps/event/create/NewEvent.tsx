@@ -27,7 +27,8 @@ function NewEvent({
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    const { name, value, files } = e.target;
+    const { name, value } = e.target as HTMLInputElement;
+    const files = (e.target as HTMLInputElement).files;
     if (files) {
       setFormData({ ...formData, [name]: files[0] });
     } else {
@@ -38,6 +39,7 @@ function NewEvent({
   const handleCancel = () => {
     // Reset form data to initial state
     setFormData({
+      event_id: "",
       eventName: "",
       venue: "",
       eventDescription: "",

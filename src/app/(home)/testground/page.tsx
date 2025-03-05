@@ -9,7 +9,6 @@ function TestingPage() {
     <div className="mt-20">
       TestingPage
       <div className="m-10">
-        <NewEvent />
         <RichTextEditor />
       </div>
     </div>

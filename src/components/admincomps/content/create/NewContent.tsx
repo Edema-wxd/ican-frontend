@@ -13,6 +13,7 @@ import StudentEdit from "./editcomps/StudentEdit";
 import FaqEdit from "./editcomps/FaqEdit";
 
 interface NewContentProps {
+  id?: any;
   showModal: boolean;
   setShowModal: (show: boolean) => void;
 }
@@ -49,14 +50,14 @@ function NewContent({ showModal, setShowModal }: NewContentProps) {
               type="select"
               id="contentType"
               value={contentType}
-              selectOptions={[
-                "Adverts",
-                "Blog",
-                "Publication",
-                "Gallery",
-                "Technical",
-                "Student",
-                "Faq",
+              options={[
+                { value: "adverts", label: "Adverts" },
+                { value: "blog", label: "Blog" },
+                { value: "publication", label: "Publication" },
+                { value: "gallery", label: "Gallery" },
+                { value: "technical", label: "Technical" },
+                { value: "student", label: "Student" },
+                { value: "faq", label: "Faq" },
               ]}
               onChange={(e) => setContentType(e.target.value)}
             />

@@ -72,9 +72,8 @@ const ActionsCell: React.FC<CellProps> = ({ row }) => {
       {showEditModal && (
         <NewContent
           id={row.original.id}
-          fullName={row.original.fullName}
-          role={capitalizeWords(row.original.role ?? "")}
-          onClose={() => setshowEditModal(false)}
+          showModal={showEditModal}
+          setShowModal={setshowEditModal}
         />
       )}
 

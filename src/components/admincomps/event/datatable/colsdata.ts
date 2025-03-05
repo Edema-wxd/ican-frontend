@@ -1,4 +1,4 @@
-export type Event = {
+export interface Event {
   event_id: string;
   eventName: string;
   date: string;
@@ -10,7 +10,7 @@ export type Event = {
   eventDescription?: string;
   eventImage?: string;
   status: "completed" | "cancelled" | "draft" | "upcoming";
-};
+}
 
 export const events: Event[] = [
   {

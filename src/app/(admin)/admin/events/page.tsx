@@ -3,19 +3,13 @@
 import React, { useState, useEffect } from "react";
 import { EventTable } from "@/components/admincomps/event/datatable/EventTable";
 import { allcolumns } from "@/components/admincomps/event/datatable/columns";
-import {
-  Event,
-  events,
-} from "@/components/admincomps/event/datatable/colsdata";
-
+import { Event } from "@/components/admincomps/event/datatable/colsdata";
 import NewEvent from "@/components/admincomps/event/create/NewEvent";
-
-export async function getData(): Promise<Event[]> {
-  return events;
-}
+import { getData } from "@/utils/dataFetcher";
 
 function EventsPage() {
   const [data, setData] = useState<Event[]>([]);
+  const [showNewEvent, setShowNewEvent] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -25,13 +19,13 @@ function EventsPage() {
     fetchData();
   }, []);
 
-  const [showNewEvent, setShowNewEvent] = useState(false);
-
   return (
     <div className="rounded-3xl p-6">
       <div className="flex flex-row mb-6 w-full items-center justify-between">
         <div className="flex flex-col gap-3">
-          <h2 className="font-semibol text-2xl text-black">Event Management</h2>
+          <h2 className="font-semibold text-2xl text-black">
+            Event Management
+          </h2>
           <p>View and Manage all events here</p>
         </div>
         <div className="flex flex-row items-center gap-4 justify-end">

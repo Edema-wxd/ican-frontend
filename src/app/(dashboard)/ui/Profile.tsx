@@ -253,6 +253,7 @@ function Profile() {
 
         {/* Action Buttons */}
         <div className="w-full mb-8 flex flex-col md:flex-row md:gap-[3rem]">
+
           <div className="w-[15%]"></div>
           <div className="md:w-[60%] grid grid-cols-1 sm:grid-cols-2 gap-6">
             <button

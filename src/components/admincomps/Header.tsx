@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import { topMenuItems, bottomMenuItems } from "./Sidebar";
 import { constants } from "node:buffer";
@@ -58,8 +59,12 @@ function Header() {
           <DropdownMenuContent align="end" className="w-56">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/admin/profile">Profile</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/admin/settings">Settings</Link>
+            </DropdownMenuItem>
             <DropdownMenuItem className="text-red-600">Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

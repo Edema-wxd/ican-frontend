@@ -43,6 +43,7 @@ function Base({ onNext }: Propsval) {
   };
 
   return (
+
     <div className="flex flex-col w-full  items-center  gap-6 ">
       <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
       <div className=" w-fit">
@@ -79,7 +80,7 @@ function Base({ onNext }: Propsval) {
           className=" px-8 py-4 bg-primary rounded-full text-white text-base font-semibold "
           type="submit"
         >
-          Reset Password
+          Send reset link
         </button>
       </form>
       <p className=" text-base font-medium   ">

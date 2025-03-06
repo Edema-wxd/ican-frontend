@@ -6,10 +6,8 @@ import {
   MdCollectionsBookmark,
   MdAttachMoney,
   MdOutlinePerson,
-
   MdOutlineAnalytics,
   MdHome,
-
   MdOutlineSettings,
 } from "react-icons/md";
 import { IoMdCalendar } from "react-icons/io";
@@ -18,7 +16,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const topMenuItems = [
-
   { icon: MdHome, label: "Dashboard", href: "/admin" },
   {
     icon: MdOutlinePeopleAlt,
@@ -33,11 +30,7 @@ const topMenuItems = [
     href: "/admin/content",
   },
   { icon: IoMdCalendar, label: "Event Management", href: "/admin/events" },
-  {
-    icon: MdOutlineCardGiftcard,
-    label: "MCPD Points",
-    href: "/admin/mcpd-points",
-  },
+
   { icon: MdAttachMoney, label: "Payment", href: "/admin/payment" },
   { icon: MdOutlineAnalytics, label: "Analytics", href: "/admin/analytics" },
 ];
@@ -97,7 +90,6 @@ function Sidebar() {
                   activePage === item.label &&
                   "bg-primary text-white fill-white"
                 } hover:bg-blue-500 hover:text-white hover:fill-white justify-start items-center rounded-lg text-neutral-900`}
-
               >
                 <item.icon className="w-6 h-6" />
                 <p className="whitespace-nowrap test-xs">{item.label}</p>

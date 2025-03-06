@@ -6,8 +6,10 @@ import {
   MdCollectionsBookmark,
   MdAttachMoney,
   MdOutlinePerson,
-  MdOutlineCardGiftcard,
-  MdOutlineHome,
+
+  MdOutlineAnalytics,
+  MdHome,
+
   MdOutlineSettings,
 } from "react-icons/md";
 import { IoMdCalendar } from "react-icons/io";
@@ -16,7 +18,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const topMenuItems = [
-  { icon: MdOutlineHome, label: "Dashboard", href: "/admin" },
+
+  { icon: MdHome, label: "Dashboard", href: "/admin" },
+  {
+    icon: MdOutlinePeopleAlt,
+    label: "Admin Management",
+    href: "/admin/admins",
+  },
+
   { icon: MdOutlinePeopleAlt, label: "User Management", href: "/admin/users" },
   {
     icon: MdCollectionsBookmark,
@@ -30,6 +39,7 @@ const topMenuItems = [
     href: "/admin/mcpd-points",
   },
   { icon: MdAttachMoney, label: "Payment", href: "/admin/payment" },
+  { icon: MdOutlineAnalytics, label: "Analytics", href: "/admin/analytics" },
 ];
 
 const bottomMenuItems = [
@@ -84,10 +94,10 @@ function Sidebar() {
                 key={index}
                 href={item.href}
                 className={`py-3 px-4 flex flex-row gap-2 ${
-                  activePage === item.label
-                    ? "bg-primary text-white fill-white"
-                    : "hover:bg-gray-200"
-                }   justify-start items-center rounded-lg text-neutral-600 font-sans `}
+                  activePage === item.label &&
+                  "bg-primary text-white fill-white"
+                } hover:bg-blue-500 hover:text-white hover:fill-white justify-start items-center rounded-lg text-neutral-900`}
+
               >
                 <item.icon className="w-6 h-6" />
                 <p className="whitespace-nowrap test-xs">{item.label}</p>

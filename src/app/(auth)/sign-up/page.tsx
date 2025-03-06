@@ -1,20 +1,15 @@
 "use client";
-
 import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaLock,
-  FaEye,
-  FaEyeSlash,
-} from "react-icons/fa";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import Toast from "@/components/genui/Toast";
+import InputEle from "@/components/genui/InputEle";
+import { useToast } from "@/hooks/use-toast";
 
 function Signup() {
   const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
   const [complete, setComplete] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -46,11 +41,21 @@ function Signup() {
   const [pnumber, setPnumber] = useState(false);
   const [plower, setPlower] = useState(false);
   const [consent, setConsent] = useState(false);
+  const [toastProps, setToastProps] = useState<{
+    type: "success" | "error" | "warning" | "info";
+    message: string;
+  }>({
+    type: "success",
+    message: "",
+  });
+  const [showToast, setShowToast] = useState(false);
 
-
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+  const showToastMessage = (
+    type: "success" | "error" | "warning" | "info",
+    message: string
+  ) => {
+    setToastProps({ type, message });
+    setShowToast(true);
   };
 
   const validateFirstName = (firstName: string): string => {
@@ -207,7 +212,6 @@ function Signup() {
       email: email,
       password: password,
     });
-
     const config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -219,6 +223,63 @@ function Signup() {
     };
 
     if (Object.values(errors).every((error) => error === "")) {
+      // Submit form
+      try {
+        const response = await axios.request(config);
+        setPopupMessage(response.data.message);
+        setShowPopup(true);
+        setPopError(false);
+      } catch (error) {
+        setPopupMessage("An error occurred during registration.");
+        setPopError(true);
+        setShowPopup(true);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      setLoading(false);
+    }
+  };
+
+  const [step, setStep] = useState(1);
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+
+  const steps = [
+    { number: 1, title: "Sign Up" },
+    { number: 2, title: "Verify Email" },
+  ];
+
+  const handleNext = (userEmail?: string) => {
+    if (userEmail) {
+      setEmail(userEmail);
+    }
+    setStep((prev) => Math.min(prev + 1, steps.length));
+  };
+
+  const handleResend = async () => {
+    // Logic to resend verification email
+    toast({
+      title: "Verification email resent",
+      description: `A new verification link has been sent to ${email}`,
+    });
+
+    const data = JSON.stringify({
+      email: email,
+      password: formData.password,
+    });
+
+    const config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: "https://ican-sds-api.onrender.com/api/v1/auth/register",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    if (Object.values(formErrors).every((error) => error === "")) {
       // Submit form
       try {
         const response = await axios.post(
@@ -256,92 +317,41 @@ function Signup() {
           </p>
         </div>
         <form className="w-full flex flex-col gap-4 " onSubmit={handleSignup}>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="firstName"
-            >
-              First Name <span className="text-red-600">*</span>
-            </label>
-            <input
-              className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your first name"
-              name="firstName"
-              id="firstName"
-              required
-              type="text"
-              onChange={handleChange}
-            />
-            {formErrors.firstName && (
-              <p className="text-red-600">{formErrors.firstName}</p>
-            )}
-          </div>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="surname"
-            >
-              Surname <span className="text-red-600">*</span>
-            </label>
-            <input
-              className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your surname"
-              name="surname"
-              id="surname"
-              onChange={handleChange}
-              required
-              type="text"
-            />
-            {formErrors.surname && (
-              <p className="text-red-600">{formErrors.surname}</p>
-            )}
-          </div>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="email"
-            >
-              Email Address <span className="text-red-600">*</span>
-            </label>
-            <input
-              className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your email address"
-              name="email"
-              onChange={handleChange}
-              id="email"
-              required
-              type="email"
-            />
-            {formErrors.email && (
-              <p className="text-red-600">{formErrors.email}</p>
-            )}
-          </div>
+          <InputEle
+            label="First Name"
+            id="firstName"
+            type="text"
+            onChange={handleChange}
+            required
+            errorMsg={formErrors.firstName}
+          />
+          <InputEle
+            label="Surname"
+            id="surname"
+            type="text"
+            onChange={handleChange}
+            required
+            errorMsg={formErrors.surname}
+          />
+          <InputEle
+            label="Email Address"
+            id="email"
+            type="email"
+            onChange={handleChange}
+            required
+            errorMsg={formErrors.email}
+          />
+
           <div className="  w-full flex flex-col ">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="password"
-            >
-              Password <span className="text-red-600">*</span>
-            </label>
-            <div className="relative">
-              <FaLock className="absolute left-3 top-[.8rem] text-gray-400 text-md" />
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                name="password"
-                placeholder="Create a password"
-                className="w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                onChange={handleChange}
-                required
-              />
-              <button
-                type="button"
-                onClick={togglePasswordVisibility}
-                className="absolute right-3 top-3 text-gray-400 text-md focus:outline-none"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button>
-            </div>
+            <InputEle
+              label="Password"
+              id="password"
+              type="password"
+              placeholder="Enter your new password"
+              required
+              onChange={handleChange}
+            />
+
             <div className="pt-4  ">
               <p className="text-xs  text-gray-500">
                 Must be at least{" "}
@@ -373,36 +383,16 @@ function Signup() {
               </p>
             </div>
           </div>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="cpassword"
-            >
-              Confirm Password <span className="text-red-600">*</span>
-            </label>
-            <div className="relative">
-              <FaLock className="absolute left-3 top-[.8rem] text-gray-400 text-md" />
-              <input
-                type={showPassword ? "text" : "password"}
-                id="cpassword"
-                onChange={handleChange}
-                name="cpassword"
-                placeholder="Confirm your password"
-                className="w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-              />
-              <button
-                type="button"
-                onClick={togglePasswordVisibility}
-                className="absolute right-3 top-3 text-gray-400 text-md focus:outline-none"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button>
-            </div>
-            {formErrors.cpassword && (
-              <p className="text-red-600">{formErrors.cpassword}</p>
-            )}
-          </div>
+          <InputEle
+            label="Confirm Password"
+            id="cpassword"
+            type="password"
+            placeholder="Confirm your password"
+            required
+            onChange={handleChange}
+            errorMsg={formErrors.cpassword}
+          />
+
           <div className=" flex flex-row justify-between gap-2 items-center ">
             <input
               type="checkbox"
@@ -437,46 +427,6 @@ function Signup() {
           </Link>
         </p>
       </div>
-      {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white flex flex-col items-center gap-3 p-6 rounded-lg shadow-lg">
-            <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
-
-            {popError ? (
-              <>
-                <h3 className="text-primary font-semibold text-3xl">
-                  Registration Failed
-                </h3>
-                <p>{popupMessage}</p>
-              </>
-            ) : (
-              <>
-                <h3 className="text-primary font-semibold text-3xl">
-                  Verify your Email
-                </h3>
-
-                <MdOutlineMarkEmailUnread className="w-16 h-16 fill-primary" />
-
-                <p className="text-center w-3/4 font-sans">
-                  A verification link has been sent to your email. Please check
-                  your email and select the link provided to continue
-                </p>
-
-                <p className="font-medium">
-                  Didn&apos;t receive an email? Check your spam folder.
-                </p>
-              </>
-            )}
-
-            <button
-              className="mt-4 px-4 py-2 bg-primary text-white rounded"
-              onClick={() => setShowPopup(false)}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

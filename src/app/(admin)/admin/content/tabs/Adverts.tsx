@@ -2,9 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 // import { Pagination } from "@/components/ui/pagination";
-import { ContentTable } from "@/components/admincomps/datatable/ContentTable";
-import { advertscolumns } from "@/components/admincomps/datatable/columns";
-import { Content, contents } from "@/components/admincomps/datatable/colsdata";
+import { ContentTable } from "@/components/admincomps/content/datatable/ContentTable";
+import { advertscolumns } from "@/components/admincomps/content/datatable/columns";
+import {
+  Content,
+  contents,
+} from "@/components/admincomps/content/datatable/colsdata";
 
 async function getData(): Promise<Content[]> {
   return contents;
@@ -16,7 +19,11 @@ function Adverts() {
   useEffect(() => {
     async function fetchData() {
       const result = await getData();
-      setData(result);
+      const filteredData = result.filter(
+        (content) => content.category === "adverts"
+      );
+
+      setData(filteredData);
     }
     fetchData();
   }, []);

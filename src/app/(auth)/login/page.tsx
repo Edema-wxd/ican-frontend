@@ -4,10 +4,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import InputEle from "@/components/genui/InputEle";
+import { useRouter } from "next/navigation";
 import Toast from "@/components/genui/Toast";
 import axios from "axios";
 
 function Login() {
+  const router = useRouter();
   const [validreq, setValidreq] = useState(true);
   const [formData, setFormData] = useState({
     email: "",
@@ -26,6 +28,8 @@ function Login() {
   const [pupper, setPupper] = useState(false);
   const [pnumber, setPnumber] = useState(false);
   const [plower, setPlower] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const validatePassword = (password: string): string => {
     if (password.length < 8) {
@@ -117,10 +121,6 @@ function Login() {
 
     setFormErrors(errors);
 
-    const data = JSON.stringify({
-      email: email,
-      password: password,
-    });
     const config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -128,7 +128,7 @@ function Login() {
       headers: {
         "Content-Type": "application/json",
       },
-      data: data,
+      data: formData,
     };
 
     if (Object.values(errors).every((error) => error === "")) {
@@ -146,6 +146,26 @@ function Login() {
     }
   };
 
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault(); // Prevent default form submission
+
+    if (email && password) {
+      Toast({
+        message: "Login Successful",
+        type: "success",
+      });
+
+      setTimeout(() => {
+        router.push("/Overview");
+      }, 2000); // Match the toast duration
+    } else {
+      Toast({
+        message: "Login Failed",
+        type: "error",
+      });
+    }
+  };
+
   return (
     <div className=" m-auto ">
       <div className="flex flex-col w-96 sm:w-[440px] items-center rounded-2xl  bg-white p-8 gap-6 ">
@@ -158,6 +178,7 @@ function Login() {
             Please, enter your details below
           </p>
         </div>
+
         <form className="w-full flex flex-col gap-4 " onSubmit={handleLogin}>
           <InputEle
             id="email"

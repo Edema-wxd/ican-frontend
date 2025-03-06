@@ -10,7 +10,6 @@ import Typography from "@mui/material/Typography";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import Toast from "./genui/Toast";
 
 import Contact from "./biosteps/Contact";
 import Experience from "./biosteps/Experience";
@@ -20,9 +19,7 @@ import Qualifications from "./biosteps/Qualifications";
 import Reference from "./biosteps/Reference";
 import Uploadimg from "./biosteps/Uploadimg";
 
-// import MobileStepper from "@mui/material/MobileStepper";
-// import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-// import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import Toast from "./genui/Toast";
 
 const steps = [
   { number: 0, title: "Upload Image" },
@@ -40,7 +37,7 @@ export type BiodataFormData = {
   personalData: {
     surname: string;
     firstName: string;
-    middleName?: string;
+    middleName: string;
     gender: string;
     dob: string;
     maritalStatus: string;
@@ -73,10 +70,10 @@ export type BiodataFormData = {
     qualification?: string;
     graduation?: string;
     professionalQualification?: {
-      firstQualName: string;
-      firstQualDate: string;
-      secQualName: string;
-      secQualDate: string;
+      firstQualName?: string;
+      firstQualDate?: string;
+      secQualName?: string;
+      secQualDate?: string;
     }[];
   };
   experience?: {
@@ -94,22 +91,20 @@ export type BiodataFormData = {
   };
   payment?: {
     receipt?: File | null;
-    waiver?: File | null;
+    waiver?: string ;
   };
 };
 
 function Biodata() {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
-  const [toast, setToast] = useState<{
-    type: "success" | "error" | "info";
-    message: string;
-  } | null>(null);
+
   const [formData, setFormData] = useState<BiodataFormData>({
     image: null,
     personalData: {
       surname: "",
       firstName: "",
+      middleName: "",
       gender: "",
       dob: "",
       maritalStatus: "",
@@ -140,7 +135,7 @@ function Biodata() {
         const { data, lastUpdated } = JSON.parse(saved);
         if (
           new Date().getTime() - new Date(lastUpdated).getTime() >
-          24 * 60 * 60 * 1000
+          1 * 60 * 60 * 1000
         ) {
           localStorage.removeItem("biodataFormProgress");
           return null;
@@ -166,6 +161,7 @@ function Biodata() {
       console.error("Error saving form progress:", error);
     }
   };
+
   const updateFormData = (data: Partial<BiodataFormData>) => {
     setFormData((prev) => ({ ...prev, ...data }));
   };
@@ -185,11 +181,10 @@ function Biodata() {
       const savedImageMeta = localStorage.getItem("biodataFormImageMeta");
       if (savedImageMeta) {
         try {
-          console.log("hwlp");
-          setToast({
-            type: "info",
-            message: "Please re-upload your event image for security reasons",
-          });
+          <Toast
+            type="info"
+            message="Please re-upload your image for security reasons"
+          />;
         } catch (error) {
           console.error("Error parsing saved image metadata:", error);
         }
@@ -211,67 +206,6 @@ function Biodata() {
     saveFormProgress(dataToSave);
   }, [formData]);
 
-  // const validateStep = (currentStep: number): boolean => {
-  //   switch (currentStep) {
-  //     case 1:
-  //       if (!formData.title.trim()) {
-  //         setToast({ type: "error", message: "Please enter an event title" });
-  //         return false;
-  //       }
-  //       if (!formData.description.trim()) {
-  //         setToast({
-  //           type: "error",
-  //           message: "Please enter an event description",
-  //         });
-  //         return false;
-  //       }
-  //       if (!formData.image) {
-  //         setToast({ type: "error", message: "Please upload an event image" });
-  //         return false;
-  //       }
-  //       if (!formData.date || !formData.time) {
-  //         setToast({
-  //           type: "error",
-  //           message: "Please set event date and time",
-  //         });
-  //         return false;
-  //       }
-  //       if (!formData.venue || !formData.location) {
-  //         setToast({
-  //           type: "error",
-  //           message: "Please enter event venue and location",
-  //         });
-  //         return false;
-  //       }
-  //       return true;
-
-  //     case 2:
-  //       if (formData.ticketType.length === 0) {
-  //         setToast({
-  //           type: "error",
-  //           message: "Please add at least one ticket type",
-  //         });
-  //         return false;
-  //       }
-  //       for (const ticket of formData.ticketType) {
-  //         if (!ticket.name || !ticket.price || !ticket.quantity) {
-  //           setToast({
-  //             type: "error",
-  //             message: "Please fill in all ticket details",
-  //           });
-  //           return false;
-  //         }
-  //       }
-  //       return true;
-
-  //     case 3:
-  //       return true;
-
-  //     default:
-  //       return true;
-  //   }
-  // };
-
   const handleNext = () => {
     let newSkipped = skipped;
     if (isStepSkipped(activeStep)) {
@@ -289,8 +223,6 @@ function Biodata() {
 
   const handleSkip = () => {
     if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
       throw new Error("You can't skip a step that isn't optional.");
     }
 
@@ -307,7 +239,7 @@ function Biodata() {
   };
 
   return (
-    <div className=" p-10 bg-white rounded-2xl ">
+    <div className="flex flex-col w-auto  lg:w-[850px] items-center rounded-2xl  bg-white  p-8 m-2 gap-6  ">
       <Box sx={{ width: "100%" }}>
         <Stepper activeStep={activeStep} alternativeLabel>
           {steps.map((step, index) => {
@@ -323,7 +255,7 @@ function Biodata() {
             }
             return (
               <Step key={step.number} {...stepProps}>
-                <StepLabel {...labelProps}>{step.title}</StepLabel>
+                <StepLabel {...labelProps}></StepLabel>
               </Step>
             );
           })}
@@ -369,40 +301,43 @@ function Biodata() {
                   </Box>
                 </Fragment>
               )}{" "}
-              {activeStep === 0 && (
+              <form className="mt-6" action="">
                 <Uploadimg
-                  setToast={setToast}
+                  isShown={activeStep === 0}
                   formData={formData}
                   updateFormData={updateFormData}
                 />
-              )}
-              {activeStep === 1 && (
-                <Personal formData={formData} updateFormData={updateFormData} />
-              )}
-              {activeStep === 2 && (
-                <Contact formData={formData} updateFormData={updateFormData} />
-              )}
-              {activeStep === 3 && (
+                <Personal
+                  isShown={activeStep === 1}
+                  formData={formData}
+                  updateFormData={updateFormData}
+                />
+                <Contact
+                  isShown={activeStep === 2}
+                  formData={formData}
+                  updateFormData={updateFormData}
+                />
                 <Qualifications
+                  isShown={activeStep === 3}
                   formData={formData}
                   updateFormData={updateFormData}
                 />
-              )}
-              {activeStep === 4 && (
                 <Experience
+                  isShown={activeStep === 4}
                   formData={formData}
                   updateFormData={updateFormData}
                 />
-              )}
-              {activeStep === 5 && (
                 <Reference
+                  isShown={activeStep === 5}
                   formData={formData}
                   updateFormData={updateFormData}
                 />
-              )}
-              {activeStep === 6 && (
-                <Payment formData={formData} updateFormData={updateFormData} />
-              )}
+                <Payment
+                  isShown={activeStep === 6}
+                  formData={formData}
+                  updateFormData={updateFormData}
+                />
+              </form>
             </motion.div>
           </AnimatePresence>
         </div>

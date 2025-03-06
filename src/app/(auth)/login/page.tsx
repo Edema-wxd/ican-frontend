@@ -1,5 +1,6 @@
 "use client";
 
+
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -146,6 +147,34 @@ function Login() {
     }
   };
 
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault(); // Prevent default form submission
+   
+    if (email && password) {
+      toast({
+        title: "Login Successful",
+        description: "Redirecting to Overview...",
+        variant: "default",
+        duration: 2000,
+      });
+
+      setTimeout(() => {
+        router.push("/Overview");
+      }, 2000); // Match the toast duration
+    } else {
+      toast({
+        title: "Login Failed",
+        description: "Please enter both email and password",
+        variant: "destructive",
+        duration: 2000,
+      });
+    }
+  };
+
   return (
     <div className=" m-auto ">
       <div className="flex flex-col w-96 sm:w-[440px] items-center rounded-2xl  bg-white p-8 gap-6 ">
@@ -158,6 +187,7 @@ function Login() {
             Please, enter your details below
           </p>
         </div>
+
         <form className="w-full flex flex-col gap-4 " onSubmit={handleLogin}>
           <InputEle
             id="email"
@@ -176,6 +206,7 @@ function Login() {
             errorMsg={formErrors.password}
           />
 
+
           <div className=" flex flex-row justify-between  ">
             <div className=" flex flex-row gap-2 ">
               <input type="checkbox" name="remember" id="remember" />
@@ -192,6 +223,7 @@ function Login() {
             disabled={!validreq}
             className=" px-8 py-4 bg-primary rounded-full text-white text-base disabled:bg-gray-600 font-semibold "
             type="submit"
+
           >
             Log In
           </button>

@@ -23,6 +23,7 @@ export function Toaster() {
             key={id}
             {...props}
             className={`${props.className} ${
+
               props.variant === "default"
                 ? "bg-[#DFF5E0] border-green-500 border-2 text-[#1F2937]"
                 : props.variant === "destructive"

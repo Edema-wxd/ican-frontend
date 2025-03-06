@@ -6,8 +6,10 @@ import {
   MdCollectionsBookmark,
   MdAttachMoney,
   MdOutlinePerson,
+
   MdOutlineAnalytics,
   MdHome,
+
   MdOutlineSettings,
 } from "react-icons/md";
 import { IoMdCalendar } from "react-icons/io";
@@ -16,12 +18,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const topMenuItems = [
+
   { icon: MdHome, label: "Dashboard", href: "/admin" },
   {
     icon: MdOutlinePeopleAlt,
     label: "Admin Management",
     href: "/admin/admins",
   },
+
   { icon: MdOutlinePeopleAlt, label: "User Management", href: "/admin/users" },
   {
     icon: MdCollectionsBookmark,
@@ -29,6 +33,11 @@ const topMenuItems = [
     href: "/admin/content",
   },
   { icon: IoMdCalendar, label: "Event Management", href: "/admin/events" },
+  {
+    icon: MdOutlineCardGiftcard,
+    label: "MCPD Points",
+    href: "/admin/mcpd-points",
+  },
   { icon: MdAttachMoney, label: "Payment", href: "/admin/payment" },
   { icon: MdOutlineAnalytics, label: "Analytics", href: "/admin/analytics" },
 ];
@@ -60,15 +69,16 @@ function Sidebar() {
       <nav className="flex flex-col">
         {/* Top Menu Group */}
         <div className="flex flex-col py-12">
-          <div className="my-4 flex flex-col gap-2">
+          <div className="my-4 flex flex-col gap-4">
             {topMenuItems.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
                 className={`py-3 px-4 flex flex-row gap-2 ${
-                  activePage === item.label &&
-                  "bg-primary text-white fill-white"
-                } hover:bg-blue-500 hover:text-white hover:fill-white justify-start items-center rounded-lg text-neutral-900`}
+                  activePage === item.label
+                    ? "bg-primary text-white fill-white"
+                    : "hover:bg-gray-200"
+                } justify-start items-center rounded-lg text-neutral-600`}
               >
                 <item.icon className="w-6 h-6" />
                 <p className="whitespace-nowrap test-xs">{item.label}</p>
@@ -78,7 +88,7 @@ function Sidebar() {
           <hr className="border border-neutral-300" />
 
           {/* Bottom Menu Group */}
-          <div className="mt-4 flex flex-col gap-2">
+          <div className="mt-4 flex flex-col gap-4">
             {bottomMenuItems.map((item, index) => (
               <Link
                 key={index}
@@ -87,6 +97,7 @@ function Sidebar() {
                   activePage === item.label &&
                   "bg-primary text-white fill-white"
                 } hover:bg-blue-500 hover:text-white hover:fill-white justify-start items-center rounded-lg text-neutral-900`}
+
               >
                 <item.icon className="w-6 h-6" />
                 <p className="whitespace-nowrap test-xs">{item.label}</p>
@@ -97,7 +108,7 @@ function Sidebar() {
 
         <div>
           <Link
-            href="/logout"
+            href="/"
             className="flex text-red-500 fill-red-500 items-center space-x-3 px-6 py-2 rounded-lg mt-32 mb-20"
           >
             <LogOut className="w-5 h-5 transform scale-x-[-1]" />

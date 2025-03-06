@@ -3,12 +3,12 @@
 import React from "react";
 import Toast from "@/components/genui/Toast";
 
-function AdminDashboard() {
+function McpdPoints() {
   return (
     <div>
-      Admin Dashboard <Toast type="success" message="Success" />
+      Admin Mcpd Points <Toast type="success" message="Success" />
     </div>
   );
 }
 
-export default AdminDashboard;
+export default McpdPoints;

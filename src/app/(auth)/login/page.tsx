@@ -1,14 +1,15 @@
 "use client";
 
-
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import InputEle from "@/components/genui/InputEle";
+import { useRouter } from "next/navigation";
 import Toast from "@/components/genui/Toast";
 import axios from "axios";
 
 function Login() {
+  const router = useRouter();
   const [validreq, setValidreq] = useState(true);
   const [formData, setFormData] = useState({
     email: "",
@@ -27,6 +28,8 @@ function Login() {
   const [pupper, setPupper] = useState(false);
   const [pnumber, setPnumber] = useState(false);
   const [plower, setPlower] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const validatePassword = (password: string): string => {
     if (password.length < 8) {
@@ -118,10 +121,6 @@ function Login() {
 
     setFormErrors(errors);
 
-    const data = JSON.stringify({
-      email: email,
-      password: password,
-    });
     const config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -129,7 +128,7 @@ function Login() {
       headers: {
         "Content-Type": "application/json",
       },
-      data: data,
+      data: formData,
     };
 
     if (Object.values(errors).every((error) => error === "")) {
@@ -147,30 +146,22 @@ function Login() {
     }
   };
 
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault(); // Prevent default form submission
-   
+
     if (email && password) {
-      toast({
-        title: "Login Successful",
-        description: "Redirecting to Overview...",
-        variant: "default",
-        duration: 2000,
+      Toast({
+        message: "Login Successful",
+        type: "success",
       });
 
       setTimeout(() => {
         router.push("/Overview");
       }, 2000); // Match the toast duration
     } else {
-      toast({
-        title: "Login Failed",
-        description: "Please enter both email and password",
-        variant: "destructive",
-        duration: 2000,
+      Toast({
+        message: "Login Failed",
+        type: "error",
       });
     }
   };
@@ -206,7 +197,6 @@ function Login() {
             errorMsg={formErrors.password}
           />
 
-
           <div className=" flex flex-row justify-between  ">
             <div className=" flex flex-row gap-2 ">
               <input type="checkbox" name="remember" id="remember" />
@@ -223,7 +213,6 @@ function Login() {
             disabled={!validreq}
             className=" px-8 py-4 bg-primary rounded-full text-white text-base disabled:bg-gray-600 font-semibold "
             type="submit"
-
           >
             Log In
           </button>

@@ -9,10 +9,6 @@ import UserActivities from "@/components/admincomps/dashboard/UserActivities";
 import PaymentActivities from "@/components/admincomps/dashboard/PaymentActivities";
 import EventActivities from "@/components/admincomps/dashboard/EventActivities";
 
-import UserActivities from "@/components/admincomps/dashboard/UserActivities";
-import PaymentActivities from "@/components/admincomps/dashboard/PaymentActivities";
-import EventActivities from "@/components/admincomps/dashboard/EventActivities";
-
 function AdminDashboard() {
   return (
     <div className="rounded-3xl p-6">

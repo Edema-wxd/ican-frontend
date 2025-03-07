@@ -51,20 +51,7 @@ export const allcolumns: ColumnDef<Event>[] = [
     accessorKey: "fee",
     header: "Fee",
   },
-  {
-    accessorKey: "mcpdCredit",
-    header: ({ column }) => {
-      return (
-        <Button
-          className="pl-0 text-left"
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          MCPD Credit <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-  },
+
   {
     accessorKey: "status",
     header: ({ column }) => {

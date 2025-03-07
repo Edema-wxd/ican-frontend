@@ -50,6 +50,7 @@
     "react-international-phone": "^4.4.0",
     "react-quill": "^2.0.0",
     "react-toastify": "^11.0.2",
+    "recharts": "^2.15.1",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7"
   },

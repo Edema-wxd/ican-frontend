@@ -18,6 +18,7 @@ function Signup() {
     password: "",
     confirmPassword: "",
     consent: false,
+    membershipId: "",
   });
   const [formErrors, setFormErrors] = useState({
     firstName: "",
@@ -26,6 +27,7 @@ function Signup() {
     password: "",
     cpassword: "",
     consent: "",
+    membershipId: "",
   });
   const [popupMessage, setPopupMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
@@ -203,6 +205,7 @@ function Signup() {
       consent: formData.consent
         ? ""
         : "You must agree to the terms and conditions.",
+      membershipId: formData.membershipId ? "" : "Membership ID is required.",
     };
 
     setFormErrors(errors);
@@ -340,6 +343,14 @@ function Signup() {
             onChange={handleChange}
             required
             errorMsg={formErrors.email}
+          />
+          <InputEle
+            label="Membership ID"
+            id="membershipId"
+            type="text"
+            onChange={handleChange}
+            required
+            errorMsg={formErrors.membershipId}
           />
 
           <div className="  w-full flex flex-col ">

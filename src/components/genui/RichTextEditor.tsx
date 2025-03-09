@@ -121,19 +121,16 @@ const constructImportMap = (): DOMConversionMap => {
 };
 
 const editorConfig = {
-  html: {
-    export: exportMap,
-    import: constructImportMap(),
-  },
   namespace: "React.js Demo",
+  theme: ExampleTheme,
   nodes: [ParagraphNode, TextNode],
   onError(error: Error) {
     throw error;
   },
-  theme: ExampleTheme,
+  editorState: null,
 };
 
-export default function App() {
+const RichTextEditor = () => {
   return (
     <LexicalComposer initialConfig={editorConfig}>
       <div className="editor-container">
@@ -149,6 +146,9 @@ export default function App() {
                 }
               />
             }
+            placeholder={
+              <div className="editor-placeholder">{placeholder}</div>
+            }
             ErrorBoundary={LexicalErrorBoundary}
           />
           <HistoryPlugin />
@@ -158,4 +158,6 @@ export default function App() {
       </div>
     </LexicalComposer>
   );
-}
+};
+
+export default RichTextEditor;

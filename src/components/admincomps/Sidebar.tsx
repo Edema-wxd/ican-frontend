@@ -32,7 +32,7 @@ const topMenuItems = [
   { icon: IoMdCalendar, label: "Event Management", href: "/admin/events" },
 
   { icon: MdAttachMoney, label: "Payment", href: "/admin/payment" },
-  { icon: MdOutlineAnalytics, label: "Analytics", href: "/admin/analytics" },
+  { icon: MdOutlineAnalytics, label: "Billing", href: "/admin/billing" },
 ];
 
 const bottomMenuItems = [

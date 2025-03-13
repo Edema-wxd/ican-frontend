@@ -5,8 +5,11 @@ import axios from "axios";
 import Link from "next/link";
 import Toast from "@/components/genui/Toast";
 import InputEle from "@/components/genui/InputEle";
+import { useRouter } from "next/navigation";
 
 function AdminSignup() {
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
   const [complete, setComplete] = useState(false);
   const [formData, setFormData] = useState({
@@ -154,6 +157,9 @@ function AdminSignup() {
     const email = (
       document.getElementById("email") as HTMLInputElement
     ).value.trim();
+    const membershipId = (
+      document.getElementById("membershipId") as HTMLInputElement
+    ).value.trim();
     const firstName = (
       document.getElementById("firstName") as HTMLInputElement
     ).value.trim();
@@ -182,12 +188,14 @@ function AdminSignup() {
       lastName: lastName,
       email: email,
       password: password,
+      membershipId: membershipId,
     });
     const config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "", // Change to admin login
+      url: "https://ican-api-6000e8d06d3a.herokuapp.com/api/auth/register?", // Change to admin login
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       data: data,
@@ -197,7 +205,18 @@ function AdminSignup() {
       // Submit form
       try {
         const response = await axios.request(config);
-        return <Toast type="success" message={response.data.message} />;
+        const { message, user, access_token } = response.data;
+
+        // Store the response data as needed
+        console.log("User registered successfully:", user);
+        console.log("Access token:", access_token);
+
+        if (user.role === "SUPER_ADMIN" || user.role === "ADMIN") {
+          router.push("/admin-login/");
+        } else {
+          router.push("/login/");
+        }
+        return <Toast type="success" message={message} />;
       } catch (error) {
         return <Toast type="error" message="An error occurred during login." />;
       } finally {
@@ -216,9 +235,9 @@ function AdminSignup() {
             Create an Account{" "}
           </h4>
         </div>
-        <form className="w-full flex flex-col gap-4 " action="">
+        <form className="w-full flex flex-col gap-4 " onSubmit={handleSignup}>
           {/* <InputEle /> */}
-          <div className="grid grid-cols-2">
+          <div className="flex flex-row gap-2">
             <InputEle
               id="firstName"
               type="text"
@@ -284,6 +303,14 @@ function AdminSignup() {
             id="cpassword"
             type="password"
             placeholder="Confirm your new password"
+            required
+            onChange={handleChange}
+          />
+          <InputEle
+            label="Membership ID"
+            id="membershipId"
+            type="text"
+            placeholder="Enter your membership ID"
             required
             onChange={handleChange}
           />

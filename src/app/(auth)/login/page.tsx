@@ -121,21 +121,35 @@ function Login() {
 
     setFormErrors(errors);
 
+    const data = JSON.stringify({
+      email: email,
+      password: password,
+    });
+
     const config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "", // Change to admin login
+      url: "https://ican-api-6000e8d06d3a.herokuapp.com/api/auth/login",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
-      data: formData,
+      data: data,
     };
 
     if (Object.values(errors).every((error) => error === "")) {
       // Submit form
       try {
         const response = await axios.request(config);
-        return <Toast type="success" message={response.data.message} />;
+        const { user, access_token } = response.data;
+        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("access_token", access_token);
+
+        if (user.role === "SUPER_ADMIN" || user.role === "ADMIN") {
+          router.push("/admin/");
+        } else {
+          router.push("/dashboard/");
+        }
       } catch (error) {
         return <Toast type="error" message="An error occurred during login." />;
       } finally {
@@ -143,26 +157,6 @@ function Login() {
       }
     } else {
       setValidreq(false);
-    }
-  };
-
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault(); // Prevent default form submission
-
-    if (email && password) {
-      Toast({
-        message: "Login Successful",
-        type: "success",
-      });
-
-      setTimeout(() => {
-        router.push("/Overview");
-      }, 2000); // Match the toast duration
-    } else {
-      Toast({
-        message: "Login Failed",
-        type: "error",
-      });
     }
   };
 

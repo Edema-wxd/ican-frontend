@@ -65,7 +65,7 @@ function UserActivities() {
           metric={3000}
           Icon={MdVerifiedUser}
         />
-      </div>{" "}
+      </div>
       <div className="flex w-full max-h-[700px] flex-col gap-10">
         <Card>
           <CardHeader>

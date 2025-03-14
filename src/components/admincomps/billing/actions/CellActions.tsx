@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,6 +18,7 @@ interface CellProps {
 }
 
 const ActionsCell: React.FC<CellProps> = ({ row }) => {
+  const router = useRouter();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const capitalizeWords = (str: string): string => {
@@ -35,7 +37,11 @@ const ActionsCell: React.FC<CellProps> = ({ row }) => {
         <DropdownMenuContent align="end">
           <DropdownMenuItem>Edit</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>View Payments</DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => router.push(`billing/${row.original.id}`)}
+          >
+            View Payments
+          </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
             className="bg-red-600 text-white"

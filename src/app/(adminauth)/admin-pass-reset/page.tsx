@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import InputEle from "@/components/genui/InputEle";
 import Link from "next/link";
+import axios from "axios";
 
 function AdminPasswordRequest() {
   const [evalid, setEvalid] = useState(false);
@@ -24,9 +25,32 @@ function AdminPasswordRequest() {
     >
   ) => {
     const { name, value } = e.target;
-    
+
     if (name === "email") {
       validateEmail(value);
+    }
+  };
+  const handleReset = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    let data = JSON.stringify({
+      email: formData.email,
+    });
+
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: "https://ican-api-6000e8d06d3a.herokuapp.com/api/auth/forgot-password",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    try {
+      const response = await axios.request(config);
+      console.log(JSON.stringify(response.data));
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -36,20 +60,24 @@ function AdminPasswordRequest() {
         <h4 className=" text-black w-full text-left text-3xl font-semibold font-mono   ">
           Request password reset
         </h4>
-        <InputEle
-          id="email"
-          type="text"
-          placeholder="Enter email address"
-          label="Email Address"
-          onChange={handleChange}
-        />{" "}
-        <button
-          className=" w-full px-8 py-4 bg-primary  rounded-full text-white text-base font-semibold "
-          type="submit"
-          disabled={!evalid}
-        >
-          Request reset
-        </button>
+
+        <form onSubmit={handleReset} className="w-full flex flex-col gap-4 ">
+          <InputEle
+            id="email"
+            type="text"
+            placeholder="Enter email address"
+            label="Email Address"
+            onChange={handleChange}
+          />{" "}
+          <button
+            className=" w-full px-8 py-4 bg-primary  rounded-full text-white text-base font-semibold "
+            type="submit"
+            disabled={!evalid}
+          >
+            Request reset
+          </button>
+        </form>
+
         <br />
         <p className=" text-base font-medium   ">
           Remember your password? {"       "}

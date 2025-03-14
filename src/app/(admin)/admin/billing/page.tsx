@@ -4,6 +4,8 @@ import React from "react";
 import { useRouter } from "next/navigation";
 
 import { BillingTable } from "@/components/admincomps/billing/datatable/BillingTable";
+import { billingcolumns } from "@/components/admincomps/billing/datatable/columns";
+import { billings } from "@/components/admincomps/billing/datatable/colsdata";
 
 function BillingPage() {
   const router = useRouter();
@@ -26,10 +28,10 @@ function BillingPage() {
       {/* Tab sections */}
       <div className="rounded-3xl px-8 py-6 flex flex-col gap-4 border border-neutral-200 bg-white">
         <h2 className="text-xl w-full font-semibold text-left border-b border-gray-500 ">
-          Notifications
+          Invoices & Billings
         </h2>
         <div>
-          <BillingTable columns={} data={} />
+          <BillingTable columns={billingcolumns} data={billings} />
         </div>
       </div>
     </div>

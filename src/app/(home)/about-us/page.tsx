@@ -1,9 +1,9 @@
 import React from "react";
 import Heroimg from "@/components/homecomps/Heroimg";
-import Meminfo from "@/components/Meminfo";
+import Meminfo from "@/components/homecomps/Meminfo";
 // import Infocard from "@/components/genui/Infocard";
 import Itemcard from "@/components/genui/Itemcard";
-import Aims from "../../../components/Aims";
+import Aims from "@/components/homecomps/Aims";
 import {
   MdOutlineLightbulb,
   MdFamilyRestroom,
@@ -108,7 +108,7 @@ function Aboutus() {
       </div> */}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 p-4 md:p-40 bg-[#d9f5e3] rounded-lg">
-        <h4 className="text-2xl font-bold text-center col-span-1 sm:col-span-2 text-primary font-mono text-2xl sm:text-5xl">
+        <h4 className="text-2xl font-bold text-center col-span-1 sm:col-span-2 text-primary font-mono  sm:text-5xl">
           Our Core Values
         </h4>
 

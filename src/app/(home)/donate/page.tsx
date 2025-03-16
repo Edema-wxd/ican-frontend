@@ -1,6 +1,6 @@
 import React from "react";
 import Heroimg from "@/components/homecomps/Heroimg";
-import Dontoday from "@/components/Dontoday";
+import Dontoday from "@/components/homecomps/Dontoday";
 
 function Donate() {
   return (

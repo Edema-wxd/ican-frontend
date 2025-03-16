@@ -3,7 +3,7 @@
 import Heroimg from "@/components/homecomps/Heroimg";
 import React from "react";
 import Faq from "@/components/homecontent/Faq";
-import StudentStudy from "@/components/StudentStudy";
+import StudentStudy from "@/components/homecontent/StudentStudy";
 
 function Student() {
   return (

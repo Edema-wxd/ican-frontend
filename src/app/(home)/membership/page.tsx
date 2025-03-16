@@ -1,5 +1,5 @@
 import React from "react";
-import Heroimg from "@/components/Heroimg";
+import Heroimg from "@/components/homecomps/Heroimg";
 import Meminfo from "@/components/Meminfo";
 import Infocard from "@/components/genui/Infocard";
 import Link from "next/link";

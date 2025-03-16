@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { GalleryItem } from "@/lib/gallerydata"; // Import the GalleryItem type
-import CommentSection from "@/components/CommentSection"; // Import the CommentSection component
+import CommentSection from "@/components/homecontent/CommentSection"; // Import the CommentSection component
 
 function GalleryCard({ item, onReadMore }) {
   const router = useRouter();

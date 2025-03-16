@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { Search, BellIcon, ChevronDown } from "lucide-react";
-import Notification from "@/components/Notification";
+import Notification from "@/components/membercomps/Notification";
 import {
   DropdownMenu,
   DropdownMenuContent,

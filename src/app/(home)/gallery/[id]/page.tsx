@@ -10,7 +10,7 @@ import GalleryCard from "@/components/GalleryCard"; // Assuming you have a Galle
 // import { shuffleArray } from "@/lib/utils";
 // import Getin from "@/components/Getin";
 import { handleReadMore } from "@/lib/utils";
-import CommentSection from "@/components/CommentSection";
+import CommentSection from "@/components/homecontent/CommentSection";
 
 export default function GalleryPage({
   params,

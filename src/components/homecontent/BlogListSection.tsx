@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import BlogCard from "@/components/BlogCard";
-import { BlogTabs } from "@/components/BlogTabs";
-import { Pagination } from "@/components/Pagination";
+import BlogCard from "@/components/homecontent/BlogCard";
+import { BlogTabs } from "@/components/homecontent/BlogTabs";
+import { Pagination } from "@/components/homecomps/Pagination";
 import { blogPosts } from "@/lib/data";
 import { handleReadMore } from "@/lib/utils";
 import { useRouter } from "next/navigation";

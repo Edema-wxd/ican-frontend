@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, ReactNode } from 'react';
 import { Calendar, X } from 'lucide-react';
-import CalendarFilter from '@/components/CalendarFilter';
+import CalendarFilter from '@/components/homecomps/CalendarFilter';
 import Image from 'next/image';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';

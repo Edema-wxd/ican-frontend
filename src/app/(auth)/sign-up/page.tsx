@@ -1,43 +1,35 @@
 "use client";
-
 import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaRegCircle,
-  FaLock,
-  FaEye,
-  FaEyeSlash,
-  FaRegCheckCircle,
-} from "react-icons/fa";
-import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import Toast from "@/components/genui/Toast";
+import InputEle from "@/components/genui/InputEle";
+import { useRouter } from "next/navigation";
 
 function Signup() {
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
   const [complete, setComplete] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
-    surname: "",
+    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
     consent: false,
+    membershipId: "",
   });
   const [formErrors, setFormErrors] = useState({
     firstName: "",
-    surname: "",
+    lastName: "",
     email: "",
     password: "",
     cpassword: "",
     consent: "",
+    membershipId: "",
   });
-  const [showToast, setShowToast] = useState(false);
-  const [popupMessage, setPopupMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
-  const [popError, setPopError] = useState(false);
 
   const [fname, setFname] = useState(false);
   const [sname, setSname] = useState(false);
@@ -50,26 +42,6 @@ function Signup() {
   const [plower, setPlower] = useState(false);
   const [consent, setConsent] = useState(false);
 
-  const [toastProps, setToastProps] = useState<{
-    type: "success" | "error" | "warning" | "info";
-    message: string;
-  }>({
-    type: "success",
-    message: "",
-  });
-
-  const toast = (
-    type: "success" | "error" | "warning" | "info",
-    message: string
-  ) => {
-    setToastProps({ type, message });
-    setShowToast(true);
-  };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
   const validateFirstName = (firstName: string): string => {
     const nameRegex = /^[a-zA-Z0-9]+$/;
     if (firstName.length < 3) {
@@ -81,12 +53,12 @@ function Signup() {
     return "";
   };
 
-  const validateSurname = (surname: string): string => {
+  const validateSurname = (lastName: string): string => {
     const nameRegex = /^[a-zA-Z0-9]+$/;
-    if (surname.length < 3) {
+    if (lastName.length < 3) {
       return "Surname must be at least 3 characters long.";
     }
-    if (!nameRegex.test(surname)) {
+    if (!nameRegex.test(lastName)) {
       return "Surname must contain only alphanumeric characters.";
     }
     return "";
@@ -156,7 +128,7 @@ function Signup() {
       error = validateFirstName(value);
       setFname(!error);
     }
-    if (name === "surname") {
+    if (name === "lastName") {
       error = validateSurname(value);
       setSname(!error);
     }
@@ -193,8 +165,8 @@ function Signup() {
     const firstName = (
       document.getElementById("firstName") as HTMLInputElement
     ).value.trim();
-    const surname = (
-      document.getElementById("surname") as HTMLInputElement
+    const lastName = (
+      document.getElementById("lastName") as HTMLInputElement
     ).value.trim();
     const email = (
       document.getElementById("email") as HTMLInputElement
@@ -205,30 +177,36 @@ function Signup() {
     const cpassword = (
       document.getElementById("cpassword") as HTMLInputElement
     ).value.trim();
+    const membershipId = (
+      document.getElementById("membershipId") as HTMLInputElement
+    ).value.trim();
 
     const errors = {
       firstName: validateFirstName(firstName),
-      surname: validateSurname(surname),
+      lastName: validateSurname(lastName),
       email: validateEmail(email),
       password: validatePassword(password),
       cpassword: validateConfirmPassword(password, cpassword),
       consent: formData.consent
         ? ""
         : "You must agree to the terms and conditions.",
+      membershipId: formData.membershipId ? "" : "Membership ID is required.",
     };
 
     setFormErrors(errors);
     const data = JSON.stringify({
       firstName: firstName,
-      lastName: surname,
+      lastName: lastName,
       email: email,
       password: password,
+      membershipId: membershipId,
     });
     const config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://ican-sds-api.onrender.com/api/v1/auth/register",
+      url: "https://ican-api-6000e8d06d3a.herokuapp.com/api/auth/register?", // Change to admin login
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       data: data,
@@ -238,13 +216,20 @@ function Signup() {
       // Submit form
       try {
         const response = await axios.request(config);
-        setPopupMessage(response.data.message);
-        setShowPopup(true);
-        setPopError(false);
+        const { message, user, access_token } = response.data;
+
+        // Store the response data as needed
+        console.log("User registered successfully:", user);
+        console.log("Access token:", access_token);
+
+        if (user.role === "SUPER_ADMIN" || user.role === "ADMIN") {
+          router.push("/admin-login/");
+        } else {
+          router.push("/login/");
+        }
+        return <Toast type="success" message={message} />;
       } catch (error) {
-        setPopupMessage("An error occurred during registration.");
-        setPopError(true);
-        setShowPopup(true);
+        return <Toast type="error" message="An error occurred during login." />;
       } finally {
         setLoading(false);
       }
@@ -255,104 +240,68 @@ function Signup() {
 
   return (
     <div className=" mx-auto  ">
-      <div className="flex flex-col w-96 sm:w-[440px] items-center rounded-2xl  bg-white p-8 gap-6 ">
+      <div className="flex flex-col w-fit sm:w-fit max-w-[700px] items-center rounded-2xl  bg-white p-8 gap-1 ">
         <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
         <div className=" w-fit">
           <h4 className=" text-primary text-center text-3xl font-bold font-mono   ">
             Create Account
           </h4>
-          <p className=" text-base font-normal font-sans  ">
+          <p className=" text-base text-center font-normal font-sans  ">
             Welcome, Let&apos;s get started
           </p>
         </div>
-        <form className="w-full flex flex-col gap-4 " onSubmit={handleSignup}>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="firstName"
-            >
-              First Name <span className="text-red-600">*</span>
-            </label>
-            <input
-              className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your first name"
-              name="firstName"
+        <form className="w-full flex flex-col gap-1 " onSubmit={handleSignup}>
+          <div className="flex flex-row gap-2">
+            <InputEle
+              label="First Name"
               id="firstName"
-              required
               type="text"
               onChange={handleChange}
-            />
-            {formErrors.firstName && (
-              <p className="text-red-600">{formErrors.firstName}</p>
-            )}
-          </div>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="surname"
-            >
-              Surname <span className="text-red-600">*</span>
-            </label>
-            <input
-              className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your surname"
-              name="surname"
-              id="surname"
-              onChange={handleChange}
+              value={formData.firstName}
               required
+              errorMsg={formErrors.firstName}
+            />
+            <InputEle
+              label="Last Name"
+              id="lastName"
               type="text"
-            />
-            {formErrors.surname && (
-              <p className="text-red-600">{formErrors.surname}</p>
-            )}
-          </div>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="email"
-            >
-              Email Address <span className="text-red-600">*</span>
-            </label>
-            <input
-              className=" p-3 rounded border border-gray-400  "
-              placeholder="Enter your email address"
-              name="email"
               onChange={handleChange}
-              id="email"
+              value={formData.lastName}
               required
-              type="email"
+              errorMsg={formErrors.lastName}
             />
-            {formErrors.email && (
-              <p className="text-red-600">{formErrors.email}</p>
-            )}
           </div>
+          <InputEle
+            label="Email Address"
+            id="email"
+            type="email"
+            onChange={handleChange}
+            value={formData.email}
+            required
+            errorMsg={formErrors.email}
+          />
+          <InputEle
+            label="Membership ID"
+            id="membershipId"
+            type="text"
+            onChange={handleChange}
+            value={formData.membershipId}
+            required
+            errorMsg={formErrors.membershipId}
+          />
+
           <div className="  w-full flex flex-col ">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="password"
-            >
-              Password <span className="text-red-600">*</span>
-            </label>
-            <div className="relative">
-              <FaLock className="absolute left-3 top-[.8rem] text-gray-400 text-md" />
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                name="password"
-                placeholder="Create a password"
-                className="w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                onChange={handleChange}
-                required
-              />
-              <button
-                type="button"
-                onClick={togglePasswordVisibility}
-                className="absolute right-3 top-3 text-gray-400 text-md focus:outline-none"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button>
-            </div>
-            <div className="pt-4  ">
+            <InputEle
+              label="Password"
+              id="password"
+              type="password"
+              value={formData.password}
+              placeholder="Enter your new password"
+              required
+              onChange={handleChange}
+            />
+
+            <div className="py-1 m-0  ">
               <p className="text-xs  text-gray-500">
                 Must be at least{" "}
                 <span
@@ -383,36 +332,17 @@ function Signup() {
               </p>
             </div>
           </div>
-          <div className="  w-full flex flex-col">
-            <label
-              className=" text-base font-sans font-semibold  "
-              htmlFor="cpassword"
-            >
-              Confirm Password <span className="text-red-600">*</span>
-            </label>
-            <div className="relative">
-              <FaLock className="absolute left-3 top-[.8rem] text-gray-400 text-md" />
-              <input
-                type={showPassword ? "text" : "password"}
-                id="cpassword"
-                onChange={handleChange}
-                name="cpassword"
-                placeholder="Confirm your password"
-                className="w-full pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-              />
-              <button
-                type="button"
-                onClick={togglePasswordVisibility}
-                className="absolute right-3 top-3 text-gray-400 text-md focus:outline-none"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button>
-            </div>
-            {formErrors.cpassword && (
-              <p className="text-red-600">{formErrors.cpassword}</p>
-            )}
-          </div>
+          <InputEle
+            label="Confirm Password"
+            id="cpassword"
+            type="password"
+            placeholder="Confirm your password"
+            required
+            onChange={handleChange}
+            value={formData.confirmPassword}
+            errorMsg={formErrors.cpassword}
+          />
+
           <div className=" flex flex-row justify-between gap-2 items-center ">
             <input
               type="checkbox"
@@ -440,53 +370,13 @@ function Signup() {
             Verify
           </button>
         </form>
-        <p className=" text-base font-medium   ">
+        <p className=" text-base font-medium pt-1 w-full text-center  gap-3 flex flex-row justify-center  ">
           Already a member?
           <Link className=" text-primary " href={"/login"}>
             Login
           </Link>
         </p>
       </div>
-      {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white flex flex-col items-center gap-3 p-6 rounded-lg shadow-lg">
-            <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
-
-            {popError ? (
-              <>
-                <h3 className="text-primary font-semibold text-3xl">
-                  Registration Failed
-                </h3>
-                <p>{popupMessage}</p>
-              </>
-            ) : (
-              <>
-                <h3 className="text-primary font-semibold text-3xl">
-                  Verify your Email
-                </h3>
-
-                <MdOutlineMarkEmailUnread className="w-16 h-16 fill-primary" />
-
-                <p className="text-center w-3/4 font-sans">
-                  A verification link has been sent to your email. Please check
-                  your email and select the link provided to continue
-                </p>
-
-                <p className="font-medium">
-                  Didn&apos;t receive an email? Check your spam folder.
-                </p>
-              </>
-            )}
-
-            <button
-              className="mt-4 px-4 py-2 bg-primary text-white rounded"
-              onClick={() => setShowPopup(false)}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -16,9 +16,9 @@ import Link from 'next/link';
 
 
 const topMenuItems = [
-  { icon: LayoutGridIcon, label: 'Overview', href: '/dashboard' },
+  { icon: LayoutGridIcon, label: 'Overview', href: '/Overview' },
   { icon: Banknote, label: 'Payment', href: '/payment' },
-  { icon: FaRegCalendarCheck, label: 'Events', href: '/events' },
+  { icon: FaRegCalendarCheck, label: 'Events', href: '/Event' },
   { icon: FileText, label: 'Resources', href: '/resources' },
   { icon: ListOrderedIcon, label: 'MCPD Records', href: '/MCPDRecords' },
 ];
@@ -82,7 +82,7 @@ export const Sidebar = () => {
         
         <div>
           <a
-            href="/logout"
+            href="/login"
             className="flex items-center space-x-3 px-6 py-2 rounded-lg mt-32 mb-20"
           >
             <LogOut className="w-5 h-5 transform scale-x-[-1]" />

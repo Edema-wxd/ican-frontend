@@ -1,15 +1,24 @@
 "use client";
 import React from "react";
-import { BiodataFormData } from "../Biodata";
+import { BiodataFormData } from "../homecomps/Biodata";
 
 interface PaymentProps {
+  isShown: boolean;
+
   formData: BiodataFormData;
   updateFormData: (data: Partial<BiodataFormData>) => void;
 }
 
-function Payment({ formData, updateFormData }: PaymentProps) {
+function Payment({ isShown, formData, updateFormData }: PaymentProps) {
+  var bucket = "";
+  if (isShown) {
+    bucket = "flex";
+  } else {
+    bucket = "hidden";
+  }
+
   return (
-    <div className="pt-4 flex flex-col justify-between gap-4 ">
+    <div className={`${bucket} pt-4 flex flex-col justify-between gap-4 `}>
       <h3 className="font-bold font-mono text-2xl text-black ">
         PAYMENT <hr />
       </h3>
@@ -21,7 +30,7 @@ function Payment({ formData, updateFormData }: PaymentProps) {
           className=" text-base font-sans font-semibold  "
           htmlFor="currentJob"
         >
-          Select Payment Option  <span className="text-red-600">*</span>
+          Select Payment Option <span className="text-red-600">*</span>
         </label>
         <input
           className=" p-3 rounded border border-gray-400  "

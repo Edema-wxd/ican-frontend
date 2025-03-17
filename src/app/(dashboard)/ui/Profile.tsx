@@ -1,24 +1,25 @@
-'use client';
-import React, { useState } from 'react';
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
 
 function Profile() {
   const [formData, setFormData] = useState({
-    surname: '',
-    firstName: '',
-    middleName: '',
-    email: '',
-    phone: '',
-    country: '',
-    address: ''
+    surname: "",
+    firstName: "",
+    middleName: "",
+    email: "",
+    phone: "",
+    country: "",
+    address: "",
   });
 
   const [profilePhoto, setProfilePhoto] = useState(null);
 
   const handleInputChange = (e: any) => {
     const { id, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [id]: value
+      [id]: value,
     }));
   };
 
@@ -27,7 +28,7 @@ function Profile() {
     if (file && file.size <= 100 * 1024) {
       setProfilePhoto(file);
     } else {
-      alert('Please select an image under 100KB');
+      alert("Please select an image under 100KB");
     }
   };
 
@@ -42,12 +43,16 @@ function Profile() {
 
   return (
     <div className="p-4 md:p-8 bg-white rounded-lg border-2 border-gray-400">
-      <h1 className="text-2xl md:text-3xl font-bold mb-6">Profile Management</h1>
-      
+      <h1 className="text-2xl md:text-3xl font-bold mb-6">
+        Profile Management
+      </h1>
+
       {/* Personal Details Section */}
       <div className="w-full mb-6 md:mb-8">
         <h2 className="text-lg font-semibold mb-2">Personal Details</h2>
-        <p className="text-sm text-gray-500 mb-4">Edit your profile details here</p>
+        <p className="text-sm text-gray-500 mb-4">
+          Edit your profile details here
+        </p>
       </div>
 
       {/* Profile Photo Section */}
@@ -57,7 +62,9 @@ function Profile() {
           <div className="relative">
             {profilePhoto ? (
               <div className="relative">
-                <img
+                <Image
+                  width={96}
+                  height={96}
                   src={URL.createObjectURL(profilePhoto)}
                   alt="Profile"
                   className="w-24 h-24 rounded-full object-cover"
@@ -65,7 +72,9 @@ function Profile() {
               </div>
             ) : (
               <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center">
-                <img
+                <Image
+                  width={96}
+                  height={96}
                   src="/avatar.png"
                   alt="Profile"
                   className="w-24 h-24 rounded-full object-cover"
@@ -74,7 +83,9 @@ function Profile() {
             )}
           </div>
           <div className="flex flex-col gap-4">
-            <span className="text-sm text-gray-500">(JPG or PNG,100KB Max )</span>
+            <span className="text-sm text-gray-500">
+              (JPG or PNG,100KB Max )
+            </span>
             <div className="flex flex-wrap gap-4">
               <label className="bg-[#27378C] text-white px-6 py-2 rounded-full cursor-pointer hover:bg-blue-700 text-sm whitespace-nowrap">
                 Update photo
@@ -104,7 +115,10 @@ function Profile() {
           <h2 className="text-base font-medium mb-4">Biodata</h2>
           <div className="w-full md:w-[60%] space-y-6">
             <div>
-              <label htmlFor="surname" className="block text-base font-semibold mb-2">
+              <label
+                htmlFor="surname"
+                className="block text-base font-semibold mb-2"
+              >
                 Surname
               </label>
               <input
@@ -118,7 +132,10 @@ function Profile() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="firstName" className="block text-base font-semibold mb-2">
+                <label
+                  htmlFor="firstName"
+                  className="block text-base font-semibold mb-2"
+                >
                   First Name
                 </label>
                 <input
@@ -131,7 +148,10 @@ function Profile() {
                 />
               </div>
               <div>
-                <label htmlFor="middleName" className="block text-base font-semibold mb-2">
+                <label
+                  htmlFor="middleName"
+                  className="block text-base font-semibold mb-2"
+                >
                   Middle Name
                 </label>
                 <input
@@ -154,7 +174,10 @@ function Profile() {
           <h2 className="text-base font-medium mb-4">Contact Details</h2>
           <div className="w-full md:w-[60%] grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="email" className="block text-base font-semibold mb-2">
+              <label
+                htmlFor="email"
+                className="block text-base font-semibold mb-2"
+              >
                 Email Address
               </label>
               <input
@@ -167,7 +190,10 @@ function Profile() {
               />
             </div>
             <div>
-              <label htmlFor="phone" className="block text-base font-semibold mb-2">
+              <label
+                htmlFor="phone"
+                className="block text-base font-semibold mb-2"
+              >
                 Phone number
               </label>
               <input
@@ -186,10 +212,15 @@ function Profile() {
 
         {/* Place of Residence Section */}
         <div className="w-full mb-8 flex flex-col md:flex-row md:gap-[3rem]">
-          <h2 className="text-base font-medium mb-4 md:w-[15%]">Place of Residence</h2>
+          <h2 className="text-base font-medium mb-4 md:w-[15%]">
+            Place of Residence
+          </h2>
           <div className="w-full md:w-[60%] grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="country" className="block text-base font-semibold mb-2">
+              <label
+                htmlFor="country"
+                className="block text-base font-semibold mb-2"
+              >
                 Country
               </label>
               <input
@@ -202,7 +233,10 @@ function Profile() {
               />
             </div>
             <div>
-              <label htmlFor="address" className="block text-base font-semibold mb-2">
+              <label
+                htmlFor="address"
+                className="block text-base font-semibold mb-2"
+              >
                 Residential Address
               </label>
               <input
@@ -219,19 +253,21 @@ function Profile() {
 
         {/* Action Buttons */}
         <div className="w-full mb-8 flex flex-col md:flex-row md:gap-[3rem]">
-            <div className='w-[15%]'></div>
-            <div className='md:w-[60%] grid grid-cols-1 sm:grid-cols-2 gap-6'>
-          <button
-            type="submit"
-            className="sm:w-auto bg-primary text-white px-8 py-2 rounded-full hover:bg-blue-700">
-            Save changes
-          </button>
-          <button
-            type="button"
-            className="sm:w-auto bg-primary text-[#27378C] px-8 py-2 rounded-full hover:bg-gray-200"
-          >
-            Cancel
-          </button>
+
+          <div className="w-[15%]"></div>
+          <div className="md:w-[60%] grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <button
+              type="submit"
+              className="sm:w-auto bg-primary text-white px-8 py-2 rounded-full hover:bg-blue-700"
+            >
+              Save changes
+            </button>
+            <button
+              type="button"
+              className="sm:w-auto bg-primary text-[#27378C] px-8 py-2 rounded-full hover:bg-gray-200"
+            >
+              Cancel
+            </button>
           </div>
         </div>
       </form>

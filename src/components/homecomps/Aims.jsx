@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import Reason from "./genui/Reason";
+import Reason from "@/components/genui/Reason";
 
 function Aims() {
   // Aims tags and info
   return (
     <div className="flex flex-col lg:px-40 md:p-20 p-4 gap-8 w-full justify-between items-center ">
       <h2 className=" text-3xl sm:text-5xl font-bold text-primary font-mono text-center  ">
-        Why You Should Join  <span className="block">Surulere & District Society (SDS)</span>
+        Why You Should Join{" "}
+        <span className="block">Surulere & District Society (SDS)</span>
       </h2>
       <Image
         width={462}

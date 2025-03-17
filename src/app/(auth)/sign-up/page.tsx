@@ -3,33 +3,33 @@ import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import Toast from "@/components/genui/Toast";
 import InputEle from "@/components/genui/InputEle";
-import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 function Signup() {
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
   const [complete, setComplete] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
-    surname: "",
+    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
     consent: false,
+    membershipId: "",
   });
   const [formErrors, setFormErrors] = useState({
     firstName: "",
-    surname: "",
+    lastName: "",
     email: "",
     password: "",
     cpassword: "",
     consent: "",
+    membershipId: "",
   });
-  const [popupMessage, setPopupMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
-  const [popError, setPopError] = useState(false);
 
   const [fname, setFname] = useState(false);
   const [sname, setSname] = useState(false);
@@ -41,22 +41,6 @@ function Signup() {
   const [pnumber, setPnumber] = useState(false);
   const [plower, setPlower] = useState(false);
   const [consent, setConsent] = useState(false);
-  const [toastProps, setToastProps] = useState<{
-    type: "success" | "error" | "warning" | "info";
-    message: string;
-  }>({
-    type: "success",
-    message: "",
-  });
-  const [showToast, setShowToast] = useState(false);
-
-  const showToastMessage = (
-    type: "success" | "error" | "warning" | "info",
-    message: string
-  ) => {
-    setToastProps({ type, message });
-    setShowToast(true);
-  };
 
   const validateFirstName = (firstName: string): string => {
     const nameRegex = /^[a-zA-Z0-9]+$/;
@@ -69,12 +53,12 @@ function Signup() {
     return "";
   };
 
-  const validateSurname = (surname: string): string => {
+  const validateSurname = (lastName: string): string => {
     const nameRegex = /^[a-zA-Z0-9]+$/;
-    if (surname.length < 3) {
+    if (lastName.length < 3) {
       return "Surname must be at least 3 characters long.";
     }
-    if (!nameRegex.test(surname)) {
+    if (!nameRegex.test(lastName)) {
       return "Surname must contain only alphanumeric characters.";
     }
     return "";
@@ -144,7 +128,7 @@ function Signup() {
       error = validateFirstName(value);
       setFname(!error);
     }
-    if (name === "surname") {
+    if (name === "lastName") {
       error = validateSurname(value);
       setSname(!error);
     }
@@ -181,8 +165,8 @@ function Signup() {
     const firstName = (
       document.getElementById("firstName") as HTMLInputElement
     ).value.trim();
-    const surname = (
-      document.getElementById("surname") as HTMLInputElement
+    const lastName = (
+      document.getElementById("lastName") as HTMLInputElement
     ).value.trim();
     const email = (
       document.getElementById("email") as HTMLInputElement
@@ -193,30 +177,36 @@ function Signup() {
     const cpassword = (
       document.getElementById("cpassword") as HTMLInputElement
     ).value.trim();
+    const membershipId = (
+      document.getElementById("membershipId") as HTMLInputElement
+    ).value.trim();
 
     const errors = {
       firstName: validateFirstName(firstName),
-      surname: validateSurname(surname),
+      lastName: validateSurname(lastName),
       email: validateEmail(email),
       password: validatePassword(password),
       cpassword: validateConfirmPassword(password, cpassword),
       consent: formData.consent
         ? ""
         : "You must agree to the terms and conditions.",
+      membershipId: formData.membershipId ? "" : "Membership ID is required.",
     };
 
     setFormErrors(errors);
     const data = JSON.stringify({
       firstName: firstName,
-      lastName: surname,
+      lastName: lastName,
       email: email,
       password: password,
+      membershipId: membershipId,
     });
     const config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://ican-sds-api.onrender.com/api/v1/auth/register",
+      url: "https://ican-api-6000e8d06d3a.herokuapp.com/api/auth/register?", // Change to admin login
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       data: data,
@@ -226,76 +216,20 @@ function Signup() {
       // Submit form
       try {
         const response = await axios.request(config);
-        setPopupMessage(response.data.message);
-        setShowPopup(true);
-        setPopError(false);
+        const { message, user, access_token } = response.data;
+
+        // Store the response data as needed
+        console.log("User registered successfully:", user);
+        console.log("Access token:", access_token);
+
+        if (user.role === "SUPER_ADMIN" || user.role === "ADMIN") {
+          router.push("/admin-login/");
+        } else {
+          router.push("/login/");
+        }
+        return <Toast type="success" message={message} />;
       } catch (error) {
-        setPopupMessage("An error occurred during registration.");
-        setPopError(true);
-        setShowPopup(true);
-      } finally {
-        setLoading(false);
-      }
-    } else {
-      setLoading(false);
-    }
-  };
-
-  const [step, setStep] = useState(1);
-  const [email, setEmail] = useState("");
-  const { toast } = useToast();
-
-  const steps = [
-    { number: 1, title: "Sign Up" },
-    { number: 2, title: "Verify Email" },
-  ];
-
-  const handleNext = (userEmail?: string) => {
-    if (userEmail) {
-      setEmail(userEmail);
-    }
-    setStep((prev) => Math.min(prev + 1, steps.length));
-  };
-
-  const handleResend = async () => {
-    // Logic to resend verification email
-    toast({
-      title: "Verification email resent",
-      description: `A new verification link has been sent to ${email}`,
-    });
-
-    const data = JSON.stringify({
-      email: email,
-      password: formData.password,
-    });
-
-    const config = {
-      method: "post",
-      maxBodyLength: Infinity,
-      url: "https://ican-sds-api.onrender.com/api/v1/auth/register",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: data,
-    };
-
-    if (Object.values(formErrors).every((error) => error === "")) {
-      // Submit form
-      try {
-        const response = await axios.post(
-          "https://ican-sds-api.onrender.com/api/v1/auth/register",
-          data,
-          config
-        );
-
-        setPopupMessage(response.data.message);
-        setShowPopup(true);
-        setPopError(false);
-      } catch (error) {
-        console.error("error: ", error);
-        setPopupMessage("An error occurred during registration.");
-        setPopError(true);
-        setShowPopup(true);
+        return <Toast type="error" message="An error occurred during login." />;
       } finally {
         setLoading(false);
       }
@@ -306,40 +240,54 @@ function Signup() {
 
   return (
     <div className=" mx-auto  ">
-      <div className="flex flex-col w-96 sm:w-[440px] items-center rounded-2xl  bg-white p-8 gap-6 ">
+      <div className="flex flex-col w-fit sm:w-fit max-w-[700px] items-center rounded-2xl  bg-white p-8 gap-1 ">
         <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
         <div className=" w-fit">
           <h4 className=" text-primary text-center text-3xl font-bold font-mono   ">
             Create Account
           </h4>
-          <p className=" text-base font-normal font-sans  ">
+          <p className=" text-base text-center font-normal font-sans  ">
             Welcome, Let&apos;s get started
           </p>
         </div>
-        <form className="w-full flex flex-col gap-4 " onSubmit={handleSignup}>
-          <InputEle
-            label="First Name"
-            id="firstName"
-            type="text"
-            onChange={handleChange}
-            required
-            errorMsg={formErrors.firstName}
-          />
-          <InputEle
-            label="Surname"
-            id="surname"
-            type="text"
-            onChange={handleChange}
-            required
-            errorMsg={formErrors.surname}
-          />
+        <form className="w-full flex flex-col gap-1 " onSubmit={handleSignup}>
+          <div className="flex flex-row gap-2">
+            <InputEle
+              label="First Name"
+              id="firstName"
+              type="text"
+              onChange={handleChange}
+              value={formData.firstName}
+              required
+              errorMsg={formErrors.firstName}
+            />
+            <InputEle
+              label="Last Name"
+              id="lastName"
+              type="text"
+              onChange={handleChange}
+              value={formData.lastName}
+              required
+              errorMsg={formErrors.lastName}
+            />
+          </div>
           <InputEle
             label="Email Address"
             id="email"
             type="email"
             onChange={handleChange}
+            value={formData.email}
             required
             errorMsg={formErrors.email}
+          />
+          <InputEle
+            label="Membership ID"
+            id="membershipId"
+            type="text"
+            onChange={handleChange}
+            value={formData.membershipId}
+            required
+            errorMsg={formErrors.membershipId}
           />
 
           <div className="  w-full flex flex-col ">
@@ -347,12 +295,13 @@ function Signup() {
               label="Password"
               id="password"
               type="password"
+              value={formData.password}
               placeholder="Enter your new password"
               required
               onChange={handleChange}
             />
 
-            <div className="pt-4  ">
+            <div className="py-1 m-0  ">
               <p className="text-xs  text-gray-500">
                 Must be at least{" "}
                 <span
@@ -390,6 +339,7 @@ function Signup() {
             placeholder="Confirm your password"
             required
             onChange={handleChange}
+            value={formData.confirmPassword}
             errorMsg={formErrors.cpassword}
           />
 
@@ -420,7 +370,7 @@ function Signup() {
             Verify
           </button>
         </form>
-        <p className=" text-base font-medium   ">
+        <p className=" text-base font-medium pt-1 w-full text-center  gap-3 flex flex-row justify-center  ">
           Already a member?
           <Link className=" text-primary " href={"/login"}>
             Login

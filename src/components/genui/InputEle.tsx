@@ -30,7 +30,6 @@ function InputEle({
   id,
   required = true,
   disabled = false,
-
   label,
   options = [],
   placeholder = "",

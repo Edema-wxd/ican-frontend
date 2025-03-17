@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { FaCloudUploadAlt, FaTrash } from "react-icons/fa";
 
-import { BiodataFormData } from "../Biodata";
+import { BiodataFormData } from "../homecomps/Biodata";
 import Toast from "../genui/Toast";
 
 interface UploadimgProps {

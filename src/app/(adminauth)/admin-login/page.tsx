@@ -7,11 +7,13 @@ import InputEle from "@/components/genui/InputEle";
 import {
   InputOTP,
   InputOTPGroup,
-  InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 
+import { useRouter } from "next/navigation";
+
 function AdminLogin() {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [complete, setComplete] = useState(false);
   const [isSwitchOn, setIsSwitchOn] = useState(false);
@@ -19,7 +21,6 @@ function AdminLogin() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    remember: false,
   });
   const [formErrors, setFormErrors] = useState({
     email: "",
@@ -46,10 +47,10 @@ function AdminLogin() {
   ) => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
-    setFormData({
-      ...formData,
+    setFormData((prevFormData) => ({
+      ...prevFormData,
       [name]: type === "checkbox" ? checked : value,
-    });
+    }));
     let error = "";
 
     if (name === "email") {
@@ -57,14 +58,18 @@ function AdminLogin() {
       setEvalid(!error);
     }
 
+    if (name === "password") {
+      setPvalid(value.length > 0);
+    }
+
     if (name === "remember") {
       setRemember(checked);
     }
 
-    setFormErrors({
-      ...formErrors,
+    setFormErrors((prevFormErrors) => ({
+      ...prevFormErrors,
       [name]: error,
-    });
+    }));
 
     if (pvalid && evalid) {
       setComplete(true);
@@ -73,7 +78,7 @@ function AdminLogin() {
     }
   };
 
-  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
@@ -86,7 +91,7 @@ function AdminLogin() {
 
     const errors = {
       email: validateEmail(email),
-      password: password,
+      password: password ? "" : "Password is required.",
     };
 
     setFormErrors(errors);
@@ -94,24 +99,31 @@ function AdminLogin() {
     const data = JSON.stringify({
       email: email,
       password: password,
-      remember: remember,
     });
+    console.log(data);
     const config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://ican-sds-api.onrender.com/api/v1/auth/register", // Change to admin login
+      url: "https://ican-api-6000e8d06d3a.herokuapp.com/api/auth/login",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       data: data,
     };
 
     if (Object.values(errors).every((error) => error === "")) {
-      // Submit form
-
       try {
         const response = await axios.request(config);
-        setIsSwitchOn(true);
+        const { user, access_token } = response.data;
+        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("access_token", access_token);
+
+        if (user.role === "SUPER_ADMIN" || user.role === "ADMIN") {
+          router.push("/admin/");
+        } else {
+          router.push("/dashboard/");
+        }
       } catch (error) {
         console.error(error);
       } finally {
@@ -189,13 +201,14 @@ function AdminLogin() {
             </p>
           </div>
         ) : (
-          <form className="w-full flex flex-col gap-4 " action="">
+          <form className="w-full flex flex-col gap-4 " onSubmit={handleSignin}>
             {/* <InputEle /> */}
             <InputEle
               id="email"
               type="text"
               placeholder="Enter email address"
               label="Email Address"
+              value={formData.email}
               onChange={handleChange}
               errorMsg={formErrors.email}
             />
@@ -204,6 +217,7 @@ function AdminLogin() {
               type="password"
               placeholder="Enter your password"
               label="Password"
+              value={formData.password}
               onChange={handleChange}
               errorMsg={formErrors.password}
             />
@@ -211,7 +225,6 @@ function AdminLogin() {
             <button
               className=" px-8 py-4 bg-primary  rounded-full text-white text-base font-semibold "
               type="submit"
-              disabled={!complete}
             >
               Log In
             </button>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Studenttile from "./genui/Studenttile";
+import Studenttile from "@/components/genui/Studenttile";
 import { studentMaterials } from "@/lib/studentdata";  
 // import { Pagination } from "../components/Pagination";
 

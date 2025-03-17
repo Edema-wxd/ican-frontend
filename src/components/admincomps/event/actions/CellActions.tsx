@@ -11,14 +11,12 @@ import {
 
 import {
   MdEdit,
-  MdOutlineToggleOn,
   MdOutlineDelete,
-  MdOutlineToggleOff,
+  MdOutlineRemoveRedEye,
+  
 } from "react-icons/md";
-import { FaUserXmark, FaUserCheck } from "react-icons/fa6";
 
 import { MoreHorizontal } from "lucide-react";
-import DisableAdmin from "./DisableAdmin";
 import CancelEvent from "./CancelEvent";
 import NewContent from "@/components/admincomps/content/create/NewContent";
 
@@ -56,7 +54,7 @@ const ActionsCell: React.FC<CellProps> = ({ row }) => {
             className="flex flex-row items-center"
             onClick={() => router.push(`/admin/events/${row.original.id}`)}
           >
-            <MdOutlineToggleOn className="w-4 h-4" /> View Event Details
+            <MdOutlineRemoveRedEye className="w-4 h-4" /> View Event Details
           </DropdownMenuItem>
 
           <DropdownMenuSeparator />

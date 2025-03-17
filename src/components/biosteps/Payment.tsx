@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { BiodataFormData } from "../Biodata";
+import { BiodataFormData } from "../homecomps/Biodata";
 
 interface PaymentProps {
   isShown: boolean;

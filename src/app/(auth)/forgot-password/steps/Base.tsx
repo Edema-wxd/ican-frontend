@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import InputEle from "@/components/genui/InputEle";
 import axios from "axios";
-
 interface Propsval {
   onNext: () => void;
 }
@@ -14,6 +14,14 @@ function Base({ onNext }: Propsval) {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setEmail((e.target as HTMLInputElement).value);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -21,10 +29,10 @@ function Base({ onNext }: Propsval) {
       email: email,
     });
 
-    const config = {
+    let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://ican-sds-api.onrender.com/api/v1/auth/password/reset",
+      url: "https://ican-api-6000e8d06d3a.herokuapp.com/api/auth/forgot-password",
       headers: {
         "Content-Type": "application/json",
       },
@@ -43,7 +51,6 @@ function Base({ onNext }: Propsval) {
   };
 
   return (
-
     <div className="flex flex-col w-full  items-center  gap-6 ">
       <Image src="/Logo_big.png" alt="Logo" width={143} height={60} />
       <div className=" w-fit">
@@ -55,28 +62,17 @@ function Base({ onNext }: Propsval) {
         </p>
       </div>
       <form className="w-full flex flex-col gap-4 " onSubmit={handleSubmit}>
-        <div className="  w-full flex flex-col">
-          <label
-            className=" text-base font-sans font-semibold  "
-            htmlFor="email"
-          >
-            Email <span className="text-red-600">*</span>
-          </label>
-          <input
-            className=" p-3 rounded border border-gray-400  "
-            placeholder="Enter your username"
-            name="email"
-            required
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <p></p>
-        </div>
+        <InputEle
+          label="Email Address"
+          id="email"
+          type="email"
+          placeholder="Enter your email address"
+          value={email}
+          onChange={handleChange}
+          required
+        />
 
         <button
-          onClick={() => {
-            onNext();
-          }}
           className=" px-8 py-4 bg-primary rounded-full text-white text-base font-semibold "
           type="submit"
         >

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { BiodataFormData } from "../Biodata";
+import { BiodataFormData } from "../homecomps/Biodata";
 import InputEle from "@/components/genui/InputEle";
 
 interface PersonalProps {

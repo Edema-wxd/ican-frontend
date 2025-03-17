@@ -11,15 +11,15 @@ import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-import Contact from "./biosteps/Contact";
-import Experience from "./biosteps/Experience";
-import Payment from "./biosteps/Payment";
-import Personal from "./biosteps/Personal";
-import Qualifications from "./biosteps/Qualifications";
-import Reference from "./biosteps/Reference";
-import Uploadimg from "./biosteps/Uploadimg";
+import Contact from "../biosteps/Contact";
+import Experience from "../biosteps/Experience";
+import Payment from "../biosteps/Payment";
+import Personal from "../biosteps/Personal";
+import Qualifications from "../biosteps/Qualifications";
+import Reference from "../biosteps/Reference";
+import Uploadimg from "../biosteps/Uploadimg";
 
-import Toast from "./genui/Toast";
+import Toast from "../genui/Toast";
 
 const steps = [
   { number: 0, title: "Upload Image" },
@@ -91,7 +91,7 @@ export type BiodataFormData = {
   };
   payment?: {
     receipt?: File | null;
-    waiver?: string ;
+    waiver?: string;
   };
 };
 

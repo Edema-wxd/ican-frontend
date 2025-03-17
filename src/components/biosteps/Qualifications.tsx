@@ -1,5 +1,5 @@
 "use client";
-import { BiodataFormData } from "../Biodata";
+import { BiodataFormData } from "../homecomps/Biodata";
 import InputEle from "../genui/InputEle";
 import React from "react";
 
